@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Francesco Tomaselli</title>
+    <link>https://tomfran.github.io/</link>
+    <description>Recent content in Home on Francesco Tomaselli</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tomfran.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Controlling Images with tags in Hugo</title>
+      <link>https://tomfran.github.io/posts/hugo-images/</link>
+      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://tomfran.github.io/posts/hugo-images/</guid>
+      <description>GitHub-like image control with Hugo using tags, supporting theme switching, and size adjustments.</description>
+    </item>
+    <item>
+      <title>Probabilistic to-visit Queue</title>
+      <link>https://tomfran.github.io/posts/prob-queue/</link>
+      <pubDate>Thu, 16 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://tomfran.github.io/posts/prob-queue/</guid>
+      <description>A probabilistic collection leveraging Bloom Filters to store a set of 1 billion visited URLs in 18mb.</description>
+    </item>
+    <item>
+      <title>Search Engine in Rust</title>
+      <link>https://tomfran.github.io/posts/search-engine/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://tomfran.github.io/posts/search-engine/</guid>
+      <description>A search engine overview and Rust implementation, supporting free and boolean ranked queries, efficient disk and memory usage, and spelling correction.</description>
+    </item>
+    <item>
+      <title>Log-Structured Merge Tree</title>
+      <link>https://tomfran.github.io/posts/lsm/</link>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://tomfran.github.io/posts/lsm/</guid>
+      <description>An LSM Tree overview and Java implementation, with a Skiplist, SStables, and background compaction from scratch.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://tomfran.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomfran.github.io/about/</guid>
+      <description>&lt;p&gt;I got a Bachelor’s degree from the &lt;a href=&#34;https://www.unitn.it/&#34;&gt;University of Trento&lt;/a&gt;, and my&#xA;Master’s degree from the &lt;a href=&#34;https://www.unimi.it/&#34;&gt;University of Milan&lt;/a&gt;. Currently,&#xA;I work as a Software Engineer at &lt;a href=&#34;https://www.amazon.jobs/teams/aft&#34;&gt;Amazon&lt;/a&gt; Berlin.&lt;/p&gt;&#xA;&lt;p&gt;During my studies, I gained a lot of interest in algorithms and data structures, as well as&#xA;distributed systems, databases, and search engines. I explored those topics with my master’s&#xA;thesis on &lt;a href=&#34;https://github.com/tomfran/ANS-Graph-compression&#34;&gt;graph compression&lt;/a&gt;, and with side&#xA;projects on &lt;a href=&#34;https://github.com/tomfran/LSM-Tree&#34;&gt;LSM tree&lt;/a&gt; and &lt;a href=&#34;https://github.com/tomfran/search-rs&#34;&gt;search engine&lt;/a&gt; &#xA;implementations.&lt;/p&gt;&#xA;&lt;p&gt;I had the opportunity of being a contestant at &lt;a href=&#34;https://swerc.eu/&#34;&gt;SWERC&lt;/a&gt;, a team competitive&#xA;programming competition, in 2020 and 2022, also, I liked to participate in &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hash_Code_(programming_competition)&#34;&gt;Google Hashcode&lt;/a&gt; every time&#xA;I got the chance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Library</title>
+      <link>https://tomfran.github.io/library/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomfran.github.io/library/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dataintensive.net/&#34;&gt;Designing Data-Intensive Applications&lt;/a&gt; &lt;br&gt;&#xA;Excellent book about many distributed systems concepts, databases, and big data processing ideas.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.databass.dev/&#34;&gt;Database Internals&lt;/a&gt; &lt;br&gt;&#xA;Deep dive into database concepts that the first book only touches briefly, like data organization on disk, log-structured databases, and so on. It also covers distributed systems.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://samnewman.io/books/building_microservices_2nd_edition/&#34;&gt;Building Microservices&lt;/a&gt; &lt;br&gt;&#xA;Concepts tied to developing independent services rather than huge monoliths. Touches testing, CI/CD, communication styles and so on.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://nlp.stanford.edu/IR-book/information-retrieval-book.html&#34;&gt;Introduction to information retrieval&lt;/a&gt; &lt;br&gt;&#xA;How search engines work, how they are built and maintained. Also covers web crawling.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
