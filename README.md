@@ -1,0 +1,1 @@
+# azurestocking.github.io
