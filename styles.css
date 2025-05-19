@@ -10,51 +10,43 @@
 /* FONTS */
 
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Book';
     src: url('./font/lineto-circular-book.ttf') format('truetype');
-    font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Book';
     src: url('./font/lineto-circular-bookItalic.ttf') format('truetype');
-    font-weight: 400;
     font-style: italic;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Medium';
     src: url('./font/lineto-circular-medium.ttf') format('truetype');
-    font-weight: 500;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Medium';
     src: url('./font/lineto-circular-mediumItalic.ttf') format('truetype');
-    font-weight: 500;
     font-style: italic;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Bold';
     src: url('./font/lineto-circular-bold.ttf') format('truetype');
-    font-weight: 700;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Bold';
     src: url('./font/lineto-circular-boldItalic.ttf') format('truetype');
-    font-weight: 700;
     font-style: italic;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Black';
     src: url('./font/lineto-circular-black.ttf') format('truetype');
-    font-weight: 900;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Circular';
+    font-family: 'Circular Black';
     src: url('./font/lineto-circular-blackItalic.ttf') format('truetype');
-    font-weight: 900;
     font-style: italic;
 }
 
@@ -119,7 +111,6 @@ p {
     padding: 0;
     margin: 0;
     border: 0;
-    font-weight: 400;
     list-style: none;
     vertical-align: bottom;
     box-sizing: border-box;
@@ -128,10 +119,11 @@ p {
     border-radius: 0;
     appearance: none;
     text-size-adjust: none;
+    font-weight: normal;
 }
 
 html, body {
-    font-family: 'Circular', Arial, Helvetica, sans-serif;
+    font-family: 'Circular Book', Helvetica, sans-serif;
 }
 
 body {
