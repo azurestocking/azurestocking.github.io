@@ -236,7 +236,6 @@ section {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
-    font-weight: 400;
 }
 
 .project a:hover {
@@ -244,7 +243,6 @@ section {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
-    font-weight: 400;
 }
 
 .project a::after {
@@ -276,6 +274,9 @@ section {
     display: flex;
     flex-direction: row;
     gap: 16px;
+}
+
+.footer-button-group {
     padding-bottom: 64px;
 }
 
@@ -291,12 +292,7 @@ section {
     transition: scale 0.2s ease;
 }
 
-.button:hover {
-    background: var(--ghost);
-    text-decoration: none;
-}
-
-.button:active {
+.button:hover, .button:active {
     background: var(--ghost);
     text-decoration: none;
 }
