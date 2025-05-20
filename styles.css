@@ -219,7 +219,6 @@ section {
 .project div {
     float: left;
     width: 100%;
-    display: block;
     clear: both;
     border-radius: 16px;
 }
@@ -231,9 +230,10 @@ section {
 }
 
 .tag-group {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     gap: 8px;
+    align-items: center;
 }
 
 .tag {
@@ -243,6 +243,7 @@ section {
     padding: 8px 12px;
     border-radius: 8px;
     position: relative;
+    display: inline-block;
 }
 
 .project h3 {
