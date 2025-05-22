@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GEMMA LI
+title: Index
 ---
 
 <section>
