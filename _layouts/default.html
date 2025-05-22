@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - GEMMA LI</title>
+    <meta name="description">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="{{ '/' | relative_url }}">GEMMA</a></div>
+        <div class="nav-group">
+            <a class="nav-item" href="{{ '/#featured' | relative_url }}">Featured</a>
+            <a class="nav-item" href="{{ '/#about' | relative_url }}">About</a>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <hr>
+        <div class="button-group" style="padding-top: 64px;padding-bottom: 64px;">
+            <a class="button" href="/">LinkedIn ↗</a>
+            <a class="button" href="/">GitHub ↗</a>
+            <a class="button" href="/">Resume ↗</a>
+            <a class="button" href="/">E-Mail ↗</a>
+        </div>
+        <div class="p-l" style="padding-bottom: 64px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+        <p>
+            Made with tons of 🍵 in Cambridge, Massachusetts.<br>
+            © 2025 · GEMMA LI. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+</html> 
