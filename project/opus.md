@@ -54,7 +54,7 @@ title: Opus
 <script>
     document.addEventListener("scroll", function() {
         const targetElements = [
-            { id: "highlight", color: "#DFE8E6" },
+            { id: "highlight", color: "#EBECFA" },
             { id: "process", color: "var(--background)" }
         ];
 

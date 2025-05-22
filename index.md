@@ -51,7 +51,7 @@ title: Index
                 <div class="list">
                     <div class="list-item">
                         <div class="list-item-1">
-                            <div>Havard University</div>
+                            <div>Harvard University</div>
                             <div>2024</div>
                         </div>
                         <div class="list-item-2">
@@ -161,8 +161,8 @@ title: Index
 <script>
     document.addEventListener("scroll", function() {
         const targetElements = [
-            { id: "project-1", color: "#DFE8E6" },
-            { id: "project-2", color: "#EBECFA" },
+            { id: "project-1", color: "#EBECFA" },
+            { id: "project-2", color: "#DFE8E6" },
             { id: "about", color: "var(--background)" }
         ];
 
