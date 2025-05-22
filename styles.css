@@ -101,6 +101,7 @@ h1 {
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -420,4 +421,64 @@ hr {
 
 .list-item-2 {
     color: var(--tertiary);
+}
+
+
+
+/* SCROLLSPY */
+
+.scrollspy {
+    position: fixed;
+    right: 44px;
+    bottom: 44px;
+    z-index: 999;
+    width: 200px;
+}
+
+.scrollspy-content {
+    background: var(--ghost);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollspy-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    color: var(--tertiary);
+}
+
+.scrollspy-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scrollspy-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.scrollspy-link:hover {
+    color: var(--primary);
+}
+
+.scrollspy-link.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 1336px) {
+    .scrollspy {
+        display: none;
+    }
 }

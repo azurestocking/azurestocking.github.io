@@ -27,7 +27,7 @@ title: Recount
 </section>
 
 <section id="highlight">
-    <h1>HIGHLIGHTS</h1>
+    <h1>Highlight</h1>
     <div class="p-l">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
@@ -45,7 +45,7 @@ title: Recount
 </section>
 
 <section id="process">
-    <h1>PROCESS</h1>
+    <h1>Process</h1>
     <div class="p-l">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
