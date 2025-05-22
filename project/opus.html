@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <title>Opus - GEMMA LI</title>
     <meta name="description">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    <header>
+        <div class="logo"><a href="/">GEMMA</a></div>
+        <div class="nav-group">
+            <a class="nav-item" href="/#featured">Featured</a>
+            <a class="nav-item" href="/#about">About</a>
+        </div>
+    </header>
 
     <main>
-
         <section>
             <div class="heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h3>
@@ -37,7 +43,7 @@
             </div>
         </section>
 
-        <section id="highlight"">
+        <section id="highlight">
             <h1>HIGHLIGHTS</h1>
             <div class="p-l">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -55,18 +61,31 @@
             </div>
         </section>
 
-        <section id="process"">
+        <section id="process">
             <h1>PROCESS</h1>
             <div class="p-l">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
         </section>   
-
     </main>
 
-    <div id="footer-container"></div>
+    <footer>
+        <hr>
+        <div class="button-group" style="padding-top: 64px;padding-bottom: 64px;">
+            <a class="button" href="/">LinkedIn ↗</a>
+            <a class="button" href="/">GitHub ↗</a>
+            <a class="button" href="/">Resume ↗</a>
+            <a class="button" href="/">E-Mail ↗</a>
+        </div>
+        <div class="p-l" style="padding-bottom: 64px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+        <p>
+            Made with tons of 🍵 in Cambridge, Massachusetts.<br>
+            © 2025 · GEMMA LI. All Rights Reserved.
+        </p>
+    </footer>
     
-    <script src="/js/load-templates.js"></script>
     <script>
         document.addEventListener("scroll", function() {
             const targetElements = [
