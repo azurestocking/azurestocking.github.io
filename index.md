@@ -27,10 +27,9 @@ title: Index
                 <span class="tag">GENERATIVE AI</span>
             </div>
         </div>
-
         <div id="project-2"> 
             <img src="{{ '/images/placeholder.jpg' | relative_url }}" loading="lazy">
-            <h3><a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</a></h3>
+            <h3><a href="{{ '/project/recount' | relative_url }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</a></h3>
             <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
             <div class="tag-group">
                 <span class="tag">Tag 1</span>
@@ -69,7 +68,6 @@ title: Index
                     </div>
                 </div>
             </div>
-            
             <div>
                 <h5>EXPERIENCE</h5>
                 <div class="list">
@@ -161,8 +159,8 @@ title: Index
 <script>
     document.addEventListener("scroll", function() {
         const targetElements = [
-            { id: "project-1", color: "#EBECFA" },
-            { id: "project-2", color: "#DFE8E6" },
+            { id: "project-1", color: "#e0d7e5" },
+            { id: "project-2", color: "#e0e7f2" },
             { id: "about", color: "var(--background)" }
         ];
 

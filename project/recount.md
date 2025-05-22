@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Opus
+title: Recount
 ---
 
 <section>
@@ -16,8 +16,8 @@ title: Opus
     <div class="col-1-3">
         <div class="col-1">
             <p><span style="color: var(--tertiary)">Role</span><br>Product Designer</p>
-            <p><span style="color: var(--tertiary)">Duration</span><br>4 Months</p>
-            <p><span style="color: var(--tertiary)">Client</span><br>Opus Clip</p>
+            <p><span style="color: var(--tertiary)">Duration</span><br>3 Months</p>
+            <p><span style="color: var(--tertiary)">Client</span><br>N/A</p>
         </div>
         <div class="col-3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -54,7 +54,7 @@ title: Opus
 <script>
     document.addEventListener("scroll", function() {
         const targetElements = [
-            { id: "highlight", color: "#e0d7e5" },
+            { id: "highlight", color: "#e0e7f2" },
             { id: "process", color: "var(--background)" }
         ];
 
