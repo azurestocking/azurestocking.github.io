@@ -47,7 +47,7 @@
         </div>
         <p>
             Coded from scratch with Jekyll framework and Lapsang Souchong black tea.<br>
-            © 2025 · Gemma Li. All Rights Reserved.
+            © 2025 · Gemma Li. All rights reserved.
         </p>
     </footer>
 
@@ -61,7 +61,7 @@
             // Create links for each heading
             headings.forEach(heading => {
                 const link = document.createElement('a');
-                link.href = '#' + heading.parentElement.id;
+                link.href = '#' + heading.textContent.toLowerCase().replace(/\s+/g, '-');
                 link.className = 'scrollspy-link';
                 link.textContent = heading.textContent;
                 scrollspyLinks.appendChild(link);
@@ -74,7 +74,7 @@
                 
                 headings.forEach(heading => {
                     const headingTop = heading.getBoundingClientRect().top;
-                    const link = document.querySelector(`.scrollspy-link[href="#${heading.parentElement.id}"]`);
+                    const link = document.querySelector(`.scrollspy-link[href="#${heading.textContent.toLowerCase().replace(/\s+/g, '-')}"]`);
                     
                     // Check if heading is in viewport
                     if (headingTop >= 0 && headingTop <= windowHeight / 2) {

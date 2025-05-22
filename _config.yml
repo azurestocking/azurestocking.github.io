@@ -1,19 +1,16 @@
-title: Azure Stocking
-description: Personal portfolio website
+title: Gemma Li
+description: Portfolio
 baseurl: ""
 url: "https://azurestocking.github.io"
 
-# Build settings
 markdown: kramdown
 permalink: pretty
 
-# Collections
 collections:
   projects:
     output: true
     permalink: /project/:name/
 
-# Default front matter
 defaults:
   - scope:
       path: ""
@@ -26,7 +23,6 @@ defaults:
     values:
       layout: "default"
 
-# Exclude files from processing
 exclude:
   - Gemfile
   - Gemfile.lock

@@ -474,7 +474,7 @@ hr {
 
 .scrollspy-link.active {
     color: var(--primary);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 @media (max-width: 1336px) {

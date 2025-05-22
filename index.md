@@ -5,12 +5,6 @@ title: Index
 
 <section>
     <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
-    <div class="button-group">
-        <a class="button" href="/">LinkedIn ↗</a>
-        <a class="button" href="/">GitHub ↗</a>
-        <a class="button" href="/">Resume ↗</a>
-        <a class="button" href="/">E-Mail ↗</a>
-    </div>
 </section>
 
 <section id="featured">

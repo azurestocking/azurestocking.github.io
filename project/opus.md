@@ -26,12 +26,12 @@ title: Opus
     </div>
 </section>
 
-<section id="highlight">
+<section>
     <h1>Highlight</h1>
     <div class="p-l">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
-</section>   
+</section>
 
 <section class="content">
     <div>
@@ -44,12 +44,19 @@ title: Opus
     </div>
 </section>
 
-<section id="process">
+<section>
     <h1>Market Analysis</h1>
     <div class="p-l">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
-</section>   
+</section>
+
+<section>
+    <h1>Concept Testing</h1>
+    <div class="p-l">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+</section>
 
 <script>
     document.addEventListener("scroll", function() {
