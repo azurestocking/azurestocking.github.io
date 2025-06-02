@@ -6,7 +6,6 @@
     --tertiary: rgba(64, 86, 71, 0.60);
     --tertiary-solid: #9AA59E;
     --ghost: rgba(64, 86, 71, 0.12);
-    /* --background: #F6F4ED; */
     --background: #FFFFFF;
 }
 
@@ -501,6 +500,7 @@ hr {
 
 .scrollspy-link:hover {
     color: var(--tertiary);
+    text-decoration: none;
 }
 
 .scrollspy-link.active {
