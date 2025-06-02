@@ -101,6 +101,16 @@
 }
 
 h1 {
+    font-size: 24px;
+    line-height: 1.5em;
+    display: block;
+    margin-block-end: 24px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h2 {
     font-size: 20px;
     line-height: 1.5em;
     display: block;
@@ -108,14 +118,6 @@ h1 {
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-}
-
-h2 {
-    font-size: 28px;
-    line-height: 1.5em;
-    display: block;
-    margin-block-end: 24px;
-    color: var(--primary);
 }
 
 h3 {
@@ -155,6 +157,14 @@ p {
     font-size: 24px;
     line-height: 1.5em;
     clear: both;
+    color: var(--primary);
+}
+
+.p-xl {
+    font-size: 28px;
+    line-height: 1.5em;
+    display: block;
+    margin-block-end: 24px;
     color: var(--primary);
 }
 
@@ -283,10 +293,12 @@ img, video {
 }
 
 .tag-group {
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px;
-    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    min-height: fit-content;
 }
 
 .tag {
@@ -299,6 +311,9 @@ img, video {
     border-radius: 8px;
     position: relative;
     display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .content {
@@ -479,7 +494,6 @@ hr {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 8px;
     color: var(--tertiary);
 }
 
@@ -496,6 +510,7 @@ hr {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.5em;
 }
 
 .scrollspy-link:hover {

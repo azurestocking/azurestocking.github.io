@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+    <script src="{{ '/scrollspy.js' | relative_url }}"></script>
     {% endif %}
 
     <footer>
@@ -43,51 +44,12 @@
             <a class="button" href="/">E-Mail ↗</a>
         </div>
         <div class="p-l" style="padding-bottom: 64px;">
-            I’m drawn to complexity and intersectionality—terms I don’t use as buzzwords but as intellectual imperatives. If your project piques analytical curiosity or serves the public good, we should talk about a potential pro bono collaboration.
+            I'm drawn to complexity and intersectionality—terms I don't use as buzzwords but as intellectual imperatives. If your project piques analytical curiosity or serves the public good, we should talk about a potential pro bono collaboration.
         </div>
         <p>
             Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong.<br>
             © 2025 · Gemma Li. All rights reserved.
         </p>
     </footer>
-
-    {% if page.url contains '/project/' %}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all h1 elements
-            const headings = document.querySelectorAll('main h1');
-            const scrollspyLinks = document.getElementById('scrollspy-links');
-            
-            // Create links for each heading
-            headings.forEach(heading => {
-                const link = document.createElement('a');
-                link.href = '#' + heading.textContent.toLowerCase().replace(/\s+/g, '-');
-                link.className = 'scrollspy-link';
-                link.textContent = heading.textContent;
-                scrollspyLinks.appendChild(link);
-            });
-            
-            // Update active state on scroll
-            function updateScrollspy() {
-                const scrollPosition = window.scrollY;
-                const windowHeight = window.innerHeight;
-                
-                headings.forEach(heading => {
-                    const headingTop = heading.getBoundingClientRect().top;
-                    const link = document.querySelector(`.scrollspy-link[href="#${heading.textContent.toLowerCase().replace(/\s+/g, '-')}"]`);
-                    
-                    // Check if heading is in viewport
-                    if (headingTop >= 0 && headingTop <= windowHeight / 2) {
-                        document.querySelectorAll('.scrollspy-link').forEach(l => l.classList.remove('active'));
-                        link.classList.add('active');
-                    }
-                });
-            }
-            
-            window.addEventListener('scroll', updateScrollspy);
-            updateScrollspy();
-        });
-    </script>
-    {% endif %}
 </body>
 </html> 
