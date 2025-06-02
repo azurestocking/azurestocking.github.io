@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get all h2 elements from main
     const headings = Array.from(main.querySelectorAll('h2')).filter(heading => {
-        // Skip if heading is inside a section with id="highlight"
-        return !heading.closest('section#highlight');
+        return !heading.classList.contains('np');
     });
     
     // Create TOC
