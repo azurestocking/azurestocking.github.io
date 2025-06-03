@@ -210,7 +210,7 @@ html, body {
 }
 
 body {
-    padding: 40px 24px;
+    padding: 40px 20px;
     background: var(--background);
     color: var(--primary);
     transition: background-color 0.5s ease 0s;
