@@ -103,12 +103,11 @@
 h1 {
     font-size: 20px;
     line-height: 1.5em;
-    display: inline-block;
+    display: block;
     margin-block-end: 24px;
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-left: 8px;
 }
 
 h1.np {
@@ -211,7 +210,7 @@ html, body {
 }
 
 body {
-    padding: 40px 0;
+    padding: 40px 24px;
     background: var(--background);
     color: var(--primary);
     transition: background-color 0.5s ease 0s;
@@ -225,6 +224,10 @@ body {
 
 .phrase {
     margin-bottom: 20px;
+}
+
+.phrase h1 {
+    margin-bottom: 0px;
 }
 
 .phrase span {
@@ -511,13 +514,35 @@ hr {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--tertiary);
+    color: var(--secondary);
     margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scrollspy-collapse {
+    cursor: pointer;
+    color: var(--secondary);
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 99px;
+}
+
+.scrollspy-collapse:hover {
+    color: var(--primary);
+    background: var(--ghost);
 }
 
 .scrollspy-links {
     display: flex;
     flex-direction: column;
+    transition: max-height 0.3s ease;
+}
+
+.scrollspy-links.collapsed {
+    max-height: 0;
+    overflow: hidden;
 }
 
 .scrollspy-link {
@@ -530,6 +555,10 @@ hr {
     text-overflow: ellipsis;
 }
 
+.scrollspy-link.h2 {
+    padding-left: 16px;
+}
+
 .scrollspy-link:hover {
     color: var(--primary);
     text-decoration: none;
@@ -537,13 +566,4 @@ hr {
 
 .scrollspy-link.active {
     color: var(--primary);
-}
-
-@media (max-width: 1439px) {
-    body {
-        grid-template-columns: 1fr minmax(0, 1000px) 1fr;
-    }
-    .scrollspy {
-        display: none;
-    }
 }

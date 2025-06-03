@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
+    const collapseButton = document.querySelector('.scrollspy-collapse');
     
-    // Get all h2 elements from main
-    const headings = Array.from(main.querySelectorAll('h2')).filter(heading => {
+    // Toggle collapse state
+    collapseButton.addEventListener('click', function() {
+        scrollspyLinks.classList.toggle('collapsed');
+        collapseButton.textContent = scrollspyLinks.classList.contains('collapsed') ? '＋' : '－';
+    });
+    
+    // Add Overview link at the top
+    const overviewLink = document.createElement('a');
+    overviewLink.href = '#';
+    overviewLink.textContent = 'Overview';
+    overviewLink.classList.add('scrollspy-link', 'h1');
+    scrollspyLinks.appendChild(overviewLink);
+    
+    // Get all h1 and h2 elements from main
+    const headings = Array.from(main.querySelectorAll('h1, h2')).filter(heading => {
         return !heading.classList.contains('np');
     });
     
@@ -20,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add h2 class for indentation
         if (heading.tagName === 'H2') {
             link.classList.add('h2');
+        } else if (heading.tagName === 'H1') {
+            link.classList.add('h1');
         }
         
         scrollspyLinks.appendChild(link);
