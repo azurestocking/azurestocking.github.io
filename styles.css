@@ -250,6 +250,10 @@ header {
     text-underline-offset: 6px;
 }
 
+footer {
+    padding-top: 64px;
+}
+
 
 
 /* MAIN */
@@ -447,50 +451,30 @@ hr {
 
 /* LAYOUT */
 
-.col-1-3 {
-    display: flex;
+.grid {
+    display: grid;
     gap: 24px;
 }
 
-.col-1 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.col-3 {
-    flex: 3;
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.col-2 {
-    display: flex;
-    gap: 24px;
+.grid-1-2 {
+    grid-template-columns: 1fr 2fr;
 }
 
-.list {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
+.start-1 { grid-column-start: 1; }
+.start-2 { grid-column-start: 2; }
+.start-3 { grid-column-start: 3; }
 
-.list-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.list-item-1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.list-item-2 {
-    color: var(--tertiary);
-}
-
-
-
-/* SCROLLSPY */
+.end-1 { grid-column-end: 1; }
+.end-2 { grid-column-end: 2; }
+.end-3 { grid-column-end: 3; }
 
 .scrollspy {
     position: sticky;
@@ -565,4 +549,35 @@ hr {
 
 .scrollspy-link.active {
     color: var(--primary);
+}
+
+
+
+/* LIST */
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.list-item-2 {
+    color: var(--tertiary);
 }
