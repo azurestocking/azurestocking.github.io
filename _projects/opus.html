@@ -1,58 +1,22 @@
 ---
-layout: default
-title: Opus
+layout: project
+slug: opus
+featured: true
+title: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+image: "/images/placeholder.jpg"
+color: "#e0d7e5"
+tags:
+  - DESIGN
+  - USER EXPERIENCE
+  - WEB APPLICATION
+  - GENERATIVE AI
+duration: "4 Months"
+role: "Product Designer"
+team:
+  - "2 Product Designers"
+  - "1 Product Manager"
 ---
-
-<section style="padding-top: 0px;">
-    <div>
-        <div class="p-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-        </div>
-        <div class="tag-group" style="margin-bottom: 64px;">
-            <span class="tag">DESIGN</span>
-            <span class="tag">USER EXPERIENCE</span>
-            <span class="tag">WEB APPLICATION</span>
-            <span class="tag">GENERATIVE AI</span>
-        </div>
-    </div>
-
-    <img src="{{ '/images/placeholder.jpg' | relative_url }}" loading="lazy" style="margin-bottom: 64px;">
-    
-    <div class="grid grid-1-2">
-        <div class="list">
-            <div class="list-item">
-                <div class="list-item-1">
-                    <div>Duration</div>
-                </div>
-                <div class="list-item-2">
-                    <div>4 Months</div>
-                </div>
-            </div>
-            <div class="list-item">
-                <div class="list-item-1">
-                    <div>Role</div>
-                </div>
-                <div class="list-item-2">
-                    <div>Product Designer</div>
-                </div>
-            </div>
-            <div class="list-item">
-                <div class="list-item-1">
-                    <div>Team</div>
-                </div>
-                <div class="list-item-2">
-                    <div>
-                        2 Product Designers,<br>
-                        1 Product Manager
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-</section>
 
 <section>
     <h2>Context</h2>
@@ -607,26 +571,4 @@ title: Opus
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </div>
-</section>
-
-<script>
-    document.addEventListener("scroll", function() {
-        const targetElements = [
-            { id: "solution", color: "#e0d7e5" },
-            { id: "design-process", color: "var(--background)" }
-        ];
-
-        let currentColor = "var(--background)";
-
-        for (let i = 0; i < targetElements.length; i++) {
-            const targetElement = document.getElementById(targetElements[i].id);
-            const targetPosition = targetElement.getBoundingClientRect().top;
-
-            if (targetPosition <= 240) {
-                currentColor = targetElements[i].color;
-            }
-        }
-
-        document.body.style.backgroundColor = currentColor;
-    }); 
-</script> 
+</section> 

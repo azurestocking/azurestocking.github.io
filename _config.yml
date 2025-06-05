@@ -9,19 +9,14 @@ permalink: pretty
 collections:
   projects:
     output: true
-    permalink: /project/:name/
+    permalink: /project/:title/
 
 defaults:
   - scope:
-      path: ""
-      type: "pages"
+      path: "_projects"
+      type: "projects"
     values:
-      layout: "default"
-  - scope:
-      path: "project"
-      type: "pages"
-    values:
-      layout: "default"
+      layout: "project"
 
 exclude:
   - Gemfile
