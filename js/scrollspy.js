@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add Overview link at the top
     const overviewLink = document.createElement('a');
-    overviewLink.href = '#';
+    overviewLink.href = '#overview';
     overviewLink.textContent = 'Overview';
     overviewLink.classList.add('scrollspy-link', 'h1');
     scrollspyLinks.appendChild(overviewLink);
@@ -62,7 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe all headings
+    // Observe all headings and the overview section
+    const overviewSection = document.getElementById('overview');
+    if (overviewSection) {
+        observer.observe(overviewSection);
+    }
     headings.forEach(heading => {
         observer.observe(heading);
     });
