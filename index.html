@@ -24,7 +24,7 @@ title: Index
             <div>
                 <img src="{{ project.image | relative_url }}" loading="lazy" style="margin-bottom: 30px;">
                 <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-                <h4>{{ project.description }}</h4>
+                <h4>{{ project.subhead }}</h4>
                 <div class="tag-group">
                     {% for tag in project.tags %}
                         <span class="tag">{{ tag }}</span>

@@ -20,7 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
         collapseButton.textContent = scrollspyLinks.classList.contains('collapsed') ? '＋' : '－';
     });
     
-    // Create TOC
+    // Create Overview link first
+    const overviewLink = document.createElement('a');
+    overviewLink.href = '#overview';
+    overviewLink.textContent = 'Overview';
+    overviewLink.classList.add('scrollspy-link', 'h1');
+    scrollspyLinks.appendChild(overviewLink);
+    
+    // Create TOC for other headings
     headings.forEach(heading => {
         const link = document.createElement('a');
         if (!heading.id) {
