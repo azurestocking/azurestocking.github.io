@@ -97,7 +97,7 @@ h1 {
     font-size: 20px;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 24px;
+    margin-block-end: 20px;
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -107,7 +107,7 @@ h2 {
     font-size: 20px;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 24px;
+    margin-block-end: 20px;
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -117,7 +117,7 @@ h3 {
     font-size: 24px;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 24px;
+    margin-block-end: 20px;
     color: var(--primary);
 }
 
@@ -125,7 +125,7 @@ h4 {
     font-size: 20px;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 24px;
+    margin-block-end: 20px;
     color: var(--primary);
 }
 
@@ -141,15 +141,13 @@ h5 {
 p {
     font-size: 20px;
     line-height: 1.5em;
-    display: block;
-    margin-block-end: 1em;
 }
 
 .p-l {
     font-size: 24px;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 24px;
+    margin-block-end: 30px;
     color: var(--primary);
 }
 
@@ -157,8 +155,14 @@ p {
     font-size: 28px;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 24px;
+    margin-block-end: 30px;
     color: var(--primary);
+}
+
+.p-s {
+    font-size: 20px;
+    line-height: 1.5em;
+    color: var(--tertiary);
 }
 
 a {
@@ -211,14 +215,6 @@ body {
     margin: 0 auto;
 }
 
-.caption {
-    font-size: 16px;
-    line-height: 1.5em;
-    display: block;
-    margin-block-end: 1em;
-    color: var(--tertiary);
-}
-
 
 
 /* HEADER */
@@ -234,12 +230,12 @@ header {
 .nav-group {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 20px;
 }
 
 .nav-item {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -278,14 +274,13 @@ img, video {
     width: 100%;
     display: block;
     border-radius: 8px;
-    margin-top: 0.5em;
-    margin-bottom: 1.5em;
 }
 
 .project {
     display: flex;
     flex-direction: column;
-    gap: 128px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .project a {
@@ -309,6 +304,7 @@ img, video {
     width: 100%;
     max-width: 800px;
     min-height: fit-content;
+    margin-top: 30px;
 }
 
 .tag {
@@ -367,12 +363,12 @@ img, video {
 
 .card {
     background-color: var(--ghost);
-    padding: 24px;
+    padding: 20px;
     border-radius: 8px;
 }
 
 .card h4 {
-    margin-block-end: 1em;
+    margin-block-end: 20px;
     font-weight: 500;
 }
 
@@ -394,7 +390,7 @@ img, video {
     float: left;
     text-decoration: none;
     padding: 8px 16px;
-    border-radius: 24px;
+    border-radius: 99px;
     color: var(--primary);
     border: 2px solid var(--primary);
     position: relative;
@@ -453,28 +449,33 @@ hr {
 
 .grid {
     display: grid;
-    gap: 24px;
+    gap: 20px;
+}
+
+.grid-1 {
+    grid-template-columns: 1fr;
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .grid-3 {
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .grid-2 {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .grid-1-2 {
     grid-template-columns: 1fr 2fr;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
-
-.start-1 { grid-column-start: 1; }
-.start-2 { grid-column-start: 2; }
-.start-3 { grid-column-start: 3; }
-
-.end-1 { grid-column-end: 1; }
-.end-2 { grid-column-end: 2; }
-.end-3 { grid-column-end: 3; }
 
 .scrollspy {
     position: sticky;
@@ -558,13 +559,13 @@ hr {
 .list-container {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 20px;
 }
 
 .list {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 20px;
 }
 
 .list-item {
