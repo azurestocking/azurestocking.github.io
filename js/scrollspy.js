@@ -3,22 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     const collapseButton = document.querySelector('.scrollspy-collapse');
     
+    // Get all h1 and h2 elements from main
+    const headings = Array.from(main.querySelectorAll('h1, h2')).filter(heading => {
+        return !heading.classList.contains('np');
+    });
+
+    // Hide TOC if no headings are found
+    if (headings.length === 0) {
+        scrollspyLinks.parentElement.style.display = 'none';
+        return;
+    }
+    
     // Toggle collapse state
     collapseButton.addEventListener('click', function() {
         scrollspyLinks.classList.toggle('collapsed');
         collapseButton.textContent = scrollspyLinks.classList.contains('collapsed') ? '＋' : '－';
-    });
-    
-    // Add Overview link at the top
-    const overviewLink = document.createElement('a');
-    overviewLink.href = '#overview';
-    overviewLink.textContent = 'Overview';
-    overviewLink.classList.add('scrollspy-link', 'h1');
-    scrollspyLinks.appendChild(overviewLink);
-    
-    // Get all h1 and h2 elements from main
-    const headings = Array.from(main.querySelectorAll('h1, h2')).filter(heading => {
-        return !heading.classList.contains('np');
     });
     
     // Create TOC

@@ -4,13 +4,22 @@ title: Index
 ---
 
 <section>
-    <div class="p-xl">
+    <div class="p-xl" style="margin-block-end: 0px;">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="button-group" style="padding-top: 64px;">
+        <a class="button" href="/">LinkedIn ↗</a>
+        <a class="button" href="/">GitHub ↗</a>
+        <a class="button" href="/">Resume ↗</a>
+        <a class="button" href="/">E-Mail ↗</a>
     </div>
 </section>
 
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
+        {% if forloop.first %}
+            <h1 style="margin-block-end: 30px;">Featured</h1>
+        {% endif %}
         <div class="project">
             <div>
                 <img src="{{ project.image | relative_url }}" loading="lazy" style="margin-bottom: 30px;">
@@ -26,7 +35,7 @@ title: Index
     </section>
 {% endfor %}
 
-<section id="about" class="about">
+<section id="about">
     <h1>About</h1>
     <div class="p-l">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
