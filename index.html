@@ -20,16 +20,15 @@ title: Index
         {% if forloop.first %}
             <h1 style="margin-block-end: 30px;">Featured</h1>
         {% endif %}
-        <div class="project">
-            <div>
-                <img src="{{ project.image | relative_url }}" loading="lazy" style="margin-bottom: 30px;">
-                <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-                <h4>{{ project.subhead }}</h4>
-                <div class="tag-group">
-                    {% for tag in project.tags %}
-                        <span class="tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+        <div>
+            <div class="grid grid-1" style="margin-top: 0px;">
+                <a href="{{ project.url | relative_url }}">
+                    <img src="{{ project.image | relative_url }}" loading="lazy">
+                </a>
+            </div>
+            <div class="grid grid-1-2">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.desc }}</p>
             </div>
         </div>
     </section>

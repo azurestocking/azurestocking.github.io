@@ -214,6 +214,21 @@ body {
     margin: 0 auto;
 }
 
+blockquote {
+    font-style: italic;
+    position: relative;
+    padding-left: 2em;
+}
+
+blockquote::before {
+    content: '\201C';
+    position: absolute;
+    left: 0;
+    font-size: 2em;
+    line-height: 1;
+    color: var(--tertiary);
+}
+
 
 
 /* HEADER */

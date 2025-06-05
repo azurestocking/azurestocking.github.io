@@ -11,7 +11,7 @@
         <div class="list">
             <div class="list-item">
                 <div class="list-item-1">
-                    <h5 style="margin-block-end: 20px;">ROLE</h5>
+                    <h2 class="np">ROLE</h2>
                 </div>
                 <div>
                     {% for role in page.role %}
@@ -21,7 +21,7 @@
             </div>
             <div class="list-item">
                 <div class="list-item-1">
-                    <h5 style="margin-block-end: 20px;">TEAM</h5>
+                    <h2 class="np">TEAM</h2>
                 </div>
                 <div>
                     {% for member in page.team %}
@@ -31,7 +31,7 @@
             </div>
             <div class="list-item">
                 <div class="list-item-1">
-                    <h5 style="margin-block-end: 20px;">SKILLS</h5>
+                    <h2 class="np">SKILLS</h2>
                 </div>
                 <div>
                     {% for skill in page.skill %}
@@ -41,9 +41,15 @@
             </div>
         </div>
         <div>
-            {% for desc in page.desc %}
-                <p style="margin-bottom: 20px;">{{ desc }}{% unless forloop.last %}</p>{% endunless %}
-            {% endfor %}
+            <div class="list">
+                <p>{{ page.desc }}</p>
+                <p>{{ page.contribution }}</p>
+                <div>
+                    {% for impact in page.impact %}
+                        <p>{{ impact }}{% unless forloop.last %}</p>{% endunless %}
+                    {% endfor %}
+                </div>
+            </div>
             <div class="tag-group">
                 {% for tag in page.tags %}
                     <span class="tag">{{ tag }}</span>
