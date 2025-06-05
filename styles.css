@@ -474,6 +474,45 @@ footer p {
     margin-bottom: 30px;
 }
 
+.grid-1 a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.grid-1 img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+    border-radius: 8px;
+}
+
+.grid-1 a:hover img {
+    filter: blur(8px);
+}
+
+.grid-1 .project-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary);
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--background);
+    padding: 4px 16px;
+    border-radius: 99px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.grid-1 a:hover .project-overlay {
+    opacity: 1;
+}
+
 .grid-3 {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 30px;

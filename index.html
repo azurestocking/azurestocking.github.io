@@ -22,8 +22,9 @@ title: Index
         {% endif %}
         <div>
             <div class="grid grid-1" style="margin-top: 0px;">
-                <a href="{{ project.url | relative_url }}">
+                <a href="{{ project.url | relative_url }}" class="project-link">
                     <img src="{{ project.image | relative_url }}" loading="lazy">
+                    <div class="project-overlay">{{ project.button }}</div>
                 </a>
             </div>
             <div class="grid grid-1-2">
