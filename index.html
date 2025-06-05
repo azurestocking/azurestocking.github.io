@@ -27,9 +27,14 @@ title: Index
                     <div class="project-overlay">{{ project.button }}</div>
                 </a>
             </div>
-            <div class="grid grid-1-2">
+            <div>
                 <h3>{{ project.title }}</h3>
                 <p>{{ project.desc }}</p>
+                <div class="tag-group">
+                    {% for tag in project.tags %}
+                        <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </section>
