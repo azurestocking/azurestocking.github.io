@@ -290,26 +290,6 @@ img, video {
     border-radius: 8px;
 }
 
-.project {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
-
-.project a {
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-}
-
-.project a:hover {
-    color: var(--secondary);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-}
-
 .tag-group {
     display: flex;
     flex-wrap: wrap;
@@ -488,25 +468,33 @@ footer p {
     border-radius: 8px;
 }
 
+.project img {
+    transform: scale(1.1);
+}
+
 .grid-1 a:hover img {
-    filter: blur(8px);
+    filter: blur(16px);
 }
 
 .grid-1 .project-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 30px;
+    left: 30px;
+    transform: none;
     color: var(--primary);
-    font-size: 16px;
-    letter-spacing: 0.05em;
+    font-size: 20px;
     text-transform: uppercase;
     background: var(--background);
-    padding: 4px 16px;
-    border-radius: 99px;
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-1 a:hover .project-overlay {
