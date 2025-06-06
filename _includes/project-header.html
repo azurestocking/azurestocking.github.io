@@ -1,6 +1,6 @@
 <section style="padding-top: 0px;" id="overview">
-    <div class="grid grid-3" style="margin-top: 0px;">
-        <div class="p-xl" style="margin-block-end: 64px; grid-column: 1 / span 2; margin-block-end: 0px;">
+    <div class="grid grid-3" style="margin-top: 0px; margin-bottom: 64px;">
+        <div class="p-xl" style="grid-column: 1 / span 2; margin-block-end: 0px;">
             {{ page.title }}
         </div>
     </div>
@@ -42,6 +42,7 @@
         </div>
         <div>
             <div class="list">
+                <h2 class="np" style="margin-block-end: 0px;">OVERVIEW</h2>
                 <p>{{ page.desc }}</p>
                 <p>{{ page.contribution }}</p>
                 <div>
@@ -50,6 +51,7 @@
                     {% endfor %}
                 </div>
             </div>
+            <h2 class="np" style="margin-block-start: 30px; margin-block-end: 0px;">TAGS</h2>
             <div class="tag-group">
                 {% for tag in page.tags %}
                     <span class="tag">{{ tag }}</span>
