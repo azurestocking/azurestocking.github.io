@@ -41,13 +41,13 @@
             </div>
         </div>
         <div>
-            <div class="list">
-                <h2 class="np" style="margin-block-end: 0px;">OVERVIEW</h2>
+            <div>
+                <h2 class="np">OVERVIEW</h2>
                 <p>{{ page.desc }}</p>
                 <p>{{ page.contribution }}</p>
                 <div>
                     {% for impact in page.impact %}
-                        <p>{{ impact }}{% unless forloop.last %}</p>{% endunless %}
+                        {{ impact }}{% unless forloop.last %}<br>{% endunless %}
                     {% endfor %}
                 </div>
             </div>

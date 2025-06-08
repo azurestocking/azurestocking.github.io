@@ -141,6 +141,11 @@ h5 {
 p {
     font-size: 20px;
     line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+p:last-child {
+    margin-bottom: 0px;
 }
 
 .p-l {
@@ -227,6 +232,12 @@ blockquote::before {
     font-size: 2em;
     line-height: 1;
     color: var(--tertiary);
+}
+
+li {
+    list-style-type: disc;
+    font-size: 20px;
+    line-height: 1.5em;
 }
 
 
