@@ -223,6 +223,7 @@ blockquote {
     font-style: italic;
     position: relative;
     padding-left: 2em;
+    margin-bottom: 1em;
 }
 
 blockquote::before {
@@ -232,6 +233,10 @@ blockquote::before {
     font-size: 2em;
     line-height: 1;
     color: var(--tertiary);
+}
+
+blockquote:last-child {
+    margin-bottom: 0px;
 }
 
 li {
