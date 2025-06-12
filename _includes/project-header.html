@@ -7,7 +7,25 @@
 
     <img src="{{ page.image | relative_url }}" loading="lazy" style="margin-bottom: 64px;">
     
-    <div class="grid grid-1-3">
+    <div class="grid grid-3-1">   
+        <div>
+            <div>
+                <h2 class="np">OVERVIEW</h2>
+                <p>{{ page.desc }}</p>
+                <p>{{ page.contribution }}</p>
+                <div>
+                    {% for impact in page.impact %}
+                        {{ impact }}{% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </div>
+            </div>
+            <h2 class="np" style="margin-block-start: 30px; margin-block-end: 0px;">TAGS</h2>
+            <div class="tag-group">
+                {% for tag in page.tags %}
+                    <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
         <div class="list">
             <div class="list-item">
                 <div class="list-item-1">
@@ -38,24 +56,6 @@
                         {{ skill }}{% unless forloop.last %}, <br>{% endunless %}
                     {% endfor %}
                 </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <h2 class="np">OVERVIEW</h2>
-                <p>{{ page.desc }}</p>
-                <p>{{ page.contribution }}</p>
-                <div>
-                    {% for impact in page.impact %}
-                        {{ impact }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </div>
-            </div>
-            <h2 class="np" style="margin-block-start: 30px; margin-block-end: 0px;">TAGS</h2>
-            <div class="tag-group">
-                {% for tag in page.tags %}
-                    <span class="tag">{{ tag }}</span>
-                {% endfor %}
             </div>
         </div>
     </div>
