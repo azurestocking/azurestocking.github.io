@@ -293,13 +293,6 @@ section {
     padding-bottom: 64px;
 }
 
-.section-title {
-    padding-top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
-}
-
 img, video {
     width: 100%;
     display: block;
