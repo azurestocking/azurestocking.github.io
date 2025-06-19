@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     const collapseButton = document.querySelector('.scrollspy-collapse');
     
-    // Get all h1 and h2 elements from main
-    const headings = Array.from(main.querySelectorAll('h1, h2')).filter(heading => {
+    // Get all h1 and h2 elements from project-content or main
+    const projectContent = document.querySelector('.project-content');
+    const contentContainer = projectContent || main;
+    const headings = Array.from(contentContainer.querySelectorAll('h1, h2')).filter(heading => {
         return !heading.classList.contains('np');
     });
 
@@ -13,12 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollspyLinks.parentElement.style.display = 'none';
         return;
     }
-    
-    // Toggle collapse state
-    collapseButton.addEventListener('click', function() {
-        scrollspyLinks.classList.toggle('collapsed');
-        collapseButton.textContent = scrollspyLinks.classList.contains('collapsed') ? '＋' : '－';
-    });
     
     // Create Overview link first
     const overviewLink = document.createElement('a');
@@ -63,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('.scrollspy-link').forEach(link => {
                     link.classList.remove('active');
                 });
-                link.classList.add('active');
+                if (link) {
+                    link.classList.add('active');
+                }
             }
         });
     }, observerOptions);

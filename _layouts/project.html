@@ -2,8 +2,36 @@
 layout: default
 ---
 
-{% include project-header.html %}
+<div class="project-header">
+    <section>
+        <div class="p-xl" style="margin-bottom: 64px;">
+            <div class="main-container">
+                {{ page.title }}
+            </div>
+        </div>
+        <section style="padding-top: 0px; padding-bottom: 64px;">
+            <div class="image-container" style="padding: 0px; background-color: {{ page.color }};">
+                <img src="{{ page.image | relative_url }}" loading="lazy">
+            </div>
+        </section>
+    </section>
+</div>
 
-{{ content }}
+<div class="project-main">
+    <div class="main-container">
+        <div class="project-content">
+            {% include project-header.html %}
+            {{ content }}
+        </div>
+    </div>
+    <div class="scrollspy">
+        <div class="scrollspy-content">
+            <h2>TOC</h2>
+            <div class="scrollspy-links" id="scrollspy-links">
+            </div>
+        </div>
+    </div>
+</div>
 
+<script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
 {% include project-script.html %} 

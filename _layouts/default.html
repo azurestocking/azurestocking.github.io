@@ -24,20 +24,6 @@
         {{ content }}
     </main>
 
-    {% if page.url contains '/project/' %}
-    <div class="scrollspy">
-        <div class="scrollspy-content">
-            <div class="scrollspy-title">
-                TOC
-                <span class="scrollspy-collapse">－</span>
-            </div>
-            <div class="scrollspy-links" id="scrollspy-links">
-            </div>
-        </div>
-    </div>
-    <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
-    {% endif %}
-
     <footer>
         <hr style="padding-bottom: 10px;">
         <div class="button-group" style="padding-top: 64px; padding-bottom: 64px;">
@@ -46,8 +32,10 @@
             <a class="button" href="/">Resume ↗</a>
             <a class="button" href="/">E-Mail ↗</a>
         </div>
-        <div class="p-l" style="padding-bottom: 64px; margin-block-end: 0px;">
-            I am drawn to complexity and intersectionality—terms I do not use as buzzwords but as intellectual imperatives. If your project piques analytical curiosity or serves the public good, we should talk about a potential pro bono collaboration.
+        <div class="main-container">
+            <div class="p-l" style="padding-bottom: 64px; margin-block-end: 0px;">
+                I am drawn to complexity and intersectionality—terms I do not use as buzzwords but as intellectual imperatives. If your project piques analytical curiosity or serves the public good, we should talk about a potential pro bono collaboration.
+            </div>
         </div>
         <p>
             Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong.<br>

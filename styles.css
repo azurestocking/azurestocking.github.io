@@ -1,12 +1,14 @@
 /* COLOR */
 
 :root {
-    --primary: rgba(64, 86, 71);
-    --secondary: rgba(64, 86, 71, 0.75);
-    --tertiary: rgba(64, 86, 71, 0.60);
-    --tertiary-solid: #9AA59E;
-    --ghost: rgba(64, 86, 71, 0.12);
+    --primary: rgba(0, 0, 0);
+    --secondary: rgba(0, 0, 0, 0.75);
+    --tertiary: rgba(0, 0, 0, 0.50);
+    --tertiary-solid: #808080;
+    --ghost: rgba(0, 0, 0, 0.10);
+    --ghost-solid: #E5E5E5;
     --background: #FFFFFF;
+    font-size: 20px;
 }
 
 
@@ -94,54 +96,51 @@
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 20px;
+    margin-block-end: 1rem;
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 20px;
+    margin-block-end: 1rem;
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 1.2rem;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 20px;
+    margin-block-end: 1.5rem;
     color: var(--primary);
 }
 
 h4 {
-    font-size: 20px;
-    line-height: 1.5em;
+    font-size: 1rem;
     display: block;
-    margin-block-end: 10px;
+    margin-block-end: 1rem;
     color: var(--primary);
 }
 
 h5 {
-    font-size: 20px;
-    line-height: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     font-weight: 500;
     color: var(--primary);
     letter-spacing: 0.05em;
 }
 
 p {
-    font-size: 20px;
-    line-height: 1.5em;
-    margin-bottom: 1em;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 p:last-child {
@@ -149,22 +148,22 @@ p:last-child {
 }
 
 .p-l {
-    font-size: 24px;
+    font-size: 1.2rem;
     line-height: 1.5em;
     display: block;
-    margin-block-end: 30px;
+    margin-block-end: 1.5rem;
     color: var(--primary);
 }
 
 .p-xl {
-    font-size: 30px;
+    font-size: 2rem;
     line-height: 1.5em;
     display: block;
     color: var(--primary);
 }
 
 .p-s {
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 1.5em;
     color: var(--tertiary);
 }
@@ -203,20 +202,41 @@ b {
 }
 
 html, body {
-    font-family: 'Circular', Arial, Helvetica, sans-serif; 
+    /* font-family: 'DM Sans', sans-serif; */
+    font-family: 'Circular', Arial, Helvetica, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 body {
-    padding: 40px 20px;
     background: var(--background);
     color: var(--primary);
     transition: background-color 0.5s ease 0s;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 1.5em;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1000px) minmax(0, 1fr);
-    max-width: 1440px;
-    margin: 0 auto;
+    padding: 30px 64px 64px 64px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1440px) {
+    body {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+}
+
+.main-container {
+    width: 100%;
+}
+
+.project-content {
+    grid-column: 1;
+}
+
+.project-header {
+    width: 100%;
+    margin-bottom: 64px;
 }
 
 blockquote {
@@ -230,7 +250,7 @@ blockquote::before {
     content: '\201C';
     position: absolute;
     left: 0;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 1;
     color: var(--tertiary);
 }
@@ -241,7 +261,7 @@ blockquote:last-child {
 
 li {
     list-style-type: disc;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 1.5em;
 }
 
@@ -250,7 +270,6 @@ li {
 /* HEADER */
 
 header {
-    grid-column: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -268,16 +287,67 @@ header {
     gap: 20px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-decoration: none;
 }
 
 .nav-item:hover {
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
 }
 
-footer {
-    padding-top: 64px;
+.image-container {
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 30px; 
+    background-color: var(--ghost);
+}
+
+
+
+/* PROJECT CARD */
+
+.project-card {
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 64px;
+    background: var(--project-color);
+    /* background: linear-gradient(180deg, #f1f5c9 0%, var(--project-color) 25%); */
+    height: 560px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-card-info {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 64px;
+}
+
+.project-card-info .button {
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.project-card img {
+    height: 496px;
+    width: 50%;
+    object-fit: cover;
+    max-width: none;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card p {
+    color: var(--tertiary);
 }
 
 
@@ -285,7 +355,7 @@ footer {
 /* MAIN */
 
 main {
-    grid-column: 2;
+    width: 100%;
 }
 
 section {
@@ -293,10 +363,13 @@ section {
     padding-bottom: 64px;
 }
 
+section:last-child {
+    padding-bottom: 0px;
+}
+
 img, video {
     width: 100%;
     display: block;
-    border-radius: 8px;
 }
 
 .tag-group {
@@ -315,7 +388,7 @@ img, video {
     text-transform: uppercase;
     background: var(--ghost);
     padding: 4px 16px;
-    border-radius: 8px;
+    border-radius: 30px;
     position: relative;
     display: inline-block;
     white-space: nowrap;
@@ -329,13 +402,17 @@ img, video {
 }
 
 .before img {
-    border-radius: 8px 8px 0 0;
     border-bottom: 8px solid #b3102e;
+    border-radius: 30px 30px 0px 0px;
+    overflow: hidden;
+    background-color: var(--ghost);
 }
 
 .before video {
-    border-radius: 8px 8px 0 0;
     border-bottom: 8px solid #b3102e;
+    border-radius: 30px 30px 0px 0px;
+    overflow: hidden;
+    background-color: var(--ghost);
 }
 
 .before h5 {
@@ -346,13 +423,17 @@ img, video {
 }
 
 .after img {
-    border-radius: 8px 8px 0 0;
     border-bottom: 8px solid #0c7354;
+    border-radius: 30px 30px 0px 0px;
+    overflow: hidden;
+    background-color: var(--ghost);
 }
 
 .after video {
-    border-radius: 8px 8px 0 0;
     border-bottom: 8px solid #0c7354;
+    border-radius: 30px 30px 0px 0px;
+    overflow: hidden;
+    background-color: var(--ghost);
 }
 
 .after h5 {
@@ -364,8 +445,8 @@ img, video {
 
 .card {
     background-color: var(--ghost);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 30px;
 }
 
 .card h4 {
@@ -397,10 +478,10 @@ hr {
 .button {
     float: left;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 8px 24px;
     border-radius: 99px;
     color: var(--primary);
-    border: 2px solid var(--primary);
+    background: var(--ghost);
     position: relative;
     transform: translate(0) translateY(0);
     transition: scale 0.2s ease;
@@ -412,13 +493,30 @@ hr {
     color: var(--primary);
 }
 
+.project-card .button {
+    float: left;
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 99px;
+    color: var(--primary);
+    background: var(--background);
+    position: relative;
+    transform: translate(0) translateY(0);
+    transition: scale 0.2s ease;
+}
+
+.project-card .button:hover, .project-card .button:active {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+
 
 
 /* FOOTER */
 
 footer {
-    grid-column: 2;
-    padding-top: 64px;
+    padding-top: 128px;
 }
 
 footer p {
@@ -433,14 +531,6 @@ footer p {
     width: calc(100% + 256px) !important;
 }
 
-@media (max-width: 1056px) {
-    .banner img {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-    }
-}
-
 .banner img {
     width: 100%;
     display: block;
@@ -448,7 +538,7 @@ footer p {
 
 
 
-/* LAYOUT */
+/* GRID */
 
 .grid {
     display: grid;
@@ -456,7 +546,7 @@ footer p {
 }
 
 .grid:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .grid-1 {
@@ -470,14 +560,13 @@ footer p {
     position: relative;
     display: block;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 30px;
 }
 
 .grid-1 img {
     width: 100%;
     height: auto;
     transition: filter 0.3s ease;
-    border-radius: 8px;
 }
 
 .project img {
@@ -559,28 +648,29 @@ footer p {
     grid-column: 1 / span 2;
 }
 
-.scrollspy {
+.main-container .scrollspy {
     position: sticky;
-    top: 40px;
+    top: 30px;
     height: fit-content;
-    grid-column: 3;
+    grid-column: 2;
     z-index: 999;
-    margin-left: 24px;
 }
 
+
+
+/* SCROLLSPY */
+
 .scrollspy-content {
-    border-radius: 8px;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .scrollspy-title {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--secondary);
+    color: var(--tertiary);
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
@@ -589,7 +679,7 @@ footer p {
 
 .scrollspy-collapse {
     cursor: pointer;
-    color: var(--secondary);
+    color: var(--tertiary);
     font-size: 20px;
     padding: 4px 8px;
     border-radius: 99px;
@@ -612,7 +702,7 @@ footer p {
 }
 
 .scrollspy-link {
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
     color: var(--tertiary);
     transition: color 0.3s ease;
@@ -622,7 +712,7 @@ footer p {
 }
 
 .scrollspy-link.h2 {
-    padding-left: 16px;
+    padding-left: 20px;
 }
 
 .scrollspy-link:hover {
@@ -692,4 +782,48 @@ td {
 
 .list-item-2 {
     color: var(--tertiary);
+}
+
+.scrollspy {
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+    z-index: 999;
+}
+
+.project-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.project-main .main-container {
+    grid-column: 1 / span 3;
+}
+
+.project-main .scrollspy {
+    grid-column: 4;
+}
+
+@media (max-width: 1439px) {
+    .main-container {
+        width: 100%;
+    }
+    
+    .project-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-main .main-container {
+        grid-column: 1;
+    }
+    
+    .project-main .scrollspy {
+        grid-column: 1;
+    }
+    
+    .scrollspy {
+        display: none;
+    }
 }
