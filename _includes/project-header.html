@@ -19,7 +19,6 @@
                     {% endfor %}
                 </div>
             </div>
-            <h2 class="np" style="margin-block-start: 30px; margin-block-end: 0px;">TAGS</h2>
             <div class="tag-group">
                 {% for tag in page.tags %}
                     <span class="tag">{{ tag }}</span>
@@ -31,31 +30,31 @@
                 <div class="list-item-1">
                     <h2 class="np">ROLE</h2>
                 </div>
-                <div>
+                <p>
                     {% for role in page.role %}
-                        {{ role }}{% unless forloop.last %}, <br>{% endunless %}
+                        {{ role }}{% unless forloop.last %}, {% endunless %}
                     {% endfor %}
-                </div>
+                </p>
             </div>
             <div class="list-item">
                 <div class="list-item-1">
                     <h2 class="np">TEAM</h2>
                 </div>
-                <div>
+                <p>
                     {% for member in page.team %}
-                        {{ member }}{% unless forloop.last %}, <br>{% endunless %}
+                        {{ member }}{% unless forloop.last %}, {% endunless %}
                     {% endfor %}
-                </div>
+                </p>
             </div>
             <div class="list-item">
                 <div class="list-item-1">
                     <h2 class="np">SKILLS</h2>
                 </div>
-                <div>
+                <p>
                     {% for skill in page.skill %}
-                        {{ skill }}{% unless forloop.last %}, <br>{% endunless %}
+                        {{ skill }}{% unless forloop.last %}, {% endunless %}
                     {% endfor %}
-                </div>
+                </p>
             </div>
         </div>
     </div>
