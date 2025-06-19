@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
-    const collapseButton = document.querySelector('.scrollspy-collapse');
     
     // Get all h1 and h2 elements from main
     const headings = Array.from(main.querySelectorAll('h1, h2')).filter(heading => {
@@ -13,12 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollspyLinks.parentElement.style.display = 'none';
         return;
     }
-    
-    // Toggle collapse state
-    collapseButton.addEventListener('click', function() {
-        scrollspyLinks.classList.toggle('collapsed');
-        collapseButton.textContent = scrollspyLinks.classList.contains('collapsed') ? '＋' : '－';
-    });
     
     // Create Overview link first
     const overviewLink = document.createElement('a');
