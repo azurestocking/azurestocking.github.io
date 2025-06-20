@@ -464,39 +464,6 @@ footer p {
     transition: filter 0.3s ease;
 }
 
-.project img {
-    transform: scale(1.1);
-}
-
-.grid-1 a:hover img {
-    filter: blur(16px);
-}
-
-.grid-1 .project-overlay {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    transform: none;
-    color: var(--primary);
-    font-size: 20px;
-    text-transform: uppercase;
-    background: var(--background);
-    padding: 8px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid-1 a:hover .project-overlay {
-    opacity: 1;
-}
-
 .grid-3 {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 1.5rem;
@@ -541,6 +508,35 @@ footer p {
 .grid-2-0 > *:last-child {
     grid-row: 2;
     grid-column: 1 / span 2;
+}
+
+
+
+/* PROJECT CARD */
+
+.grid-1 .project-overlay {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    transform: none;
+    color: var(--primary);
+    font-size: 20px;
+    text-transform: uppercase;
+    background: var(--background);
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-1 a:hover .project-overlay {
+    opacity: 1;
 }
 
 
@@ -608,29 +604,6 @@ footer p {
     text-overflow: ellipsis;
 }
 
-.scrollspy-link.h2 {
-    padding-left: 0.85rem;
-    border-left: 1px solid var(--ghost-focus);
-}
-
-.h2-container {
-    padding-left: 0.85rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.scrollspy-link.h2:hover {
-    padding-left: 0.85rem;
-    border-left: 1px solid var(--primary);
-    text-decoration: none;
-}
-
-.scrollspy-link.h2.active {
-    padding-left: 0.85rem;
-    border-left: 1px solid var(--primary);
-    text-decoration: none;
-}
-
 .scrollspy-link:hover {
     color: var(--primary);
     text-decoration: none;
@@ -638,6 +611,20 @@ footer p {
 
 .scrollspy-link.active {
     color: var(--primary);
+    text-decoration: none;
+}
+
+.scrollspy-link.h2 {
+    padding-left: 0.85rem;
+}
+
+.scrollspy-link.h2:hover {
+    padding-left: 0.85rem;
+    text-decoration: none;
+}
+
+.scrollspy-link.h2.active {
+    padding-left: 0.85rem;
     text-decoration: none;
 }
 

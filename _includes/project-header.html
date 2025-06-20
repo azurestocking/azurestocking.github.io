@@ -12,12 +12,7 @@
             <div>
                 <h2 class="np">OVERVIEW</h2>
                 <p>{{ page.desc }}</p>
-                <p>{{ page.contribution }}</p>
-                <div>
-                    {% for impact in page.impact %}
-                        {{ impact }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </div>
+                <p>{{ page.impact }}</p>
             </div>
             <div class="tag-group">
                 {% for tag in page.tags %}

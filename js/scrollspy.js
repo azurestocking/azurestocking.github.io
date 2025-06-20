@@ -33,11 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add h2 class for indentation
         if (heading.tagName === 'H2') {
             link.classList.add('h2');
-            // Create h2-container and append the link to it
-            const h2Container = document.createElement('div');
-            h2Container.classList.add('h2-container');
-            h2Container.appendChild(link);
-            scrollspyLinks.appendChild(h2Container);
+            scrollspyLinks.appendChild(link);
         } else if (heading.tagName === 'H1') {
             link.classList.add('h1');
             scrollspyLinks.appendChild(link);
