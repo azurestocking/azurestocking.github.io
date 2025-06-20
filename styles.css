@@ -2,12 +2,12 @@
 
 :root {
     --primary: rgba(23, 23, 23);
-    --secondary: rgba(23, 23, 23, 0.60);
-    --tertiary: rgba(23, 23, 23, 0.40);
-    --tertiary-solid: #A2A2A2;
-    --ghost: rgba(23, 23, 23, 0.05);
+    --secondary: rgba(23, 23, 23, 0.48);
+    --secondary-solid: #909090;
+    --ghost: rgba(23, 23, 23, 0.04);
+    --ghost-focus: rgba(23, 23, 23, 0.12);
     --background: #FFFFFF;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -91,6 +91,7 @@
 }
 
 .logo a {
+    color: var(--primary);
     text-decoration: none !important;
 }
 
@@ -98,7 +99,7 @@ h1 {
     font-size: 1rem;
     line-height: 1.5em;
     margin-bottom: 1rem;
-    color: var(--tertiary);
+    color: var(--secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -107,7 +108,7 @@ h2 {
     font-size: 1rem;
     line-height: 1.5em;
     margin-bottom: 1rem;
-    color: var(--tertiary);
+    color: var(--secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -159,18 +160,18 @@ p:last-child {
 .p-s {
     font-size: 1rem;
     line-height: 1.5em;
-    color: var(--tertiary);
+    color: var(--secondary);
 }
 
 a {
-    color: inherit;
+    color: var(--secondary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
 }
 
 a:hover {
-    color: var(--secondary);
+    color: var(--primary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
@@ -224,7 +225,7 @@ blockquote::before {
     left: 0;
     font-size: 2rem;
     line-height: 1;
-    color: var(--tertiary);
+    color: var(--secondary);
 }
 
 blockquote:last-child {
@@ -242,7 +243,7 @@ hr {
     padding: 0;
     height: 0;
     border: none;
-    border-top: 2px solid var(--primary);
+    border-top: 1px solid var(--ghost-focus);
 }
 
 
@@ -320,7 +321,7 @@ img, video {
 .tag-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 16px;
     width: 100%;
     min-height: fit-content;
     margin-top: 1.5rem;
@@ -333,7 +334,7 @@ img, video {
     text-transform: uppercase;
     background: var(--ghost);
     padding: 0.5em 1em;
-    border-radius: 8px;
+    border-radius: 99px;
     position: relative;
     display: inline-block;
     white-space: nowrap;
@@ -405,14 +406,14 @@ img, video {
     padding: 0.5em 1.5em;
     border-radius: 99px;
     color: var(--primary);
-    border: 2px solid var(--primary);
+    background: var(--ghost);
     position: relative;
     transform: translate(0) translateY(0);
     transition: scale 0.2s ease;
 }
 
 .button:hover, .button:active {
-    background: var(--ghost);
+    background: var(--ghost-focus);
     text-decoration: none;
     color: var(--primary);
 }
@@ -427,7 +428,7 @@ footer {
 }
 
 footer p {
-    color: var(--tertiary-solid);
+    color: var(--secondary-solid);
 }
 
 
@@ -556,6 +557,10 @@ footer p {
 }
 
 @media (max-width: 1439px) {
+    body {
+        padding: 30px 64px;
+    }
+
     .scrollspy {
         display: none;
     }
@@ -594,9 +599,9 @@ footer p {
 
 .scrollspy-link {
     font-size: 0.85rem;
-    line-height: 1.5em;
+    line-height: 1.5rem;
     text-decoration: none;
-    color: var(--tertiary);
+    color: var(--secondary);
     transition: color 0.3s ease;
     white-space: nowrap;
     overflow: hidden;
@@ -604,7 +609,26 @@ footer p {
 }
 
 .scrollspy-link.h2 {
-    padding-left: 1rem;
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--ghost-focus);
+}
+
+.h2-container {
+    padding-left: 0.85rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollspy-link.h2:hover {
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--primary);
+    text-decoration: none;
+}
+
+.scrollspy-link.h2.active {
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--primary);
+    text-decoration: none;
 }
 
 .scrollspy-link:hover {
@@ -614,6 +638,7 @@ footer p {
 
 .scrollspy-link.active {
     color: var(--primary);
+    text-decoration: none;
 }
 
 
@@ -673,5 +698,5 @@ td {
 }
 
 .list-item-2 {
-    color: var(--tertiary);
+    color: var(--secondary);
 }
