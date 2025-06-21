@@ -7,7 +7,11 @@
     --ghost: rgba(23, 23, 23, 0.04);
     --ghost-focus: rgba(23, 23, 23, 0.12);
     --background: #FFFFFF;
-    font-size: 18px;
+    --font-size-xs: 0.8rem;
+    --font-size-s: 1rem;
+    --font-size-m: 1.25rem;
+    --font-size-l: 3.5rem;
+    font-size: 16px;
 }
 
 
@@ -71,20 +75,87 @@
 }
 
 @font-face {
-    font-family: 'Monument Extended';
-    src: url('./font/MonumentExtended-Regular.otf') format('opentype');
+    font-family: 'Soehne';
+    src: url('./font/Test Söhne/test-soehne-buch.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('./font/Test Söhne/test-soehne-buch-kursiv.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('./font/Test Söhne/test-soehne-kraftig.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('./font/Test Söhne/test-soehne-kraftig-kursiv.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('./font/Test Söhne/test-soehne-fett.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('./font/Test Söhne/test-soehne-fett-kursiv.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
 }
 
 
 
 /* TYPOGRAPHY */
 
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-weight: 400;
+    line-height: 1.5em;
+    list-style: none;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    font-style: normal;
+    overflow-wrap: break-word;
+    border-radius: 0;
+    appearance: none;
+    text-size-adjust: none;
+}
+
+html, body {
+    font-family: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
+    /* font-family: 'Circular', sans-serif; */
+}
+
+body {
+    padding: 30px 20px;
+    background: var(--background);
+    color: var(--primary);
+    transition: background-color 0.5s ease 0s;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1000px) minmax(0, 1fr);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .logo {
     font-family: "Bruno Ace", sans-serif;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--primary);
@@ -95,8 +166,16 @@
     text-decoration: none !important;
 }
 
+.heading {
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
 h1 {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     line-height: 1.5em;
     margin-bottom: 1rem;
     color: var(--secondary);
@@ -105,7 +184,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     line-height: 1.5em;
     margin-bottom: 1rem;
     color: var(--secondary);
@@ -114,29 +193,30 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: var(--font-size-m);
     line-height: 1.5em;
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     line-height: 1.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     color: var(--primary);
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     line-height: 1.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--primary);
     letter-spacing: 0.05em;
 }
 
 p {
+    font-size: var(--font-size-s);
     line-height: 1.5em;
     margin-bottom: 1rem;
 }
@@ -146,21 +226,9 @@ p:last-child {
 }
 
 .p-l {
-    font-size: 1.2rem;
+    font-size: var(--font-size-m);
     line-height: 1.5em;
     color: var(--primary);
-}
-
-.p-xl {
-    font-size: 1.5rem;
-    line-height: 1.5em;
-    color: var(--primary);
-}
-
-.p-s {
-    font-size: 1rem;
-    line-height: 1.5em;
-    color: var(--secondary);
 }
 
 a {
@@ -181,37 +249,6 @@ b {
     font-weight: 500;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-weight: 400;
-    line-height: 1.5em;
-    list-style: none;
-    vertical-align: bottom;
-    box-sizing: border-box;
-    font-style: normal;
-    overflow-wrap: break-word;
-    border-radius: 0;
-    appearance: none;
-    text-size-adjust: none;
-}
-
-html, body {
-    font-family: 'Circular', Helvetica, sans-serif; 
-}
-
-body {
-    padding: 30px 20px;
-    background: var(--background);
-    color: var(--primary);
-    transition: background-color 0.5s ease 0s;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1000px) minmax(0, 1fr);
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
 blockquote {
     font-style: italic;
     position: relative;
@@ -224,17 +261,16 @@ blockquote::before {
     position: absolute;
     left: 0;
     font-size: 2rem;
-    line-height: 1;
     color: var(--secondary);
 }
 
 blockquote:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 li {
     list-style-type: disc;
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     line-height: 1.5em;
 }
 
@@ -306,7 +342,7 @@ img, video {
 
 .image-container {
     background-color: var(--ghost);
-    padding: 60px;
+    padding: 64px;
     border-radius: 8px;
 }
 
@@ -321,7 +357,7 @@ img, video {
 .tag-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 8px;
     width: 100%;
     min-height: fit-content;
     margin-top: 1.5rem;
@@ -329,11 +365,11 @@ img, video {
 
 .tag {
     color: var(--primary);
-    font-size: 0.85rem;
+    font-size: var(--font-size-xs);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     background: var(--ghost);
-    padding: 0.5em 1em;
+    padding: 0.5em 1.25em;
     border-radius: 99px;
     position: relative;
     display: inline-block;
@@ -520,7 +556,7 @@ footer p {
     left: 30px;
     transform: none;
     color: var(--primary);
-    font-size: 20px;
+    font-size: var(--font-size-m);
     text-transform: uppercase;
     background: var(--background);
     padding: 8px;
@@ -571,9 +607,8 @@ footer p {
 
 .scrollspy-title {
     padding-bottom: 0.5rem;
-    font-size: 0.85rem;
+    font-size: var(--font-size-s);
     line-height: 1.5em;
-    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--secondary);
@@ -583,6 +618,7 @@ footer p {
 }
 
 .scrollspy-links {
+    padding-top: 0.5rem;
     display: flex;
     flex-direction: column;
     transition: max-height 0.3s ease;
@@ -594,8 +630,8 @@ footer p {
 }
 
 .scrollspy-link {
-    font-size: 0.85rem;
-    line-height: 1.5rem;
+    font-size: var(--font-size-s);
+    line-height: 1.5em;
     text-decoration: none;
     color: var(--secondary);
     transition: color 0.3s ease;
@@ -615,16 +651,16 @@ footer p {
 }
 
 .scrollspy-link.h2 {
-    padding-left: 0.85rem;
+    padding-left: 1rem;
 }
 
 .scrollspy-link.h2:hover {
-    padding-left: 0.85rem;
+    padding-left: 1rem;
     text-decoration: none;
 }
 
 .scrollspy-link.h2.active {
-    padding-left: 0.85rem;
+    padding-left: 1rem;
     text-decoration: none;
 }
 
@@ -646,7 +682,7 @@ th, td {
 }
 
 th {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -654,7 +690,7 @@ th {
 }
 
 td {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
 }
 
 
