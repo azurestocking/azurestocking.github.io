@@ -1,8 +1,6 @@
 <section style="padding-top: 0px;" id="overview">
     <div class="grid grid-1" style="margin-top: 0px; margin-bottom: 64px;">
-        <div class="heading" style="margin-block-end: 0px;">
-            {{ page.title }}
-        </div>
+        <h1>{{ page.title }}</h1>
     </div>
 
     <img src="{{ page.image | relative_url }}" loading="lazy" style="margin-bottom: 64px;">
@@ -10,7 +8,7 @@
     <div class="grid grid-2-1">   
         <div>
             <div>
-                <h2 class="np">OVERVIEW</h2>
+                <h3 class="np">OVERVIEW</h3>
                 <p>{{ page.desc }}</p>
                 <p>{{ page.impact }}</p>
             </div>
@@ -23,7 +21,7 @@
         <div class="list">
             <div class="list-item">
                 <div class="list-item-1">
-                    <h2 class="np">ROLE</h2>
+                    <h3 class="np">ROLE</h3>
                 </div>
                 <p>
                     {% for role in page.role %}
@@ -33,7 +31,7 @@
             </div>
             <div class="list-item">
                 <div class="list-item-1">
-                    <h2 class="np">TEAM</h2>
+                    <h3 class="np">TEAM</h3>
                 </div>
                 <p>
                     {% for member in page.team %}
@@ -43,7 +41,7 @@
             </div>
             <div class="list-item">
                 <div class="list-item-1">
-                    <h2 class="np">SKILLS</h2>
+                    <h3 class="np">SKILLS</h3>
                 </div>
                 <p>
                     {% for skill in page.skill %}

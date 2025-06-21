@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     
-    // Get all h1 and h2 elements from main
-    const headings = Array.from(main.querySelectorAll('h1, h2')).filter(heading => {
+    // Get all h2 and h3 elements from main
+    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
         return !heading.classList.contains('np');
     });
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const overviewLink = document.createElement('a');
     overviewLink.href = '#overview';
     overviewLink.textContent = 'Overview';
-    overviewLink.classList.add('scrollspy-link', 'h1');
+    overviewLink.classList.add('scrollspy-link', 'h2');
     scrollspyLinks.appendChild(overviewLink);
     
     // Create TOC for other headings
@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
         link.textContent = heading.textContent;
         link.classList.add('scrollspy-link');
         
-        // Add h2 class for indentation
-        if (heading.tagName === 'H2') {
-            link.classList.add('h2');
+        // Add h3 class for indentation
+        if (heading.tagName === 'H3') {
+            link.classList.add('h3');
             scrollspyLinks.appendChild(link);
-        } else if (heading.tagName === 'H1') {
-            link.classList.add('h1');
+        } else if (heading.tagName === 'H2') {
+            link.classList.add('h2');
             scrollspyLinks.appendChild(link);
         }
     });

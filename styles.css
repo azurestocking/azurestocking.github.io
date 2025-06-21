@@ -166,21 +166,11 @@ body {
     text-decoration: none !important;
 }
 
-.heading {
+h1 {
     font-size: var(--font-size-l);
-    font-weight: 500;
     line-height: 1.2em;
     margin-bottom: 1rem;
     color: var(--primary);
-}
-
-h1 {
-    font-size: var(--font-size-s);
-    line-height: 1.5em;
-    margin-bottom: 1rem;
-    color: var(--secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
 }
 
 h2 {
@@ -193,26 +183,27 @@ h2 {
 }
 
 h3 {
+    font-size: var(--font-size-s);
+    line-height: 1.5em;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h4 {
     font-size: var(--font-size-m);
     line-height: 1.5em;
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
-h4 {
-    font-size: var(--font-size-s);
-    line-height: 1.5em;
-    margin-bottom: 0.5rem;
-    color: var(--primary);
-}
-
 h5 {
     font-size: var(--font-size-s);
+    font-weight: 500;
     line-height: 1.5em;
     margin-bottom: 0.5rem;
-    font-weight: 500;
     color: var(--primary);
-    letter-spacing: 0.05em;
 }
 
 p {
@@ -650,16 +641,16 @@ footer p {
     text-decoration: none;
 }
 
-.scrollspy-link.h2 {
+.scrollspy-link.h3 {
     padding-left: 1rem;
 }
 
-.scrollspy-link.h2:hover {
+.scrollspy-link.h3:hover {
     padding-left: 1rem;
     text-decoration: none;
 }
 
-.scrollspy-link.h2.active {
+.scrollspy-link.h3.active {
     padding-left: 1rem;
     text-decoration: none;
 }
