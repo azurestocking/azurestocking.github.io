@@ -11,15 +11,14 @@ title: Index
 
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
-        {% if forloop.first %}
-            <h2 style="margin-block-end: 30px;">Featured</h2>
-        {% endif %}
         <div class="project-card">
             <a href="{{ project.url | relative_url }}" class="project-link">
                 <div class="project-content">
-                    <div class="project-text">
-                        <h4>{{ project.title }}</h4>
-                        <p style="color: var(--secondary);">{{ project.impact }}</p>
+                    <div class="project-info">
+                        <div class="project-text">
+                            <h4>{{ project.title }}</h4>
+                            <p style="color: var(--secondary);">{{ project.impact }}</p>
+                        </div>
                         <div class="button"><i class="fa-solid fa-arrow-right rotate-45"></i></div>
                     </div>
                     <div class="project-image">
@@ -30,125 +29,6 @@ title: Index
         </div>
     </section>
 {% endfor %}
-
-<section id="about">
-    <h2>About</h2>
-    <div class="p-l">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-</section>
-
-<section>
-    <div class="grid grid-2" style="margin-top: 0px;">
-        <div class="list-container" style="gap: 64px;">
-            <div class="list">
-                <h5>Education</h5>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Harvard University</div>
-                        <div>2024</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Master in Design Studies</div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Tsinghua University</div>
-                        <div>2020</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Bachelor of Arts</div>
-                    </div>
-                </div>
-            </div>
-            <div class="list">
-                <h5>Experience</h5>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Berkman Klein Center</div>
-                        <div>2024</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Research Sprint Participant</div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Savills</div>
-                        <div>2023</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Strategy Consultant Intern</div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Roland Berger</div>
-                        <div>2022</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Strategy Consultant Intern</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="list-container" style="gap: 64px;">
-            <div class="list">
-                <h5>Awards</h5>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Red Dot Award</div>
-                        <div>2024</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Winner</div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>MUSE Creative Award</div>
-                        <div>2024</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Platinum Winner</div>
-                    </div>
-                </div>
-            </div>
-            <div class="list">
-                <h5>Exhibitions</h5>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Museum of Science, Boston</div>
-                        <div>2024</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Participant</div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>Venice Biennale</div>
-                        <div>2023</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Participant</div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-item-1">
-                        <div>National Exhibition of Fine Arts, China</div>
-                        <div>2019</div>
-                    </div>
-                    <div class="list-item-2">
-                        <div>Participant</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <script>
     document.addEventListener("scroll", function() {

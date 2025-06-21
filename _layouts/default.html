@@ -10,36 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/switzer" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-55" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
 <body>
     <header>
-        <div class="logo"><a href="{{ '/' | relative_url }}">GEMMA</a></div>
-        <div class="nav-group">
-            <h5><a class="nav-item" href="{{ '/#featured' | relative_url }}">Featured</a></h5>
-            <h5><a class="nav-item" href="{{ '/#about' | relative_url }}">About</a></h5>
+        <div class="grid grid-1-4-1" class="full-width-bg">
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}">GEMMA</a>
+            </div>
+            <div class="nav-group">
+                <h5><a class="nav-item" href="{{ '/#featured' | relative_url }}">Featured</a></h5>
+                <h5><a class="nav-item" href="{{ '/#about' | relative_url }}">About</a></h5>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+                <a class="button" style="background-color: var(--ghost-focus);" href="/">Resume<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            </div>
         </div>
     </header>
 
     <main>
         {{ content }}
     </main>
-
-    {% if page.url contains '/project/' %}
-    <div class="scrollspy">
-        <div class="scrollspy-content">
-            <div class="scrollspy-title">
-                TOC
-            </div>
-            <hr>
-            <div class="scrollspy-links" id="scrollspy-links">
-            </div>
-        </div>
-    </div>
-    <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
-    {% endif %}
 
     <footer>
         <hr style="padding-bottom: 10px;">

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
+    const scrollspy = document.querySelector('.scrollspy');
     
     // Get all h2 and h3 elements from main
     const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hide TOC if no headings are found
     if (headings.length === 0) {
-        scrollspyLinks.parentElement.style.display = 'none';
+        scrollspy.style.display = 'none';
         return;
     }
     

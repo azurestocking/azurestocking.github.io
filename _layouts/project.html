@@ -2,8 +2,44 @@
 layout: default
 ---
 
-{% include project-header.html %}
+<section id="overview" class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-1-5">
+        <div></div>
+        <div>
+            <h1 style="margin-bottom: 64px; margin-top: 128px;">{{ page.title }}</h1>
+            <img src="{{ page.banner | relative_url }}" loading="lazy">
+        </div>
+    </div>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div>
+            <p>{{ page.desc }}</p>
+            <p>{{ page.impact }}</p>
+            <div class="tag-group">
+                {% for tag in page.tags %}
+                    <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section> 
+
+<section>
+    <div class="grid grid-1-5">
+        <div class="scrollspy">
+            <div class="scrollspy-content">
+                <div class="scrollspy-title">
+                    TOC
+                </div>
+                <div class="scrollspy-links" id="scrollspy-links">
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</section>
 
 {{ content }}
 
+<script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
 {% include project-script.html %} 
