@@ -14,24 +14,19 @@ title: Index
         {% if forloop.first %}
             <h2 style="margin-block-end: 30px;">Featured</h2>
         {% endif %}
-        <div class="project">
-            <div class="grid grid-1" style="margin-top: 0px;">
-                <a href="{{ project.url | relative_url }}" class="project-link">
-                    <img src="{{ project.image | relative_url }}" loading="lazy">
-                    <div class="project-overlay">↗</div>
-                </a>
-            </div>
-            <div>
-                <div class="grid grid-2-0" style="margin-bottom: 20px;">
-                    <h4 style="margin-block-end: 0px;">{{ project.title }}</h4>
+        <div class="project-card">
+            <a href="{{ project.url | relative_url }}" class="project-link">
+                <div class="project-content">
+                    <div class="project-text">
+                        <h4>{{ project.title }}</h4>
+                        <p style="color: var(--secondary);">{{ project.impact }}</p>
+                        <div class="button"><i class="fa-solid fa-arrow-right rotate-45"></i></div>
+                    </div>
+                    <div class="project-image">
+                        <img src="{{ project.image | relative_url }}" loading="lazy">
+                    </div>
                 </div>
-                <p>{{ project.impact }}</p>
-                <div class="tag-group">
-                    {% for tag in project.tags %}
-                        <span class="tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-            </div>
+            </a>
         </div>
     </section>
 {% endfor %}
