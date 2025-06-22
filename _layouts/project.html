@@ -3,56 +3,64 @@ layout: default
 ---
 
 <section id="overview" class="full-width-bg" style="background-color: {{ page.color }};">
-    <div class="grid grid-1-5">
-        <div></div>
-        <div>
-            <h1 style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-signifier);">{{ page.title }}</h1>
-            <img src="{{ page.banner | relative_url }}" loading="lazy">
+    <div class="grid" style="align-items: center;">
+        <div class="content-span-1"></div>
+        <div class="content-span-5">
+            <div class="grid-5" style="margin-bottom: 64px;">
+                <h1 style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-signifier);">{{ page.title }}</h1>
+                <img src="{{ page.banner | relative_url }}" loading="lazy">
+            </div>
+            <div class="grid-4-1" style="margin-bottom: 64px;">
+                <div class="p-l">{{ page.desc }}</div>
+            </div>
+            <div class="breakout-6col" style="margin-bottom: 24px;">
+                <hr>
+            </div>
+            <div class="grid-3-1-1" style="margin-bottom: 64px;">
+                <div class="list-container">
+                    <div>
+                        <h5 class="np">Overview</h5>
+                        <p>{{ page.background }}</p>
+                    </div>
+                    <div>
+                        <h5 class="np">Challenge</h5>
+                        <p>{{ page.challenge }}</p>
+                    </div>
+                    <div>
+                        <h5 class="np">Solution</h5>
+                        <p>{{ page.solution }}</p>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="np">Skills</h5>
+                    <p>
+                        {% for skill in page.skill %}
+                            {{ skill }}{% unless forloop.last %},<br>{% endunless %}
+                        {% endfor %}
+                    </p>
+                </div>   
+            </div>
+            <div class="grid-3-1-1" style="margin-bottom: 64px;">
+                <div>
+                    <a class="button" href="/">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                </div> 
+            </div>
         </div>
-    </div>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div class="p-l">{{ page.desc }}</div>
-    </div>
-    <div>
-        <div class="grid grid-6-0" style="margin-bottom: 0;">
-            <hr style="margin-bottom: 1rem;">
-        </div>
-        <div class="grid grid-1-3-1-1">
-            <div><h3 style="font-weight: 400;">{{ page.time }}</h3></div>
-            <div><h3>Overview</h3></div>
-            <div></div>
-            <div><h3>Responsibilities</h3></div>
-        </div>
-    </div>
-    <div class="grid grid-1-3-1-1">
-        <div></div>
-        <div>
-            <p>{{ page.background }}</p>
-            <p>{{ page.challenge }}</p>
-            <p>{{ page.solution }}</p>
-        </div>
-        <div></div>
-        <div>
-            <p>
-                {% for skill in page.skill %}
-                    {{ skill }}{% unless forloop.last %},<br>{% endunless %}
-                {% endfor %}
-            </p>
-        </div>   
-    </div>
-    <div class="grid grid-1-3-1-1">
-        <div></div>
-        <div>
-            <a class="button" href="/">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-        </div>
-        <div></div>
-        <div></div>   
     </div>
 </section> 
 
-<div id="page-content">
-    {{ content }}
+<div class="grid">
+    <section class="content-span-1">
+        <div class="scrollspy">
+            <div class="scrollspy-content">
+                <div class="scrollspy-links" id="scrollspy-links">
+                </div>
+            </div>
+        </div>
+    </section>
+    <di class="content-span-5">
+        {{ content }}
+    </div>
 </div>
 
 <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
