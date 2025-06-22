@@ -16,16 +16,16 @@
 </head>
 <body>
     <header>
-        <div class="grid grid-1-4-1" class="full-width-bg">
+        <div class="grid grid-1-4-1 full-width-bg" style="align-items: center;">
             <div class="logo">
                 <a href="{{ '/' | relative_url }}">GEMMA</a>
             </div>
-            <div class="nav-group">
-                <h5><a class="nav-item" href="{{ '/#featured' | relative_url }}">Featured</a></h5>
-                <h5><a class="nav-item" href="{{ '/#about' | relative_url }}">About</a></h5>
+            <div class="button-group">
+                <a class="button ghost" href="{{ '/#featured' | relative_url }}">Featured<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost" href="{{ '/#about' | relative_url }}">About<i class="fa-solid fa-arrow-right rotate-45"></i></a>
             </div>
             <div style="display: flex; justify-content: flex-end;">
-                <a class="button" style="background-color: var(--ghost-focus);" href="/">Resume<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button" href="/">Contact<i class="fa-solid fa-arrow-right rotate-45"></i></a>
             </div>
         </div>
     </header>
@@ -34,21 +34,29 @@
         {{ content }}
     </main>
 
-    <footer>
-        <hr style="padding-bottom: 10px;">
-        <div class="button-group" style="padding-top: 64px; padding-bottom: 64px;">
-            <a class="button" href="/">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            <a class="button" href="/">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            <a class="button" href="/">Resume<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            <a class="button" href="/">E-Mail<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+    <footer class="full-width-bg">
+        <div class="grid grid-1-4-1" style="padding-top: 64px; align-items: center;">
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}">GEMMA</a>
+            </div>
+            <div class="button-group">
+                <a class="button ghost" href="{{ '/#featured' | relative_url }}">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost" href="{{ '/#about' | relative_url }}">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost" href="{{ '/#about' | relative_url }}">Resume<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost" href="{{ '/#about' | relative_url }}">E-Mail<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            </div>
         </div>
-        <div class="p-l" style="padding-bottom: 64px;">
-            I am drawn to complexity and intersectionality—terms I do not use as buzzwords but as intellectual imperatives. If your project piques analytical curiosity or serves the public good, we should talk about a potential pro bono collaboration.
+        <div class="grid grid-6-0" style="margin-bottom: 0;">
+            <div class="p-l" style="padding-bottom: 64px;">
+                I am drawn to complexity and intersectionality—terms I do not use as buzzwords but as intellectual imperatives. If your project piques analytical curiosity or serves the public good, we should talk about a potential pro bono collaboration.
+            </div>
         </div>
-        <p>
-            Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong.<br>
-            © 2025 · Gemma Li. All rights reserved.
-        </p>
+        <div class="grid grid-6-0" style="margin-bottom: 0;">
+            <hr style="margin-bottom: 24px;">
+        </div>
+        <div class="grid grid-6-0">
+            <p>Gemma Li © 2025<br>Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong</p>
+        </div>
     </footer>
 </body>
 </html> 

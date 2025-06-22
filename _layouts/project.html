@@ -6,40 +6,55 @@ layout: default
     <div class="grid grid-1-5">
         <div></div>
         <div>
-            <h1 style="margin-bottom: 64px; margin-top: 128px;">{{ page.title }}</h1>
+            <h1 style="margin-bottom: 64px; margin-top: 33vh; font-family: var(--font-signifier);">{{ page.title }}</h1>
             <img src="{{ page.banner | relative_url }}" loading="lazy">
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div>
-            <p>{{ page.desc }}</p>
-            <p>{{ page.impact }}</p>
-            <div class="tag-group">
-                {% for tag in page.tags %}
-                    <span class="tag">{{ tag }}</span>
-                {% endfor %}
-            </div>
+        <div class="p-l">{{ page.desc }}</div>
+    </div>
+    <div>
+        <div class="grid grid-6-0" style="margin-bottom: 0;">
+            <hr style="margin-bottom: 1rem;">
         </div>
+        <div class="grid grid-1-3-1-1">
+            <div><h5>{{ page.time }}</h5></div>
+            <div><h5>Overview</h5></div>
+            <div></div>
+            <div><h5>Responsibilities</h5></div>
+        </div>
+    </div>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <p>{{ page.background }}</p>
+            <p>{{ page.challenge }}</p>
+            <p>{{ page.solution }}</p>
+        </div>
+        <div></div>
+        <div>
+            <p>
+                {% for skill in page.skill %}
+                    {{ skill }}{% unless forloop.last %},<br>{% endunless %}
+                {% endfor %}
+            </p>
+        </div>   
+    </div>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <a class="button" href="/">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+        </div>
+        <div></div>
+        <div></div>   
     </div>
 </section> 
 
-<section>
-    <div class="grid grid-1-5">
-        <div class="scrollspy">
-            <div class="scrollspy-content">
-                <div class="scrollspy-title">
-                    TOC
-                </div>
-                <div class="scrollspy-links" id="scrollspy-links">
-                </div>
-            </div>
-        </div>
-        <div></div>
-    </div>
-</section>
-
-{{ content }}
+<div id="page-content">
+    {{ content }}
+</div>
 
 <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
+
 {% include project-script.html %} 
