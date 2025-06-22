@@ -19,8 +19,9 @@
     --line-height-l: 125%;
     --line-height-xl: 125%;
     line-height: 135%;
-    --font-signifier: 'Signifier', 'EB Garamond', sans-serif; 
+    --font-signifier: 'Signifier', 'EB Garamond', serif; 
     --font-soehne: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 
@@ -95,6 +96,13 @@
     src: url('./font/Test Söhne/test-soehne-fett-kursiv.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne Mono';
+    src: url('./font/Test Söhne/test-soehne-mono-buch.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
