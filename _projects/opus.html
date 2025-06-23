@@ -31,14 +31,7 @@ tool:
   - Figma
 ---
 
-<section class="full-width-bg">
-    <div class="grid grid-6">
-        <div>
-            <hr style="margin-bottom: 24px;">
-            <h2>Overview</h2>
-        </div>
-    </div>
-</section>
+{% include subtitle-heading.html subtitle="Overview" %}
 
 <section>
     <div class="grid grid-1-3-1-1">
@@ -55,7 +48,7 @@ tool:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Design Process</h3>
+            <h3>Approach</h3>
             <p>We adopted a Lean approach to move quickly and stay focused on real user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
         </div>
     </div>
@@ -68,77 +61,85 @@ tool:
 </section>
 
 <section>
-    <div class="grid grid-1-3-1-1">
+    <div class="grid grid-1-4-1">
         <div></div>
         <div>
             <h3>Solution</h3>
-            <p>We proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and creative control from scripting to shot management.</p>
+            <div class="p-l">
+                We proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and creative control from scripting to shot management.
+            </div>
         </div>
     </div>
 </section>
 
-<section id="highlight" class="full-width-bg" style="background-color: {{ page.color }};">
-    <div class="grid grid-3-3">
-        <div>
-            <h4>I. Collaborative Script Editor</h4>
-            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
-            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving token-level disambiguation, model output accuracy, and readability.</p>
-        </div>
+<section class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-6">
         <video width="100%" height="auto" autoplay loop muted>
             <source src="/images/opus/F1.mp4" type="video/mp4" loading="lazy">
         </video>
     </div>
     <div class="grid grid-3-3">
+        <h4>I. Collaborative Script Editor</h4>
         <div>
-            <h4>II. Adaptive Shot Manager</h4>
-            <p>Serves as a visual intermediary between text and video generation through a keyframe-based storyboard.</p>
-            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
-            <p>Includes key element filters to improve manageability in complex or long-form screenplays.</p>
+            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
+            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving token-level disambiguation, model output accuracy, and readability.</p>
         </div>
+    </div>
+
+    <div class="grid grid-6">
         <video width="100%" height="auto" autoplay loop muted>
             <source src="/images/opus/F2.mp4" type="video/mp4" loading="lazy">
         </video>
     </div>
     <div class="grid grid-3-3">
+        <h4>II. Adaptive Shot Manager</h4>
         <div>
-            <h4>III. Comprehensive Shot Editor</h4>
-            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
-            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
-            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
+            <p>Serves as a visual intermediary between text and video generation through a keyframe-based storyboard.</p>
+            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
+            <p>Includes key element filters to improve manageability in complex or long-form screenplays.</p>
         </div>
+    </div>
+    
+    <div class="grid grid-6">
         <video width="100%" height="auto" autoplay loop muted>
             <source src="/images/opus/F3.mp4" type="video/mp4" loading="lazy">
         </video>
     </div>
     <div class="grid grid-3-3">
+        <h4>III. Comprehensive Shot Editor</h4>
         <div>
-            <h4>IV. Customizable Asset Manager</h4>
-            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
+            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
+            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
+            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
         </div>
+    </div>
+    
+    <div class="grid grid-6">
         <video width="100%" height="auto" autoplay loop muted>
             <source src="/images/opus/F4.mp4" type="video/mp4" loading="lazy">
         </video>
     </div>
-</section>
-
-<section class="full-width-bg">
-    <div class="grid grid-6">
+    <div class="grid grid-3-3">
+        <h4>IV. Customizable Asset Manager</h4>
         <div>
-            <hr style="margin-bottom: 24px;">
-            <h2>Think 1</h2>
+            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
         </div>
     </div>
 </section>
 
+{% include subtitle-heading.html subtitle="Design Process" %}
+
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Market Analysis</h3>
             <p>Leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
             <p>To validate this hypothesis, I identified several leading players along the production cycle and established a set of criteria to assess their narrative capabilities.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container" style="padding: 0; overflow: hidden;">
             <img src="{{ '/images/opus/market-analysis.png' | relative_url }}" loading="lazy">
         </div>
@@ -146,14 +147,16 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Brainstorming</h3>
             <p>The matrix above reveals a strategic opportunity: to differentiate by centering on storytelling support, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
             <p>We brainstormed features that address narrative structure and creative flow more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruit.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container">
             <img src="{{ '/images/opus/brainstorming.png' | relative_url }}" loading="lazy">
         </div>
@@ -161,12 +164,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Wireframe</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-1-2-2-1">
+        <div></div>
         <div class="list-container">
             <img src="{{ '/images/placeholder.jpg' | relative_url }}" loading="lazy">
             <div>
@@ -185,13 +191,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Concept Testing</h3>
             <p>Although the cell option initially appealed to the team’s intellectual curiosity, I facilitated an asynchronous workshop to gather insights cross-functionally and evaluate its viability.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container">
             <img src="{{ '/images/opus/concept-testing.png' | relative_url }}" loading="lazy">
         </div>
@@ -199,13 +207,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3 class="np">Insights</h3>
             <p>Insights gathered and synthesized through affinity mapping revealed that implementing such an architecture would require substantial engineering refactoring and invited critical concerns across technical, usability, and strategic dimensions.</p>
         </div>
     </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="card-list">
             <div class="card">
                 <h5>🤹 Technical Complexity</h5>
@@ -224,12 +234,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Prototype 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container" style="padding: 0; overflow: hidden;">
             <img src="{{ '/images/opus/prototype-1.png' | relative_url }}" loading="lazy">
         </div>
@@ -237,14 +250,16 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Usability Testing 1</h3>
             <p>Since I hypothesized multiple user segments, I recruited a slightly larger and diverse sample of 8 participants, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
             <p>I tested this prototype to identity the main usability and functionality issues, along with a screener survey to assess the <b>usage intensity</b>, i.e., how each participant might use the proposed feature in their routine.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container">
             <img src="{{ '/images/opus/usability-testing-1-1.png' | relative_url }}" loading="lazy">
         </div>
@@ -252,14 +267,16 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3 class="np">Insights</h3>
             <p>Looking closely, I found that even feedback within the same group often expressed conflicting views on what needed improvement.</p>
             <p>To make sense of those seemingly irreconcilable contradictions, I first examined the underlying intent behind each request, and then reshuffled them by <b>high-level goals</b>—the broader needs encompassing possibly divergent user behaviors and expectations.</p>
         </div>
     </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="card-list">
             <div class="card">
                 <h5>⌛️ Efficiency</h5>
@@ -278,13 +295,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Problem Statement</h3>
             <p>With the shared high-level goals that emerged above, I was able to refine the initially rough question as follows:</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="p-l" style="margin-bottom: 0px;">
             <blockquote>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</blockquote>
         </div>
@@ -292,43 +311,51 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3 class="np">Insights</h3>
             <p>The observed conflicting feedback unveiled divergent user expectations and behaviors, rooted in how users conceptualized the shared high-level goals differently and hence their distinct positions on value trade-offs. This indicates multiple user segments, which should be logically inferable by their clustering on these trade-off spectrums.</p>
             <p>Therefore, I mapped all those stickers onto two axes that represent core tensions in users’ decision-making: <b>Cost vs. Perceived Quality</b> and <b>User Agency vs. Automation</b>.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container">
             <img src="{{ '/images/opus/usability-testing-1-2.png' | relative_url }}" loading="lazy">
         </div>
     </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <p>All feedback is distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, leading to the following insights:</p>
         </div>
     </div>
-    <div class="grid-2-2-1">
-        <div class="card">
-            <h5>1️⃣ We Don’t Trust AI</h5>
-            <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
-        </div>
-        <div class="card">
-            <h5>2️⃣ User Segmentation</h5>
-            <p>The polarization between users with different usage intensity reveals two user groups that vary in positions on the two axes, i.e., the expectation for production commitment and outcomes, and the preference for interaction.</p>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div class="card-list">
+            <div class="card">
+                <h5>1️⃣ We Don’t Trust AI</h5>
+                <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
+            </div>
+            <div class="card">
+                <h5>2️⃣ User Segmentation</h5>
+                <p>The polarization between users with different usage intensity reveals two user groups that vary in positions on the two axes, i.e., the expectation for production commitment and outcomes, and the preference for interaction.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Personas</h3>
             <p>Based on these insights, I developed two personas and visualized their differences across multiple dimensions of the two spectrums.</p>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-1-2-2-1">
+        <div></div>
         <div class="list-container">
             <img src="{{ '/images/opus/persona-1.png' | relative_url }}" loading="lazy">
             <div>
@@ -347,7 +374,8 @@ tool:
 </section>
 
 <section>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div>
             <h3>Prototype 2</h3>
             <div class="p-l">
@@ -357,11 +385,11 @@ tool:
     </div>
 </section>
 
-<section>
-    <div class="grid-3-1-1">
+<section class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-6">
         <h4>I. Layout</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I1-1B.png' | relative_url }}" loading="lazy">
@@ -383,13 +411,10 @@ tool:
             </div>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-6">
         <h4>II. Customizable Assets</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I1-2-1B.png' | relative_url }}" loading="lazy">
@@ -409,7 +434,7 @@ tool:
             </div>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I1-2-2B.png' | relative_url }}" loading="lazy">
@@ -431,13 +456,10 @@ tool:
             </div>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-6">
         <h4>III. Script Editing</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I1-3B.png' | relative_url }}" loading="lazy">
@@ -457,16 +479,13 @@ tool:
             </div>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-6">
         <h4>IV. Separate Workflow</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
-                <img src="{{ '/images/opus/I1-4B.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
+                <img src="{{ '/images/opus/I1-4B.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
             </div>
             <div class="before">
                 <h5>BEFORE</h5>
@@ -475,7 +494,7 @@ tool:
         </div>
         <div class="list-container">
             <div class="after">
-                <img src="{{ '/images/opus/I1-4A.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
+                <img src="{{ '/images/opus/I1-4A.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
             </div>
             <div class="after">
                 <h5>AFTER</h5>
@@ -486,13 +505,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Usability Testing 2</h3>
             <p>I tested the updated prototype and initially categorized feedback by improvement areas. I then reclassified it using the previously identified high-level goals. However, several items didn’t fit any known category.</p>
         </div>
     </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container">
             <img src="{{ '/images/opus/usability-testing-2.png' | relative_url }}" loading="lazy">
         </div>
@@ -500,13 +521,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3 class="np">Insights</h3>
             <p>The uncategorized feedback reveals an unstated high-level goal in the previous round, i.e., <b>transparency</b>—a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</p>
         </div>
     </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="card-list">
             <div class="card">
                 <h5>1️⃣ Expose Processing Logic</h5>
@@ -525,7 +548,8 @@ tool:
 </section>
 
 <section>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div>
             <h3>Prototype 3</h3>
             <div class="p-l">
@@ -535,11 +559,11 @@ tool:
     </div>
 </section>
 
-<section>
-    <div class="grid-3-1-1">
+<section class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-6">
         <h4>I. Script Editing</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <video width="100%" height="auto" autoplay loop muted>
@@ -563,7 +587,7 @@ tool:
             </div>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <video width="100%" height="auto" autoplay loop muted>
@@ -587,16 +611,13 @@ tool:
             </div>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-6">
         <h4>II. Shot Editing</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
-                <img src="{{ '/images/opus/I2-2-1B.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
+                <img src="{{ '/images/opus/I2-2-1B.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
             </div>
             <div class="before">
                 <h5>BEFORE</h5>
@@ -605,7 +626,7 @@ tool:
         </div>
         <div class="list-container">
             <div class="after">
-                <img src="{{ '/images/opus/I2-2-1A.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
+                <img src="{{ '/images/opus/I2-2-1A.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
             </div>
             <div class="after">
                 <h5>AFTER</h5>
@@ -613,7 +634,7 @@ tool:
             </div>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I2-2-2B.png' | relative_url }}" loading="lazy">
@@ -633,7 +654,7 @@ tool:
             </div>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I2-2-3B.png' | relative_url }}" loading="lazy">
@@ -655,13 +676,10 @@ tool:
             </div>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-6">
         <h4>III. Transparency</h4>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I2-3-1B.png' | relative_url }}" loading="lazy">
@@ -683,7 +701,7 @@ tool:
             </div>
         </div>
     </div>
-    <div class="grid-2-2-1">
+    <div class="grid grid-3-3">
         <div class="list-container">
             <div class="before">
                 <img src="{{ '/images/opus/I2-3-2B.png' | relative_url }}" loading="lazy">
@@ -705,26 +723,20 @@ tool:
     </div>
 </section>
 
-<section>
-    <div class="grid-4-1">
-        <div>
-            <h2>Retrospect</h2>
-            <div class="p-l">
-                Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.
-            </div>
-        </div>
-    </div>
-</section>
+{% include subtitle-heading.html subtitle="Retrospect" %}
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Takeaways</h3>
+            <p>Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.</p>
             <p>Looking back, my problem statement and persona were made as logically required steps emerging organically from the iterative, user-centric prototype testing and analysis, rather than predefined JTBDs adhering to a dogmatic “discovery” framework in the beginning.</p>
             <p>Besides, key insights emerged not only about users’ mental models and behaviors, but also about coping with vagueness in social dynamics, research methodologies, and practical techniques.</p>
         </div>
     </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="card-list">
             <div class="card">
                 <h5>1️⃣ Billiard Method</h5>
@@ -743,13 +755,15 @@ tool:
 </section>
 
 <section>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
             <h3>Ways Forward</h3>
             <p>Looking ahead, our future endeavors should take a holistic consideration of various dimensions in design, development, and strategy, to adapt to evolving product demands and market dynamics.</p>
         </div>
     </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="card-list">
             <div class="card">
                 <h5>1️⃣ Waiting Experience</h5>

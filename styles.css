@@ -198,7 +198,8 @@ h3 {
 
 h4 {
     font-size: var(--font-size-l);
-    font-family: var(--font-soehne);
+    font-family: var(--font-signifier);
+    font-weight: 500;
     line-height: var(--line-height-l);
     margin-bottom: 1rem;
     color: var(--primary);
@@ -766,10 +767,10 @@ img, video {
 
 .scrollspy-link {
     font-family: var(--font-soehne);
-    font-size: var(--font-size-s);
-    line-height: var(--line-height-s);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
     text-decoration: none;
-    color: var(--primary);
+    color: var(--secondary);
     transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     white-space: nowrap;
     overflow: show;
@@ -787,7 +788,7 @@ img, video {
 
 .scrollspy-link.active {
     color: var(--primary);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .scrollspy-link.h3 {
@@ -799,7 +800,7 @@ img, video {
 }
 
 .scrollspy-link.h3.active {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #scrollspy.scrollspy-hidden .scrollspy-link {
