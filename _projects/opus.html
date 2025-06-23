@@ -31,88 +31,36 @@ tool:
   - Figma
 ---
 
-<section>
-    <div class="grid-4-1">
+<section class="full-width-bg">
+    <div class="grid grid-6">
         <div>
-            <h3>Solution</h3>
-            <div class="p-l">
-                We proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and creative control from scripting to shot management.
-            </div>
+            <hr style="margin-bottom: 24px;">
+            <h2>Overview</h2>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="grid-4-1">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F1.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
-            <h4>I. Collaborative Script Editor</h4>
-            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
-            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving token-level disambiguation, model output accuracy, and readability.</p>
+            <h3>Problem</h3>
+            <p>The team needed to quickly and affordably validate a loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint, navigating ambiguity and trust issues amid limited support, vague requirements, and low internal priority.</p>
+            <p>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</p>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="grid-4-1">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F2.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid-3-1-1">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
         <div>
-            <h4>II. Adaptive Shot Manager</h4>
-            <p>Serves as a visual intermediary between text and video generation through a keyframe-based storyboard.</p>
-            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
-            <p>Includes key element filters to improve manageability in complex or long-form screenplays.</p>
+            <h3>Design Process</h3>
+            <p>We adopted a Lean approach to move quickly and stay focused on real user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="grid-4-1">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F3.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid-3-1-1">
-        <div>
-            <h4>III. Comprehensive Shot Editor</h4>
-            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
-            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
-            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-4-1">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F4.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid-3-1-1">
-        <div>
-            <h4>IV. Customizable Asset Manager</h4>
-            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-4-1">
-        <div>
-            <h2>Design Process</h2>
-            <div class="p-l">
-                We adopted a Lean approach to move quickly and stay focused on real user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.
-            </div>
-        </div>
-    </div>
-    <div class="grid-4-1">
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div class="image-container">
             <img src="{{ '/images/opus/design-process.png' | relative_url }}" loading="lazy">
         </div>
@@ -120,10 +68,64 @@ tool:
 </section>
 
 <section>
-    <div class="grid-5">
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <h3>Solution</h3>
+            <p>We proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and creative control from scripting to shot management.</p>
+        </div>
+    </div>
+</section>
+
+<section id="highlight" class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-3-3">
+        <div>
+            <h4>I. Collaborative Script Editor</h4>
+            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
+            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving token-level disambiguation, model output accuracy, and readability.</p>
+        </div>
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="/images/opus/F1.mp4" type="video/mp4" loading="lazy">
+        </video>
+    </div>
+    <div class="grid grid-3-3">
+        <div>
+            <h4>II. Adaptive Shot Manager</h4>
+            <p>Serves as a visual intermediary between text and video generation through a keyframe-based storyboard.</p>
+            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
+            <p>Includes key element filters to improve manageability in complex or long-form screenplays.</p>
+        </div>
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="/images/opus/F2.mp4" type="video/mp4" loading="lazy">
+        </video>
+    </div>
+    <div class="grid grid-3-3">
+        <div>
+            <h4>III. Comprehensive Shot Editor</h4>
+            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
+            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
+            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
+        </div>
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="/images/opus/F3.mp4" type="video/mp4" loading="lazy">
+        </video>
+    </div>
+    <div class="grid grid-3-3">
+        <div>
+            <h4>IV. Customizable Asset Manager</h4>
+            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
+        </div>
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="/images/opus/F4.mp4" type="video/mp4" loading="lazy">
+        </video>
+    </div>
+</section>
+
+<section class="full-width-bg">
+    <div class="grid grid-6">
         <div>
             <hr style="margin-bottom: 24px;">
-            <h2>Think - Make - Check 1</h2>
+            <h2>Think 1</h2>
         </div>
     </div>
 </section>
