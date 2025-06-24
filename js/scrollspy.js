@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!scrollspy) {
         return;
     }
+
+    // Create Overview link first
+    const overviewLink = document.createElement('a');
+    overviewLink.href = '#overview';
+    overviewLink.textContent = 'Overview';
+    overviewLink.classList.add('scrollspy-link', 'h2');
+    scrollspyLinks.appendChild(overviewLink);
     
     // Function to apply staggered transitions
     function applyStaggeredTransitions(isHiding) {

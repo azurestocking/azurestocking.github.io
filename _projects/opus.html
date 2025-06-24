@@ -4,14 +4,15 @@ slug: opus
 featured: true
 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-impact: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean."
-background: "The team needed to quickly and affordably validate a loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint, navigating ambiguity and trust issues amid limited support, vague requirements, and low internal priority."
-challenge: "How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?"
-solution: "We proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and creative control from scripting to shot management."
+problem: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean."
+outcome: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean."
 image: "/images/placeholder-macbook.png"
 banner: "/images/placeholder.jpg"
+prototype: ""
 color: "#EBEAFA"
 time: "June 2024"
+categories:
+  - Design
 tags:
   - Design
   - Web
@@ -20,7 +21,7 @@ tags:
 role:
   - Product Designer
 team:
-  - 2 Product Designers
+  - 1 Product Designer
   - 1 Product Manager
 skill:
   - Market Research
@@ -31,25 +32,116 @@ tool:
   - Figma
 ---
 
-{% include subtitle-heading.html subtitle="Overview" %}
-
 <section>
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Problem</h3>
+            <h3>Background</h3>
             <p>The team needed to quickly and affordably validate a loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint, navigating ambiguity and trust issues amid limited support, vague requirements, and low internal priority.</p>
-            <p>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</p>
+        </div>
+    </div>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div class="card-list">
+            <div class="card">
+                <h5>💵 Tight Budget</h5>
+                <p>The company is an early-stage startup preparing for Series A, operating with a small team and limited budget, and lacking the bandwidth to make a full-time hire for temporary concept testing.</p>
+            </div>
+            <div class="card">
+                <h5>💪 Fueling Market</h5>
+                <p>The company is among the earliest players in AI captioning, but the low barrier to entry makes differentiation essential to maintain its competitive edge as more tech giants enter the space.</p>
+            </div>
+            <div class="card">
+                <h5>🤝 Potential Synergy</h5>
+                <p>Users have expressed strong interest in a generative feature, which has the potential to create meaningful synergy with the existing capability, enhancing overall value within a unified workflow.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="grid grid-1-3-1-1">
+    <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h3>Approach</h3>
-            <p>We adopted a Lean approach to move quickly and stay focused on real user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
+            <h3>Highlight</h3>
+            <div class="p-l">
+                Proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and flexible control.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-6">
+        <h4>I. Collaborative Script Editor</h4>
+    </div>
+    <div class="grid grid-6">
+        <div class="list-container">
+            <video width="100%" height="auto" autoplay loop muted>
+                <source src="/images/opus/F1.mp4" type="video/mp4" loading="lazy">
+            </video>
+        </div>
+        <div class="content-span-3">
+            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
+            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving token-level disambiguation, model output accuracy, and readability.</p>
+        </div>
+    </div>
+
+    <div class="grid grid-6">
+        <h4>II. Adaptive Shot Manager</h4>
+    </div>
+    <div class="grid grid-6">
+        <div class="list-container">
+            <video width="100%" height="auto" autoplay loop muted>
+                <source src="/images/opus/F2.mp4" type="video/mp4" loading="lazy">
+            </video>
+        </div>
+        <div class="content-span-3">
+            <p>Serves as a visual intermediary between text and video generation through a keyframe-based storyboard.</p>
+            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
+            <p>Includes key element filters to improve manageability in complex or long-form screenplays.</p>
+        </div>
+    </div>
+    
+    <div class="grid grid-6">
+        <h4>III. Comprehensive Shot Editor</h4>
+    </div>
+    <div class="grid grid-6">
+        <div class="list-container">
+            <video width="100%" height="auto" autoplay loop muted>
+                <source src="/images/opus/F3.mp4" type="video/mp4" loading="lazy">
+            </video>
+        </div>
+        <div class="content-span-3">
+            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
+            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
+            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
+        </div>
+    </div>
+    
+    <div class="grid grid-6">
+        <h4>IV. Customizable Asset Manager</h4>
+    </div>
+    <div class="grid grid-6">
+        <div class="list-container">
+            <video width="100%" height="auto" autoplay loop muted>
+                <source src="/images/opus/F4.mp4" type="video/mp4" loading="lazy">
+            </video>
+        </div>
+        <div class="content-span-3">
+            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div>
+            <h2>Design Process</h2>
+            <div class="p-l">
+                Adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.
+            </div>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -59,75 +151,6 @@ tool:
         </div>
     </div>
 </section>
-
-<section>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div>
-            <h3>Solution</h3>
-            <div class="p-l">
-                We proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and creative control from scripting to shot management.
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="full-width-bg" style="background-color: {{ page.color }};">
-    <div class="grid grid-6">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F1.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid grid-3-3">
-        <h4>I. Collaborative Script Editor</h4>
-        <div>
-            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
-            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving token-level disambiguation, model output accuracy, and readability.</p>
-        </div>
-    </div>
-
-    <div class="grid grid-6">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F2.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid grid-3-3">
-        <h4>II. Adaptive Shot Manager</h4>
-        <div>
-            <p>Serves as a visual intermediary between text and video generation through a keyframe-based storyboard.</p>
-            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
-            <p>Includes key element filters to improve manageability in complex or long-form screenplays.</p>
-        </div>
-    </div>
-    
-    <div class="grid grid-6">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F3.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid grid-3-3">
-        <h4>III. Comprehensive Shot Editor</h4>
-        <div>
-            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
-            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
-            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
-        </div>
-    </div>
-    
-    <div class="grid grid-6">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="/images/opus/F4.mp4" type="video/mp4" loading="lazy">
-        </video>
-    </div>
-    <div class="grid grid-3-3">
-        <h4>IV. Customizable Asset Manager</h4>
-        <div>
-            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
-        </div>
-    </div>
-</section>
-
-{% include subtitle-heading.html subtitle="Design Process" %}
 
 <section>
     <div class="grid grid-1-3-1-1">
@@ -234,17 +257,44 @@ tool:
 </section>
 
 <section>
-    <div class="grid grid-1-3-1-1">
+    <div class="grid grid-1-4-1">
         <div></div>
         <div>
             <h3>Prototype 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="p-l">Introduced an intermediary step of text-to-image generation to stabilize the creative workflow, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</div>
         </div>
     </div>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div class="image-container" style="padding: 0; overflow: hidden;">
-            <img src="{{ '/images/opus/prototype-1.png' | relative_url }}" loading="lazy">
+</section>
+
+<section class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="flex-row">
+        <div class="list-container">
+            <img src="{{ '/images/opus/prototype-1-1.png' | relative_url }}" loading="lazy">
+            <div>
+                <h5>Prompt</h5>
+                <p>Enrich the user input with storytelling techniques to produce a complete, engaging screenplay.</p>
+            </div>
+        </div>
+        <div class="list-container">
+            <img src="{{ '/images/opus/prototype-1-2.png' | relative_url }}" loading="lazy">
+            <div>
+                <h5>Screenplay</h5>
+                <p>Parse the screenplay into shot-by-shot scripts with structured metadata to guide text-to-image generation.</p>
+            </div>
+        </div>
+        <div class="list-container">
+            <img src="{{ '/images/opus/prototype-1-3.png' | relative_url }}" loading="lazy">
+            <div>
+                <h5>Storyboard</h5>
+                <p>Tweak keyframes, voiceover, and animation settings to better align with the user’s creative intent.</p>
+            </div>
+        </div>
+        <div class="list-container">
+            <img src="{{ '/images/opus/prototype-1-4.png' | relative_url }}" loading="lazy">
+            <div>
+                <h5>Slideshow</h5>
+                <p>Simulate the structure and pacing of the final video to reduce uncertainty in image-to-video generation.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -299,7 +349,7 @@ tool:
         <div></div>
         <div>
             <h3>Problem Statement</h3>
-            <p>With the shared high-level goals that emerged above, I was able to refine the initially rough question as follows:</p>
+            <p>We set off with a knowingly over-simplistic problem framing to integrate a text-to-video feature into the product. With high-level goals that emerged above, I refined the initially rough question as follows:</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -328,7 +378,7 @@ tool:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <p>All feedback is distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, leading to the following insights:</p>
+            <p>All stickers are distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating the following insights:</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -340,7 +390,7 @@ tool:
             </div>
             <div class="card">
                 <h5>2️⃣ User Segmentation</h5>
-                <p>The polarization between users with different usage intensity reveals two user groups that vary in positions on the two axes, i.e., the expectation for production commitment and outcomes, and the preference for interaction.</p>
+                <p>The polarization between users with different usage intensity reveals two user groups that vary in positions on the two value axes, i.e., the expectation for production commitment and outcomes, and the preference for interaction.</p>
             </div>
         </div>
     </div>
@@ -351,7 +401,8 @@ tool:
         <div></div>
         <div>
             <h3>Personas</h3>
-            <p>Based on these insights, I developed two personas and visualized their differences across multiple dimensions of the two spectrums.</p>
+            <p>Based on user segmentation, I developed two personas and mapped their differences across multiple dimensions of the two core tensions.</p>
+            <p>Original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators. Derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
         </div>
     </div>
     <div class="grid grid-1-2-2-1">
@@ -360,14 +411,14 @@ tool:
             <img src="{{ '/images/opus/persona-1.png' | relative_url }}" loading="lazy">
             <div>
                 <h5>Original Creator</h5>
-                <p>Likely content creators with a high level of expertise, such as indie filmmakers and animators; seek to maintain creative authorship while achieving high-quality outputs; cautious of full automation and perceive the tool as an extension.</p>
+                <p>Seek to maintain creative authorship while achieving high-quality outputs; cautious of full automation and perceive the tool as an extension.</p>
             </div>
         </div>
         <div class="list-container">
             <img src="{{ '/images/opus/persona-2.png' | relative_url }}" loading="lazy">
             <div>
                 <h5>Derivative Creator</h5>
-                <p>Likely content creators with distribution-driven priorities, such as influencers and content aggregators; aim to produce acceptable outputs with minimal input; willing to delegate complex tasks to the system and view the tool as a replacement.</p>
+                <p>Aim to produce acceptable outputs with minimal input; willing to delegate complex tasks to the system and view the tool as a replacement.</p>
             </div>
         </div>
     </div>
@@ -537,7 +588,7 @@ tool:
             </div>
             <div class="card">
                 <h5>2️⃣ Guide Interactions</h5>
-                <p>Offer proactive cues to achieve desired outcomes, e.g., simplify complex, effort-intensive prompting by disassembling it into smaller, manageable pieces via structured input fields.</p>
+                <p>Offer intuitive, proactive cues to achieve desired outcomes, e.g., simplify complex, effort-intensive prompting by disassembling it into smaller, manageable pieces via structured input fields.</p>
             </div>
             <div class="card">
                 <h5>3️⃣ Enable Human Oversight</h5>
@@ -723,16 +774,24 @@ tool:
     </div>
 </section>
 
-{% include subtitle-heading.html subtitle="Retrospect" %}
+<section>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div>
+            <h2>Retrospect</h2>
+            <div class="p-l">
+                Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.
+            </div>
+        </div>
+    </div>
+</section>
 
 <section>
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
             <h3>Takeaways</h3>
-            <p>Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.</p>
-            <p>Looking back, my problem statement and persona were made as logically required steps emerging organically from the iterative, user-centric prototype testing and analysis, rather than predefined JTBDs adhering to a dogmatic “discovery” framework in the beginning.</p>
-            <p>Besides, key insights emerged not only about users’ mental models and behaviors, but also about coping with vagueness in social dynamics, research methodologies, and practical techniques.</p>
+            <p>Lessons learned emerged not only about users’ mental models and behaviors, but also about coping with ambiguity in social dynamics, research methodologies, and practical design techniques.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -776,6 +835,29 @@ tool:
             <div class="card">
                 <h5>3️⃣ Pricing Structure</h5>
                 <p>Explore new monetization strategies that fit increased computational costs and value delivered, e.g., tiered subscriptions, pay-per-export, and enterprise licensing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <h3>Hindsights</h3>
+            <p>The company has successfully raised $30M in Series A in August 2024 and $20M in Series B in March 2025, but ultimately chose not to ship the storyboard feature, likely due to a strategic pivot toward monetizable, lower-risk enhancements to its core captioning feature amid the intensifying competition, where research-driven startups like Sand.ai have complicated the landscape, while niche startups like Katalist.ai have gained a head start.</p>
+        </div>
+    </div>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div class="card-list">
+            <div class="card">
+                <h5>1️⃣ At Launched</h5>
+                <p>Track activation rate, export rate (% of generated storyboards exported or pushed into downstream workflows), and usage frequency to measure evaluate initial user engagement and to identify early signals of perceived value.</p>
+            </div>
+            <div class="card">
+                <h5>2️⃣ Over Time</h5>
+                <p>Monitor user retention lift and conversion rate to evaluate long-term business impact and sustained behavior change.</p>
             </div>
         </div>
     </div>

@@ -3,11 +3,16 @@ layout: default
 title: Index
 ---
 
-<section>
-    <h1>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </h1>
-</section>
+<div class="hero" style="background-image: url('/images/placeholder.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw; margin-left: calc(-50vw + 50%);">
+    <div class="grid grid-1-5">
+        <div></div>
+        <div>
+            <div class="p-xl" style="margin-bottom: 64px; margin-top: 50vh;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+        </div>
+    </div>
+</div>
 
 {% for project in site.projects %}
     <section id="{{ project.slug }}">

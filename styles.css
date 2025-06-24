@@ -172,17 +172,18 @@ body {
 }
 
 h1 {
-    font-size: var(--font-size-xl);
-    font-family: var(--font-soehne);
-    line-height: var(--line-height-xl);
+    font-size: var(--font-size-l);
+    font-family: var(--font-signifier);
+    line-height: var(--line-height-l);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 h2 {
-    font-size: var(--font-size-l);
-    font-family: var(--font-signifier);
-    line-height: var(--line-height-l);
+    font-size: var(--font-size-m);
+    font-family: var(--font-soehne);
+    font-weight: 500;
+    line-height: var(--line-height-m);
     margin-bottom: 1rem;
     color: var(--primary);
 }
@@ -199,7 +200,6 @@ h3 {
 h4 {
     font-size: var(--font-size-l);
     font-family: var(--font-signifier);
-    font-weight: 500;
     line-height: var(--line-height-l);
     margin-bottom: 1rem;
     color: var(--primary);
@@ -218,14 +218,14 @@ p {
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
     font-family: var(--font-soehne);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 p.serif {
     font-size: var(--font-size-m);
     line-height: var(--font-size-m);
     font-family: var(--font-signifier);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:last-child {
@@ -236,6 +236,13 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-size: var(--font-size-l);
     line-height: var(--line-height-l);
     font-family: var(--font-signifier);
+    color: var(--primary);
+}
+
+.p-xl {
+    font-size: var(--font-size-xl);
+    font-family: var(--font-soehne);
+    line-height: var(--line-height-xl);
     color: var(--primary);
 }
 
@@ -277,10 +284,18 @@ blockquote:last-child {
     margin-bottom: 0;
 }
 
+ul {
+    list-style-type: disc;
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    margin-bottom: 0.5rem;
+}
+
 li {
     list-style-type: disc;
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
+    padding-left: 0.5rem;
 }
 
 hr {
@@ -314,11 +329,15 @@ footer * {
     color: var(--background);
 }
 
+.hero {
+    height: 100vh;
+    width: auto;
+}
+
 
 
 /* LAYOUT */
 
-/* Base 6-column grid system */
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -332,7 +351,6 @@ footer * {
     margin-bottom: 0;
 }
 
-/* Subgrid column layouts */
 .grid-1-5 > *:first-child {
     grid-column: 1 / span 1;
 }
@@ -429,7 +447,6 @@ footer * {
     grid-column: 1 / span 6;
 }
 
-/* Flexible grids */
 .content-span-1 {
     grid-column: span 1;
 }
@@ -456,6 +473,21 @@ footer * {
 
 .content-span-all {
     grid-column: 1 / -1;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto 64px auto;
+    padding: 0 24px;
+}
+
+.flex-row > * {
+    flex: 1;
+    min-width: 0;
 }
 
 .full-width-bg {
@@ -566,10 +598,6 @@ img, video {
 
 .card h4 {
     font-weight: 500;
-}
-
-.card p {
-    margin-block-end: 0;
 }
 
 

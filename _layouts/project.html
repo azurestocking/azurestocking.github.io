@@ -6,7 +6,7 @@ layout: default
     <div class="grid grid-1-5">
         <div></div>
         <div>
-            <h1 style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-signifier);">{{ page.title }}</h1>
+            <div class="p-xl" style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-signifier);">{{ page.title }}</div>
             <img src="{{ page.banner | relative_url }}" loading="lazy">
         </div>
     </div>
@@ -18,25 +18,40 @@ layout: default
         <hr>
     </div>
     <div class="grid grid-1-3-1-1" style="margin-bottom: 64px;">
-        <div></div>
+        <div>
+            <h3 class="np">Category</h5>
+            <p>
+                {% for category in page.categories %}
+                {{ category }}{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+            </p>
+        </div>
         <div class="list-container">
             <div>
-                <h3 class="np">Background</h5>
-                <p>{{ page.background }}</p>
+                <h3 class="np">Problem</h5>
+                <p>{{ page.problem }}</p>
             </div>
             <div>
-                <h3 class="np">Impact</h5>
-                <p>{{ page.impact }}</p>
+                <h3 class="np">Outcome</h5>
+                <p>{{ page.outcome }}</p>
             </div>
         </div>
         <div>
-            <h3 class="np">Skills</h5>
+            <h3 class="np">Responsibilities</h5>
             <p>
                 {% for skill in page.skill %}
-                    {{ skill }}{% unless forloop.last %}, {% endunless %}
+                    {{ skill }}{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
             </p>
-        </div>   
+        </div>
+        <div>
+            <h3 class="np">Collaborators</h5>
+            <p>
+                {% for member in page.team %}
+                    {{ member }}{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+            </p>
+        </div>
     </div>
     <div class="grid grid-1-3-1-1">
         <div></div>
