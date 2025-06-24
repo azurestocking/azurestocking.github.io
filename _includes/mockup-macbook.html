@@ -1,0 +1,65 @@
+<div class="mockup-container">
+  <div class="mockup-frame">
+    <!-- MacBook mockup background -->
+    <img src="{{ site.baseurl }}/images/mockup-macbook.png" alt="MacBook Mockup" class="mockup-bg">
+   
+    <div class="content-area">
+      {% if include.content_image %}
+        {% if include.content_type == 'video' %}
+          <video class="content-media" autoplay loop muted playsinline>
+            <source src="{{ include.content_image }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% else %}
+          <img src="{{ include.content_image }}" alt="{{ include.content_alt | default: 'Content' }}" class="content-media">
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+.mockup-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mockup-frame {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.mockup-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content-area {
+  position: absolute;
+  /* Original frame: 1752.54x1037 */
+  /* Content area: 1440x900 */
+  /* Content position: X165 Y33 (relative to original frame) */
+  
+  /* Position relative to original frame */
+  left: calc(165 / 1752.54 * 100%);
+  top: calc(33 / 1037 * 100%);
+  
+  /* Size relative to original frame */
+  width: calc(1440 / 1752.54 * 100%);
+  height: calc(900 / 1037 * 100%);
+  
+  background: transparent;
+  overflow: hidden;
+}
+
+.content-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
+
