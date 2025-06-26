@@ -16,21 +16,16 @@ title: Index
 
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
-        <div class="project-card">
-            <a href="{{ project.url | relative_url }}" class="project-link">
-                <div class="project-content">
-                    <div class="project-info">
-                        <div class="project-text">
-                            <h4>{{ project.title }}</h4>
-                            <p style="color: var(--secondary);">{{ project.impact }}</p>
-                        </div>
-                        <div class="button"><i class="fa-solid fa-arrow-right rotate-45"></i></div>
-                    </div>
-                    <div class="project-image">
-                        <img src="{{ project.image | relative_url }}" loading="lazy">
-                    </div>
-                </div>
-            </a>
+        <div class="grid">
+            <div class="content-span-2">
+                <h1 style="font-family: var(--font-soehne);">{{ project.title }}</h1>
+                <p>{{ project.outcome }}</p>
+                <a class="button" href="{{ project.url | relative_url }}" style="margin-top: 64px;">View Case<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            </div>
+            <div class="content-span-1"></div>
+            <div class="content-span-3">
+                <img src="{{ project.image | relative_url }}" loading="lazy">
+            </div>
         </div>
     </section>
 {% endfor %}

@@ -6,9 +6,7 @@ title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 problem: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean."
 outcome: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean."
-image: "/images/placeholder-macbook.png"
-banner: "/images/placeholder.jpg"
-prototype: ""
+image: "/images/placeholder.jpg"
 color: "#EBEAFA"
 time: "June 2024"
 categories:
@@ -30,6 +28,8 @@ skill:
   - User Research
 tool:
   - Figma
+links:
+  - #highlight
 ---
 
 <section>
@@ -37,18 +37,18 @@ tool:
         <div></div>
         <div>
             <h3>Background</h3>
-            <p>The team needed to quickly and affordably validate a loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint, navigating ambiguity and trust issues amid limited support, vague requirements, and low internal priority.</p>
+            <p>The team needed to quickly and affordably validate a loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint under low internal priority.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
         <div class="card-list">
             <div class="card">
-                <h5>💵 Tight Budget</h5>
+                <h5>💵 Limited Resource</h5>
                 <p>The company is an early-stage startup preparing for Series A, operating with a small team and limited budget, and lacking the bandwidth to make a full-time hire for temporary concept testing.</p>
             </div>
             <div class="card">
-                <h5>💪 Fueling Market</h5>
+                <h5>💪 Growing Market</h5>
                 <p>The company is among the earliest players in AI-powered video captioning and repurposing, but the low barrier to entry makes differentiation essential to maintain its competitive edge as tech giants enter the space.</p>
             </div>
             <div class="card">
@@ -63,8 +63,8 @@ tool:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Problem Space</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h3>Challenge</h3>
+            <p>Amidst the AIGC boom, integrating a text-to-video feature seemed timely and feasible. Yet, the go-to-market challenge wasn’t about design implementation alone; it lay in clarifying strategic ambiguity—specifically, articulating a compelling value proposition, identifying the right user segments, and aligning with actual workflows to drive profitable adoption.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -81,7 +81,7 @@ tool:
         <div>
             <h3>Highlight</h3>
             <div class="p-l">
-                Proposed an end-to-end tool for AI video production, built on a multistage generative media pipeline focused on human-AI collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and flexible control.
+                Proposed an end-to-end storytelling support tool for AI video production, built on a multistage generative media pipeline focused on human-AI collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and flexible control.
             </div>
         </div>
     </div>
@@ -89,61 +89,78 @@ tool:
 
 <section class="full-width-bg" style="background-color: {{ page.color }};">
     <div class="grid grid-6">
-        <h4>I. Collaborative Script Editor</h4>
+        <h4>I. Collaborative Script Composition</h4>
     </div>
-    <div class="grid">
-        <div class="content-span-2">
-            <p>Allows users to select and modify text segments using predefined AI enhancement functions or instruction-based prompts without altering adjacent content. </p>
-            <p>Enables easy formatting aligned with industry-standard screenplay conventions to structurally differentiate key elements, improving both readability and token-level disambiguation.</p>
+    <div class="grid grid-6">
+        {% include mockup-macbook.html 
+            content_image="/images/opus/F1.mp4" 
+            content_type="video" %}
+    </div>
+    <div class="grid grid-3-3">
+        <div>
+            <h5>Precise Text Enhancement</h5>
+            <p>Users can select and refine specific text segments using predefined functions such as polish, shorten, and regenerate, or apply custom instruction-based prompts, all while ensuring adjacent content remains unaffected.</p>
         </div>
-        <div class="content-span-4">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F1.mp4" 
-                content_type="video" %}
+        <div>
+            <h5>Easy Screenplay Reformatting</h5>
+            <p>Users can reformat scripts adhering to industry-standard conventions, which structurally distinguishes key elements like action, dialogue, character, and transition, improving readability and enhancing LLM understanding.</p>
         </div>
     </div>
 
     <div class="grid grid-6">
-        <h4>II. Adaptive Shot Manager</h4>
+        <h4>II. Flexible Storyboard Management</h4>
     </div>
-    <div class="grid">
-        <div class="content-span-2">
-            <p>Supports three distinct modes for flexible shot management at varying levels of granularity: thumbnail, editor, and slideshow modes, respectively for navigation, refinement, and preview, covering the full production lifecycle.</p>
-        </div>
-        <div class="content-span-4">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F2.mp4" 
-                content_type="video" %}
-        </div>
-    </div>
-    
     <div class="grid grid-6">
-        <h4>III. Comprehensive Shot Editor</h4>
+        {% include mockup-macbook.html 
+            content_image="/images/opus/F2.mp4" 
+            content_type="video" %}
     </div>
-    <div class="grid">
-        <div class="content-span-2">
-            <p>Provides full-spectrum yet atomic control over individual shots, including keyframes, audio, and camera movement.</p>
-            <p>Utilizes a context-aware interface with inline dropdowns and modals to enable seamless interaction without disrupting the editing flow.</p>
-            <p>Adopts a hybrid editing approach that combines manual input with AI assistance, enhancing productivity while preserving creative autonomy.</p>
+    <div class="grid grid-3-3">
+        <div>
+            <h5>Adaptive View Modes</h5>
+            <p>Users can switch between varying levels of granularity using three distinct view modes: thumbnail for navigation, editor for detailed refinement, and slideshow for preview, covering the full production lifecycle.</p>
         </div>
-        <div class="content-span-4">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F3.mp4" 
-                content_type="video" %}
+        <div>
+            <h5>Targeted Shot Focus</h5>
+            <p>Users can apply key element filters to isolate shots by character or scene, enabling focused editing, reduced visual clutter, and improved manageability within complex or long-form scripts.</p>
         </div>
     </div>
-    
+
     <div class="grid grid-6">
-        <h4>IV. Customizable Asset Manager</h4>
+        <h4>III. Comprehensive Shot Tweaking</h4>
     </div>
-    <div class="grid">
-        <div class="content-span-2">
-            <p>Creates a centralized system by extracting reusable global assets from natural language through semantic parsing, allowing them to be defined, applied to individual shots, and batch-edited across multiple shots. It enhances consistency and scalability for large-scale and episodic productions, and optimizes workflows by reducing duplication and manual effort.</p>
+    <div class="grid grid-6">
+        {% include mockup-macbook.html 
+            content_image="/images/opus/F3.mp4" 
+            content_type="video" %}
+    </div>
+    <div class="grid grid-3-3">
+        <div>
+            <h5>Complete Production Control</h5>
+            <p>Users can fine-tune keyframes using a full set of tools, such as reprompting, uploading, generative fill, and camera movement setting, and edit voiceover and dialogue transcripts.</p>
         </div>
-        <div class="content-span-4">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F4.mp4" 
-                content_type="video" %}
+        <div>
+            <h5>Accessible Prompt Builder</h5>
+            <p>Users can transform complex, text-based prompting into an intuitive, GUI-driven experience with structured, atomic controls to achieve desired results without prompt engineering expertise, lowering the cognitive burden.</p>
+        </div>
+    </div>
+
+    <div class="grid grid-6">
+        <h4>IV. Centralized Asset Management & Customization</h4>
+    </div>
+    <div class="grid grid-6">
+        {% include mockup-macbook.html 
+            content_image="/images/opus/F4.mp4" 
+            content_type="video" %}
+    </div>
+    <div class="grid grid-3-3">
+        <div>
+            <h5>Automatic Entity Extraction</h5>
+            <p>Users no longer need to manually identify reusable characters and scenes, as the model automatically extracts global assets from natural language input using advanced semantic parsing.</p>
+        </div>
+        <div>
+            <h5>Centralized Asset Manager</h5>
+            <p>Users can update multiple shots in batch by customizing shared global assets through a centralized system, accelerating revisions and ensuring visual consistency across the entire project.</p>
         </div>
     </div>
 </section>
@@ -205,20 +222,20 @@ tool:
         <div></div>
         <div>
             <h3>Wireframe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>Subsequently, we explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming in two divergent directions.</p>
         </div>
     </div>
     <div class="grid grid-1-2-2-1">
         <div></div>
         <div class="list-container">
-            <img src="{{ '/images/placeholder.jpg' | relative_url }}" loading="lazy">
+            <img src="{{ '/images/opus/wireframe-1.png' | relative_url }}" loading="lazy">
             <div>
                 <h5>Storyboard</h5>
                 <p>A visual tool used by filmmakers and animators to pre-visualize and plan a production clearly and efficiently, e.g., Toon Boom Storyboard.</p>
             </div>
         </div>
         <div class="list-container">
-            <img src="{{ '/images/placeholder.jpg' | relative_url }}" loading="lazy">
+            <img src="{{ '/images/opus/wireframe-2.png' | relative_url }}" loading="lazy">
             <div>
                 <h5>Infinite Canvas</h5>
                 <p>A modular approach used by domain experts to design and execute complex systems visually, e.g., Grasshopper, Unreal Engine.</p>
@@ -232,7 +249,7 @@ tool:
         <div></div>
         <div>
             <h3>Concept Testing</h3>
-            <p>Although the cell option initially appealed to the team’s intellectual curiosity, I facilitated an asynchronous workshop to gather insights cross-functionally and evaluate its viability.</p>
+            <p>Although the node-based interface initially intrigued the team, particularly designers and engineers, I facilitated an asynchronous workshop to gather insights cross-functionally and evaluate its viability.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -318,7 +335,7 @@ tool:
         <div></div>
         <div>
             <h3>Usability Testing 1</h3>
-            <p>Since I hypothesized multiple user segments, I recruited a slightly larger and diverse sample of 8 participants, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
+            <p>Since I hypothesized multiple user segments, I recruited a slightly larger sample of 8 participants, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
             <p>I tested this prototype to identity the main usability and functionality issues, along with a screener survey to assess the <b>usage intensity</b>, i.e., how each participant might use the proposed feature in their routine.</p>
         </div>
     </div>
@@ -363,7 +380,7 @@ tool:
         <div></div>
         <div>
             <h3>Problem Statement</h3>
-            <p>We set off with a knowingly over-simplistic problem framing to integrate a text-to-video feature into the product. With high-level goals that emerged above, I refined the initially rough question as follows:</p>
+            <p>Before fully understanding user needs, workflows, or success criteria, we began with a straightforward yet knowingly simplistic problem framing based on client’s request, aiming to integrate a text-to-video feature to the current product. With high-level goals that emerged above, I refined the initially rough question as follows:</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">

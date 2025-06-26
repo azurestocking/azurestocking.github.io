@@ -249,14 +249,14 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
 a {
     color: var(--primary);
     text-decoration: underline;
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
 a:hover {
     color: var(--primary);
     text-decoration: underline;
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
@@ -303,7 +303,7 @@ hr {
     padding: 0;
     height: 0;
     border: none;
-    border-top: 1.5px solid var(--primary);
+    border-top: 1px solid var(--primary);
 }
 
 header {
@@ -592,7 +592,7 @@ img, video {
 }
 
 .card {
-    border: 1.5px solid var(--ghost-focus);
+    border: 1px solid var(--ghost-focus);
     padding: 1rem;
 }
 
@@ -614,7 +614,7 @@ img, video {
     height: 36px;
     float: left;
     text-decoration: none;
-    border: 1.5px solid var(--primary);
+    border: 1px solid var(--primary);
     padding: 12px;
     color: var(--primary);
     position: relative;
@@ -659,100 +659,6 @@ img, video {
 .button.ghost {
     border: none;
     padding: 0;
-}
-
-
-
-/* PROJECT CARD */
-
-.project-card {
-    height: 560px;
-    background: var(--ghost);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    height: 100%;
-}
-
-.project-card * {
-    text-decoration: none;
-}
-
-.project-card *:hover {
-    text-decoration: none;
-}
-
-.project-card .button {
-    background: var(--background);
-}
-
-.project-card:hover .button i {
-    transform: rotate(0deg);
-}
-
-.project-content {
-    display: flex;
-    height: 100%;
-}
-
-.project-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    height: 100%;
-    width: 480px;
-    padding: 64px;
-}
-
-.project-image {
-    height: 100%;
-    flex: 1;
-    padding: 64px 64px 64px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-image img {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .project-content {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.5rem;
-    }
-    
-    .project-image {
-        order: -1;
-    }
-}
-
-
-
-/* PROJECT LAYOUT */
-
-.project-header-image {
-    height: 560px;
-    padding: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-header-image img {
-    height: 432px;
-    width: auto;
 }
 
 
