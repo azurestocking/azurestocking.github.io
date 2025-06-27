@@ -13,19 +13,15 @@
     --font-size-l: 28px;
     --font-size-xl: 64px;
     font-size: 18px;
-    --line-height-xs: 140%;
-    --line-height-s: 140%;
-    --line-height-m: 140%;
-    --line-height-l: 130%;
-    --line-height-xl: 120%;
-    line-height: 140%;
+    --line-height-xs: 135%;
+    --line-height-s: 135%;
+    --line-height-m: 135%;
+    --line-height-l: 125%;
+    --line-height-xl: 115%;
+    line-height: 135%;
     --font-signifier: 'Signifier', 'EB Garamond', serif; 
     --font-soehne: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
-    --grid-column-1: 1fr;
-    --grid-column-2: 5fr;
-    --grid-column-3: 1fr;
-    --grid-column-4: 1fr;
 }
 
 
