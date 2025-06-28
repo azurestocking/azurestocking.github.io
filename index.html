@@ -3,13 +3,17 @@ layout: default
 title: Index
 ---
 
-<div class="hero" style="background-image: url('/images/placeholder.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw; margin-left: calc(-50vw + 50%);">
+<div class="hero">
+    <video autoplay muted loop>
+        <source src="https://ena-supply.b-cdn.net/Ora/740047_Woman%20Model%20Projection%20Vj_By_Ira_Belsky_Artlist_HD%20comp.mp4" type="video/mp4">
+    </video>
     <div class="grid grid-1-5">
         <div></div>
         <div>
-            <div class="p-xl" style="margin-bottom: 64px; margin-top: 50vh;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <div class="p-xl" style="margin-bottom: 64px; margin-top: 50vh; color: var(--background);">
+                Your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
             </div>
+            <a class="button" href="/" style="color: var(--background); border-color: var(--background);">Featured<i class="fa-solid fa-arrow-right rotate-45"></i></a>
         </div>
     </div>
 </div>
@@ -17,10 +21,13 @@ title: Index
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
         <div class="grid">
+            <div class="content-span-6"><hr></div>
+        </div>
+        <div class="grid">
             <div class="content-span-2">
-                <h1>{{ project.title }}</h1>
+                <h1 style="font-family: var(--font-soehne);">{{ project.title }}</h1>
                 <p>{{ project.outcome }}</p>
-                <a class="button" href="{{ project.url | relative_url }}" style="margin-top: 64px;">View Case<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button" href="{{ project.url | relative_url }}" style="margin-top: 64px;">Read More<i class="fa-solid fa-arrow-right rotate-45"></i></a>
             </div>
             <div class="content-span-1"></div>
             <div class="content-span-3">

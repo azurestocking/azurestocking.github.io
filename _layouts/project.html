@@ -22,8 +22,8 @@ layout: default
             <h3 class="np">Category</h5>
             <p>
                 {% for category in page.categories %}
-                {{ category }}{% unless forloop.last %}<br>{% endunless %}
-            {% endfor %}
+                    {{ category }}{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
             </p>
         </div>
         <div class="list-container">

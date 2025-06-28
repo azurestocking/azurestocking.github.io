@@ -13,12 +13,11 @@
     --font-size-l: 28px;
     --font-size-xl: 64px;
     font-size: 18px;
-    --line-height-xs: 135%;
-    --line-height-s: 135%;
-    --line-height-m: 135%;
-    --line-height-l: 125%;
-    --line-height-xl: 115%;
-    line-height: 135%;
+    --line-height-xs: 1.35em;
+    --line-height-s: 1.35em;
+    --line-height-m: 1.35em;
+    --line-height-l: 1.25em;
+    --line-height-xl: 1.10em;
     --font-signifier: 'Signifier', 'EB Garamond', serif; 
     --font-soehne: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
@@ -128,7 +127,6 @@
     margin: 0;
     border: 0;
     font-weight: 400;
-    line-height: 135%;
     list-style: none;
     vertical-align: bottom;
     box-sizing: border-box;
@@ -299,7 +297,7 @@ hr {
     padding: 0;
     height: 0;
     border: none;
-    border-top: 1px solid var(--primary);
+    border-top: 1.5px solid var(--primary);
 }
 
 header {
@@ -328,6 +326,24 @@ footer * {
 .hero {
     height: 100vh;
     width: auto;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero .grid {
+    mix-blend-mode: difference;
 }
 
 
@@ -588,7 +604,7 @@ img, video {
 }
 
 .card {
-    border: 1px solid var(--ghost-focus);
+    border: 1.5px solid var(--ghost-focus);
     padding: 1rem;
 }
 
@@ -610,7 +626,7 @@ img, video {
     height: 36px;
     float: left;
     text-decoration: none;
-    border: 1px solid var(--primary);
+    border: 1.5px solid var(--primary);
     padding: 12px;
     color: var(--primary);
     position: relative;
