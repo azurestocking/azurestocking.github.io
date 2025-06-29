@@ -3,21 +3,38 @@ layout: default
 title: Index
 ---
 
+<section>
+    <div class="grid grid-1-5">
+        <div></div>
+        <div style="margin-top: 25vh;">
+            <div class="p-xl">
+                Your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-1-2-2-1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</section>
+
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
+        <div class="grid grid-6"><hr></div>
         <div class="grid grid-1-4-1">
             <div>
-                <h1>Q2 2024</h1>
+                <h1>{{ project.timeline }}</h1>
             </div>
             <div>
                 <h1>{{ project.title }}</h1>
-                <p>{{ project.outcome }}</p>
             </div>
             <div></div>
         </div>
         <div class="grid grid-1-5">
             <div></div>
-            <div class="image-container" style="padding: 64px; background-color: {{ project.color }};">
+            <div class="image-container" style="padding: 64px;">
                 <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
                     {% include mockup-macbook.html 
                         content_image="/images/placeholder.jpg" 
@@ -27,3 +44,5 @@ title: Index
         </div>
     </section>
 {% endfor %}
+
+{% include index-script.html %}
