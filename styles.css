@@ -9,17 +9,17 @@
     --background: #FFFFFF;
     --font-size-xs: 0.85rem;
     --font-size-s: 1rem;
-    --font-size-m: 1rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 4rem;
+    --font-size-m: 1.5rem;
+    --font-size-l: 2rem;
+    --font-size-xl: 3rem;
     font-size: 18px;
     --line-height-xs: 1.35em;
     --line-height-s: 1.35em;
     --line-height-m: 1.35em;
     --line-height-l: 1.15em;
     --line-height-xl: 1.10em;
-    --font-signifier: 'Signifier', 'EB Garamond', serif; 
-    --font-soehne: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
+    --font-secondary: 'Tiempos', 'Times New Roman', serif; 
+    --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -118,6 +118,20 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Tiempos';
+    src: url('./font/Test Tiempos/test-tiempos-headline-light.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos';
+    src: url('./font/Test Tiempos/test-tiempos-headline-light-italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
 
 
 /* TYPOGRAPHY */
@@ -138,7 +152,7 @@
 }
 
 html, body {
-    font-family: var(--font-soehne); 
+    font-family: var(--font-primary); 
     scroll-behavior: smooth;
 }
 
@@ -167,41 +181,43 @@ body {
 
 h1 {
     font-size: var(--font-size-l);
-    font-family: var(--font-signifier);
+    font-family: var(--font-secondary);
+    font-style: italic;
     line-height: var(--line-height-l);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 h2 {
-    font-size: var(--font-size-m);
-    font-family: var(--font-soehne);
+    font-size: var(--font-size-s);
+    font-family: var(--font-primary);
     font-weight: 500;
-    line-height: var(--line-height-m);
+    line-height: var(--line-height-s);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 h3 {
-    font-size: var(--font-size-m);
-    font-family: var(--font-soehne);
+    font-size: var(--font-size-s);
+    font-family: var(--font-primary);
     font-weight: 500;
-    line-height: var(--line-height-m);
+    line-height: var(--line-height-s);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 h4 {
-    font-size: var(--font-size-l);
-    font-family: var(--font-signifier);
-    line-height: var(--line-height-l);
+    font-size: var(--font-size-m);
+    font-family: var(--font-secondary);
+    font-style: italic;
+    line-height: var(--line-height-m);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 h5 {
     font-size: var(--font-size-s);
-    font-family: var(--font-soehne);
+    font-family: var(--font-primary);
     font-weight: 500;
     line-height: var(--line-height-s);
     margin-bottom: 0.5rem;
@@ -211,14 +227,7 @@ h5 {
 p {
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
-    font-family: var(--font-soehne);
-    margin-bottom: 0.5rem;
-}
-
-p.serif {
-    font-size: var(--font-size-m);
-    line-height: var(--font-size-m);
-    font-family: var(--font-signifier);
+    font-family: var(--font-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -227,15 +236,17 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
 }
 
 .p-l {
-    font-size: var(--font-size-l);
-    line-height: var(--line-height-l);
-    font-family: var(--font-signifier);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    font-family: var(--font-secondary);
+    font-style: italic;
     color: var(--primary);
 }
 
 .p-xl {
     font-size: var(--font-size-xl);
-    font-family: var(--font-soehne);
+    font-family: var(--font-secondary);
+    font-style: italic;
     line-height: var(--line-height-xl);
     color: var(--primary);
 }
@@ -259,7 +270,8 @@ b {
 }
 
 blockquote {
-    font-family: var(--font-signifier);
+    font-family: var(--font-secondary);
+    font-style: italic;
     position: relative;
     line-height: var(--line-height-l);
     padding-left: 2rem;
@@ -424,6 +436,26 @@ footer * {
 }
 
 .grid-1-2-2-1 > *:nth-child(4) {
+    grid-column: 6 / span 1;
+}
+
+.grid-1-2-1-1-1 > *:nth-child(1) {
+    grid-column: 1 / span 1;
+}
+
+.grid-1-2-1-1-1 > *:nth-child(2) {
+    grid-column: 2 / span 2;
+}
+
+.grid-1-2-1-1-1 > *:nth-child(3) {
+    grid-column: 4 / span 1;
+}
+
+.grid-1-2-1-1-1 > *:nth-child(4) {
+    grid-column: 5 / span 1;
+}
+
+.grid-1-2-1-1-1 > *:nth-child(5) {
     grid-column: 6 / span 1;
 }
 
@@ -713,7 +745,7 @@ img, video {
 }
 
 .scrollspy-link {
-    font-family: var(--font-soehne);
+    font-family: var(--font-primary);
     font-size: var(--font-size-xs);
     line-height: var(--line-height-xs);
     text-decoration: none;
