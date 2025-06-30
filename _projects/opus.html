@@ -36,8 +36,8 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Background</h3>
-            <p>The team needed to quickly and affordably validate a loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint under low internal priority.</p>
+            <h3 class="np">Background</h3>
+            <p>Amidst the AIGC boom, integrating a text-to-video feature seemed timely and feasible. The team needed to quickly and affordably validate this loosely defined but potentially valuable opportunity without diverting core production efforts. I was brought in to lead a focused rapid prototyping sprint under low internal priority.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -60,17 +60,17 @@ links:
 </section>
 
 <section>
-    <div class="grid grid-1-3-1-1">
+    <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h3>Challenge</h3>
-            <p>Amidst the AIGC boom, integrating a text-to-video feature seemed timely and feasible. Yet, the go-to-market challenge wasn’t about design implementation alone; it lay in clarifying strategic ambiguity.</p>
+            <h3 class="np">Process</h3>
+            <p>We adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="p-l" style="margin-bottom: 0px;">
-            <blockquote>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</blockquote>
+        <div class="image-container">
+            <img src="{{ '/images/opus/design-process.png' | relative_url }}" loading="lazy">
         </div>
     </div>
 </section>
@@ -79,7 +79,7 @@ links:
     <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h3>Highlight</h3>
+            <h3 class="np">Highlight</h3>
             <div class="p-l">
                 Proposed an end-to-end storytelling support tool for AI video production, built on a multistage generative media pipeline focused on human-AI collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and flexible control.
             </div>
@@ -165,38 +165,20 @@ links:
     </div>
 </section>
 
-<section>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div>
-            <h2>Design Process</h2>
-            <div class="p-l">
-                Adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.
-            </div>
-        </div>
-    </div>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div class="image-container">
-            <img src="{{ '/images/opus/design-process.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-</section>
+{% include section-header.html index="1" emoji="" subtitle="Lean Sprint" %}
 
-<section>
+<section id="design-process">
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Market Analysis</h3>
+            <h3 index="1.1">Market Analysis</h3>
             <p>Leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
             <p>To validate this hypothesis, I identified several leading players along the production cycle and established a set of criteria to assess their narrative capabilities.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="image-container" style="padding: 0; overflow: hidden;">
-            <img src="{{ '/images/opus/market-analysis.png' | relative_url }}" loading="lazy">
-        </div>
+        <img src="{{ '/images/opus/market-analysis.png' | relative_url }}" loading="lazy">
     </div>
 </section>
 
@@ -204,7 +186,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Brainstorming</h3>
+            <h3 index="1.2">Brainstorming</h3>
             <p>The matrix above reveals a strategic opportunity: to differentiate by centering on storytelling support, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
             <p>We brainstormed features that address narrative structure and creative flow more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruit.</p>
         </div>
@@ -221,7 +203,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Wireframe</h3>
+            <h3 index="1.3">Wireframe</h3>
             <p>Subsequently, we explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming two different directions.</p>
         </div>
     </div>
@@ -248,7 +230,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Concept Testing</h3>
+            <h3 index="1.4">Concept Testing</h3>
             <p>Although the node-based interface initially intrigued the team, particularly designers and engineers, I facilitated an asynchronous workshop to gather insights cross-functionally and evaluate its viability.</p>
         </div>
     </div>
@@ -260,13 +242,14 @@ links:
     </div>
 </section>
 
+{% include section-header.html index="2" emoji="" subtitle="Lean Sprint" %}
+
 <section>
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3 class="np">Insights</h3>
-            <p>The affinity mapping revealed that implementing such an architecture would require substantial engineering refactoring and invited critical concerns across technical, usability, and strategic dimensions.</p>
-            <p>As a result, we deprioritized this option and redirected our focus toward the more feasible storyboard-based alternative.</p>
+            <h3 index="2.1">Data Analysis</h3>
+            <p>Implementing such an architecture would require substantial engineering refactoring and invited critical concerns across technical, usability, and strategic dimensions. We deprioritized this option and redirected our focus toward the storyboard alternative.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -292,7 +275,7 @@ links:
     <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h3>Prototype 1</h3>
+            <h3 index="2.2">Prototype</h3>
             <div class="p-l">Introduced an intermediary step of text-to-image generation to stabilize the creative workflow, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</div>
         </div>
     </div>
@@ -335,7 +318,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Usability Testing 1</h3>
+            <h3 index="2.3">Usability Testing</h3>
             <p>Since I hypothesized multiple user segments, I recruited a slightly larger sample of 8 participants, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
             <p>I tested this prototype to identity the main usability and functionality issues, along with a screener survey to assess the <b>usage intensity</b>, i.e., how each participant might use the proposed feature in their routine.</p>
         </div>
@@ -348,11 +331,13 @@ links:
     </div>
 </section>
 
+{% include section-header.html index="3" emoji="" subtitle="Lean Sprint" %}
+
 <section>
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3 class="np">Insights</h3>
+            <h3 index="3.1">Data Analysis</h3>
             <p>Looking closely, I found that even feedback within the same group often expressed conflicting views on what needed improvement.</p>
             <p>To make sense of those seemingly irreconcilable contradictions, I first examined the underlying intent behind each request, and then reshuffled them by <b>high-level goals</b>—the broader needs encompassing possibly divergent user behaviors and expectations.</p>
         </div>
@@ -380,7 +365,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Problem Statement</h3>
+            <h3 index="3.2">Problem Statement</h3>
             <p>We began with a straightforward yet knowingly simplistic problem framing based on client’s request. With high-level goals that emerged above, I refined the initially rough question as follows:</p>
         </div>
     </div>
@@ -396,7 +381,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3 class="np">Insights</h3>
+            <h3 index="3.3">Data Analysis</h3>
             <p>The observed conflicting feedback unveiled divergent user expectations and behaviors, rooted in how users conceptualized the shared high-level goals differently and hence their distinct positions on value trade-offs. This indicates multiple user segments, which should be logically inferable by their clustering on these trade-off spectrums.</p>
             <p>Therefore, I mapped all those stickers onto two axes that represent core tensions in users’ decision-making: <b>Cost vs. Perceived Quality</b> and <b>User Agency vs. Automation</b>.</p>
         </div>
@@ -432,7 +417,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Personas</h3>
+            <h3 index="3.4">Personas</h3>
             <p>Based on user segmentation, I developed two personas and mapped their differences across multiple dimensions of the two core tensions.</p>
             <p>Original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators. Derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
         </div>
@@ -460,9 +445,9 @@ links:
     <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h3>Prototype 2</h3>
+            <h3 index="3.5">Prototype</h3>
             <div class="p-l">
-                We improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent text-to-image generation.
+                Improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent text-to-image generation.
             </div>
         </div>
     </div>
@@ -591,7 +576,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Usability Testing 2</h3>
+            <h3 index="3.6">Usability Testing</h3>
             <p>I tested the updated prototype and initially categorized feedback by improvement areas. I then reclassified it using the previously identified high-level goals. However, several items didn’t fit any known category.</p>
         </div>
     </div>
@@ -603,11 +588,13 @@ links:
     </div>
 </section>
 
+{% include section-header.html index="4" emoji="" subtitle="Lean Sprint" %}
+
 <section>
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3 class="np">Insights</h3>
+            <h3 index="4.1">Data Analysis</h3>
             <p>The uncategorized feedback reveals an unstated high-level goal in the previous round, i.e., <b>transparency</b>—a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</p>
         </div>
     </div>
@@ -634,7 +621,7 @@ links:
     <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h3>Prototype 3</h3>
+            <h3 index="4.2">Prototype</h3>
             <div class="p-l">
                 We included transparency as a new evaluation lens while continuing to improve core usability through fine-grained refinements, including clarified interface hierarchy and interaction logic, flexible preview controls, and more informative version tracking.
             </div>
@@ -809,39 +796,23 @@ links:
     </div>
 </section>
 
-<section>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div>
-            <h2>Retrospect</h2>
-            <div class="p-l">
-                Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
+<section id="retrospect">
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Takeaways</h3>
-            <p>Lessons learned emerged not only about users’ mental models and behaviors, but also about coping with ambiguity in social dynamics, research methodologies, and practical design techniques.</p>
+            <h3 class="np">Takeaways</h3>
+            <p>Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
         <div class="card-list">
             <div class="card">
-                <h5>1️⃣ Billiard Method</h5>
+                <h5>🎱 Billiard Method</h5>
                 <p>When direct peer support is absent, maintain momentum by engaging stand-by colleagues with something tangible in hands for constructive feedback.</p>
             </div>
             <div class="card">
-                <h5>2️⃣ Upfront Benchmarking</h5>
-                <p>When A/B testing isn’t available for multiple choices, define evaluative criteria that derive from core objectives with specific, actionable, and measurable rubrics.</p>
-            </div>
-            <div class="card">
-                <h5>3️⃣ Opening Black Box</h5>
+                <h5>🎁 Opening Black Box</h5>
                 <p>Provide transparency into AI’s decision-making, rather than simply presenting end-products, allowing users to understand how inputs translate into outputs.</p>
             </div>
         </div>
@@ -852,34 +823,7 @@ links:
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3>Ways Forward</h3>
-            <p>Looking ahead, our future endeavors should take a holistic consideration of various dimensions in design, development, and strategy, to adapt to evolving product demands and market dynamics.</p>
-        </div>
-    </div>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div class="card-list">
-            <div class="card">
-                <h5>1️⃣ Waiting Experience</h5>
-                <p>Implement mechanisms like progressive disclosure or dynamic skeleton, keeping users engaged during processing time, reducing perceived latency.</p>
-            </div>
-            <div class="card">
-                <h5>2️⃣ Ecosystem Connectivity</h5>
-                <p>Integrate with existing captioning workflows and seamlessly merge into the broader post-production ecosystem by enabling export to popular NLEs.</p>
-            </div>
-            <div class="card">
-                <h5>3️⃣ Pricing Structure</h5>
-                <p>Explore new monetization strategies that fit increased computational costs and value delivered, e.g., tiered subscriptions, pay-per-export, and enterprise licensing.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid grid-1-3-1-1">
-        <div></div>
-        <div>
-            <h3>Hindsights</h3>
+            <h3 class="np">Hindsights</h3>
             <p>The company has successfully raised $30M in Series A in August 2024 and $20M in Series B in March 2025, but ultimately chose not to ship the storyboard feature, likely due to a strategic pivot toward monetizable, lower-risk enhancements to its core captioning feature amid the intensifying competition.</p>
         </div>
     </div>

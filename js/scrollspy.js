@@ -2,23 +2,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     const scrollspy = document.querySelector('#scrollspy');
-    
-    // Check if scrollspy exists
+
     if (!scrollspy) {
         return;
     }
 
-    // Create Overview link first
+    // Create Overview link
     const overviewLink = document.createElement('a');
     overviewLink.href = '#overview';
     overviewLink.textContent = 'Overview';
     overviewLink.classList.add('scrollspy-link', 'h2');
     scrollspyLinks.appendChild(overviewLink);
+
+    // Create Design Process link
+    const processLink = document.createElement('a');
+    processLink.href = '#design-process';
+    processLink.textContent = 'Design Process';
+    processLink.classList.add('scrollspy-link', 'h2');
+    scrollspyLinks.appendChild(processLink);
     
-    // Function to apply staggered transitions
+    // Apply staggered transitions
     function applyStaggeredTransitions(isHiding) {
         const links = scrollspy.querySelectorAll('.scrollspy-link');
-        const delayIncrement = 0.05; // 50ms between each link
+        const delayIncrement = 0.05;
         
         links.forEach((link, index) => {
             let delay;
@@ -36,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get all elements with "full-width-bg" class
     const fullWidthBgElements = document.querySelectorAll('.full-width-bg');
     
-    // Function to check if any full-width-bg element is at scrollspy position
+    // Check if any full-width-bg element is at scrollspy position
     function checkScrollspyVisibility() {
         const scrollspyViewportY = 24; // scrollspy is positioned at top: 24px in viewport
         
@@ -64,11 +70,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up scroll listener for full-width-bg elements
     if (fullWidthBgElements.length > 0) {
-        // Check on scroll
         window.addEventListener('scroll', checkScrollspyVisibility);
-        
-        // Check initial state
         checkScrollspyVisibility();
+    }
+    
+    // Function to generate ID based on section-header index and h2 index
+    function generateHeadingId(heading) {
+        // Find all h2 headings
+        const sectionHeader = heading.closest('.full-width-bg');
+        if (sectionHeader) {
+            // Find their index
+            const allSectionHeaders = Array.from(document.querySelectorAll('.full-width-bg')).filter(el => 
+                el.querySelector('h2') && !el.id // Exclude elements that already have IDs like overview
+            );
+            const sectionIndex = allSectionHeaders.indexOf(sectionHeader) + 1;
+            // Find their heading text
+            const h2Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            
+            return `${sectionIndex}-${h2Text}`;
+        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
+            // Find all h3 headings and their index, heading text
+            const h3Index = heading.getAttribute('index');
+            const h3Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            return `${h3Index}-${h3Text}`;
+        } else {
+            // For h2/h3 elements not in section-headers and without index, use their text content
+            const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            return headingText;
+        }
     }
     
     // Get all h2 and h3 elements from main
@@ -86,10 +115,27 @@ document.addEventListener('DOMContentLoaded', function() {
     headings.forEach(heading => {
         const link = document.createElement('a');
         if (!heading.id) {
-            heading.id = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            heading.id = generateHeadingId(heading);
         }
         link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
+        
+        // Check if h2 headings
+        const sectionHeader = heading.closest('.full-width-bg');
+        if (sectionHeader && heading.tagName === 'H2') {
+            // Find their index
+            const allSectionHeaders = Array.from(document.querySelectorAll('.full-width-bg')).filter(el => 
+                el.querySelector('h2') && !el.id // Exclude elements that already have IDs like overview
+            );
+            const sectionIndex = allSectionHeaders.indexOf(sectionHeader) + 1;
+            link.textContent = `${sectionIndex} ${heading.textContent}`;
+        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
+            // For h3 elements with index attribute, display index + text
+            const h3Index = heading.getAttribute('index');
+            link.textContent = `${h3Index} ${heading.textContent}`;
+        } else {
+            link.textContent = heading.textContent;
+        }
+        
         link.classList.add('scrollspy-link');
         
         // Add h3 class for indentation
@@ -101,6 +147,13 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollspyLinks.appendChild(link);
         }
     });
+    
+    // Create Retrospect link
+    const retrospectLink = document.createElement('a');
+    retrospectLink.href = '#retrospect';
+    retrospectLink.textContent = 'Retrospect';
+    retrospectLink.classList.add('scrollspy-link', 'h2');
+    scrollspyLinks.appendChild(retrospectLink);
     
     // Apply initial staggered transitions after creating links
     applyStaggeredTransitions(false);
@@ -134,4 +187,14 @@ document.addEventListener('DOMContentLoaded', function() {
     headings.forEach(heading => {
         observer.observe(heading);
     });
+
+    const retrospectSection = document.getElementById('retrospect');
+    if (retrospectSection) {
+        observer.observe(retrospectSection);
+    }
+
+    const processSection = document.getElementById('design-process');
+    if (processSection) {
+        observer.observe(processSection);
+    }
 }); 

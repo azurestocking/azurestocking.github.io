@@ -728,8 +728,9 @@ img, video {
 }
 
 .scrollspy-link {
-    font-family: var(--font-primary);
+    font-family: var(--font-mono);
     font-size: var(--font-size-xs);
+    text-transform: uppercase;
     line-height: var(--line-height-xs);
     text-decoration: none;
     color: var(--secondary);
@@ -754,7 +755,7 @@ img, video {
 }
 
 .scrollspy-link.h3 {
-    padding-left: 1rem;
+    padding-left: 0;
 }
 
 .scrollspy-link.h3:hover {

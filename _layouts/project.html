@@ -19,7 +19,7 @@ layout: default
     </div>
     <div class="grid grid-1-3-1-1" style="margin-bottom: 64px;">
         <div>
-            <h3 class="np">Category</h5>
+            <h3 class="np">Category</h3>
             <p>
                 {% for category in page.categories %}
                     {{ category }}{% unless forloop.last %}<br>{% endunless %}
@@ -28,16 +28,16 @@ layout: default
         </div>
         <div class="list-container">
             <div>
-                <h3 class="np">Problem</h5>
+                <h3 class="np">Problem</h3>
                 <p>{{ page.problem }}</p>
             </div>
             <div>
-                <h3 class="np">Outcome</h5>
+                <h3 class="np">Outcome</h3>
                 <p>{{ page.outcome }}</p>
             </div>
         </div>
         <div>
-            <h3 class="np">Responsibilities</h5>
+            <h3 class="np">Responsibilities</h3>
             <p>
                 {% for skill in page.skill %}
                     {{ skill }}{% unless forloop.last %}<br>{% endunless %}
@@ -45,7 +45,7 @@ layout: default
             </p>
         </div>
         <div>
-            <h3 class="np">Collaborators</h5>
+            <h3 class="np">Collaborators</h3>
             <p>
                 {% for member in page.team %}
                     {{ member }}{% unless forloop.last %}<br>{% endunless %}
