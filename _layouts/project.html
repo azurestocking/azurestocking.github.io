@@ -7,7 +7,13 @@ layout: default
         <div></div>
         <div>
             <div class="p-xl" style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-secondary);">{{ page.title }}</div>
-            <img src="{{ page.image | relative_url }}" loading="lazy">
+            <div class="image-container" style="padding: 64px;">
+                <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
+                    {% include mockup-macbook.html 
+                        content_image="/images/placeholder.jpg" 
+                        content_type="image" %}
+                </a>
+            </div>
         </div>
     </div>
     <div class="grid grid-1-4-1">

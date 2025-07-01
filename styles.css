@@ -189,10 +189,10 @@ h1 {
 }
 
 h2 {
-    font-size: var(--font-size-s);
-    font-family: var(--font-primary);
-    font-weight: 500;
-    line-height: var(--line-height-s);
+    font-size: var(--font-size-m);
+    font-family: var(--font-secondary);
+    font-style: italic;
+    line-height: var(--line-height-m);
     margin-bottom: 1rem;
     color: var(--primary);
 }
@@ -294,14 +294,13 @@ ul {
     list-style-type: disc;
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
-    margin-bottom: 0.5rem;
 }
 
 li {
     list-style-type: disc;
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
-    padding-left: 0.5rem;
+    margin-left: 1rem;
 }
 
 hr {
@@ -448,6 +447,14 @@ footer * {
 
 .grid-2-4 > *:last-child {
     grid-column: 3 / span 4;
+}
+
+.grid-4-2 > *:first-child {
+    grid-column: 1 / span 4;
+}
+
+.grid-4-2 > *:last-child {
+    grid-column: 5 / span 2;
 }
 
 .grid-3-3 > *:first-child {
@@ -612,10 +619,19 @@ img, video {
     text-transform: uppercase;
 }
 
-.card-list {
+.card-list-col {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.card-list-row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto 64px auto;
 }
 
 .card {

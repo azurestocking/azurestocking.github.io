@@ -42,7 +42,7 @@ links:
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="card-list-col">
             <div class="card">
                 <h5>💵 Limited Resource</h5>
                 <p>The company was an early-stage startup preparing for Series A, operating with a small team and limited budget, and lacking the bandwidth to make a full-time hire for temporary concept testing.</p>
@@ -60,10 +60,10 @@ links:
 </section>
 
 <section>
-    <div class="grid grid-1-4-1">
+    <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <h3 class="np">Process</h3>
+            <h3 class="np">Design Process</h3>
             <p>We adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
         </div>
     </div>
@@ -91,76 +91,84 @@ links:
     <div class="grid grid-6">
         <h4>I. Collaborative Script Composition</h4>
     </div>
-    <div class="grid grid-6">
-        {% include mockup-macbook.html 
-            content_image="/images/opus/F1.mp4" 
-            content_type="video" %}
-    </div>
-    <div class="grid grid-3-3">
-        <div>
-            <h5>Precise Text Enhancement</h5>
-            <p>Users can select and refine specific text segments using predefined functions such as polish, shorten, and regenerate, or apply custom instruction-based prompts, all while ensuring adjacent content remains unaffected.</p>
+    <div class="grid grid-2-4">
+        <div class="list-container">
+            <div>
+                <h5>Text Enhancement</h5>
+                <p>Select and refine specific text segments using predefined functions such as polish, shorten, and regenerate, or apply custom instruction-based prompts.</p>
+            </div>
+            <div>
+                <h5>Screenplay Reformatting</h5>
+                <p>Reformat scripts adhering to industry-standard conventions to structurally distinguish key elements, improving readability and enhancing LLM understanding.</p>
+            </div>
         </div>
         <div>
-            <h5>Easy Screenplay Reformatting</h5>
-            <p>Users can reformat scripts adhering to industry-standard conventions, which structurally distinguishes key elements like action, dialogue, character, and transition, improving readability and enhancing LLM understanding.</p>
+            {% include mockup-macbook.html 
+                content_image="/images/opus/F1.mp4" 
+                content_type="video" %}
         </div>
     </div>
 
     <div class="grid grid-6">
         <h4>II. Flexible Storyboard Management</h4>
     </div>
-    <div class="grid grid-6">
-        {% include mockup-macbook.html 
-            content_image="/images/opus/F2.mp4" 
-            content_type="video" %}
-    </div>
-    <div class="grid grid-3-3">
+    <div class="grid grid-4-2">
         <div>
-            <h5>Adaptive View Modes</h5>
-            <p>Users can switch between varying levels of granularity using three distinct view modes: thumbnail for navigation, editor for detailed refinement, and slideshow for preview, covering the full production lifecycle.</p>
+            {% include mockup-macbook.html 
+                content_image="/images/opus/F2.mp4" 
+                content_type="video" %}
         </div>
-        <div>
-            <h5>Targeted Shot Focus</h5>
-            <p>Users can apply key element filters to isolate shots by character or scene, enabling focused editing, reduced visual clutter, and improved manageability within complex or long-form scripts.</p>
+        <div class="list-container">
+            <div>
+                <h5>View Mode</h5>
+                <p>Switch between varying levels of granularity using three distinct view modes: thumbnail for navigation, editor for detailed refinement, and slideshow for preview.</p>
+            </div>
+            <div>
+                <h5>Shot Focus</h5>
+                <p>Apply key element filters to isolate shots by character or scene, improving manageability within complex or long-form scripts.</p>
+            </div>
         </div>
     </div>
 
     <div class="grid grid-6">
         <h4>III. Comprehensive Shot Tweaking</h4>
     </div>
-    <div class="grid grid-6">
-        {% include mockup-macbook.html 
-            content_image="/images/opus/F3.mp4" 
-            content_type="video" %}
-    </div>
-    <div class="grid grid-3-3">
-        <div>
-            <h5>Complete Production Control</h5>
-            <p>Users can fine-tune keyframes using a full set of tools, such as reprompting, uploading, generative fill, and camera movement setting, and edit voiceover and dialogue transcripts.</p>
+    <div class="grid grid-2-4">
+        <div class="list-container">
+            <div>
+                <h5>Full Control</h5>
+                <p>Edit each shot’s voiceover and dialogue, and fine-tune keyframes with tools like reprompting, uploads, generative fill, and camera movement.</p>
+            </div>
+            <div>
+                <h5>Prompt Builder</h5>
+                <p>Transform text-based prompting into a GUI-driven experience with structured, atomic controls to achieve desired results without prompt engineering expertise.</p>
+            </div>
         </div>
         <div>
-            <h5>Accessible Prompt Builder</h5>
-            <p>Users can transform complex, text-based prompting into an intuitive, GUI-driven experience with structured, atomic controls to achieve desired results without prompt engineering expertise, lowering the cognitive burden.</p>
+            {% include mockup-macbook.html 
+                content_image="/images/opus/F3.mp4" 
+                content_type="video" %}
         </div>
     </div>
 
     <div class="grid grid-6">
         <h4>IV. Centralized Asset Management & Customization</h4>
     </div>
-    <div class="grid grid-6">
-        {% include mockup-macbook.html 
-            content_image="/images/opus/F4.mp4" 
-            content_type="video" %}
-    </div>
-    <div class="grid grid-3-3">
+    <div class="grid grid-4-2">
         <div>
-            <h5>Automatic Entity Extraction</h5>
-            <p>Users no longer need to manually identify reusable characters and scenes, as the model automatically extracts global assets from natural language input using advanced semantic parsing.</p>
+            {% include mockup-macbook.html 
+                content_image="/images/opus/F4.mp4" 
+                content_type="video" %}
         </div>
-        <div>
-            <h5>Centralized Asset Manager</h5>
-            <p>Users can update multiple shots in batch by customizing shared global assets through a centralized system, accelerating revisions and ensuring visual consistency across the entire project.</p>
+        <div class="list-container">
+            <div>
+                <h5>Entity Extraction</h5>
+                <p>Automatically extract reusable characters and scenes from natural language with advanced semantic parsing. No manual tagging needed.</p>
+            </div>
+            <div>
+                <h5>Asset Manager</h5>
+                <p>Update multiple shots in batch by customizing shared global assets through a centralized system, accelerating revisions and ensuring visual consistency across the entire project.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -204,7 +212,7 @@ links:
         <div></div>
         <div>
             <h3 index="1.3">Wireframe</h3>
-            <p>Subsequently, we explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming two different directions.</p>
+            <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming two different directions.</p>
         </div>
     </div>
     <div class="grid grid-1-2-2-1">
@@ -231,7 +239,7 @@ links:
         <div></div>
         <div>
             <h3 index="1.4">Concept Testing</h3>
-            <p>Although the node-based interface initially intrigued the team, particularly designers and engineers, I facilitated an asynchronous workshop to gather insights cross-functionally and evaluate its viability.</p>
+            <p>Although the node-based option seems to be intriguing at first, especially for designers and engineers, I facilitated a stakeholder interview cross-functionally to evaluate its viability. We walked through the annotated sketches and discussed each concept’s strengths, limitations, and overall strategic fit.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
@@ -249,12 +257,18 @@ links:
         <div></div>
         <div>
             <h3 index="2.1">Data Analysis</h3>
-            <p>Implementing such an architecture would require substantial engineering refactoring and invited critical concerns across technical, usability, and strategic dimensions. We deprioritized this option and redirected our focus toward the storyboard alternative.</p>
+            <p>I grouped the feedback through into <b>thematic categories</b>. The affinity mapping demonstrates that implementing such an architecture would require substantial engineering refactoring and invited critical concerns across technical, usability, and strategic dimensions.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="image-container">
+            <img src="{{ '/images/opus/data-analysis-1.png' | relative_url }}" loading="lazy">
+        </div>
+    </div>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div class="card-list-col">
             <div class="card">
                 <h5>🤹 Technical Complexity</h5>
                 <p>Requires each cell to be developed standalone yet communicative, and the magnitude of potential cell combinations exponentially poses challenges in scalability, agility, and version control.</p>
@@ -267,6 +281,12 @@ links:
                 <h5>📉 Managerial Misalignment</h5>
                 <p>Demands significant resources in labor, capital, and time for development and operation, potentially resulting in delays, shifts, or failures in achieving long-term strategic goals.</p>
             </div>
+        </div>
+    </div>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <p>Considering those constraints and the questionable input-output ratio, we deprioritized this option and redirected our focus toward the storyboard alternative.</p>
         </div>
     </div>
 </section>
@@ -319,14 +339,20 @@ links:
         <div></div>
         <div>
             <h3 index="2.3">Usability Testing</h3>
-            <p>Since I hypothesized multiple user segments, I recruited a slightly larger sample of 8 participants, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
+            <p>Hypothesizing multiple user segments, I recruited a slightly larger sample of 8 participants, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
             <p>I tested this prototype to identity the main usability and functionality issues, along with a screener survey to assess the <b>usage intensity</b>, i.e., how each participant might use the proposed feature in their routine.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
         <div class="image-container">
-            <img src="{{ '/images/opus/usability-testing-1-1.png' | relative_url }}" loading="lazy">
+            <img src="{{ '/images/opus/usability-testing-2.png' | relative_url }}" loading="lazy">
+        </div>
+    </div>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <p>Upon closer inspection, even feedback targeting the same areas for improvement often conflicted on how to proceed. Which direction should we take? Or, to ask a more fundamental question: why are the views so divergent?</p>
         </div>
     </div>
 </section>
@@ -338,13 +364,24 @@ links:
         <div></div>
         <div>
             <h3 index="3.1">Data Analysis</h3>
-            <p>Looking closely, I found that even feedback within the same group often expressed conflicting views on what needed improvement.</p>
             <p>To make sense of those seemingly irreconcilable contradictions, I first examined the underlying intent behind each request, and then reshuffled them by <b>high-level goals</b>—the broader needs encompassing possibly divergent user behaviors and expectations.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="image-container">
+            <img src="{{ '/images/opus/data-analysis-3-1.png' | relative_url }}" loading="lazy">
+        </div>
+    </div>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <p>The affinity mapping indicates that while user expectations diverge, they fall under the same high-level goals, implying that the divergence stems from how users conceptualize these goals differently.</p>
+        </div>
+    </div>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div class="card-list-col">
             <div class="card">
                 <h5>⌛️ Efficiency</h5>
                 <p>Reduce time, effort, financial cost, and cognitive friction by providing readable information, an intuitive interface, and a streamlined, user-friendly workflow.</p>
@@ -382,25 +419,25 @@ links:
         <div></div>
         <div>
             <h3 index="3.3">Data Analysis</h3>
-            <p>The observed conflicting feedback unveiled divergent user expectations and behaviors, rooted in how users conceptualized the shared high-level goals differently and hence their distinct positions on value trade-offs. This indicates multiple user segments, which should be logically inferable by their clustering on these trade-off spectrums.</p>
+            <p>When users conceptualize high-level goals differently, they inevitably adopt distinct positions on the value trade-offs. Such divergence logically points to multiple user segments, which should be evident from their clustering along these trade-off spectrums.</p>
             <p>Therefore, I mapped all those stickers onto two axes that represent core tensions in users’ decision-making: <b>Cost vs. Perceived Quality</b> and <b>User Agency vs. Automation</b>.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
         <div class="image-container">
-            <img src="{{ '/images/opus/usability-testing-1-2.png' | relative_url }}" loading="lazy">
+            <img src="{{ '/images/opus/data-analysis-3-2.png' | relative_url }}" loading="lazy">
         </div>
     </div>
     <div class="grid grid-1-3-1-1">
         <div></div>
         <div>
-            <p>All stickers are distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating the following insights:</p>
+            <p>Stickers were distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating the following insights:</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="card-list-col">
             <div class="card">
                 <h5>1️⃣ We Don’t Trust AI</h5>
                 <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
@@ -577,13 +614,13 @@ links:
         <div></div>
         <div>
             <h3 index="3.6">Usability Testing</h3>
-            <p>I tested the updated prototype and initially categorized feedback by improvement areas. I then reclassified it using the previously identified high-level goals. However, several items didn’t fit any known category.</p>
+            <p>I tested the updated prototype with another 5 participants, and then categorized feedback by areas for improvement.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
         <div class="image-container">
-            <img src="{{ '/images/opus/usability-testing-2.png' | relative_url }}" loading="lazy">
+            <img src="{{ '/images/opus/usability-testing-3.png' | relative_url }}" loading="lazy">
         </div>
     </div>
 </section>
@@ -595,12 +632,24 @@ links:
         <div></div>
         <div>
             <h3 index="4.1">Data Analysis</h3>
-            <p>The uncategorized feedback reveals an unstated high-level goal in the previous round, i.e., <b>transparency</b>—a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</p>
+            <p>When I reclassified the requests using the previously identified high-level goals, however, several items didn’t fit any known category, surfacing an unstated goal.</p>
         </div>
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="image-container">
+            <img src="{{ '/images/opus/data-analysis-4.png' | relative_url }}" loading="lazy">
+        </div>
+    </div>
+    <div class="grid grid-1-3-1-1">
+        <div></div>
+        <div>
+            <p>By analyzing the uncategorized feedback, it revealed an new in the previous round, i.e., <b>transparency</b>—a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</p>
+        </div>
+    </div>
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div class="card-list-col">
             <div class="card">
                 <h5>1️⃣ Processing Logic Exposure</h5>
                 <p>Demystify how inputs and parameters are interpreted, e.g., establish a visually clear cause-effect relationship between script segments and corresponding generated shots.</p>
@@ -610,7 +659,7 @@ links:
                 <p>Offer progressive disclosure of information to guide user interactions, e.g., simplify complex, effort-intensive prompting by disassembling it into smaller, manageable pieces via structured input fields.</p>
             </div>
             <div class="card">
-                <h5>3️⃣ Human-in-the-Loop Moment</h5>
+                <h5>3️⃣ Human-in-the-Loop</h5>
                 <p>Integrate deliberate checkpoints where users can validate, revise, or override AI outputs, e.g., include undo/redo capabilities and history log to revert states or track changes.</p>
             </div>
         </div>
@@ -623,7 +672,7 @@ links:
         <div>
             <h3 index="4.2">Prototype</h3>
             <div class="p-l">
-                We included transparency as a new evaluation lens while continuing to improve core usability through fine-grained refinements, including clarified interface hierarchy and interaction logic, flexible preview controls, and more informative version tracking.
+                We included transparency as a new evaluation lens while continuing to improve core usability through fine-grained refinements, including domain-specific text enhancement, clarified interface hierarchy and interaction logic, more and informative iteration support.
             </div>
         </div>
     </div>
@@ -747,7 +796,7 @@ links:
         </div>
     </div>
     <div class="grid grid-6">
-        <h4>III. Preview Mode</h4>
+        <h4>III. Preview</h4>
     </div>
     <div class="grid grid-3-3">
         <div class="list-container">
@@ -806,7 +855,7 @@ links:
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="card-list-col">
             <div class="card">
                 <h5>🎱 Billiard Method</h5>
                 <p>When direct peer support is absent, maintain momentum by engaging stand-by colleagues with something tangible in hands for constructive feedback.</p>
@@ -829,7 +878,7 @@ links:
     </div>
     <div class="grid grid-1-4-1">
         <div></div>
-        <div class="card-list">
+        <div class="card-list-col">
             <div class="card">
                 <h5>🚀 Intensifying Competition</h5>
                 <p>With research-driven startups like Sand.ai raising technical benchmarks and niche players like Katalist.ai gaining early traction, the increasingly complex landscape made it more prudent to focus on strengthening current revenue drivers before expanding into new verticals with fragmented use cases.</p>
