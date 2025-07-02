@@ -22,9 +22,15 @@ layout: default
         </div>
         <div>
             <div class="p-l">{{ page.desc }}</div>
-            <div style="margin-top: 64px;">
-                <a class="button" href="#highlight">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            </div> 
+            <div class="button-group-vertical" style="margin-top: 64px;">
+                <a class="button ghost navlink" href="#highlight">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% if page.prototype %}
+                    <a class="button ghost navlink" href="{{ page.prototype }}">Prototype<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+                {% if page.paper %}
+                    <a class="button ghost navlink" href="{{ page.paper }}">Paper<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+            </div>
         </div>
         <div class="list-container">
             <div>

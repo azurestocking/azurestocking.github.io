@@ -349,6 +349,11 @@ footer * {
     position: relative;
 }
 
+.navlink {
+    font-family: var(--font-mono); 
+    text-transform: uppercase;
+}
+
 
 
 /* LAYOUT */
@@ -650,13 +655,18 @@ img, video {
     gap: 24px;
 }
 
+.button-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 .button {
-    height: 36px;
     float: left;
     font-size: var(--font-size-s);
     text-decoration: none;
     border: 1.5px solid var(--primary);
-    padding: 12px;
+    padding: 8px 16px;
     color: var(--primary);
     position: relative;
     transform: translate(0) translateY(0);
