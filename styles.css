@@ -198,7 +198,7 @@ h2 {
 }
 
 h3 {
-    font-size: var(--font-size-s);
+    font-size: 20px;
     font-family: var(--font-primary);
     font-weight: 500;
     line-height: var(--line-height-s);
@@ -249,6 +249,15 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-style: italic;
     line-height: var(--line-height-xl);
     color: var(--primary);
+}
+
+.number {
+    font-size: var(--font-size-xl);
+    font-family: var(--font-secondary);
+    font-style: italic;
+    line-height: var(--line-height-xl);
+    color: var(--primary);
+    margin-bottom: 24px;
 }
 
 a {
@@ -514,9 +523,6 @@ footer * {
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
-    max-width: 1440px;
-    margin: 0 auto 64px auto;
-    padding: 0 24px;
 }
 
 .flex-row > * {
@@ -623,15 +629,6 @@ img, video {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.card-list-row {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    flex-wrap: wrap;
-    max-width: 1440px;
-    margin: 0 auto 64px auto;
 }
 
 .card {
