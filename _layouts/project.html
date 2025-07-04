@@ -23,29 +23,37 @@ layout: default
         <div>
             <div class="p-l">{{ page.desc }}</div>
             <div class="button-group-vertical" style="margin-top: 64px;">
-                <a class="button ghost navlink" href="#highlight">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% if page.highlight %}
+                    <a class="button ghost navlink" href="{{ page.highlight }}">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
                 {% if page.prototype %}
                     <a class="button ghost navlink" href="{{ page.prototype }}">Prototype<i class="fa-solid fa-arrow-right rotate-45"></i></a>
                 {% endif %}
                 {% if page.paper %}
                     <a class="button ghost navlink" href="{{ page.paper }}">Paper<i class="fa-solid fa-arrow-right rotate-45"></i></a>
                 {% endif %}
+                {% if page.repository %}
+                    <a class="button ghost navlink" href="{{ page.repository }}">Repository<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+                {% if page.website %}
+                    <a class="button ghost navlink" href="{{ page.website }}">Website<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
             </div>
         </div>
         <div class="list-container">
             <div>
-                <h5 class="np">Category</h5>
+                <h5 class="np">Roles</h5>
                 <p>
-                    {% for category in page.categories %}
-                        {{ category }}{% unless forloop.last %}<br>{% endunless %}
+                    {% for role in page.roles %}
+                        {{ role }}{% unless forloop.last %}<br>{% endunless %}
                     {% endfor %}
                 </p>
             </div>
             <div>
                 <h5 class="np">Responsibilities</h5>
                 <p>
-                    {% for skill in page.skill %}
-                        {{ skill }}{% unless forloop.last %}<br>{% endunless %}
+                    {% for responsibility in page.responsibilities %}
+                        {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
                     {% endfor %}
                 </p>
             </div>

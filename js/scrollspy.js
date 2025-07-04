@@ -76,25 +76,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to generate ID based on section-header index and h2 index
     function generateHeadingId(heading) {
-        // Find all h2 headings
-        const sectionHeader = heading.closest('.full-width-bg');
-        if (sectionHeader) {
-            // Find their index
-            const allSectionHeaders = Array.from(document.querySelectorAll('.full-width-bg')).filter(el => 
-                el.querySelector('h2') && !el.id // Exclude elements that already have IDs like overview
-            );
-            const sectionIndex = allSectionHeaders.indexOf(sectionHeader) + 1;
-            // Find their heading text
+        // Check if h2 has index attribute (from section-header)
+        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
+            const h2Index = heading.getAttribute('index');
             const h2Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            
-            return `${sectionIndex}-${h2Text}`;
+            return `${h2Index}-${h2Text}`;
         } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
             // Find all h3 headings and their index, heading text
             const h3Index = heading.getAttribute('index');
             const h3Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
             return `${h3Index}-${h3Text}`;
         } else {
-            // For h2/h3 elements not in section-headers and without index, use their text content
+            // For h2/h3 elements without index, use their text content
             const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
             return headingText;
         }
@@ -120,14 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = '#' + heading.id;
         
         // Check if h2 headings
-        const sectionHeader = heading.closest('.full-width-bg');
-        if (sectionHeader && heading.tagName === 'H2') {
-            // Find their index
-            const allSectionHeaders = Array.from(document.querySelectorAll('.full-width-bg')).filter(el => 
-                el.querySelector('h2') && !el.id // Exclude elements that already have IDs like overview
-            );
-            const sectionIndex = allSectionHeaders.indexOf(sectionHeader) + 1;
-            link.textContent = `${sectionIndex} ${heading.textContent}`;
+        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
+            // For h2 elements with index attribute (from section-header), display index + text
+            const h2Index = heading.getAttribute('index');
+            link.textContent = `${h2Index} ${heading.textContent}`;
         } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
             // For h3 elements with index attribute, display index + text
             const h3Index = heading.getAttribute('index');
