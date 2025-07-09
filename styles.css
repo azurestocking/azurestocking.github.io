@@ -13,11 +13,11 @@
     --font-size-l: 2rem;
     --font-size-xl: 3rem;
     font-size: 18px;
-    --line-height-xs: 1.35em;
-    --line-height-s: 1.35em;
-    --line-height-m: 1.35em;
-    --line-height-l: 1.15em;
-    --line-height-xl: 1.10em;
+    --line-height-xs: 1.3em;
+    --line-height-s: 1.3em;
+    --line-height-m: 1.3em;
+    --line-height-l: 1.2em;
+    --line-height-xl: 1.1em;
     --font-secondary: 'Tiempos', 'Times New Roman', serif; 
     --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
@@ -253,6 +253,14 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-style: italic;
     line-height: var(--line-height-xl);
     color: var(--primary);
+}
+
+.p-xxl {
+    font-family: var(--primary); 
+    letter-spacing: -0.02em; 
+    font-style: normal; 
+    font-size: 64px; 
+    line-height: 100%;
 }
 
 .number {

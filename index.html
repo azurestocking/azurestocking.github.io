@@ -7,30 +7,10 @@ title: Index
     <div class="grid grid-1-5">
         <div></div>
         <div style="margin-top: 25vh;">
-            <div class="p-xl">
-                Your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
+            <div class="p-xxl">
+                I’m your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
             </div>
         </div>
-    </div>
-    <div class="grid grid-1-2-2-1">
-        <div></div>
-        <div>
-            <h5>Currently</h5>
-            <p>
-                Conducting research with <span style="font-family: var(--font-secondary); font-style: italic;">Microsoft Asia</span>.<br>
-                Collecting Korok seeds in <span style="font-family: var(--font-secondary); font-style: italic;">Legend of Zelda II</span>.<br>
-                Learning sailing on <span style="font-family: var(--font-secondary); font-style: italic;">Charles River</span>.
-            </p>
-        </div>
-        <div>
-            <h5>Previously</h5>
-            <p>
-                Designed at <span style="font-family: var(--font-secondary); font-style: italic;">Berkman Klein Center for Internet & Society</span>.<br>
-                Consulted at <span style="font-family: var(--font-secondary); font-style: italic;">Savills</span> and <span style="font-family: var(--font-secondary); font-style: italic;">Roland Berger</span>.<br>
-                Studied at <span style="font-family: var(--font-secondary); font-style: italic;">Harvard</span> and <span style="font-family: var(--font-secondary); font-style: italic;">Tsinghua</span>.
-            </p>
-        </div>
-        <div></div>
     </div>
 </section>
 
@@ -51,7 +31,7 @@ title: Index
         </div>
         <div class="grid grid-1-5">
             <div></div>
-            <div class="image-container" style="padding: 64px;">
+            <div class="image-container" style="padding: 64px; background-color: {{ project.color }};">
                 <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
                     {% include mockup-macbook.html 
                         content_image="/images/placeholder.jpg" 
@@ -65,37 +45,3 @@ title: Index
 <section id="other">
     <div class="grid grid-6"><hr></div>
 </section>
-
-<script>
-    document.addEventListener("scroll", function() {
-        const projects = [
-            {% for project in site.projects %}
-            {
-                id: "{{ project.slug }}",
-                color: "{{ project.color }}"
-            }{% unless forloop.last %},{% endunless %}
-            {% endfor %}
-        ];
-        
-        let currentColor = "var(--background)";
-
-        // Check if we're at the top
-        const firstProject = projects[0];
-        if (firstProject) {
-            const firstElement = document.getElementById(firstProject.id);
-            if (firstElement && firstElement.getBoundingClientRect().top > 240) {
-                currentColor = "var(--background)";
-            }
-        }
-
-        // Check each project section
-        for (const section of projects) {
-            const element = document.getElementById(section.id);
-            if (element && element.getBoundingClientRect().top <= 240) {
-                currentColor = section.color;
-            }
-        }
-
-        document.documentElement.style.backgroundColor = currentColor;
-    });
-</script>
