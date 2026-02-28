@@ -12,7 +12,7 @@
     --font-size-m: 1.5rem;
     --font-size-l: 2rem;
     --font-size-xl: 3rem;
-    font-size: 18px;
+    font-size: 16px;
     --line-height-xs: 1.3em;
     --line-height-s: 1.3em;
     --line-height-m: 1.3em;
@@ -202,7 +202,7 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: var(--font-size-s);
     font-family: var(--font-primary);
     font-weight: 500;
     line-height: var(--line-height-s);
