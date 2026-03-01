@@ -3,11 +3,11 @@ layout: default
 ---
 
 <section id="overview" class="full-width-bg" style="background-color: {{ page.color }};">
-    <div class="grid grid-1-5">
+    <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <div class="p-xl" style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-secondary);">{{ page.title }}</div>
-            <div class="image-container" style="padding: 64px;">
+            <div class="p-xl" style="margin-bottom: 64px; margin-top: 25vh;">{{ page.title }}</div>
+            <div class="image-container" style="padding: 64px; background-color: white;">
                 <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
                     {% include mockup-macbook.html 
                         content_image="/images/placeholder.jpg" 
@@ -15,11 +15,42 @@ layout: default
                 </a>
             </div>
         </div>
+        <div></div>
     </div>
+    <!--
     <div class="grid grid-1-4-1">
-        <div>
-            <div class="p-l">{{page.timeline }}</div>
+        <div></div>
+        <div class="flex-row">
+            <div>
+                <h5>Roles</h5>
+                <p>
+                    {% for role in page.roles %}
+                        {{ role }}{% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
+            <div>
+                <h5>Responsibilities</h5>
+                <p>
+                    {% for responsibility in page.responsibilities %}
+                        {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
+            <div>
+                <h5>Collaborators</h5>
+                <p>
+                    {% for member in page.team %}
+                        {{ member }}{% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
         </div>
+        <div></div>
+    </div>
+    -->
+    <div class="grid grid-1-4-1">
+        <div></div>
         <div>
             <div class="p-l">{{ page.desc }}</div>
             <div class="button-group-vertical" style="margin-top: 64px;">
@@ -40,41 +71,18 @@ layout: default
                 {% endif %}
             </div>
         </div>
-        <div class="list-container">
-            <div>
-                <h5 class="np">Roles</h5>
-                <p>
-                    {% for role in page.roles %}
-                        {{ role }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </p>
-            </div>
-            <div>
-                <h5 class="np">Responsibilities</h5>
-                <p>
-                    {% for responsibility in page.responsibilities %}
-                        {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </p>
-            </div>
-            <div>
-                <h5 class="np">Collaborators</h5>
-                <p>
-                    {% for member in page.team %}
-                        {{ member }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </p>
-            </div>
-        </div>
+        <div></div>
     </div>
 </section> 
 
-<section id="scrollspy">
-    <div class="grid grid-1-5">
+<section id="scrollspy" class="scrollspy-hidden">
+    <div class="grid grid-1-4-1" style="align-items: center;">
+        <div></div>
         <div class="scrollspy">
             <div class="scrollspy-content">
-                <div class="scrollspy-links" id="scrollspy-links">
+                <div class="scrollspy-links collapsed" id="scrollspy-links">
                 </div>
+                <button type="button" class="scrollspy-toggle" id="scrollspy-toggle" aria-label="Show table of contents"><i class="fa-solid fa-chevron-down"></i></button>
             </div>
         </div>
         <div></div>

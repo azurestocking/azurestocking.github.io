@@ -2,10 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     const scrollspy = document.querySelector('#scrollspy');
+    const scrollspyToggle = document.getElementById('scrollspy-toggle');
 
     if (!scrollspy) {
         return;
     }
+
+    // Move scrollspy to body so its z-index can sit above the header (scrollspy is otherwise inside main, which has z-index 1)
+    document.body.appendChild(scrollspy);
 
     // Create Overview link
     const overviewLink = document.createElement('a');
@@ -14,87 +18,19 @@ document.addEventListener('DOMContentLoaded', function() {
     overviewLink.classList.add('scrollspy-link', 'h2');
     scrollspyLinks.appendChild(overviewLink);
 
-    // Create Design Process link
-    const processLink = document.createElement('a');
-    processLink.href = '#design-process';
-    processLink.textContent = 'Design Process';
-    processLink.classList.add('scrollspy-link', 'h2');
-    scrollspyLinks.appendChild(processLink);
-    
-    // Apply staggered transitions
-    function applyStaggeredTransitions(isHiding) {
-        const links = scrollspy.querySelectorAll('.scrollspy-link');
-        const delayIncrement = 0.05;
-        
-        links.forEach((link, index) => {
-            let delay;
-            if (isHiding) {
-                // Disappear from bottom to top
-                delay = (links.length - 1 - index) * delayIncrement;
-            } else {
-                // Appear from top to bottom
-                delay = index * delayIncrement;
-            }
-            link.style.transitionDelay = `${delay}s`;
-        });
-    }
-    
-    // Get all elements with "full-width-bg" class
-    const fullWidthBgElements = document.querySelectorAll('.full-width-bg');
-    
-    // Check if any full-width-bg element is at scrollspy position
-    function checkScrollspyVisibility() {
-        const scrollspyViewportY = 24; // scrollspy is positioned at top: 24px in viewport
-        
-        // Get the scrollspy element's height to calculate its bottom position
-        const scrollspyHeight = scrollspy.offsetHeight;
-        const scrollspyBottomY = scrollspyViewportY + scrollspyHeight;
-        
-        const hasFullWidthBgIntersection = Array.from(fullWidthBgElements).some(element => {
-            const rect = element.getBoundingClientRect();
-            
-            // Check if there's any intersection between the scrollspy and the full-width-bg element
-            // scrollspy: from scrollspyViewportY to scrollspyBottomY
-            // element: from rect.top to rect.bottom
-            return !(rect.bottom < scrollspyViewportY || rect.top > scrollspyBottomY);
-        });
-        
-        if (hasFullWidthBgIntersection) {
-            applyStaggeredTransitions(true); // Apply disappearing delays
-            scrollspy.classList.add('scrollspy-hidden');
-        } else {
-            applyStaggeredTransitions(false); // Apply appearing delays
-            scrollspy.classList.remove('scrollspy-hidden');
-        }
-    }
-    
-    // Set up scroll listener for full-width-bg elements
-    if (fullWidthBgElements.length > 0) {
-        window.addEventListener('scroll', checkScrollspyVisibility);
-        checkScrollspyVisibility();
-    }
-    
-    // Function to generate ID based on section-header index and h2 index
+    // Function to generate ID for h2
     function generateHeadingId(heading) {
-        // Check if h2 has index attribute (from section-header)
         if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
             const h2Index = heading.getAttribute('index');
             const h2Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
             return `${h2Index}-${h2Text}`;
-        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
-            // Find all h3 headings and their index, heading text
-            const h3Index = heading.getAttribute('index');
-            const h3Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            return `${h3Index}-${h3Text}`;
-        } else {
-            // For h2/h3 elements without index, use their text content
-            const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            return headingText;
         }
+        const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+        return headingText;
     }
-    
-    // Get all h2 and h3 elements from main
-    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
+
+    // Get only h2 elements from main (no h3)
+    const headings = Array.from(main.querySelectorAll('h2')).filter(heading => {
         return !heading.classList.contains('np');
     });
 
@@ -103,87 +39,134 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollspy.classList.add('scrollspy-hidden');
         return;
     }
-    
-    // Create TOC for other headings
+
+    // Create TOC for h2 headings only
     headings.forEach(heading => {
         const link = document.createElement('a');
         if (!heading.id) {
             heading.id = generateHeadingId(heading);
         }
         link.href = '#' + heading.id;
-        
-        // Check if h2 headings
-        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
-            // For h2 elements with index attribute (from section-header), display index + text
-            const h2Index = heading.getAttribute('index');
-            link.textContent = `${h2Index} ${heading.textContent}`;
-        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
-            // For h3 elements with index attribute, display index + text
-            const h3Index = heading.getAttribute('index');
-            link.textContent = `${h3Index} ${heading.textContent}`;
-        } else {
-            link.textContent = heading.textContent;
-        }
-        
-        link.classList.add('scrollspy-link');
-        
-        // Add h3 class for indentation
-        if (heading.tagName === 'H3') {
-            link.classList.add('h3');
-            scrollspyLinks.appendChild(link);
-        } else if (heading.tagName === 'H2') {
-            link.classList.add('h2');
-            scrollspyLinks.appendChild(link);
-        }
+        link.textContent = heading.textContent;
+        link.classList.add('scrollspy-link', 'h2');
+        scrollspyLinks.appendChild(link);
     });
-    
+
     // Create Retrospect link
     const retrospectLink = document.createElement('a');
     retrospectLink.href = '#retrospect';
     retrospectLink.textContent = 'Retrospect';
     retrospectLink.classList.add('scrollspy-link', 'h2');
     scrollspyLinks.appendChild(retrospectLink);
-    
-    // Apply initial staggered transitions after creating links
-    applyStaggeredTransitions(false);
-    
+
+    // Show scrollspy only when overview section is out of viewport
+    const overviewSection = document.getElementById('overview');
+    const sectionIds = ['overview'].concat(headings.map(function(h) { return h.id || ''; }).filter(Boolean), ['retrospect']);
+
+    function setActiveLinkFromScrollPosition() {
+        const viewportMid = window.scrollY + window.innerHeight / 2;
+        let bestId = null;
+        let bestTop = -Infinity;
+        sectionIds.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const rect = el.getBoundingClientRect();
+            const top = rect.top + window.scrollY;
+            const bottom = top + rect.height;
+            if (top <= viewportMid && bottom >= viewportMid) {
+                if (top > bestTop) {
+                    bestTop = top;
+                    bestId = id;
+                }
+            } else if (bottom < viewportMid && bottom > bestTop) {
+                bestTop = bottom;
+                bestId = id;
+            }
+        });
+        if (bestId) {
+            const link = document.querySelector('.scrollspy-link[href="#' + bestId + '"]');
+            if (link) {
+                document.querySelectorAll('.scrollspy-link').forEach(function(l) { l.classList.remove('active'); });
+                link.classList.add('active');
+            }
+        }
+    }
+
+    function updateScrollspyVisibility() {
+        if (!overviewSection) {
+            scrollspy.classList.remove('scrollspy-hidden');
+            return;
+        }
+        const rect = overviewSection.getBoundingClientRect();
+        const halfViewport = window.innerHeight / 2;
+        if (rect.bottom <= -halfViewport) {
+            setActiveLinkFromScrollPosition();
+            var hasActive = scrollspyLinks.querySelector('.scrollspy-link.active');
+            if (hasActive) {
+                scrollspy.classList.remove('scrollspy-hidden');
+            } else {
+                scrollspy.classList.add('scrollspy-hidden');
+            }
+        } else {
+            scrollspy.classList.add('scrollspy-hidden');
+        }
+    }
+
+    function collapseScrollspyIfExpanded() {
+        if (scrollspyLinks.classList.contains('collapsed')) return;
+        scrollspyLinks.classList.add('collapsed');
+        if (scrollspyToggle) {
+            const icon = scrollspyToggle.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-chevron-down');
+                icon.classList.remove('fa-chevron-up');
+            }
+            scrollspyToggle.setAttribute('aria-label', 'Show table of contents');
+        }
+    }
+    window.addEventListener('scroll', function() {
+        updateScrollspyVisibility();
+        collapseScrollspyIfExpanded();
+    });
+    window.addEventListener('resize', updateScrollspyVisibility);
+    updateScrollspyVisibility();
+
+    // Expand/collapse toggle: default collapsed
+    scrollspyLinks.classList.add('collapsed');
+    if (scrollspyToggle) {
+        scrollspyToggle.addEventListener('click', function() {
+            scrollspyLinks.classList.toggle('collapsed');
+            const icon = scrollspyToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down', scrollspyLinks.classList.contains('collapsed'));
+                icon.classList.toggle('fa-chevron-up', !scrollspyLinks.classList.contains('collapsed'));
+            }
+            scrollspyToggle.setAttribute('aria-label', scrollspyLinks.classList.contains('collapsed') ? 'Show table of contents' : 'Hide table of contents');
+        });
+    }
+
     // Update active state on scroll
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.5
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
             const link = document.querySelector(`.scrollspy-link[href="#${id}"]`);
-            
-            if (entry.isIntersecting) {
-                document.querySelectorAll('.scrollspy-link').forEach(link => {
-                    link.classList.remove('active');
-                });
+
+            if (entry.isIntersecting && link) {
+                document.querySelectorAll('.scrollspy-link').forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
             }
         });
     }, observerOptions);
-    
-    // Observe all headings and the overview section
-    const overviewSection = document.getElementById('overview');
-    if (overviewSection) {
-        observer.observe(overviewSection);
-    }
-    headings.forEach(heading => {
-        observer.observe(heading);
-    });
 
+    // Observe overview, retrospect and h2 sections only
+    if (overviewSection) observer.observe(overviewSection);
+    headings.forEach(heading => observer.observe(heading));
     const retrospectSection = document.getElementById('retrospect');
-    if (retrospectSection) {
-        observer.observe(retrospectSection);
-    }
-
-    const processSection = document.getElementById('design-process');
-    if (processSection) {
-        observer.observe(processSection);
-    }
-}); 
+    if (retrospectSection) observer.observe(retrospectSection);
+});

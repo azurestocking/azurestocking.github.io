@@ -9,16 +9,16 @@
     --background: #FFFFFF;
     --font-size-xs: 0.8rem;
     --font-size-s: 1rem;
-    --font-size-m: 1.5rem;
+    --font-size-m: 1.75rem;
     --font-size-l: 2rem;
-    --font-size-xl: 3rem;
+    --font-size-xl: 3.5rem;
     font-size: 16px;
-    --line-height-xs: 1.3em;
-    --line-height-s: 1.3em;
-    --line-height-m: 1.3em;
-    --line-height-l: 1.2em;
-    --line-height-xl: 1.1em;
-    --font-secondary: 'Tiempos', 'Times New Roman', serif; 
+    --line-height-xs: 1.5em;
+    --line-height-s: 1.5em;
+    --line-height-m: 1.5em;
+    --line-height-l: 1.3em;
+    --line-height-xl: 1.2em;
+    --font-secondary: 'Signifier', 'EB Garamond', serif; 
     --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
 }
@@ -186,7 +186,6 @@ body {
 h1 {
     font-size: var(--font-size-l);
     font-family: var(--font-secondary);
-    font-style: italic;
     line-height: var(--line-height-l);
     margin-bottom: 1rem;
     color: var(--primary);
@@ -195,7 +194,6 @@ h1 {
 h2 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
-    font-style: italic;
     line-height: var(--line-height-m);
     margin-bottom: 1rem;
     color: var(--primary);
@@ -203,8 +201,9 @@ h2 {
 
 h3 {
     font-size: var(--font-size-s);
-    font-family: var(--font-primary);
-    font-weight: 500;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-weight: 700;
     line-height: var(--line-height-s);
     margin-bottom: 1rem;
     color: var(--primary);
@@ -213,7 +212,6 @@ h3 {
 h4 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
-    font-style: italic;
     line-height: var(--line-height-m);
     margin-bottom: 1rem;
     color: var(--primary);
@@ -243,14 +241,14 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-size: var(--font-size-m);
     line-height: var(--line-height-m);
     font-family: var(--font-secondary);
-    font-style: italic;
+    font-style: normal;
     color: var(--primary);
 }
 
 .p-xl {
     font-size: var(--font-size-xl);
-    font-family: var(--font-secondary);
-    font-style: italic;
+    font-family: var(--font-primary);
+    font-style: normal;
     line-height: var(--line-height-xl);
     color: var(--primary);
 }
@@ -292,19 +290,9 @@ b {
 
 blockquote {
     font-family: var(--font-secondary);
-    font-style: italic;
     position: relative;
     line-height: var(--line-height-l);
-    padding-left: 2rem;
     margin-bottom: 1rem;
-}
-
-blockquote::before {
-    content: '\201C';
-    position: absolute;
-    left: 0;
-    font-size: 2rem;
-    color: var(--secondary);
 }
 
 blockquote:last-child {
@@ -339,8 +327,10 @@ header {
     right: 0;
     z-index: 999;
     isolation: isolate;
-    mix-blend-mode: difference;
     padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
 footer {
@@ -559,6 +549,11 @@ footer * {
 
 /* MAIN */
 
+main {
+    position: relative;
+    z-index: 1;
+}
+
 section {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -729,44 +724,88 @@ img, video {
 /* SCROLLSPY */
 
 #scrollspy {
-    position: fixed; 
-    top: 24px; 
-    left: 0; 
-    right: 0; 
-    z-index: 10;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--background);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid var(--ghost);
+    border-bottom: 1px solid var(--ghost);
     opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.5s ease, background-color 0.3s ease;
 }
 
+/* Only used when there are no headings (TOC empty) */
 #scrollspy.scrollspy-hidden {
     opacity: 0;
-    transform: translateY(-20px);
     pointer-events: none;
 }
 
 .scrollspy-content {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-right: 2.5rem;
 }
 
 .scrollspy-links {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-width: 0;
     transition: max-height 0.3s ease;
 }
 
 .scrollspy-links.collapsed {
-    max-height: 0;
+    max-height: 1.5em;
     overflow: hidden;
 }
 
-.scrollspy-link {
-    font-family: var(--font-mono);
+.scrollspy-links.collapsed .scrollspy-link {
+    display: none;
+}
+
+.scrollspy-links.collapsed .scrollspy-link.active {
+    display: block;
+}
+
+.scrollspy-toggle {
+    position: absolute;
+    right: 0;
+    top: 0.25em;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0px 8px;
+    cursor: pointer;
+    color: var(--secondary);
     font-size: var(--font-size-xs);
-    text-transform: uppercase;
-    line-height: var(--line-height-xs);
+}
+
+.scrollspy-toggle:hover {
+    color: var(--primary);
+}
+
+#scrollspy .grid {
+    margin-bottom: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+#scrollspy .scrollspy {
+    position: relative;
+}
+
+.scrollspy-link {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
     text-decoration: none;
     color: var(--secondary);
     transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
@@ -775,8 +814,13 @@ img, video {
     text-overflow: ellipsis;
     cursor: pointer;
     display: block;
+    margin-bottom: 0.5rem;
     opacity: 1;
     transform: translateX(0);
+}
+
+.scrollspy-link:last-child {
+    margin-bottom: 0;
 }
 
 .scrollspy-link:hover {
@@ -790,7 +834,7 @@ img, video {
 }
 
 .scrollspy-link.h3 {
-    padding-left: 0;
+    padding-left: 1.25em;
 }
 
 .scrollspy-link.h3:hover {
@@ -803,7 +847,6 @@ img, video {
 
 #scrollspy.scrollspy-hidden .scrollspy-link {
     opacity: 0;
-    transform: translateX(-20px);
 }
 
 .scrollspy-link {

@@ -7,29 +7,32 @@ title: Index
     <div class="grid grid-1-5">
         <div></div>
         <div style="margin-top: 25vh;">
-            <div class="p-xxl">
-                I’m your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
+            <div class="p-l">
+                Your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
+            </div>
+            <div class="p-l">
+                I am drawn to complexity and intersectionality—not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.
             </div>
         </div>
     </div>
 </section>
 
+<!--
 <section id="featured">
     <div class="grid grid-6"><hr></div>
 </section>
+-->
 
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
         <div class="grid grid-1-4-1">
-            <div>
-                <h1>{{ project.timeline }}</h1>
-            </div>
+            <div></div>
             <div>
                 <h1>{{ project.title }}</h1>
             </div>
             <div></div>
         </div>
-        <div class="grid grid-1-5">
+        <div class="grid grid-1-4-1">
             <div></div>
             <div class="image-container" style="padding: 64px; background-color: {{ project.color }};">
                 <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
@@ -38,10 +41,13 @@ title: Index
                         content_type="image" %}
                 </a>
             </div>
+            <div></div>
         </div>
     </section>
 {% endfor %}
 
+<!--
 <section id="other">
     <div class="grid grid-6"><hr></div>
 </section>
+-->
