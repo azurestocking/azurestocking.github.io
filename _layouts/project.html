@@ -2,97 +2,94 @@
 layout: default
 ---
 
-<section id="overview" class="full-width-bg" style="background-color: {{ page.color }};">
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div>
-            <h1 style="margin-top: 25vh;">{{ page.title }}</h1>
-            <div class="p-l">{{ page.desc }}</div>
-        </div>
-        <div></div>
-    </div>
-
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div>
-            <div class="image-container" style="padding: 64px; background-color: white;">
-                <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
-                    {% include mockup-macbook.html 
-                        content_image="/images/placeholder.jpg" 
-                        content_type="image" %}
-                </a>
+<div class="grid">
+    <aside class="side-container" aria-hidden="true">
+        <section id="scrollspy" class="scrollspy-hidden">
+            <div class="scrollspy">
+                <div class="scrollspy-content">
+                    <div class="scrollspy-links" id="scrollspy-links">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div></div>
-    </div>
-
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div>
-            <!--
-            <div class="flex-row">
+        </section>
+    </aside>
+    <div class="main-container">
+        <section id="overview">
+            <div class="grid-4-1">
                 <div>
-                    <h5>Roles</h5>
-                    <p>
-                        {% for role in page.roles %}
-                            {{ role }}{% unless forloop.last %}<br>{% endunless %}
-                        {% endfor %}
-                    </p>
+                    <h1 style="margin-top: 25vh;">{{ page.title }}</h1>
+                    <div class="p-l">{{ page.desc }}</div>
                 </div>
-                <div>
-                    <h5>Responsibilities</h5>
-                    <p>
-                        {% for responsibility in page.responsibilities %}
-                            {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
-                        {% endfor %}
-                    </p>
-                </div>
-                <div>
-                    <h5>Collaborators</h5>
-                    <p>
-                        {% for member in page.team %}
-                            {{ member }}{% unless forloop.last %}<br>{% endunless %}
-                        {% endfor %}
-                    </p>
-                </div>
+                <div></div>
             </div>
-            -->
-            <div class="button-group-vertical">
-                {% if page.highlight %}
-                    <a class="button ghost navlink" href="{{ page.highlight }}">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                {% endif %}
-                {% if page.prototype %}
-                    <a class="button ghost navlink" href="{{ page.prototype }}">Prototype<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                {% endif %}
-                {% if page.paper %}
-                    <a class="button ghost navlink" href="{{ page.paper }}">Paper<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                {% endif %}
-                {% if page.repository %}
-                    <a class="button ghost navlink" href="{{ page.repository }}">Repository<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                {% endif %}
-                {% if page.website %}
-                    <a class="button ghost navlink" href="{{ page.website }}">Website<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                {% endif %}
-            </div>
-        </div>
-        <div></div>
-    </div>
-</section> 
 
-<section id="scrollspy" class="scrollspy-hidden">
-    <div class="grid grid-1-4-1" style="align-items: center;">
-        <div></div>
-        <div class="scrollspy">
-            <div class="scrollspy-content">
-                <div class="scrollspy-links collapsed" id="scrollspy-links">
+            <div class="grid-4-1">
+                <div>
+                    <div class="image-container" style="padding: 64px;">
+                        <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
+                            {% include mockup-macbook.html 
+                                content_image="/images/placeholder.jpg" 
+                                content_type="image" %}
+                        </a>
+                    </div>
                 </div>
-                <button type="button" class="scrollspy-toggle" id="scrollspy-toggle" aria-label="Show table of contents"><i class="fa-solid fa-chevron-down"></i></button>
+                <div></div>
             </div>
-        </div>
-        <div></div>
-    </div>
-</section>
 
-{{ content }}
+            <div class="grid-4-1">
+                <div>
+                    <!--
+                    <div class="flex-row">
+                        <div>
+                            <h5>Roles</h5>
+                            <p>
+                                {% for role in page.roles %}
+                                    {{ role }}{% unless forloop.last %}<br>{% endunless %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div>
+                            <h5>Responsibilities</h5>
+                            <p>
+                                {% for responsibility in page.responsibilities %}
+                                    {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div>
+                            <h5>Collaborators</h5>
+                            <p>
+                                {% for member in page.team %}
+                                    {{ member }}{% unless forloop.last %}<br>{% endunless %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    -->
+                    <div class="button-group-vertical">
+                        {% if page.highlight %}
+                            <a class="button ghost navlink" href="{{ page.highlight }}">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                        {% endif %}
+                        {% if page.prototype %}
+                            <a class="button ghost navlink" href="{{ page.prototype }}">Prototype<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                        {% endif %}
+                        {% if page.paper %}
+                            <a class="button ghost navlink" href="{{ page.paper }}">Paper<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                        {% endif %}
+                        {% if page.repository %}
+                            <a class="button ghost navlink" href="{{ page.repository }}">Repository<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                        {% endif %}
+                        {% if page.website %}
+                            <a class="button ghost navlink" href="{{ page.website }}">Website<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        {{ content }}
+    </div>
+</div>
 
 <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>

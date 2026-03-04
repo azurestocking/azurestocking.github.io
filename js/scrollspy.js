@@ -1,15 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     const scrollspy = document.querySelector('#scrollspy');
-    const scrollspyToggle = document.getElementById('scrollspy-toggle');
 
     if (!scrollspy) {
         return;
     }
 
-    // Move scrollspy to body so its z-index can sit above the header (scrollspy is otherwise inside main, which has z-index 1)
-    document.body.appendChild(scrollspy);
+    // On project pages scrollspy lives in .side-container; keep it there. Else move to body for z-index above header.
+    if (!scrollspy.parentElement || !scrollspy.parentElement.classList.contains('side-container')) {
+        document.body.appendChild(scrollspy);
+    }
+
+    // Use the .main-container that is sibling to scrollspy's column (same grid), so we don't pick the header's .main-container
+    const grid = scrollspy.closest('.grid');
+    const main = grid ? grid.querySelector('.main-container') : (document.querySelector('main') || document.querySelector('.main-container'));
+
+    if (!main) {
+        return;
+    }
 
     // Create Overview link
     const overviewLink = document.createElement('a');
@@ -18,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     overviewLink.classList.add('scrollspy-link', 'h2');
     scrollspyLinks.appendChild(overviewLink);
 
-    // Function to generate ID for h2
+    // Function to generate ID for any heading
     function generateHeadingId(heading) {
         if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
             const h2Index = heading.getAttribute('index');
@@ -29,18 +37,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return headingText;
     }
 
-    // Get only h2 elements from main (no h3)
-    const headings = Array.from(main.querySelectorAll('h2')).filter(heading => {
-        return !heading.classList.contains('np');
+    // Get h2 and h3 elements from main in document order (exclude .np and .hide)
+    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
+        return !heading.classList.contains('np') && !heading.classList.contains('hide');
     });
 
-    // Hide TOC if no headings are found
-    if (headings.length === 0) {
+    const isInSideContainer = scrollspy.parentElement && scrollspy.parentElement.classList.contains('side-container');
+
+    // When not in side-container and no headings: hide and stop. Otherwise continue so we at least have Overview.
+    if (headings.length === 0 && !isInSideContainer) {
         scrollspy.classList.add('scrollspy-hidden');
         return;
     }
 
-    // Create TOC for h2 headings only
+    // Create TOC for h2 and h3 headings (class h2/h3 for styling/indent)
     headings.forEach(heading => {
         const link = document.createElement('a');
         if (!heading.id) {
@@ -48,20 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         link.href = '#' + heading.id;
         link.textContent = heading.textContent;
-        link.classList.add('scrollspy-link', 'h2');
+        link.classList.add('scrollspy-link', heading.tagName.toLowerCase());
         scrollspyLinks.appendChild(link);
     });
 
-    // Create Retrospect link
-    const retrospectLink = document.createElement('a');
-    retrospectLink.href = '#retrospect';
-    retrospectLink.textContent = 'Retrospect';
-    retrospectLink.classList.add('scrollspy-link', 'h2');
-    scrollspyLinks.appendChild(retrospectLink);
-
     // Show scrollspy only when overview section is out of viewport
     const overviewSection = document.getElementById('overview');
-    const sectionIds = ['overview'].concat(headings.map(function(h) { return h.id || ''; }).filter(Boolean), ['retrospect']);
+    const sectionIds = ['overview'].concat(headings.map(function(h) { return h.id || ''; }).filter(Boolean));
 
     function setActiveLinkFromScrollPosition() {
         const viewportMid = window.scrollY + window.innerHeight / 2;
@@ -97,6 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollspy.classList.remove('scrollspy-hidden');
             return;
         }
+        // On project pages (scrollspy in sidebar) always show the TOC
+        if (isInSideContainer) {
+            scrollspy.classList.remove('scrollspy-hidden');
+            setActiveLinkFromScrollPosition();
+            return;
+        }
         const rect = overviewSection.getBoundingClientRect();
         const halfViewport = window.innerHeight / 2;
         if (rect.bottom <= -halfViewport) {
@@ -112,37 +121,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function collapseScrollspyIfExpanded() {
-        if (scrollspyLinks.classList.contains('collapsed')) return;
-        scrollspyLinks.classList.add('collapsed');
-        if (scrollspyToggle) {
-            const icon = scrollspyToggle.querySelector('i');
-            if (icon) {
-                icon.classList.add('fa-chevron-down');
-                icon.classList.remove('fa-chevron-up');
-            }
-            scrollspyToggle.setAttribute('aria-label', 'Show table of contents');
-        }
-    }
     window.addEventListener('scroll', function() {
         updateScrollspyVisibility();
-        collapseScrollspyIfExpanded();
     });
     window.addEventListener('resize', updateScrollspyVisibility);
     updateScrollspyVisibility();
 
-    // Expand/collapse toggle: default collapsed
-    scrollspyLinks.classList.add('collapsed');
-    if (scrollspyToggle) {
-        scrollspyToggle.addEventListener('click', function() {
-            scrollspyLinks.classList.toggle('collapsed');
-            const icon = scrollspyToggle.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-chevron-down', scrollspyLinks.classList.contains('collapsed'));
-                icon.classList.toggle('fa-chevron-up', !scrollspyLinks.classList.contains('collapsed'));
-            }
-            scrollspyToggle.setAttribute('aria-label', scrollspyLinks.classList.contains('collapsed') ? 'Show table of contents' : 'Hide table of contents');
-        });
+    // On project pages (sidebar) ensure visible from the start
+    if (isInSideContainer) {
+        scrollspy.classList.remove('scrollspy-hidden');
     }
 
     // Update active state on scroll
@@ -164,9 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe overview, retrospect and h2 sections only
+    // Observe overview and all headings (h2 + h3)
     if (overviewSection) observer.observe(overviewSection);
     headings.forEach(heading => observer.observe(heading));
-    const retrospectSection = document.getElementById('retrospect');
-    if (retrospectSection) observer.observe(retrospectSection);
 });
