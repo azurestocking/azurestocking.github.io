@@ -1,23 +1,23 @@
 /* COLOR */
 
 :root {
+    font-size: 16px;
     --primary: rgba(23, 23, 23);
     --secondary: rgba(23, 23, 23, 0.48);
     --secondary-solid: #909090;
-    --ghost: rgba(23, 23, 23, 0.04);
-    --ghost-focus: rgba(23, 23, 23, 0.12);
+    --tertiary: rgba(23, 23, 23, 0.04);
+    --tertiary-focus: rgba(23, 23, 23, 0.12);
     --background: #FFFFFF;
-    --font-size-xs: 0.8rem;
+    --font-size-xs: 0.75rem;
     --font-size-s: 1rem;
-    --font-size-m: 1.75rem;
+    --font-size-m: 1.5rem;
     --font-size-l: 2rem;
     --font-size-xl: 3.5rem;
-    font-size: 16px;
     --line-height-xs: 1.5em;
     --line-height-s: 1.5em;
-    --line-height-m: 1.5em;
-    --line-height-l: 1.3em;
-    --line-height-xl: 1.2em;
+    --line-height-m: 1.4em;
+    --line-height-l: 1.4em;
+    --line-height-xl: 1.3em;
     --font-secondary: 'Signifier', 'EB Garamond', serif; 
     --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
@@ -183,14 +183,16 @@ body {
     text-decoration: none !important;
 }
 
+/* PAGE TITLE */
 h1 {
-    font-size: var(--font-size-l);
-    font-family: var(--font-secondary);
-    line-height: var(--line-height-l);
+    font-size: var(--font-size-m);
+    font-family: var(--font-primary);
+    line-height: var(--line-height-m);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
+/* SECTION TITLE */
 h2 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
@@ -199,6 +201,7 @@ h2 {
     color: var(--primary);
 }
 
+/* SUBSECTION TITLE */
 h3 {
     font-size: var(--font-size-s);
     font-family: var(--font-mono);
@@ -209,6 +212,7 @@ h3 {
     color: var(--primary);
 }
 
+/* FEATURE TITLE */
 h4 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
@@ -217,6 +221,7 @@ h4 {
     color: var(--primary);
 }
 
+/* BULLET TITLE */
 h5 {
     font-size: var(--font-size-s);
     font-family: var(--font-primary);
@@ -247,18 +252,10 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
 
 .p-xl {
     font-size: var(--font-size-xl);
-    font-family: var(--font-primary);
-    font-style: normal;
     line-height: var(--line-height-xl);
+    font-family: var(--font-secondary);
+    font-style: normal;
     color: var(--primary);
-}
-
-.p-xxl {
-    font-family: var(--primary); 
-    letter-spacing: -0.02em; 
-    font-style: normal; 
-    font-size: 64px; 
-    line-height: 100%;
 }
 
 .number {
@@ -291,7 +288,7 @@ b {
 blockquote {
     font-family: var(--font-secondary);
     position: relative;
-    line-height: var(--line-height-l);
+    line-height: var(--line-height-m);
     margin-bottom: 1rem;
 }
 
@@ -573,7 +570,7 @@ img, video {
 }
 
 .image-container {
-    background-color: var(--ghost);
+    background-color: var(--tertiary);
     padding: 24px;
 }
 
@@ -597,7 +594,7 @@ img, video {
 .tag {
     color: var(--primary);
     font-size: var(--font-size-s);
-    background: var(--ghost);
+    background: var(--tertiary);
     padding: 0.5em 1.25em;
     border-radius: 99px;
     position: relative;
@@ -644,7 +641,7 @@ img, video {
 }
 
 .card {
-    border: 1.5px solid var(--ghost-focus);
+    border: 1.5px solid var(--tertiary-focus);
     padding: 1rem;
 }
 
@@ -732,8 +729,8 @@ img, video {
     background-color: var(--background);
     padding-top: 12px;
     padding-bottom: 12px;
-    border-top: 1px solid var(--ghost);
-    border-bottom: 1px solid var(--ghost);
+    border-top: 1px solid var(--tertiary);
+    border-bottom: 1px solid var(--tertiary);
     opacity: 1;
     transition: opacity 0.5s ease, background-color 0.3s ease;
 }
@@ -861,7 +858,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     overflow: hidden;
-    background-color: var(--ghost);
+    background-color: var(--tertiary);
 }
 
 th, td {
