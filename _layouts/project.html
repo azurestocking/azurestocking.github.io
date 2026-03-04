@@ -6,7 +6,15 @@ layout: default
     <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <h1 style="margin-bottom: 64px; margin-top: 25vh;">{{ page.title }}</h1>
+            <h1 style="margin-top: 25vh;">{{ page.title }}</h1>
+            <div class="p-l">{{ page.desc }}</div>
+        </div>
+        <div></div>
+    </div>
+
+    <div class="grid grid-1-4-1">
+        <div></div>
+        <div>
             <div class="image-container" style="padding: 64px; background-color: white;">
                 <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
                     {% include mockup-macbook.html 
@@ -17,43 +25,39 @@ layout: default
         </div>
         <div></div>
     </div>
-    <!--
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div class="flex-row">
-            <div>
-                <h5>Roles</h5>
-                <p>
-                    {% for role in page.roles %}
-                        {{ role }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </p>
-            </div>
-            <div>
-                <h5>Responsibilities</h5>
-                <p>
-                    {% for responsibility in page.responsibilities %}
-                        {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </p>
-            </div>
-            <div>
-                <h5>Collaborators</h5>
-                <p>
-                    {% for member in page.team %}
-                        {{ member }}{% unless forloop.last %}<br>{% endunless %}
-                    {% endfor %}
-                </p>
-            </div>
-        </div>
-        <div></div>
-    </div>
-    -->
+
     <div class="grid grid-1-4-1">
         <div></div>
         <div>
-            <div class="p-l">{{ page.desc }}</div>
-            <div class="button-group-vertical" style="margin-top: 64px;">
+            <!--
+            <div class="flex-row">
+                <div>
+                    <h5>Roles</h5>
+                    <p>
+                        {% for role in page.roles %}
+                            {{ role }}{% unless forloop.last %}<br>{% endunless %}
+                        {% endfor %}
+                    </p>
+                </div>
+                <div>
+                    <h5>Responsibilities</h5>
+                    <p>
+                        {% for responsibility in page.responsibilities %}
+                            {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
+                        {% endfor %}
+                    </p>
+                </div>
+                <div>
+                    <h5>Collaborators</h5>
+                    <p>
+                        {% for member in page.team %}
+                            {{ member }}{% unless forloop.last %}<br>{% endunless %}
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+            -->
+            <div class="button-group-vertical">
                 {% if page.highlight %}
                     <a class="button ghost navlink" href="{{ page.highlight }}">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
                 {% endif %}

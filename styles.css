@@ -11,13 +11,11 @@
     --font-size-xs: 0.75rem;
     --font-size-s: 1rem;
     --font-size-m: 1.5rem;
-    --font-size-l: 2rem;
-    --font-size-xl: 3.5rem;
+    --font-size-l: 3.5rem;
     --line-height-xs: 1.5em;
     --line-height-s: 1.5em;
     --line-height-m: 1.4em;
-    --line-height-l: 1.4em;
-    --line-height-xl: 1.3em;
+    --line-height-l: 1.3em;
     --font-secondary: 'Signifier', 'EB Garamond', serif; 
     --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
     --font-mono: 'JetBrains Mono', monospace;
@@ -251,18 +249,18 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
 }
 
 .p-xl {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xl);
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-l);
     font-family: var(--font-secondary);
     font-style: normal;
     color: var(--primary);
 }
 
 .number {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-l);
     font-family: var(--font-secondary);
     font-style: italic;
-    line-height: var(--line-height-xl);
+    line-height: var(--line-height-l);
     color: var(--primary);
     margin-bottom: 24px;
 }
@@ -670,6 +668,7 @@ img, video {
     font-size: var(--font-size-s);
     text-decoration: none;
     border: 1.5px solid var(--primary);
+    border-radius: 24px;
     padding: 8px 16px;
     color: var(--primary);
     position: relative;
@@ -722,7 +721,7 @@ img, video {
 
 #scrollspy {
     position: fixed;
-    top: 72px;
+    top: 88.5px;
     left: 0;
     right: 0;
     z-index: 1000;
