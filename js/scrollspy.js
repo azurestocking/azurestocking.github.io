@@ -19,52 +19,40 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Create Overview link
-    const overviewLink = document.createElement('a');
-    overviewLink.href = '#overview';
-    overviewLink.textContent = 'Overview';
-    overviewLink.classList.add('scrollspy-link', 'h2');
-    scrollspyLinks.appendChild(overviewLink);
-
-    // Function to generate ID for any heading
+    // Function to generate ID from heading text
     function generateHeadingId(heading) {
-        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
-            const h2Index = heading.getAttribute('index');
-            const h2Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            return `${h2Index}-${h2Text}`;
-        }
         const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
         return headingText;
     }
 
-    // Get h2 and h3 elements from main in document order (exclude .np and .hide)
-    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
+    // Get h3 inside section with class "subtitle" only, in document order (exclude .np and .hide)
+    const headings = Array.from(main.querySelectorAll('section.subtitle h3')).filter(heading => {
         return !heading.classList.contains('np') && !heading.classList.contains('hide');
     });
 
     const isInSideContainer = scrollspy.parentElement && scrollspy.parentElement.classList.contains('side-container');
 
-    // When not in side-container and no headings: hide and stop. Otherwise continue so we at least have Overview.
     if (headings.length === 0 && !isInSideContainer) {
         scrollspy.classList.add('scrollspy-hidden');
         return;
     }
 
-    // Create TOC for h2 and h3 headings (class h2/h3 for styling/indent)
+    // Build section ids: use parent section.subtitle id if present, else set from heading
+    const sectionIds = [];
+
     headings.forEach(heading => {
         const link = document.createElement('a');
-        if (!heading.id) {
-            heading.id = generateHeadingId(heading);
-        }
-        link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
+        const section = heading.closest('section.subtitle');
+        const targetId = section && (section.id || (section.id = generateHeadingId(heading)));
+        sectionIds.push(targetId);
+        link.href = '#' + targetId;
         link.classList.add('scrollspy-link', heading.tagName.toLowerCase());
+        link.textContent = heading.textContent;
         scrollspyLinks.appendChild(link);
     });
 
-    // Show scrollspy only when overview section is out of viewport
-    const overviewSection = document.getElementById('overview');
-    const sectionIds = ['overview'].concat(headings.map(function(h) { return h.id || ''; }).filter(Boolean));
+    // First section (for visibility when scrollspy is not in sidebar): overview or first linked section
+    const overviewSection = document.getElementById('overview') || (sectionIds[0] ? document.getElementById(sectionIds[0]) : null);
 
     function setActiveLinkFromScrollPosition() {
         const viewportMid = window.scrollY + window.innerHeight / 2;
@@ -151,7 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe overview and all headings (h2 + h3)
-    if (overviewSection) observer.observe(overviewSection);
-    headings.forEach(heading => observer.observe(heading));
+    // Observe each linked section/heading by id
+    sectionIds.forEach(function(id) {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
 });

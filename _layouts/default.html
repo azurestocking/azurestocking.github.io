@@ -15,23 +15,17 @@
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-55" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
-<body data-page-color="{{ page.color | default: '#ffffff' }}">
+<body>
     <header class="grid" style="align-items: center;">
         <aside class="side-container" aria-hidden="true">
             <div class="logo">
                 <a href="{{ '/' | relative_url }}">GEMMA</a>
             </div>
         </aside>
-        <div class="main-container" style="margin-bottom: 0;">
-            <div class="grid-4-1" style="align-items: center;">
-                <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-                    <div class="button-group">
-                        <a class="button ghost navlink" href="{{ '/#about' | relative_url }}">About<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        <a class="button ghost navlink" href="{{ '/#featured' | relative_url }}">Work<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        <a class="button ghost navlink" href="https://www.linkedin.com/in/li-jm/">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        <a class="button ghost navlink" href="https://github.com/azurestocking">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                    </div>
-                </div>
+        <div class="main-container">
+            <div class="grid-1-1-1" style="align-items: center;">
+                <div></div>
+                <div></div>
                 <div style="display: flex; justify-content: flex-end;">
                     <a class="button navlink" href="#footer">Contact<i class="fa-solid fa-arrow-right rotate-45"></i></a>
                 </div>
@@ -46,42 +40,19 @@
     <footer class="grid">
         <aside class="side-container" aria-hidden="true"></aside>
         <div class="main-container">
-            <div class="grid-4-1">
-                <p style="font-family: var(--font-mono); text-transform: uppercase;">
+            <div class="grid-3">
+                <div style="font-family: var(--font-mono); text-transform: uppercase;">
                     Coded from scratch with 🤖 Jekyll framework and 🍵 Lapsang Souchong
-                </p>
+                </div>
             </div>
         </div>
     </footer>
-
     <script>
-        (function() {
-            var header = document.querySelector('header');
-            var overview = document.getElementById('overview');
-            function getPageColor() { return (document.body.getAttribute('data-page-color') || '#ffffff').trim(); }
-            function setNavbarBg(color) {
-                if (header) header.style.backgroundColor = color;
-            }
-            function updateHeader() {
-                if (!header) return;
-                if (!overview) {
-                    header.classList.add('header-solid');
-                    setNavbarBg('#ffffff');
-                    return;
-                }
-                var rect = overview.getBoundingClientRect();
-                if (rect.bottom <= 0) {
-                    header.classList.add('header-solid');
-                    setNavbarBg('#ffffff');
-                } else {
-                    header.classList.remove('header-solid');
-                    setNavbarBg(getPageColor());
-                }
-            }
-            window.addEventListener('scroll', updateHeader);
-            window.addEventListener('resize', updateHeader);
-            updateHeader();
-        })();
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.matches('img, video')) e.preventDefault();
+            });
+        });
     </script>
 </body>
 </html> 

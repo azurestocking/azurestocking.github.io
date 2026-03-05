@@ -3,7 +3,10 @@ layout: default
 ---
 
 <div class="grid">
-    <aside class="side-container" aria-hidden="true">
+    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1.5px solid;">
+        <section>
+            <div>{{ page.desc }}</div>
+        </section>
         <section id="scrollspy" class="scrollspy-hidden">
             <div class="scrollspy">
                 <div class="scrollspy-content">
@@ -13,30 +16,25 @@ layout: default
             </div>
         </section>
     </aside>
-    <div class="main-container">
-        <section id="overview">
-            <div class="grid-4-1">
+    <div class="main-container" style="margin-top: 25vh;">
+        <section class="subtitle" id="overview">
+            <h3>Overview</h3>
+        </section>
+        <section>
+            <div class="grid-3">
                 <div>
-                    <h1 style="margin-top: 25vh;">{{ page.title }}</h1>
+                    <h1>{{ page.title }}</h1>
                     <div class="p-l">{{ page.desc }}</div>
                 </div>
-                <div></div>
             </div>
 
-            <div class="grid-4-1">
+            <div class="grid-3">
                 <div>
-                    <div class="image-container" style="padding: 64px;">
-                        <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
-                            {% include mockup-macbook.html 
-                                content_image="/images/placeholder.jpg" 
-                                content_type="image" %}
-                        </a>
-                    </div>
+                    <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
                 </div>
-                <div></div>
             </div>
 
-            <div class="grid-4-1">
+            <div class="grid-3">
                 <div>
                     <!--
                     <div class="flex-row">
@@ -84,7 +82,6 @@ layout: default
                         {% endif %}
                     </div>
                 </div>
-                <div></div>
             </div>
         </section>
 
