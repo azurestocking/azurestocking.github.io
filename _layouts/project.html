@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="grid">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1.5px solid;">
+    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1px solid;">
         <section>
             <div>{{ page.desc }}</div>
         </section>
@@ -16,75 +16,18 @@ layout: default
             </div>
         </section>
     </aside>
-    <div class="main-container" style="margin-top: 25vh;">
-        <section class="subtitle" id="overview">
-            <h3>Overview</h3>
-        </section>
-        <section>
-            <div class="grid-3">
-                <div>
-                    <h1>{{ page.title }}</h1>
-                    <div class="p-l">{{ page.desc }}</div>
-                </div>
-            </div>
-
+    <div class="main-container" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1px solid;">
+        <section style="margin-top: 0;">
+            <h4>{{ page.client }}</h4>
             <div class="grid-3">
                 <div>
                     <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
                 </div>
             </div>
-
-            <div class="grid-3">
-                <div>
-                    <!--
-                    <div class="flex-row">
-                        <div>
-                            <h5>Roles</h5>
-                            <p>
-                                {% for role in page.roles %}
-                                    {{ role }}{% unless forloop.last %}<br>{% endunless %}
-                                {% endfor %}
-                            </p>
-                        </div>
-                        <div>
-                            <h5>Responsibilities</h5>
-                            <p>
-                                {% for responsibility in page.responsibilities %}
-                                    {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
-                                {% endfor %}
-                            </p>
-                        </div>
-                        <div>
-                            <h5>Collaborators</h5>
-                            <p>
-                                {% for member in page.team %}
-                                    {{ member }}{% unless forloop.last %}<br>{% endunless %}
-                                {% endfor %}
-                            </p>
-                        </div>
-                    </div>
-                    -->
-                    <div class="button-group-vertical">
-                        {% if page.highlight %}
-                            <a class="button ghost navlink" href="{{ page.highlight }}">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        {% endif %}
-                        {% if page.prototype %}
-                            <a class="button ghost navlink" href="{{ page.prototype }}">Prototype<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        {% endif %}
-                        {% if page.paper %}
-                            <a class="button ghost navlink" href="{{ page.paper }}">Paper<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        {% endif %}
-                        {% if page.repository %}
-                            <a class="button ghost navlink" href="{{ page.repository }}">Repository<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        {% endif %}
-                        {% if page.website %}
-                            <a class="button ghost navlink" href="{{ page.website }}">Website<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
         </section>
-
+        <section class="subtitle">
+            <h3>Overview</h3>
+        </section>
         {{ content }}
     </div>
 </div>

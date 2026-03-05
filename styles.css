@@ -4,7 +4,7 @@
     font-size: 16px;
     /* Colors */
     --primary: rgba(23, 23, 23);
-    --secondary: rgba(23, 23, 23, 0.48);
+    --secondary: rgba(23, 23, 23, 0.6);
     --secondary-solid: #909090;
     --tertiary: rgba(23, 23, 23, 0.04);
     --tertiary-focus: rgba(23, 23, 23, 0.12);
@@ -32,7 +32,9 @@
     --space-xl: 1.5rem;     /* 24px - grid gap, section padding, component padding */
     --space-2xl: 2rem;      /* 32px - between blocks within a section */
     --space-3xl: 3rem;      /* 48px - between sections / stacked grids */
+    --space-section: 4rem;  /* 64px - gap between main content sections */
     --header-height: 90px; /* sticky offset so content sits below fixed header */
+    --radius: 18px;
 }
 
 
@@ -302,6 +304,8 @@ blockquote {
     position: relative;
     line-height: var(--line-height-m);
     margin-bottom: var(--space-m);
+    border-left: 4px solid var(--tertiary-focus);
+    padding-left: var(--space-l);
 }
 
 blockquote:last-child {
@@ -326,7 +330,7 @@ hr {
     padding: 0;
     height: 0;
     border: none;
-    border-top: 1.5px solid var(--primary);
+    border-top: 1px solid var(--tertiary-focus);
 }
 
 header {
@@ -417,6 +421,14 @@ html {
     gap: var(--space-xl);
 }
 
+/* Subgrid: 2 equal columns (evenly divide main container) */
+.main-container > .grid-1-1,
+.main-container section > .grid-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
 /* Subgrid: 2 cols + 1 col (first child 2/3, second 1/3) */
 .main-container > .grid-2-1,
 .main-container section > .grid-2-1 {
@@ -462,15 +474,22 @@ html {
 }
 
 /* Space between section children */
-.main-container section > * + * {
+/* Space between section children (stacked grids). Exclude grid containers so their column children don't get margin. */
+.main-container section:not(.grid-1-1):not(.grid-1-1-1):not(.grid-2-1):not(.grid-1-2):not(.grid-3) > * + * {
     margin-top: var(--space-xl);
 }
 
 .main-container section > .grid-1-1-1 + *,
+.main-container section > .grid-1-1 + *,
 .main-container section > .grid-2-1 + *,
 .main-container section > .grid-1-2 + *,
 .main-container section > .grid-3 + * {
     margin-top: var(--space-2xl);
+}
+
+/* Large gap between sections in main content */
+.main-container section + section {
+    margin-top: var(--space-section);
 }
 
 /* Header: main container rows have no bottom margin */
@@ -521,7 +540,8 @@ section {
 }
 
 section.subtitle {
-    border-top: var(--tertiary-focus) 1.5px solid;
+    border-top: var(--tertiary-focus) 1px solid;
+    border-bottom: var(--tertiary-focus) 1px solid;
 }
 
 img, video {
@@ -597,15 +617,15 @@ img, video {
 .card-list-col {
     display: flex;
     flex-direction: column;
-    gap: var(--space-m);
+    gap: var(--space-xl);
 }
 
 .card {
-    border: 1.5px solid var(--tertiary-focus);
+    border: 1px solid var(--tertiary-focus);
     padding: var(--space-m);
 }
 
-.card h4 {
+.card h5 {
     font-weight: 500;
 }
 
@@ -629,8 +649,8 @@ img, video {
     float: left;
     font-size: var(--font-size-xs);
     text-decoration: none;
-    border: 1.5px solid var(--primary);
-    border-radius: 24px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
     padding: var(--space-xs) var(--space-m);
     color: var(--primary);
     position: relative;
@@ -688,7 +708,7 @@ img, video {
     text-decoration: none;
     color: var(--primary);
     border: none;
-    border-top: 1.5px solid var(--tertiary-focus);
+    border-top: 1px solid var(--tertiary-focus);
     border-radius: 0;
     padding: var(--space-xs) 0;
     background: transparent;
@@ -815,6 +835,7 @@ img, video {
 
 #scrollspy .grid,
 #scrollspy .grid-1-1-1,
+#scrollspy .grid-1-1,
 #scrollspy .grid-2-1,
 #scrollspy .grid-1-2,
 #scrollspy .grid-3 {
@@ -826,6 +847,7 @@ img, video {
 /* Full-width bar padding only when scrollspy is not in side-container (e.g. moved to body) */
 body > #scrollspy .grid,
 body > #scrollspy .grid-1-1-1,
+body > #scrollspy .grid-1-1,
 body > #scrollspy .grid-2-1,
 body > #scrollspy .grid-1-2,
 body > #scrollspy .grid-3 {
@@ -854,7 +876,7 @@ body > #scrollspy .grid-3 {
     gap: var(--space-xs-tight);
     opacity: 1;
     transform: translateX(0);
-    border-top: 1.5px solid var(--tertiary-focus);
+    border-top: 1px solid var(--tertiary-focus);
     padding: var(--space-xs) 0;
 }
 
