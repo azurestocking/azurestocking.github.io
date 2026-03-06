@@ -1,4 +1,4 @@
-/* COLOR */
+/* DESIGN TOKENS */
 
 :root {
     font-size: 16px;
@@ -145,8 +145,10 @@
 /* TYPOGRAPHY */
 
 * {
-    padding: 0;
-    margin: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    margin-block: 0;
+    margin-inline: 0;
     border: 0;
     line-height: var(--line-height-regular);
     font-weight: 400;
@@ -168,14 +170,17 @@ html, body {
 html {
     background-color: var(--background);
     transition: background-color 0.5s ease;
+    scrollbar-gutter: stable;
 }
 
 body {
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
     background: transparent;
     color: var(--primary);
     max-width: 1440px;
-    margin: 0 auto;
+    margin-block: 0;
+    margin-inline: auto;
 }
 
 .logo {
@@ -197,7 +202,7 @@ h1 {
     font-size: var(--font-size-m);
     font-family: var(--font-primary);
     line-height: var(--line-height-regular);
-    margin-bottom: var(--space-text);
+    margin-block-end: var(--space-text);
     color: var(--primary);
 }
 
@@ -206,7 +211,7 @@ h2 {
     font-size: var(--font-size-m);
     font-family: var(--font-primary);
     line-height: var(--line-height-regular);
-    margin-bottom: var(--space-text);
+    margin-block-end: var(--space-text);
     color: var(--primary);
 }
 
@@ -217,7 +222,7 @@ h3 {
     text-transform: uppercase;
     font-weight: 700;
     line-height: var(--line-height-regular);
-    margin-bottom: var(--space-text);
+    margin-block-end: var(--space-text);
     color: var(--primary);
 }
 
@@ -226,7 +231,7 @@ h4 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
     line-height: var(--line-height-regular);
-    margin-bottom: var(--space-text);
+    margin-block-end: var(--space-text);
     color: var(--primary);
 }
 
@@ -236,7 +241,7 @@ h5 {
     font-family: var(--font-primary);
     font-weight: 500;
     line-height: var(--line-height-regular);
-    margin-bottom: var(--space-button-v);
+    margin-block-end: var(--space-button-v);
     color: var(--primary);
 }
 
@@ -244,12 +249,12 @@ p {
     font-size: var(--font-size-s);
     line-height: var(--line-height-regular);
     font-family: var(--font-primary);
-    margin-bottom: var(--space-button-v);
+    margin-block-end: var(--space-button-v);
 }
 
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:last-child,
 .p-l:last-child, .p-xl:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 .p-l {
@@ -258,7 +263,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-family: var(--font-secondary);
     font-style: normal;
     color: var(--primary);
-    margin-bottom: var(--space-text);
+    margin-block-end: var(--space-text);
 }
 
 .number {
@@ -267,17 +272,10 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-style: italic;
     line-height: var(--line-height-tight);
     color: var(--primary);
-    margin-bottom: var(--space-grid);
+    margin-block-end: var(--space-grid);
 }
 
 a {
-    color: var(--primary);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-}
-
-a:hover {
     color: var(--primary);
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -292,13 +290,13 @@ blockquote {
     font-family: var(--font-secondary);
     position: relative;
     line-height: var(--line-height-regular);
-    margin-bottom: var(--space-text);
+    margin-block-end: var(--space-text);
     border-left: 4px solid var(--tertiary);
-    padding-left: var(--space-grid);
+    padding-inline-start: var(--space-grid);
 }
 
 blockquote:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 ul {
@@ -311,16 +309,19 @@ li {
     list-style-type: disc;
     font-size: var(--font-size-s);
     line-height: var(--line-height-regular);
-    margin-left: var(--space-text);
+    margin-inline-start: var(--space-text);
 }
 
 li + li {
-    margin-top: var(--space-button-v);
+    margin-block-start: var(--space-button-v);
 }
 
 hr {
-    margin: 0;
-    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
     height: 0;
     border: none;
     border-top: 1px solid var(--tertiary);
@@ -336,19 +337,22 @@ header {
 }
 
 header.grid {
-    padding: var(--space-grid);
+    padding-block: var(--space-grid);
+    padding-inline: var(--space-grid);
 }
 
 footer {
-    padding-top: var(--space-grid);
-    padding-bottom: var(--space-grid);
+    padding-block-start: var(--space-grid);
+    padding-block-end: var(--space-grid);
     isolation: isolate;
     font-size: var(--font-size-xs);
 }
 
 footer.grid {
-    padding: var(--space-grid);
-    margin: 0 auto;
+    padding-block: var(--space-grid);
+    padding-inline: var(--space-grid);
+    margin-block: 0;
+    margin-inline: auto;
 }
 
 .hero {
@@ -364,14 +368,10 @@ footer.grid {
 
 
 
-html {
-    scrollbar-gutter: stable;
-}
-
 /* LAYOUT */
 
 /* Spacing: use adjacent-sibling (* + *) for layout (grid/section stacking) so we don't need
-   :first-child/:last-child there. Typography still uses margin-bottom + :last-child for text blocks. */
+   :first-child/:last-child there. Typography still uses margin-block-end + :last-child for text blocks. */
 
 /* 1. Base grid: 4 columns. Col 1 = side, Col 2–4 = main (side:main = 1:3). */
 .grid {
@@ -379,13 +379,15 @@ html {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--space-grid);
     max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 var(--space-grid);
+    margin-block: 0;
+    margin-inline: auto;
+    padding-block: 0;
+    padding-inline: var(--space-grid);
 }
 
 /* Space between stacked grids (section-level separation) */
 .grid + .grid {
-    margin-top: var(--space-section);
+    margin-block-start: var(--space-section);
 }
 
 .side-container {
@@ -403,7 +405,7 @@ html {
 
 /* Space between stacked main-containers */
 .main-container + .main-container {
-    margin-top: var(--space-section);
+    margin-block-start: var(--space-section);
 }
 
 /* Subgrid: 3 equal columns (evenly divide main container) */
@@ -466,20 +468,18 @@ html {
     grid-column: 1;
 }
 
-/* Space between section children */
-/* Space between section children (stacked grids). Exclude grid containers so their column children don't get margin. */
-.main-container section:not(.grid-1-1):not(.grid-1-1-1):not(.grid-2-1):not(.grid-1-2):not(.grid-3) > * + * {
-    margin-top: var(--space-grid);
-}
-
 /* Large gap between sections in main content */
 .main-container section + section {
-    margin-top: var(--space-section);
+    margin-block-start: var(--space-section);
+}
+
+.side-container section + section {
+    margin-block-start: var(--space-section);
 }
 
 /* Header: main container rows have no bottom margin */
 header .main-container > * {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 /* Full-width row on base grid (all 4 cols) */
@@ -517,18 +517,20 @@ header .main-container > * {
 main {
     position: relative;
     z-index: 1;
+    padding-block-end: var(--space-section);
 }
 
 section {
     display: flex;
     flex-direction: column;
-    gap: var(--space-text);
-    padding-top: var(--space-text);
-    padding-bottom: var(--space-text);
+    gap: var(--space-grid);
+    padding-block-start: var(--space-grid);
 }
 
 section.subtitle {
-    border-top: var(--tertiary) 1px solid;
+    border-top: 1px solid var(--tertiary);
+    border-bottom: 1px solid var(--tertiary);
+    padding-block-end: var(--space-grid);
 }
 
 img, video {
@@ -538,7 +540,8 @@ img, video {
 
 .image-container {
     background-color: var(--ghost);
-    padding: var(--space-grid);
+    padding-block: var(--space-grid);
+    padding-inline: var(--space-grid);
 }
 
 .image-container img {
@@ -555,14 +558,15 @@ img, video {
     gap: var(--space-text);
     width: 100%;
     min-height: fit-content;
-    margin-top: var(--space-grid);
+    margin-block-start: var(--space-grid);
 }
 
 .tag {
     color: var(--primary);
     font-size: var(--font-size-s);
     background: var(--tertiary);
-    padding: var(--space-button-v) var(--space-text);
+    padding-block: var(--space-button-v);
+    padding-inline: var(--space-text);
     border-radius: 99px;
     position: relative;
     display: inline-block;
@@ -582,7 +586,7 @@ img, video {
 .before h5 {
     color: #b3102e !important;
     font-family: var(--font-mono);
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -597,7 +601,7 @@ img, video {
 .after h5 {
     color: #0c7354 !important;
     font-family: var(--font-mono);
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -609,7 +613,8 @@ img, video {
 
 .card {
     border: 1px solid var(--tertiary);
-    padding: var(--space-text);
+    padding-block: var(--space-text);
+    padding-inline: var(--space-text);
 }
 
 .card h5 {
@@ -638,7 +643,8 @@ img, video {
     text-decoration: none;
     border: 1px solid var(--primary);
     border-radius: var(--radius);
-    padding: var(--space-button-v) var(--space-text);
+    padding-block: var(--space-button-v);
+    padding-inline: var(--space-text);
     color: var(--primary);
     position: relative;
     transform: translate(0) translateY(0);
@@ -681,7 +687,8 @@ img, video {
 
 .button.ghost {
     border: none;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
 }
 
 /* Side button: like section.subtitle, border-top, padding; hover/active → black */
@@ -697,7 +704,8 @@ img, video {
     border: none;
     border-top: 1px solid var(--tertiary);
     border-radius: 0;
-    padding: var(--space-button-v) 0;
+    padding-block: var(--space-button-v);
+    padding-inline: 0;
     background: transparent;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -749,8 +757,8 @@ img, video {
     width: 100%;
     border-top: none;
     border-bottom: none;
-    padding-top: var(--space-grid);
-    padding-bottom: var(--space-grid);
+    padding-block-start: var(--space-grid);
+    padding-block-end: var(--space-grid);
 }
 
 #scrollspy {
@@ -759,8 +767,8 @@ img, video {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding-top: var(--space-text);
-    padding-bottom: var(--space-text);
+    padding-block-start: var(--space-text);
+    padding-block-end: var(--space-text);
     border-top: 1px solid var(--tertiary);
     border-bottom: 1px solid var(--tertiary);
     opacity: 1;
@@ -810,7 +818,8 @@ img, video {
     flex-shrink: 0;
     background: none;
     border: none;
-    padding: 0 var(--space-button-v);
+    padding-block: 0;
+    padding-inline: var(--space-button-v);
     cursor: pointer;
     color: var(--secondary);
     font-size: var(--font-size-xs);
@@ -829,7 +838,7 @@ img, video {
     color: var(--primary);
     transition: color 0.2s ease, background-color 0.2s ease, opacity 0.3s ease, transform 0.3s ease;
     white-space: nowrap;
-    overflow: show;
+    overflow: visible;
     text-overflow: ellipsis;
     cursor: pointer;
     display: flex;
@@ -838,11 +847,12 @@ img, video {
     opacity: 1;
     transform: translateX(0);
     border-top: 1px solid var(--tertiary);
-    padding: var(--space-button-v) 0;
+    padding-block: var(--space-button-v);
+    padding-inline: 0;
 }
 
 .scrollspy-link:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 .scrollspy-link:hover,
@@ -891,7 +901,8 @@ table {
 }
 
 th, td {
-    padding: var(--space-button-v) var(--space-text);
+    padding-block: var(--space-button-v);
+    padding-inline: var(--space-text);
     text-align: left;
 }
 
