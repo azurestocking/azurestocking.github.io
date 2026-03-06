@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="grid">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1px solid;">
+<div class="grid" data-project-color="{{ page.color }}">
+    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary) 1px solid;">
         <section>
             <div>{{ page.desc }}</div>
         </section>
@@ -16,9 +16,20 @@ layout: default
             </div>
         </section>
     </aside>
-    <div class="main-container" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1px solid;">
-        <section style="margin-top: 0;">
-            <h4>{{ page.client }}</h4>
+    <div class="main-container" style="margin-top: 25vh;">
+        <section class="subtitle">
+            <h3 class="hide">
+                <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit; font-weight: inherit;">
+                    <i class="fa-solid fa-arrow-left" style="margin-bottom: 0.25em;"></i> INDEX
+                </a>
+            </h3>
+        </section>
+        <section style="border-top: var(--tertiary) 1px solid;">
+            <div class="grid-3">
+                <div class="p-l">{{ page.desc }}</div>
+            </div>
+        </section>
+        <section class="full-bg">
             <div class="grid-3">
                 <div>
                     <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
@@ -31,3 +42,4 @@ layout: default
 </div>
 
 <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
+{% include bg-switcher.html %}

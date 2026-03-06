@@ -1,13 +1,13 @@
----
----
+<script>
 (function() {
     var defaultBg = "var(--background)";
 
     function runProjectPageSwitcher() {
         var el = document.querySelector("[data-project-color]");
         var projectColor = el && el.getAttribute("data-project-color");
+        if (!projectColor) return false;
+
         var fullBgSections = document.querySelectorAll(".full-bg");
-        if (!projectColor || !fullBgSections.length) return false;
 
         var overlay = document.createElement("div");
         overlay.id = "viewport-bg-overlay";
@@ -18,8 +18,8 @@
         document.documentElement.style.backgroundColor = "transparent";
         document.body.style.backgroundColor = "transparent";
 
-        function setOverlay(inView) {
-            overlay.style.backgroundColor = inView ? projectColor : defaultBg;
+        function setOverlay(color) {
+            overlay.style.backgroundColor = color;
         }
 
         function sectionCoversViewportCenter(section) {
@@ -29,26 +29,40 @@
         }
 
         function updateOverlay() {
+            if (fullBgSections.length === 0) {
+                setOverlay(projectColor);
+                return;
+            }
             var anyInView = false;
             fullBgSections.forEach(function(section) {
                 if (sectionCoversViewportCenter(section)) anyInView = true;
             });
-            setOverlay(anyInView);
+            setOverlay(anyInView ? projectColor : defaultBg);
         }
 
-        var observer = new IntersectionObserver(
-            updateOverlay,
-            { root: null, rootMargin: "0px", threshold: 0 }
-        );
+        setOverlay(projectColor);
 
-        fullBgSections.forEach(function(section) {
-            observer.observe(section);
-        });
-
-        window.addEventListener("scroll", updateOverlay, { passive: true });
-        window.addEventListener("resize", updateOverlay);
-
-        updateOverlay();
+        if (fullBgSections.length > 0) {
+            var hasScrolled = false;
+            function onScrollOrResize() {
+                if (!hasScrolled) return;
+                updateOverlay();
+            }
+            window.addEventListener("scroll", function() {
+                hasScrolled = true;
+                updateOverlay();
+            }, { passive: true });
+            window.addEventListener("resize", onScrollOrResize);
+            var observer = new IntersectionObserver(
+                function() {
+                    if (hasScrolled) updateOverlay();
+                },
+                { root: null, rootMargin: "0px", threshold: 0 }
+            );
+            fullBgSections.forEach(function(section) {
+                observer.observe(section);
+            });
+        }
         return true;
     }
 
@@ -60,6 +74,15 @@
         ];
         if (!projects.length) return;
 
+        var overlay = document.createElement("div");
+        overlay.id = "viewport-bg-overlay";
+        overlay.setAttribute("aria-hidden", "true");
+        overlay.style.cssText = "position:fixed;inset:0;z-index:-1;pointer-events:none;transition:background-color 0.2s ease;";
+        document.body.appendChild(overlay);
+
+        document.documentElement.style.backgroundColor = "transparent";
+        document.body.style.backgroundColor = "transparent";
+
         function update() {
             var currentColor = defaultBg;
             for (var i = 0; i < projects.length; i++) {
@@ -69,10 +92,11 @@
                     currentColor = section.color;
                 }
             }
-            document.body.style.backgroundColor = currentColor;
+            overlay.style.backgroundColor = currentColor;
         }
 
         document.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
         update();
     }
 
@@ -88,3 +112,4 @@
         }
     }
 })();
+</script>

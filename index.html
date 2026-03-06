@@ -4,32 +4,34 @@ title: Index
 ---
 
 <div class="grid">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary-focus) 1px solid;">
+    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary) 1px solid;">
         <section>
             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
         </section>
         <section>
-            <a class="side-button navlink" href="https://www.linkedin.com/in/li-jm/">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            <a class="side-button navlink" href="https://github.com/azurestocking">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            <div>
+                <a class="side-button navlink" href="https://www.linkedin.com/in/li-jm/">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="side-button navlink" href="https://github.com/azurestocking">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            </div>
         </section>
     </aside>
 
     <div class="main-container" style="margin-top: 25vh;">
-        <section class="subtitle" style="border-bottom: none">
+        <section class="subtitle">
             <h3>FEATURED</h3>
         </section>
         {% for project in site.projects %}
-            <section id="{{ project.slug }}" class="grid-1-1" style="border-top: var(--tertiary-focus) 1px solid; margin-top: 0; margin-bottom: 64px;">
-                <div>
-                    <h4>{{ project.client }}</h4>
-                    <div style="color: var(--secondary);">{{ project.desc }}</div>
-                </div>
-                <div>
-                    <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
-                        <img src="{{ project.image | relative_url }}" alt="" loading="lazy">
-                    </a>
-                </div>
-            </section>
+        <section id="{{ project.slug }}" class="grid-1-1" style="border-top: var(--tertiary) 1px solid;">
+            <div>
+                <h4>{{ project.client }}</h4>
+                <div style="color: var(--secondary);">{{ project.desc }}</div>
+            </div>
+            <div>
+                <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
+                    <img src="{{ project.image | relative_url }}" alt="" loading="lazy">
+                </a>
+            </div>
+        </section>
         {% endfor %}
     </div>
 </div>
