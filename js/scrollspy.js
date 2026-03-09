@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return headingText;
     }
 
-    // Get h3 inside section with class "subtitle" only, in document order (exclude .np and .hide)
-    const headings = Array.from(main.querySelectorAll('section.subtitle h3')).filter(heading => {
+    // Get h2 inside .module-header, in document order (exclude .np and .hide)
+    const headings = Array.from(main.querySelectorAll('.module-header h2')).filter(heading => {
         return !heading.classList.contains('np') && !heading.classList.contains('hide');
     });
 
@@ -37,17 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Build section ids: use parent section.subtitle id if present, else set from heading
+    // Build section ids: use parent section id if present, else set from heading
     const sectionIds = [];
 
-    headings.forEach(heading => {
+    headings.forEach((heading, index) => {
         const link = document.createElement('a');
-        const section = heading.closest('section.subtitle');
+        const section = heading.closest('section');
         const targetId = section && (section.id || (section.id = generateHeadingId(heading)));
         sectionIds.push(targetId);
         link.href = '#' + targetId;
         link.classList.add('scrollspy-link', heading.tagName.toLowerCase());
-        link.textContent = heading.textContent;
+
+        const label = document.createElement('span');
+        label.classList.add('module-label');
+        label.textContent = String(index + 1).padStart(2, '0');
+        link.appendChild(label);
+        link.append(heading.textContent);
         scrollspyLinks.appendChild(link);
     });
 

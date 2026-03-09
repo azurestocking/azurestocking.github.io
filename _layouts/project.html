@@ -3,11 +3,11 @@ layout: default
 ---
 
 <div class="grid" data-project-color="{{ page.color }}">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary) 1px solid;">
+    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh;">
         <section>
             <div>{{ page.desc }}</div>
         </section>
-        <section id="scrollspy" class="scrollspy-hidden" style="margin-block-start: 0;">
+        <section id="scrollspy" class="scrollspy-hidden">
             <div class="scrollspy">
                 <div class="scrollspy-content">
                     <div class="scrollspy-links" id="scrollspy-links">
@@ -17,23 +17,31 @@ layout: default
         </section>
     </aside>
     <div class="main-container" style="margin-top: 25vh;">
-        <section class="subtitle">
-            <h3 class="hide">
-                <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit; font-weight: inherit;">
-                    <i class="fa-solid fa-arrow-left" style="margin-bottom: 0.25em;"></i> INDEX
-                </a>
-            </h3>
-        </section>
-        <section>
-            <div class="grid-3">
-                <div class="p-l">{{ page.desc }}</div>
+        <section class="hero">
+            <div class="grid-2-1">
+                <h1>{{ page.client }}</h1>
             </div>
-        </section>
-        <section class="full-bg">
-            <div class="grid-3">
-                <div>
-                    <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
+            <div class="grid-2-1">
+                <p>{{ page.desc }}</p>
+            </div>
+            <div class="grid-2-1">
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <span class="label">module</span>
+                        <span class="value">10</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="label">module</span>
+                        <span class="value">10</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="label">module</span>
+                        <span class="value">10</span>
+                    </div>
                 </div>
+            </div>
+            <div class="grid-3">
+                <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
             </div>
         </section>
         
@@ -42,4 +50,4 @@ layout: default
 </div>
 
 <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
-{% include bg-switcher.html %}
+{% comment %}{% include bg-switcher.html %}{% endcomment %}

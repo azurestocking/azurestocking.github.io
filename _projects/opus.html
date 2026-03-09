@@ -30,959 +30,969 @@ tools:
   - Figma
 ---
 
-<section class="subtitle">
-    <h3>Part 1. Overview</h3>
-</section>
-
 <section>
-    <div class="grid-2-1">
-        <div>
-            <h3 class="hide">Background</h3>
-            <p>Amidst the AIGC boom, integrating a text-to-video feature seemed timely and feasible. The team needed to quickly and affordably validate this loosely defined but potentially valuable opportunity before diverting core production efforts.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>🔥 Market Interest</h5>
-                <p>The recent advancement of generative AI has fueled momentum in multimodal creation, with text-to-video emerging as a compelling frontier. Startups like Pika and Runway signal both technical feasibility and strong market demand.</p>
-            </div>
-            <div class="card">
-                <h5>🚀 Existential Crisis</h5>
-                <p>The client is among the earliest players in AI-powered video captioning and repurposing, but the low barrier to entry makes differentiation essential to maintain its competitive edge as more industry giants enter the space.</p>
-            </div>
-            <div class="card">
-                <h5>🤝 Potential Synergy</h5>
-                <p>Our existing users have been requesting text-to-video generation feature, which complements the current focus on captioning and repurposing by extending the workflow earlier in the pipeline.</p>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3 class="hide">Challenge</h3>
-            <p>As an external consultant, I was brought in to lead a focused rapid prototyping sprint under low internal priority. The go-to-market challenge lies not in design implementation alone, but also in clarifying underlying strategic ambiguity.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>💵 Limited Resource</h5>
-                <p>The company was an early-stage startup preparing for Series A, operating with a small team and limited budget, and lacking the bandwidth to make a full-time hire for temporary concept testing.</p>
-            </div>
-            <div class="card">
-                <h5>🧭 Twofold Ambiguity</h5>
-                <p>Our research goal is to strategically validate this opportunity by defining a compelling value proposition and identifying key user segments, and technically, to align the feature with actual user workflows in design.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3 class="hide">Design Process</h3>
-            <p>We adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/design-process.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-3">
-        <div>
-            <h3 class="hide">Highlight</h3>
-            <div class="p-l">
-                Proposed an end-to-end storytelling support tool for AI video production, built on a multistage generative media pipeline focused on human-AI collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and flexible control.
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="full-bg">
-    <div class="grid-3">
-        <h4>I. Collaborative Script Composition</h4>
-    </div>
-    <div class="grid-3">
-        <div class="image-container" style="padding: 64px;">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F1.mp4" 
-                content_type="video" %}
-        </div>
-    </div>
-    <div class="grid-1-1">
-        <div>
-            <h5>Text Enhancement</h5>
-            <p>Select and refine specific text segments using predefined functions such as polish, shorten, and regenerate, or apply custom instruction-based prompts.</p>
-        </div>
-        <div>
-            <h5>Screenplay Reformatting</h5>
-            <p>Reformat scripts adhering to industry-standard conventions to structurally distinguish key elements, improving readability and enhancing LLM understanding.</p>
-        </div>
+    <div class="module-header">
+        <span class="module-label">Part 01</span>
+        <h2>Overview</h2>
+        <p>Opus Clip was an expanding Pre-Series A startup specializing in AI-powered short video repurposing and captioning, now aiming to integrate a text-to-video generation feature into its current product amid limited resources and intensifying market.</p>
+        <p>Our research yielded data-driven insights through iterative prototype-based testing, uncovering diverse user segments and their varied expectations and shared high-level goals, culminating in a design proposal for an end-to-end, human-AI collaborative storytelling support tool.</p>
     </div>
 
-    <hr>
-
-    <div class="grid-3">
-        <h4>II. Flexible Storyboard Management</h4>
-    </div>
-    <div class="grid-3">
-        <div class="image-container" style="padding: 64px;">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F2.mp4" 
-                content_type="video" %}
-        </div>
-    </div>
-    <div class="grid-1-1">
-        <div>
-            <h5>View Mode</h5>
-            <p>Switch between varying levels of granularity using three distinct view modes: thumbnail for navigation, editor for detailed refinement, and slideshow for preview.</p>
-        </div>
-        <div>
-            <h5>Shot Focus</h5>
-            <p>Apply key element filters to isolate shots by character or scene, improving manageability within complex or long-form scripts.</p>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="grid-3">
-        <h4>III. Comprehensive Shot Tweaking</h4>
-    </div>
-    <div class="grid-3">
-        <div class="image-container" style="padding: 64px;">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F3.mp4" 
-                content_type="video" %}
-        </div>
-    </div>
-    <div class="grid-1-1">
-        <div>
-            <h5>Full Control</h5>
-            <p>Edit each shot’s voiceover and dialogue, and fine-tune keyframes with tools like reprompting, uploads, generative fill, and camera movement.</p>
-        </div>
-        <div>
-            <h5>Prompt Builder</h5>
-            <p>Transform text-based prompting into a GUI-driven experience with structured, atomic controls to achieve desired results without prompt engineering expertise.</p>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="grid-3">
-        <h4>IV. Centralized Asset Management & Customization</h4>
-    </div>
-    <div class="grid-3">
-        <div class="image-container" style="padding: 64px;">
-            {% include mockup-macbook.html 
-                content_image="/images/opus/F4.mp4" 
-                content_type="video" %}
-        </div>
-    </div>
-    <div class="grid-1-1">
-        <div>
-            <h5>Entity Extraction</h5>
-            <p>Automatically extract reusable characters and scenes from natural language with advanced semantic parsing. No manual tagging needed.</p>
-        </div>
-        <div>
-            <h5>Asset Manager</h5>
-            <p>Update multiple shots in batch by customizing shared global assets through a centralized system, accelerating revisions and ensuring visual consistency across the entire project.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3 class="hide">Impacts</h3>
-            <p>Full implementation would be a major, resource-intensive undertaking requiring leadership buy-in and broader organizational alignment—none of which were in place yet. While the design has not been shipped, it nonetheless created indirect value.</p>
-        </div>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
+    <div>
+        <div class="grid-2-1">
             <div>
-                <div class="number">30M</div>
-                <h5>Series A Funding</h5>
-                <p>Enhanced the client’s vision and strategy, bolstering market position and investor confidence ahead of fundraising.</p>
+                <h3 class="hide">Background</h3>
+                <p>Amidst the AIGC boom, integrating a text-to-video feature seemed timely and feasible. Yet, this loosely defined but potentially valuable opportunity needed to be validated and conceptualized, quickly and affordably, before securing leadership buy-in and diverting core production efforts.</p>
             </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>🔥 Market Interest</h5>
+                    <p>The recent advancement of generative AI has fueled momentum in multimodal creation, with text-to-video emerging as a compelling frontier. Startups like Pika and Runway signal both technical feasibility and strong market demand.</p>
+                </div>
+                <div class="card">
+                    <h5>🚀 Existential Crisis</h5>
+                    <p>The client is among the earliest players in AI-powered video captioning and repurposing, but the low barrier to entry makes differentiation essential to maintain its competitive edge as more industry giants enter the space.</p>
+                </div>
+                <div class="card">
+                    <h5>🤝 Potential Synergy</h5>
+                    <p>Our existing users have been requesting text-to-video generation feature, which complements the current focus on captioning and repurposing by extending the workflow earlier in the pipeline.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="grid-2-1">
             <div>
-                <div class="number">40%</div>
-                <h5>Retention Rate</h5>
-                <p>initial user engagement and to identify early signals of perceived value.</p>
+                <h3 class="hide">Challenge</h3>
+                <p>As an external consultant, I was brought in to lead a focused rapid prototyping sprint under low internal priority. The go-to-market challenge lies not in design implementation alone, but also in clarifying underlying strategic ambiguity.</p>
             </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>💵 Limited Resource</h5>
+                    <p>The company was an early-stage startup preparing for Series A, operating with a small team and limited budget, and lacking the bandwidth to make a full-time hire for temporary concept testing.</p>
+                </div>
+                <div class="card">
+                    <h5>🧭 Twofold Ambiguity</h5>
+                    <p>Our research goal is to strategically validate this opportunity by defining a compelling value proposition and identifying key user segments, and technically, to align the feature with actual user workflows in design.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="grid-2-1">
             <div>
-                <div class="number">60%</div>
-                <h5>Export Rate</h5>
-                <p></p>
+                <h3 class="hide">Design Process</h3>
+                <p>We adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/design-process.png' | relative_url }}" loading="lazy">
             </div>
         </div>
     </div>
-</section>
 
-<section class="subtitle">
-    <h3>Part 2. Think, Make, Check *1</h3>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Market Analysis</h3>
-            <p>Leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
-            <p>To validate this hypothesis, I identified several leading players along the production cycle and established a set of criteria to assess their narrative capabilities.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <img src="{{ '/images/opus/market-analysis.png' | relative_url }}" loading="lazy">
-    </div>
-    <div class="grid-2-1">
-        <div>
-            <p>The matrix reveals a strategic opportunity: to differentiate by centering on storytelling support, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Brainstorming</h3>
-            <p>We brainstormed features that support storytelling more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruits.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/brainstorming.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Wireframe</h3>
-            <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming two different directions.</p>
-        </div>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <img src="{{ '/images/opus/wireframe-1.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Storyboard</h5>
-                    <p>A visual tool used by filmmakers and animators to pre-visualize and plan a production clearly and efficiently, e.g., Toon Boom Storyboard.</p>
-                </div>
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3 class="hide">Highlight</h3>
+                <p>Proposed an end-to-end storytelling support tool for AI video production, built on a multistage generative media pipeline focused on human-AI collaborative workflow enhancement rather than dependence on powerful models, enabling faster iteration, consistent output, and flexible control.</p>
             </div>
-            <div class="list-container">
-                <img src="{{ '/images/opus/wireframe-2.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Infinite Canvas</h5>
-                    <p>A modular approach used by domain experts to design and execute complex systems visually, e.g., Grasshopper, Unreal Engine.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Feature #1 - Collaborative Script Composition</div>
+                <div class="demo-body">
+                    <div class="grid-1-1">
+                        <div>
+                            <h5>Text Enhancement</h5>
+                            <p>Select and refine specific text segments using predefined functions such as polish, shorten, and regenerate, or apply custom instruction-based prompts.</p>
+                        </div>
+                        <div>
+                            <h5>Screenplay Reformatting</h5>
+                            <p>Reformat scripts adhering to industry-standard conventions to structurally distinguish key elements, improving readability and enhancing LLM understanding.</p>
+                        </div>
+                    </div>
+                    <div class="grid-3">
+                        <div class="image-container">
+                            {% include mockup-macbook.html 
+                                content_image="/images/opus/F1.mp4" 
+                                content_type="video" %}
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Concept Testing</h3>
-            <p>Although the node-based option seems to be intriguing at first, especially for designers and engineers, I facilitated a stakeholder interview cross-functionally to evaluate its viability. We walked through the annotated sketches and discussed each concept’s strengths, limitations, and overall strategic fit.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/concept-testing.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<section class="subtitle">
-    <h3>Part 3. Think, Make, Check *2</h3>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Data Analysis</h3>
-            <p>I grouped the feedback through into <b>thematic categories</b>. The affinity mapping demonstrates that implementing such an architecture would require substantial engineering refactoring and invited critical concerns across technical, usability, and strategic dimensions.</p>
-            <p>Considering those constraints and the questionable input-output ratio, we deprioritized this option and redirected our focus toward the storyboard alternative.</p>
-        </div>
-    </div>
-    <!--
-    <div class="grid-3">
-        <div class="image-container">
-            <img src="{{ '/images/opus/data-analysis-1.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-    -->
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>🤹 Technical Complexity</h5>
-                <p>Requires each cell to be developed standalone yet communicative, and the magnitude of potential cell combinations exponentially poses challenges in scalability, agility, and version control.</p>
-            </div>
-            <div class="card">
-                <h5>🤯 Usability Uncertainty</h5>
-                <p>Introduces flexibility with larger possibility of choice paralysis and increased cognitive load, which may alienate users with a fragmented, unpredictable, and delayed experience.</p>
-            </div>
-            <div class="card">
-                <h5>📉 Managerial Misalignment</h5>
-                <p>Demands significant resources in labor, capital, and time for development and operation, potentially resulting in delays, shifts, or failures in achieving long-term strategic goals.</p>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-<section>
-    <div class="grid-3">
-        <div>
-            <h3>Prototype</h3>
-            <div class="p-l">Introduced an intermediary step of text-to-image generation to stabilize the creative workflow, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</div>
-        </div>
-    </div>
-</section>
-
-<section class="full-bg">
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <img src="{{ '/images/opus/prototype-1-1.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Prompt</h5>
-                    <p>Enrich the user input with storytelling techniques to produce a complete, engaging screenplay.</p>
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Feature #2 - Flexible Storyboard Management</div>
+                <div class="demo-body">
+                    <div class="grid-1-1">
+                        <div>
+                            <h5>View Mode</h5>
+                            <p>Switch between varying levels of granularity using three distinct view modes: thumbnail for navigation, editor for detailed refinement, and slideshow for preview.</p>
+                        </div>
+                        <div>
+                            <h5>Shot Focus</h5>
+                            <p>Apply key element filters to isolate shots by character or scene, improving manageability within complex or long-form scripts.</p>
+                        </div>
+                    </div>
+                    <div class="grid-3">
+                        <div class="image-container">
+                            {% include mockup-macbook.html 
+                                content_image="/images/opus/F2.mp4" 
+                                content_type="video" %}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="list-container">
-                <img src="{{ '/images/opus/prototype-1-2.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Screenplay</h5>
-                    <p>Parse the screenplay into shot-by-shot scripts with structured metadata to guide text-to-image generation.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Feature #3 - Comprehensive Shot Tweaking</div>
+                <div class="demo-body">
+                    <div class="grid-1-1">
+                        <div>
+                            <h5>Full Control</h5>
+                            <p>Edit each shot’s voiceover and dialogue, and fine-tune keyframes with tools like reprompting, uploads, generative fill, and camera movement.</p>
+                        </div>
+                        <div>
+                            <h5>Prompt Builder</h5>
+                            <p>Transform text-based prompting into a GUI-driven experience with structured, atomic controls to achieve desired results without prompt engineering expertise.</p>
+                        </div>
+                    </div>
+                    <div class="grid-3">
+                        <div class="image-container">
+                            {% include mockup-macbook.html 
+                                content_image="/images/opus/F3.mp4" 
+                                content_type="video" %}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="list-container">
-                <img src="{{ '/images/opus/prototype-1-3.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Storyboard</h5>
-                    <p>Tweak keyframes, voiceover, and animation settings to better align with the user’s creative intent.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Feature #4 - Centralized Asset Management & Customization</div>
+                <div class="demo-body">
+                    <div class="grid-1-1">
+                        <div>
+                            <h5>Entity Extraction</h5>
+                            <p>Automatically extract reusable characters and scenes from natural language with advanced semantic parsing. No manual tagging needed.</p>
+                        </div>
+                        <div>
+                            <h5>Asset Manager</h5>
+                            <p>Update multiple shots in batch by customizing shared global assets through a centralized system, accelerating revisions and ensuring visual consistency across the entire project.</p>
+                        </div>
+                    </div>
+                    <div class="grid-3">
+                        <div class="image-container">
+                            {% include mockup-macbook.html 
+                                content_image="/images/opus/F4.mp4" 
+                                content_type="video" %}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="list-container">
-                <img src="{{ '/images/opus/prototype-1-4.png' | relative_url }}" loading="lazy">
+        </div>
+    </div>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3 class="hide">Impacts</h3>
+                <p>While the product launched 1.5 years after the design was completed, the foundational strategy and UX direction I established continued to guide the team through development.</p>
+            </div>
+        </div>
+        <div class="grid-3">
+            <div class="flex-list-row">
                 <div>
-                    <h5>Slideshow</h5>
-                    <p>Simulate the structure and pacing of the final video to reduce uncertainty in image-to-video generation.</p>
+                    <div class="number">30M</div>
+                    <h4>Series A Funding</h4>
+                    <p>Enhanced the client’s product vision and go-to-market narrative, contributing to investor confidence ahead of fundraising round.</p>
+                </div>
+                <div>
+                    <div class="number">40%</div>
+                    <h4>Day-1 Retention</h4>
+                    <p>Crafted an onboarding and core experience that delivered immediate value, driving strong next-day user return.</p>
+                </div>
+                <div>
+                    <div class="number">60%</div>
+                    <h4>Export Rate</h4>
+                    <p>Drove high satisfaction with the rendered output, prompting users to voluntarily share their results on social media.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+
+
 <section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Usability Testing</h3>
-            <p>Because I hypothesized multiple user segments, I recruited a slightly larger sample of 8 participants to ensure comprehensive representation, including vloggers, content aggregators, enterprise marketers, and filmmakers.</p>
-            <p>To identify key usability and functionality issues, I employed the think-aloud protocol during sessions that complemented by a screener survey to gauge how each participant might use the proposed feature in their routine.</p>
-            <p>Feedback was then synthesized with sticky notes, grouped by <b>thematic categories</b> and color-coded by <b>usage intensity</b>.</p>
+    <div class="module-header">
+        <span class="module-label">Part 2</span>
+        <h2>Think, Make, Check</h2>
+        <p>Starting with a hypothesis: leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
+    </div>
+    
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Market Analysis</h3>
+                <p>I identified several leading players along the production cycle and established a set of criteria to assess their narrative capabilities.</p>
+                <p>The matrix reveals a strategic opportunity: to differentiate by centering on storytelling support, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <img src="{{ '/images/opus/market-analysis.png' | relative_url }}" loading="lazy">
         </div>
     </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/usability-testing-2.png' | relative_url }}" loading="lazy">
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Brainstorming</h3>
+                <p>We brainstormed features that support storytelling more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruits.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/brainstorming.png' | relative_url }}" loading="lazy">
+            </div>
         </div>
     </div>
-    <div class="grid-2-1">
-        <div>
-            <p>Upon closer inspection, even feedback targeting the same areas for improvement conflicted on how to improve. How should we navigate these discrepancies to determine the optimal path forward? Or, to ask a more fundamental question:</p>
+    
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Wireframe</h3>
+                <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming two different directions.</p>
+            </div>
+        </div>
+        <div class="grid-3">
+            <div class="flex-list-row">
+                <div class="list-container">
+                    <img src="{{ '/images/opus/wireframe-1.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Storyboard</h5>
+                        <p>A visual tool used by filmmakers and animators to pre-visualize and plan a production clearly and efficiently, e.g., Toon Boom Storyboard.</p>
+                    </div>
+                </div>
+                <div class="list-container">
+                    <img src="{{ '/images/opus/wireframe-2.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Infinite Canvas</h5>
+                        <p>A modular approach used by domain experts to design and execute complex systems visually, e.g., Grasshopper, Unreal Engine.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="grid-2-1">
-        <div class="p-l" style="margin-bottom: 0px;">
-            <blockquote>Why are users holding conflicting opinions on the same areas for improvement?</blockquote>
+    
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Concept Testing</h3>
+                <p>Although the node-based option appeared intriguing, particularly for designers and engineers, I facilitated a <strong>cross-functional stakeholder interview</strong> to evaluate its viability, walking through annotated sketches and assessing each concept’s strengths, limitations, and strategic fit.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/concept-testing.png' | relative_url }}" loading="lazy">
+            </div>
         </div>
     </div>
 </section>
 
-<section class="subtitle">
-    <h3>Part 4. Think, Make, Check *3</h3>
-</section>
+
 
 <section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Data Analysis</h3>
-            <p>To make sense of those seemingly irreconcilable contradictions, I first examined the underlying intent behind each request, and then reshuffled them by <b>high-level goals</b>—the broader needs encompassing possibly divergent user behaviors and expectations.</p>
-        </div>
+    <div class="module-header">
+        <span class="module-label">Part 3</span>
+        <h2>Think, Make, Check +1</h2>
+        <p>With stakeholder feedback in hand, the next step was to synthesize insights and determine the stronger path forward before moving into the next round of iteration.</p>
     </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/data-analysis-3-1.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div>
-            <p>The affinity mapping indicates that while user expectations diverge, they fall under the same high-level goals, implying that the divergence stems from how users conceptualize these goals differently.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>⌛️ Efficiency</h5>
-                <p>Reduce time, effort, financial cost, and cognitive friction by providing readable information, an intuitive interface, and a streamlined, user-friendly workflow.</p>
-            </div>
-            <div class="card">
-                <h5>📐 Consistency</h5>
-                <p>Enable a coherent narrative and stable visual identity across frames, while allowing reasonable variation to support continuity in action, time, and space.</p>
-            </div>
-            <div class="card">
-                <h5>🕹 Adaptability</h5>
-                <p>Support varied intents and use cases through rich customization options, flexible control over outputs and workflows, and a context-aware, responsive system.</p>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Data Analysis</h3>
+                <p>Grouping feedback into <strong>thematic categories</strong>, the affinity mapping revealed that implementing a node-based architecture would require substantial engineering refactoring, raising critical concerns across technical, usability, and strategic dimensions.</p>
             </div>
         </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/data-analysis-1.png' | relative_url }}" loading="lazy">
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>🤹 Technical Complexity</h5>
+                    <p>Requires each cell to be developed standalone yet communicative, and the magnitude of potential cell combinations exponentially poses challenges in scalability, agility, and version control.</p>
+                </div>
+                <div class="card">
+                    <h5>🤯 Usability Uncertainty</h5>
+                    <p>Introduces flexibility with larger possibility of choice paralysis and increased cognitive load, which may alienate users with a fragmented, unpredictable, and delayed experience.</p>
+                </div>
+                <div class="card">
+                    <h5>📉 Managerial Misalignment</h5>
+                    <p>Demands significant resources in labor, capital, and time for development and operation, potentially resulting in delays, shifts, or failures in achieving long-term strategic goals.</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <p>Given these constraints and an unfavorable input-output ratio, we deprioritized this direction and redirected focus toward the storyboard alternative.</p>
+        </div>
     </div>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Prototype</h3>
+                <p>Introduced an intermediary step of text-to-image generation to stabilize the creative workflow, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</p>
+            </div>
+        </div>
+        <div class="grid-3">
+            <div class="flex-list-row">
+                <div class="list-container">
+                    <img src="{{ '/images/opus/prototype-1-1.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Prompt</h5>
+                        <p>Enrich the user input with storytelling techniques to produce a complete, engaging screenplay.</p>
+                    </div>
+                </div>
+                <div class="list-container">
+                    <img src="{{ '/images/opus/prototype-1-2.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Screenplay</h5>
+                        <p>Parse the screenplay into shot-by-shot scripts with structured metadata to guide text-to-image generation.</p>
+                    </div>
+                </div>
+                <div class="list-container">
+                    <img src="{{ '/images/opus/prototype-1-3.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Storyboard</h5>
+                        <p>Tweak keyframes, voiceover, and animation settings to better align with the user’s creative intent.</p>
+                    </div>
+                </div>
+                <div class="list-container">
+                    <img src="{{ '/images/opus/prototype-1-4.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Slideshow</h5>
+                        <p>Simulate the structure and pacing of the final video to reduce uncertainty in image-to-video generation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Usability Testing</h3>
+                <p>To ensure comprehensive representation across hypothesized user segments, I recruited a slightly larger sample of 8 participants, complemented by a screener survey to understand how each might incorporate the feature into their existing workflow.</p>
+                <p>Sessions employed the think-aloud protocol to surface key usability and functionality issues in real time. Feedback was then synthesized through affinity mapping, grouped thematically and color-coded by usage intensity.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/usability-testing-2.png' | relative_url }}" loading="lazy">
+            </div>
+        </div>
+    </div>
+    
 </section>
 
+
+
 <section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Problem Statement</h3>
-            <p>We began with a straightforward yet knowingly simplistic problem framing based on client’s request. With the emerged high-level goals, I refined that rough question:</p>
+    <div class="module-header">
+        <span class="module-label">Part 4</span>
+        <h2>Think, Make, Check +2</h2>
+        <p>Digging deeper, we found that feedback converged on the same areas for improvement, yet diverged sharply on how to address them, which raises a more fundamental question: <strong>Why are users holding conflicting opinions on the same areas for improvement?</strong></p>
+    </div>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Data Analysis</h3>
+                <p>To make sense of those seemingly irreconcilable contradictions, I first examined the underlying intent behind each request, and then reshuffled them by <b>high-level goals</b>—the broader needs encompassing possibly divergent user behaviors and expectations.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/data-analysis-3-1.png' | relative_url }}" loading="lazy">
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div>
+                <p>The affinity mapping indicates that <strong>while user expectations diverge, they fall under the same high-level goals</strong>, implying that <strong>the divergence stems from how users conceptualize these goals differently</strong>.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>⌛️ Efficiency</h5>
+                    <p>Reduce time, effort, financial cost, and cognitive friction by providing readable information, an intuitive interface, and a streamlined, user-friendly workflow.</p>
+                </div>
+                <div class="card">
+                    <h5>📐 Consistency</h5>
+                    <p>Enable a coherent narrative and stable visual identity across frames, while allowing reasonable variation to support continuity in action, time, and space.</p>
+                </div>
+                <div class="card">
+                    <h5>🕹 Adaptability</h5>
+                    <p>Support varied intents and use cases through rich customization options, flexible control over outputs and workflows, and a context-aware, responsive system.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="grid-2-1">
-        <div class="p-l" style="margin-bottom: 0px;">
+    
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Problem Statement</h3>
+                <p>We began with a straightforward yet knowingly simplistic problem framing based on client’s request. With the emerged high-level goals, I refined that rough question:</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
             <blockquote>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</blockquote>
         </div>
     </div>
-</section>
 
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Data Analysis</h3>
-            <p>The observation that users conceptualize high-level goals differently validates our hypothesis of multiple user segments. This divergence indicates that distinct user groups inevitably adopt varying positions on value trade-offs, which was expected to be evident through their clustering along axes representing two <b>core tensions in users’ decision-making</b>.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>1️⃣ Cost vs. Perceived Quality</h5>
-                <p>This axis plots users’ expectations for production by reflecting their weighting of resources commitment against the value of outcomes. Dimensions highlighted in feedback include time-saved, effort-saved, and craftsmanship, with the extremes of this axis representing cost and perceived quality.</p>
-            </div>
-            <div class="card">
-                <h5>2️⃣ User Agency vs. Automation</h5>
-                <p>This axis plots users’ preferences for interaction by reflecting their willingness to delegate creative control to the system. Dimensions highlighted in feedback include authorship, precision, and freedom, with the extremes of this axis representing user agency versus automation.</p>
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Data Analysis</h3>
+                <p>The observation that users conceptualize high-level goals differently validates our hypothesis of multiple user segments. This divergence indicates that distinct user groups inevitably adopt varying positions on value trade-offs, which was expected to be evident through their clustering along axes representing two <b>core tensions in users’ decision-making</b>.</p>
             </div>
         </div>
-    </div>
-    <div class="grid-2-1">
-        <div>
-            <p>Mapping all sticky notes onto these two axes allowed us to reveal the logically inferred user segmentation.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/data-analysis-3-2.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div>
-            <p>Sticky notes were distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating that:</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>1️⃣ We Don’t Trust AI</h5>
-                <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
-            </div>
-            <div class="card">
-                <h5>2️⃣ User Segmentation</h5>
-                <p>The polarization by usage intensity reveals two distinct user groups: those with lower intensity favoring low cost and automation, and others with higher intensity prioritizing user agency and quality.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Personas</h3>
-            <p>Based on user segmentation, I developed two personas. Original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators. Derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
-        </div>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <img src="{{ '/images/opus/persona-1.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Original Creator</h5>
-                    <p>Seek to maintain creative authorship while achieving high-quality outputs; cautious of full automation and perceive the tool as an extension.</p>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>1️⃣ Cost vs. Perceived Quality</h5>
+                    <p>This axis plots users’ expectations for production by reflecting their weighting of resources commitment against the value of outcomes. Dimensions highlighted in feedback include time-saved, effort-saved, and craftsmanship, with the extremes of this axis representing cost and perceived quality.</p>
                 </div>
-            </div>
-            <div class="list-container">
-                <img src="{{ '/images/opus/persona-2.png' | relative_url }}" loading="lazy">
-                <div>
-                    <h5>Derivative Creator</h5>
-                    <p>Aim to produce acceptable outputs with minimal input; willing to delegate complex tasks to the system and view the tool as a replacement.</p>
+                <div class="card">
+                    <h5>2️⃣ User Agency vs. Automation</h5>
+                    <p>This axis plots users’ preferences for interaction by reflecting their willingness to delegate creative control to the system. Dimensions highlighted in feedback include authorship, precision, and freedom, with the extremes of this axis representing user agency versus automation.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-3">
-        <div>
-            <h3>Prototype</h3>
-            <div class="p-l">
-                Improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent generation.
+        <div class="grid-2-1">
+            <div>
+                <p>Mapping all sticky notes onto these two axes allowed us to reveal the logically inferred user segmentation.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="full-bg">
-    <div class="grid-3">
-        <h4>I. Layout</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I1-1B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Arranged shots horizontally, causing confusion due to misalignment between the container and slider lengths, which conflicted with standard scrolling behavior.</p>
-                </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/data-analysis-3-2.png' | relative_url }}" loading="lazy">
             </div>
-            <div class="list-container">
-                <div class="after">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I1-1A.mp4" type="video/mp4" loading="lazy">
-                    </video>
+        </div>
+        <div class="grid-2-1">
+            <div>
+                <p>Sticky notes were distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating that:</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>1️⃣ We Don’t Trust AI</h5>
+                    <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
                 </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Switched to a vertical layout with two modes, and collapsed shot editing options with hover effects to reduce cognitive load through prioritized information display.</p>
+                <div class="card">
+                    <h5>2️⃣ User Segmentation</h5>
+                    <p>The polarization by usage intensity reveals two distinct user groups: those with lower intensity favoring low cost and automation, and others with higher intensity prioritizing user agency and quality.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <hr>
-
-    <div class="grid-3">
-        <h4>II. Customization</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I1-2-1B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Required manual configuration of global settings each time via a low-discoverability button, leading to repetitive setup and frequent oversights.</p>
-                </div>
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Personas</h3>
+                <p>Based on user segmentation, I developed two personas. Original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators. Derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
             </div>
-            <div class="list-container">
-                <div class="after">
-                    <img src="{{ '/images/opus/I1-2-1A.png' | relative_url }}" loading="lazy">
+        </div>
+        <div class="grid-3">
+            <div class="flex-list-row">
+                <div class="list-container">
+                    <img src="{{ '/images/opus/persona-1.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Original Creator</h5>
+                        <p>Seek to maintain creative authorship while achieving high-quality outputs; cautious of full automation and perceive the tool as an extension.</p>
+                    </div>
                 </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Displayed global settings in a prominent sidebar and introduced both predefined and customizable templates to streamline setup and ensure consistency.</p>
+                <div class="list-container">
+                    <img src="{{ '/images/opus/persona-2.png' | relative_url }}" loading="lazy">
+                    <div>
+                        <h5>Derivative Creator</h5>
+                        <p>Aim to produce acceptable outputs with minimal input; willing to delegate complex tasks to the system and view the tool as a replacement.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I1-2-2B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Required extensive manual effort to tweak shots individually in order to maintain visual consistency across shots.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I1-2-2A.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Extracted shared assets from the script automatically, enabling centralized control for easy insertion and batch-level tweaking.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="grid-3">
-        <h4>III. Inline Editing</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I1-3B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Applied AI-assisted text enhancements to the entire text area, altering unrelated content and lacking support for targeted control.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <img src="{{ '/images/opus/I1-3A.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Introduced a floating toolbar that allows users to select specific text segments for focused, instruction-based modifications in the editor.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="grid-3">
-        <h4>IV. Separate Workflow</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I1-4B.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Followed a linear path with a fixed entry point, assuming all users start from scratch and proceed through every editing stage.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <img src="{{ '/images/opus/I1-4A.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Added conditional branching and early skip options to bypass unnecessary editing steps based on user readiness, reducing the minimum required steps.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Usability Testing</h3>
-            <p>The updated prototype underwent testing with 5 additional participants, and their feedback was grouped by <b>thematic categories</b> to identify areas for improvement.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/usability-testing-3.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<section class="subtitle">
-    <h3>Part 5. Think, Make, Check *4</h3>
-</section>
-
-<section>
-    <div class="grid-2-1">
-        <div>
-            <h3>Data Analysis</h3>
-            <p>However, when I reclassified the requests using the previously found <b>high-level goals</b>, several items didn’t fit any known category, surfacing an unstated goal.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="image-container">
-            <img src="{{ '/images/opus/data-analysis-4.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div>
-            <p>Even with their diverse focuses, the uncategorized feedback unanimously converged on a previously unmentioned dimension: <b>transparency</b>—a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</p>
-        </div>
-    </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>1️⃣ Processing Logic Exposure</h5>
-                <p>Demystify how inputs and parameters are interpreted, e.g., establish a visually clear cause-effect relationship between script segments and corresponding generated shots.</p>
-            </div>
-            <div class="card">
-                <h5>2️⃣ Cognitive Load Distribution</h5>
-                <p>Offer progressive disclosure of information to guide user interactions, e.g., simplify complex, effort-intensive prompting by disassembling it into smaller, manageable pieces via structured input fields.</p>
-            </div>
-            <div class="card">
-                <h5>3️⃣ Human-in-the-Loop</h5>
-                <p>Integrate deliberate checkpoints where users can validate, revise, or override AI outputs, e.g., include undo/redo capabilities and history log to revert states or track changes.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="grid-3">
-        <div>
-            <h3>Prototype</h3>
-            <div class="p-l">
-                We included transparency as a new evaluation lens while continuing to improve core usability through fine-grained refinements, including domain-specific text enhancement, clarified interface hierarchy and interaction logic, more and informative iteration support.
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="full-bg">
-    <div class="grid-3">
-        <h4>I. Script Reformatting</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I2-1-1B.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Relied on plain text with minimal markdown-style grammar, confusing non-technical users and necessitating model’s semantic understanding.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I2-1-1A.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Added a reformat option to declare key elements with symbolic tags, improving frontend styling and generative performance.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I2-1-2B.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Displayed all options as buttons with icons and text labels, and provided sliders to adjust tone and length, resulting in redundant choices and unnecessary clicks.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I2-1-2A.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Replaced label-heavy buttons with grouped icon buttons, differentiated prompt input from function controls, and removed redundant two-step interactions.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="grid-3">
-        <h4>II. Shot Editing</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I2-2-1B.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Misarranged controls with an illogical information architecture, juxtaposed unrelated functions and nested options that should have remained parallel.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <img src="{{ '/images/opus/I2-2-1A.png' | relative_url }}" loading="lazy" style="background-color: var(--ghost);">
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Reorganized controls by target objects and logical relationships across the floating toolbar and modal, and removed redundant buttons.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I2-2-2B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Opened a new page with a disjointed layout where the trigger button didn’t align with the output keyframe, undermining traceability between the trigger and the result.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <img src="{{ '/images/opus/I2-2-2A.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Flattened the page hierarchy using modals and in-textarea dropdowns to establish a more intuitive cause-and-effect relationship.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I2-2-3B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Generated audio tracks exclusively from voiceover input, limiting applicability to genres like vlogs and commentary where narrative closely follows the visuals.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I2-2-3A.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Separated dialogue from voiceover to support formats like feature films, where audio often diverges from visuals and voiceover alone is insufficient.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="grid-3">
-        <h4>III. Preview</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I2-3-1B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Allowed preview only at the final step via an ambiguously labeled button, with no option to set starting points, discouraging early identification of issues.</p>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="after">
-                    <video width="100%" height="auto" autoplay loop muted>
-                        <source src="/images/opus/I2-3-1A.mp4" type="video/mp4" loading="lazy">
-                    </video>
-                </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Introduced a slideshow mode that simulates the final output’s pacing and structure before committing, with flexible back-and-forth switching between modes.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr>
     
-    <div class="grid-3">
-        <h4>IV. Version Control</h4>
-    </div>
-    <div class="grid-3">
-        <div class="flex-row">
-            <div class="list-container">
-                <div class="before">
-                    <img src="{{ '/images/opus/I2-3-2B.png' | relative_url }}" loading="lazy">
-                </div>
-                <div class="before">
-                    <h5>BEFORE</h5>
-                    <p>Kept a flat version control system that recorded all generation variations, offering little value for tracking meaningful changes or refining prompts.</p>
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Prototype</h3>
+                <p>Improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent generation.</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #1 - Layout</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I1-1B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Arranged shots horizontally, causing confusion due to misalignment between the container and slider lengths, which conflicted with standard scrolling behavior.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I1-1A.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Switched to a vertical layout with two modes, and collapsed shot editing options with hover effects to reduce cognitive load through prioritized information display.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="list-container">
-                <div class="after">
-                    <img src="{{ '/images/opus/I2-3-2A.png' | relative_url }}" loading="lazy">
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #2 - Customization</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I1-2-1B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Required manual configuration of global settings each time via a low-discoverability button, leading to repetitive setup and frequent oversights.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <img src="{{ '/images/opus/I1-2-1A.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Displayed global settings in a prominent sidebar and introduced both predefined and customizable templates to streamline setup and ensure consistency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I1-2-2B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Required extensive manual effort to tweak shots individually in order to maintain visual consistency across shots.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I1-2-2A.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Extracted shared assets from the script automatically, enabling centralized control for easy insertion and batch-level tweaking.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="after">
-                    <h5>AFTER</h5>
-                    <p>Maintained an iteration log that highlights differences compared to the last selected version, enabling more informed and focused revisions.</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #3 - Inline Editing</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I1-3B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Applied AI-assisted text enhancements to the entire text area, altering unrelated content and lacking support for targeted control.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <img src="{{ '/images/opus/I1-3A.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Introduced a floating toolbar that allows users to select specific text segments for focused, instruction-based modifications in the editor.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #4 - Separate Workflow</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I1-4B.png' | relative_url }}" loading="lazy" style="background-color: white;">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Followed a linear path with a fixed entry point, assuming all users start from scratch and proceed through every editing stage.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <img src="{{ '/images/opus/I1-4A.png' | relative_url }}" loading="lazy" style="background-color: white;">
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Added conditional branching and early skip options to bypass unnecessary editing steps based on user readiness, reducing the minimum required steps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Usability Testing</h3>
+                <p>The updated prototype underwent testing with 5 additional participants, and their feedback was grouped by <b>thematic categories</b> to identify areas for improvement.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/usability-testing-3.png' | relative_url }}" loading="lazy">
             </div>
         </div>
     </div>
 </section>
 
-<section class="subtitle">
-    <h3>Part 6. Retrospect</h3>
-</section>
+
 
 <section>
-    <div class="grid-2-1">
-        <div>
-            <h3 class="hide">Takeaways</h3>
-            <p>Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.</p>
-        </div>
+    <div class="module-header">
+        <span class="module-label">Part 5</span>
+        <h2>Think, Make, Check +3</h2>
     </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>🎱 Billiard Method</h5>
-                <p>When direct peer support is absent, maintain momentum by engaging stand-by colleagues with something tangible in hands for constructive feedback.</p>
-            </div>
-            <div class="card">
-                <h5>🎁 Opening Black Box</h5>
-                <p>Provide transparency into AI’s decision-making, rather than simply presenting end-products, allowing users to understand how inputs translate into outputs.</p>
+    
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Data Analysis</h3>
+                <p>However, when I reclassified the requests using the previously found <b>high-level goals</b>, several items didn’t fit any known category, surfacing an unstated goal.</p>
             </div>
         </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/data-analysis-4.png' | relative_url }}" loading="lazy">
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div>
+                <p>Even with their diverse focuses, the uncategorized feedback unanimously converged on a previously unmentioned dimension: <b>transparency</b>—a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>1️⃣ Processing Logic Exposure</h5>
+                    <p>Demystify how inputs and parameters are interpreted, e.g., establish a visually clear cause-effect relationship between script segments and corresponding generated shots.</p>
+                </div>
+                <div class="card">
+                    <h5>2️⃣ Cognitive Load Distribution</h5>
+                    <p>Offer progressive disclosure of information to guide user interactions, e.g., simplify complex, effort-intensive prompting by disassembling it into smaller, manageable pieces via structured input fields.</p>
+                </div>
+                <div class="card">
+                    <h5>3️⃣ Human-in-the-Loop</h5>
+                    <p>Integrate deliberate checkpoints where users can validate, revise, or override AI outputs, e.g., include undo/redo capabilities and history log to revert states or track changes.</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3>Prototype</h3>
+                <p>We included transparency as a new evaluation lens while continuing to improve core usability through fine-grained refinements, including domain-specific text enhancement, clarified interface hierarchy and interaction logic, more and informative iteration support.</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #1 - Script Reformatting</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I2-1-1B.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Relied on plain text with minimal markdown-style grammar, confusing non-technical users and necessitating model’s semantic understanding.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I2-1-1A.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Added a reformat option to declare key elements with symbolic tags, improving frontend styling and generative performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I2-1-2B.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Displayed all options as buttons with icons and text labels, and provided sliders to adjust tone and length, resulting in redundant choices and unnecessary clicks.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I2-1-2A.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Replaced label-heavy buttons with grouped icon buttons, differentiated prompt input from function controls, and removed redundant two-step interactions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #2 - Shot Editing</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I2-2-1B.png' | relative_url }}" loading="lazy" style="background-color: white;">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Misarranged controls with an illogical information architecture, juxtaposed unrelated functions and nested options that should have remained parallel.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <img src="{{ '/images/opus/I2-2-1A.png' | relative_url }}" loading="lazy" style="background-color: white;">
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Reorganized controls by target objects and logical relationships across the floating toolbar and modal, and removed redundant buttons.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I2-2-2B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>The trigger button and output keyframe appeared on separate pages with no visual continuity, breaking the traceable connection between input and result.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <img src="{{ '/images/opus/I2-2-2A.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Flattened the page hierarchy using modals and in-textarea dropdowns to establish a more intuitive cause-and-effect relationship.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I2-2-3B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Generated audio tracks exclusively from voiceover input, limiting applicability to genres like vlogs and commentary where narrative closely follows the visuals.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I2-2-3A.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Separated dialogue from voiceover to support formats like feature films, where audio often diverges from visuals and voiceover alone is insufficient.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #3 - Preview</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I2-3-1B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Allowed preview only at the final step via an ambiguously labeled button, with no option to set starting points, discouraging early identification of issues.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <video width="100%" height="auto" autoplay loop muted>
+                                    <source src="/images/opus/I2-3-1A.mp4" type="video/mp4" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Introduced a slideshow mode that simulates the final output’s pacing and structure before committing, with fluid switching between modes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="demo-wrap">
+                <div class="demo-label">Iteration #4 - Version Control</div>
+                <div class="demo-body">
+                    <div class="flex-list-row">
+                        <div class="list-container">
+                            <div class="before">
+                                <img src="{{ '/images/opus/I2-3-2B.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="before">
+                                <h5>BEFORE</h5>
+                                <p>Kept a flat version control system that recorded all generation variations, offering little value for tracking meaningful changes or refining prompts.</p>
+                            </div>
+                        </div>
+                        <div class="list-container">
+                            <div class="after">
+                                <img src="{{ '/images/opus/I2-3-2A.png' | relative_url }}" loading="lazy">
+                            </div>
+                            <div class="after">
+                                <h5>AFTER</h5>
+                                <p>Maintained an iteration log that highlights differences compared to the last selected version, enabling more informed and focused revisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </section>
 
+
+
 <section>
-    <div class="grid-2-1">
-        <div>
-            <h3 class="hide">Hindsights</h3>
-            <p>The company has successfully raised $30M in Series A in August 2024 and $20M in Series B in March 2025, but ultimately chose not to ship the storyboard or any 0 to 1 generative feature, likely due to a strategic pivot toward monetizable, lower-risk enhancements to its core captioning feature amid the intensifying competition.</p>
+    <div class="module-header">
+        <span class="module-label">Part 6</span>
+        <h2>Retrospect</h2>
+    </div>
+
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3 class="hide">Takeaways</h3>
+                <p>Trust-building surfaced as a recurring theme, not only in designing human-AI collaborative models that foster user confidence, but also in establishing credibility and exposure within the team, thereby driving iterative direction and securing alignment as a mercenary with limited visibility and resources.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>🎱 Billiard Method</h5>
+                    <p>When direct peer support is absent, maintain momentum by engaging stand-by colleagues with something tangible in hands for constructive feedback.</p>
+                </div>
+                <div class="card">
+                    <h5>🎁 Opening Black Box</h5>
+                    <p>Provide transparency into AI’s decision-making, rather than simply presenting end-products, allowing users to understand how inputs translate into outputs.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="grid-2-1">
-        <div class="card-list-col">
-            <div class="card">
-                <h5>💪 Intensifying Competition</h5>
-                <p>With research-driven startups like Sand.ai raising technical benchmarks and niche players like Katalist.ai gaining early traction, the increasingly complex landscape made it more prudent to focus on strengthening current revenue drivers before expanding into new verticals with fragmented use cases.</p>
+    
+    <div>
+        <div class="grid-2-1">
+            <div>
+                <h3 class="hide">Hindsights</h3>
+                <p>The company has successfully raised $30M in Series A in August 2024 and $20M in Series B in March 2025, but ultimately chose not to ship the storyboard or any 0 to 1 generative feature, likely due to a strategic pivot toward monetizable, lower-risk enhancements to its core captioning feature amid the intensifying competition.</p>
             </div>
-            <div class="card">
-                <h5>📊 Proposed Success Metrics</h5>
-                <p>If the feature had been shipped, at launched, track activation rate, export rate, and usage frequency to measure evaluate initial user engagement and to identify early signals of perceived value. Over time, monitor user retention lift and conversion rate to evaluate long-term business impact and sustained behavior change.</p>
+        </div>
+        <div class="grid-2-1">
+            <div class="flex-list-col">
+                <div class="card">
+                    <h5>💪 Intensifying Competition</h5>
+                    <p>With research-driven startups like Sand.ai raising technical benchmarks and niche players like Katalist.ai gaining early traction, the increasingly complex landscape made it more prudent to focus on strengthening current revenue drivers before expanding into new verticals with fragmented use cases.</p>
+                </div>
+                <div class="card">
+                    <h5>📊 Proposed Success Metrics</h5>
+                    <p>If the feature had been shipped, at launched, track activation rate, export rate, and usage frequency to measure evaluate initial user engagement and to identify early signals of perceived value. Over time, monitor user retention lift and conversion rate to evaluate long-term business impact and sustained behavior change.</p>
+                </div>
             </div>
         </div>
     </div>

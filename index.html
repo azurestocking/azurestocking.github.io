@@ -4,7 +4,7 @@ title: Index
 ---
 
 <div class="grid">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh; border-top: var(--tertiary) 1px solid;">
+    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh;">
         <section>
             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
         </section>
@@ -17,9 +17,6 @@ title: Index
     </aside>
 
     <div class="main-container" style="margin-top: 25vh;">
-        <section class="subtitle">
-            <h3>FEATURED</h3>
-        </section>
         {% for project in site.projects %}
         <section class="grid-2-1" id="{{ project.slug }}">
             <div>
