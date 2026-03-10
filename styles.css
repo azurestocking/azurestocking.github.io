@@ -25,7 +25,7 @@
 
     /* Type scale */
     --font-size-xs: 0.75rem;   /* 11px - label, overline, tag */
-    --font-size-sm: 0.82rem;   /* 13px - caption, helper, meta */
+    --font-size-sm: 0.85rem;   /* 13px - caption, helper, meta */
     --font-size-base: 1rem;      /* 16px - body text */
     --font-size-lg: 1.25rem;     /* 20px - large body, lead text */
     --font-size-xl: 1.5rem;      /* 24px - subheading */
@@ -265,7 +265,7 @@ h3 {
     font-size: var(--font-size-lg);
     font-weight: 500;
     color: var(--text);
-    letter-spacing: -0.01em;
+    letter-spacing: var(--tracking-tight);
     margin: 40px 0 12px;
 }
 
@@ -351,6 +351,15 @@ blockquote {
     font-family: var(--font-secondary);
     border-left: 2px solid var(--accent);
     padding-inline-start: var(--space-4);
+}
+
+blockquote strong {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-tight);
+    color: var(--text);
+    font-style: italic;
+    font-family: var(--font-secondary);
+    font-weight: 600;
 }
 
 ul {
@@ -675,13 +684,7 @@ section > div > [class^="grid-"] + [class^="grid-"] {
     margin-bottom: 16px;
 }
 
-
-/* DEMO: Visual demonstration blocks with distinct spacing */
 .demo {
-    margin-block: var(--space-8);
-}
-
-.demo-wrap {
     margin: 0;
     border: 1px solid var(--border);
     border-radius: var(--space-2);
@@ -707,6 +710,12 @@ section > div > [class^="grid-"] + [class^="grid-"] {
     gap: var(--space-4);
 }
 
+.demo-body h4 {
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+    letter-spacing: var(--tracking-wide);
+}
+
 .demo-body p {
     font-size: var(--font-size-sm);
     color: var(--text-2);
@@ -726,16 +735,16 @@ section > div > [class^="grid-"] + [class^="grid-"] {
 .callout-label {
     font-family: var(--font-mono);
     font-size: var(--font-size-xs);
-    letter-spacing: var(--tracking-wider);
-    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
     color: var(--text-2);
     display: block;
     margin-block-end: var(--space-3);
 }
 
 .callout p {
-    margin-block-end: 0;
+    font-size: var(--font-size-sm);
     color: var(--text-2);
+    line-height: var(--line-height-regular);
 }
 
 .callout p + p {
@@ -846,19 +855,36 @@ img, video {
 }
 
 .card {
+    margin: 0;
     border: 1px solid var(--border);
     border-radius: var(--space-2);
+    overflow: hidden;
+}
+
+.card-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--text-2);
+    padding: var(--space-2) var(--space-4);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.card-body {
     padding: var(--space-4);
     background: var(--surface);
 }
 
-.card h5 {
-    margin-bottom: 8px;
+.card-body h5 {
+    margin-block-end: var(--space-2);
 }
 
-.card p {
+.card-body p {
+    font-size: var(--font-size-sm);
     color: var(--text-2);
-    margin-block-end: 0;
+    line-height: var(--line-height-regular);
 }
 
 
@@ -1086,6 +1112,7 @@ img, video {
     background: transparent;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
+    letter-spacing: var(--tracking-wide);
 }
 
 .scrollspy-link:last-child {
@@ -1190,17 +1217,16 @@ td {
     color: var(--text-2);
 }
 
-/* VOCAB: Term definitions grid (like reference site) */
 .vocab-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-3);
 }
 
 .vocab-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--space-2);
     padding: var(--space-4);
 }
 
@@ -1208,20 +1234,19 @@ td {
     font-family: var(--font-mono);
     font-size: var(--font-size-xs);
     font-weight: 500;
-    color: var(--text);
+    color: var(--amber);
     display: block;
     margin-block-end: var(--space-2);
 }
 
 .vocab-def {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     color: var(--text-2);
     line-height: var(--line-height-regular);
-    margin-block-end: var(--space-3);
 }
 
 .vocab-use {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     color: var(--text-2);
     font-style: italic;
     line-height: var(--line-height-regular);
@@ -1229,9 +1254,21 @@ td {
     border-top: 1px solid var(--border);
 }
 
-/* DIVIDER: Horizontal rule with proper spacing */
-.divider {
-    height: 1px;
-    background: var(--border);
-    margin-block: var(--space-12);
+.tag-group {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-block-start: 0;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(13, 155, 114, 0.08);
+    padding: 3px 8px;
+    border-radius: 3px;
+    display: inline-block;
 }
