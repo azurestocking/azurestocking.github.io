@@ -430,11 +430,6 @@ footer.grid {
     color: var(--text);
 }
 
-.navlink {
-    font-family: var(--font-mono); 
-    text-transform: uppercase;
-}
-
 
 
 /* LAYOUT */
@@ -722,6 +717,8 @@ img, video {
     float: left;
     font-size: var(--font-size-xs);
     text-decoration: none;
+    font-family: var(--font-mono); 
+    text-transform: uppercase;
     border: 1px solid var(--text);
     border-radius: var(--radius);
     padding-block: var(--space-button-v);
@@ -733,6 +730,12 @@ img, video {
     display: flex;
     align-items: center;
     gap: 6px;
+}
+
+.ghost {
+    border: none;
+    padding-block: 0;
+    padding-inline: 0;
 }
 
 .button:hover, .button:active {
@@ -807,38 +810,25 @@ img, video {
 
 /* SCROLLSPY */
 
-/* Project pages: scrollspy lives in .side-container; starts at 25vh, sticks at 88.5px when scrolled */
 .grid:has(.side-container:has(#scrollspy)) {
     align-items: start;
 }
 
-.side-container #scrollspy {
+#scrollspy {
     position: sticky;
     top: var(--header-height);
     left: auto;
     right: auto;
     width: 100%;
+    z-index: 1000;
     border-top: none;
     border-bottom: none;
-    padding-block-start: var(--space-grid);
-    padding-block-end: var(--space-grid);
-}
-
-#scrollspy {
-    position: fixed;
-    top: 25vh;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding-block-start: var(--space-text);
-    padding-block-end: var(--space-text);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    padding-block-start: 0;
+    padding-block-end: 0;
     opacity: 1;
     transition: opacity 0.5s ease;
 }
 
-/* Only used when there are no headings (TOC empty) */
 #scrollspy.scrollspy-hidden {
     opacity: 0;
     pointer-events: none;
