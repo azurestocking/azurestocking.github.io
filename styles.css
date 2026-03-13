@@ -33,8 +33,8 @@
     --font-size-3xl: 3rem;       /* 48px - display */
 
     /* Line heights */
-    --line-height-tight: 1.5;    /* headlines, large text */
-    --line-height-regular: 1.65; /* body text */
+    --line-height-tight: 1.35;    /* headlines, large text */
+    --line-height-regular: 1.6; /* body text */
 
     /* Letter spacing */
     --tracking-tight: -0.02em;   /* headlines */
@@ -256,6 +256,16 @@ h2 {
     color: var(--text);
 }
 
+.large-text {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    line-height: var(--line-height-regular);
+    letter-spacing: var(--tracking-tight);
+    margin-block-end: var(--space-4);
+    color: var(--text);
+}
+
 /* SUBSECTION TITLE */
 h3 {
     font-family: var(--font-secondary);
@@ -313,6 +323,14 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-size: var(--font-size-2xl);
     font-family: var(--font-secondary);
     font-style: italic;
+    line-height: var(--line-height-tight);
+    color: var(--text);
+    margin-block-end: var(--space-6);
+}
+
+.emoji {
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-secondary);
     line-height: var(--line-height-tight);
     color: var(--text);
     margin-block-end: var(--space-6);
@@ -404,6 +422,47 @@ footer.grid {
 
 .hero {
     position: relative;
+    margin-top: 25vh;
+    border-top: none;
+}
+
+.project {
+    position: relative;
+    padding: 64px 0 64px;
+}
+
+/* Hero: full-width row, 4-col base grid; direct children are full-width rows */
+.grid > .hero {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--space-grid);
+}
+
+.hero > * {
+    grid-column: 1 / -1;
+}
+
+/* Project sections: 4-col base grid; direct children are full-width rows */
+.main-container > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--space-grid);
+}
+
+.main-container > section > * {
+    grid-column: 1 / -1;
+}
+
+.grid > .project {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--space-grid);
+}
+
+.project > * {
+    grid-column: 1 / -1;
 }
 
 .hero-meta {
@@ -517,6 +576,25 @@ footer.grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-grid);
+}
+
+/* Subgrid: 2 equal columns (4-col base) */
+.grid-2-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-grid);
+}
+
+/* Subgrid: 1–2–1 columns (4-col base) */
+.grid-1-2-1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: var(--space-grid);
+}
+
+/* Subgrid: full-width row (4-col base) */
+.grid-4 {
+    display: block;
 }
 
 /* Large gap between sections */

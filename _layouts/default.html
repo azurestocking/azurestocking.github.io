@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
 <body>
-    <header class="grid" style="align-items: center;">
+    <header class="grid" style="align-items: center; background-color: var(--bg);">
         <aside class="side-container" aria-hidden="true">
             <div class="logo">
                 <a href="{{ '/' | relative_url }}">GEMMA LI</a>
@@ -23,9 +23,9 @@
                 <div></div>
                 <div></div>
                 <div style="display: flex; justify-content: flex-end; gap: var(--space-grid);">
-                    <a class="button ghost" href="https://github.com/azurestocking">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
                     <a class="button ghost" href="https://www.linkedin.com/in/li-jm/">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                    <a class="button" href="#footer">Contact<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                    <a class="button ghost" href="https://github.com/azurestocking">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                    <a class="button" href="#about">About<i class="fa-solid fa-arrow-right rotate-45"></i></a>
                 </div>
             </div>
         </div>
@@ -36,16 +36,14 @@
     </main>
 
     <footer class="grid">
-        <aside class="side-container" aria-hidden="true"></aside>
-        <div class="main-container">
-            <div class="grid-3">
-                <hr>
-                <div style="font-family: var(--font-mono); text-transform: uppercase;">
-                    Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong
-                </div>
+        <div class="hero" style="margin-top: 0;">
+            <hr>
+            <div style="font-family: var(--font-mono); text-transform: uppercase;">
+                Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong
             </div>
-        </div>
+        </div> 
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.addEventListener('contextmenu', function(e) {

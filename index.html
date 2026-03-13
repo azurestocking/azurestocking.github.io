@@ -4,25 +4,31 @@ title: Index
 ---
 
 <div class="grid">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh;">
-        <section>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-        </section>
-    </aside>
+    <section class="hero">
+        <div>
+            <div class="grid-2-2">
+                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <div class="large-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+        </div>
+    </section>
 
-    <div class="main-container" style="margin-top: 25vh;">
+    <section class="project">
         {% for project in site.projects %}
-        <section id="{{ project.slug }}">
-            <div class="grid-3">
-                <h2>{{ project.client }}</h2>
-            </div>
-            <div class="grid-1-2">
-                <p>{{ project.desc }}</p>
-                <a href="/project/{{ project.slug }}/" style="margin-top: 0;">
+            <div id="{{ project.slug }}">
+                <div class="grid-2-2">
+                    <h2>{{ project.client }}</h2>
+                </div>
+                <div class="grid-2-2">
+                    <p>{{ project.desc }}</p>
+                </div>
+                <div class="grid-2-2" style="display: flex;">
+                    <a class="button" href="/project/{{ project.slug }}/" style="background-color: var(--text); color: var(--bg);">View More<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                </div>
+                <div class="grid-4">
                     <img src="{{ project.image | relative_url }}" alt="" loading="lazy">
-                </a>
+                </div>
             </div>
-        </section>
         {% endfor %}
-    </div>
+    </section>
 </div>

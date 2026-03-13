@@ -3,25 +3,15 @@ layout: default
 ---
 
 <div class="grid" data-project-color="{{ page.color }}">
-    <aside class="side-container" aria-hidden="true" style="margin-top: 25vh;">
-        <section id="scrollspy" class="scrollspy-hidden">
-            <div class="scrollspy">
-                <div class="scrollspy-content">
-                    <div class="scrollspy-links" id="scrollspy-links">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </aside>
-    <div class="main-container" style="margin-top: 25vh;">
-        <section class="hero">
-            <div class="grid-2-1">
+    <section class="hero">
+        <div>
+            <div class="grid-2-2">
                 <h1>{{ page.client }}</h1>
             </div>
-            <div class="grid-2-1">
+            <div class="grid-2-2">
                 <p>{{ page.desc }}</p>
             </div>
-            <div class="grid-2-1">
+            <div class="grid-2-2">
                 <div class="hero-meta">
                     <div class="hero-meta-item">
                         <span class="label">module</span>
@@ -37,11 +27,27 @@ layout: default
                     </div>
                 </div>
             </div>
-            <div class="grid-3">
+        </div>
+
+        <div>
+            <div class="grid-4">
                 <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
             </div>
+        </div>
+    </section>
+
+    <aside class="side-container" aria-hidden="true">
+        <section id="scrollspy" class="scrollspy-hidden">
+            <div class="scrollspy">
+                <div class="scrollspy-content">
+                    <div class="scrollspy-links" id="scrollspy-links">
+                    </div>
+                </div>
+            </div>
         </section>
-        
+    </aside>
+    
+    <div class="main-container">
         {{ content }}
     </div>
 </div>
