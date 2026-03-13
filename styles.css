@@ -62,8 +62,8 @@
     --space-section: var(--space-16);   /* 64px */
 
     --header-height: 90px;
-    --radius: 18px;
-    --prose-width: 620px;
+    --radius: var(--space-4);
+    --button-radius: var(--space-6);
 }
 
 
@@ -210,7 +210,7 @@ html {
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: var(--radius); }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
 
 body {
@@ -422,7 +422,8 @@ footer.grid {
 
 .hero {
     position: relative;
-    margin-top: 25vh;
+    padding-top: 25vh;
+    margin-bottom: 64px;
     border-top: none;
 }
 
@@ -689,6 +690,7 @@ img, video {
     background-color: var(--surface);
     padding: var(--space-4);
     margin: 32px 0;
+    border-radius: var(--radius);
 }
 
 .image-container:first-child {
@@ -696,6 +698,23 @@ img, video {
 }
 
 .image-container:last-child {
+    margin-bottom: 0;
+}
+
+.project-container {
+    background-color: var(--surface);
+    padding: var(--space-16);
+    margin: 32px 0;
+    border-radius: var(--radius);
+    height: 75vh;
+    overflow: hidden;
+}
+
+.project-container:first-child {
+    margin-top: 0;
+}
+
+.project-container:last-child {
     margin-bottom: 0;
 }
 
@@ -744,7 +763,7 @@ img, video {
 .demo {
     margin: 0;
     border: 1px solid var(--border);
-    border-radius: var(--space-2);
+    border-radius: var(--radius);
     overflow: hidden;
 }
 
@@ -798,7 +817,7 @@ img, video {
     font-family: var(--font-mono); 
     text-transform: uppercase;
     border: 1px solid var(--text);
-    border-radius: var(--radius);
+    border-radius: var(--button-radius);
     padding-block: var(--space-button-v);
     padding-inline: var(--space-button-h);
     color: var(--text);
@@ -1059,7 +1078,7 @@ td {
 .vocab-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--space-2);
+    border-radius: var(--radius);
     padding: var(--space-4);
 }
 
@@ -1103,6 +1122,6 @@ td {
     color: var(--accent);
     background: rgba(13, 155, 114, 0.08);
     padding: 3px 8px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     display: inline-block;
 }

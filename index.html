@@ -15,18 +15,19 @@ title: Index
 
     <section class="project">
         {% for project in site.projects %}
-            <div id="{{ project.slug }}">
+            <div class="project-container" id="{{ project.slug }}">
                 <div class="grid-2-2">
-                    <h2>{{ project.client }}</h2>
-                </div>
-                <div class="grid-2-2">
-                    <p>{{ project.desc }}</p>
-                </div>
-                <div class="grid-2-2" style="display: flex;">
-                    <a class="button" href="/project/{{ project.slug }}/" style="background-color: var(--text); color: var(--bg);">View More<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                    <div>
+                        <h2>{{ project.client }}</h2>
+                    </div>
+                    <div>
+                        <p>{{ project.desc }}</p>
+                    </div>
                 </div>
                 <div class="grid-4">
-                    <img src="{{ project.image | relative_url }}" alt="" loading="lazy">
+                    <a href="/project/{{ project.slug }}/">
+                        <img src="{{ project.image | relative_url }}" alt="" loading="lazy">
+                    </a>
                 </div>
             </div>
         {% endfor %}
