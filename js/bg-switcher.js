@@ -54,7 +54,8 @@
 
     function runIndexPageSwitcher() {
         var projects = [
-            {% for project in site.projects %}
+            {% assign visible_projects = site.projects | where_exp: "item", "item.draft != true" %}
+            {% for project in visible_projects %}
             { id: "{{ project.slug }}", color: "{{ project.color }}" }{% unless forloop.last %},{% endunless %}
             {% endfor %}
         ];

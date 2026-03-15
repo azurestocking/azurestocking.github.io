@@ -64,6 +64,7 @@
     --header-height: 90px;
     --radius: var(--space-4);
     --button-radius: var(--space-6);
+    --tag-radius: 4px;
 }
 
 
@@ -686,6 +687,13 @@ img, video {
     display: block;
 }
 
+.demo-body .image-container {
+    background-color: white;
+    padding: var(--space-16);
+    margin: 32px 0;
+    border-radius: 0;
+}
+
 .image-container {
     background-color: var(--surface);
     padding: var(--space-4);
@@ -1083,13 +1091,7 @@ td {
 }
 
 .vocab-term {
-    font-family: var(--font-mono);
-    text-transform: lowercase;
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-    color: var(--amber);
-    display: block;
-    margin-block-end: var(--space-2);
+    color: var(--amber) !important;
 }
 
 .vocab-def {
@@ -1122,6 +1124,6 @@ td {
     color: var(--accent);
     background: rgba(13, 155, 114, 0.08);
     padding: 3px 8px;
-    border-radius: var(--radius);
+    border-radius: var(--tag-radius);
     display: inline-block;
 }

@@ -14,7 +14,8 @@ title: Index
     </section>
 
     <section class="project">
-        {% for project in site.projects %}
+        {% assign visible_projects = site.projects | where_exp: "item", "item.draft != true" %}
+        {% for project in visible_projects %}
             <div class="project-container" id="{{ project.slug }}">
                 <div class="grid-2-2">
                     <div>
