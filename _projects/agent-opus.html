@@ -474,14 +474,15 @@ responsibilities:
     <div class="module-header">
         <span class="module-label">Part 04</span>
         <h2>Think, Make, Check +2</h2>
-        <p>Digging deeper, something more interesting emerged: users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question: <strong>why do users hold conflicting opinions on the same areas for improvement?</strong></p>
+        <p>Digging deeper, something more interesting emerged — users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question: <strong>why do users hold conflicting opinions on the same areas for improvement?</strong></p>
     </div>
 
     <div>
         <div class="grid-2-1">
             <div>
                 <h3>Data Analysis</h3>
-                <p>To make sense of those seemingly irreconcilable contradictions, I first examined the underlying intent behind each request, and then reshuffled them by <b>high-level goals</b> — the broader needs encompassing possibly divergent user behaviors and expectations.</p>
+                <p>To make sense of these apparent contradictions, I hypothesized that the conflicting needs stemmed from how users conceptualize a set of shared goals differently.</p>
+                <p>To test this, I examined the underlying intent behind each request and reshuffled them by <strong>high-level goals — the broader needs that encompass divergent user behaviors and expectations</strong>.</p>
             </div>
         </div>
         <div class="grid-2-1">
@@ -491,7 +492,7 @@ responsibilities:
         </div>
         <div class="grid-2-1">
             <div>
-                <p>The affinity mapping indicates that <strong>while user expectations diverge, they fall under the same high-level goals</strong>, implying that the divergence stems from how users conceptualize these goals differently.</p>
+                <p>The affinity mapping supports this hypothesis: despite appearing contradictory at the surface level, all requests consistently mapped to the same high-level goals, indicating that <strong>users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable</strong>.</p>
             </div>
         </div>
         <div class="grid-3">
@@ -521,15 +522,8 @@ responsibilities:
         </div>
         <div class="grid-2-1">
             <div>
-                <p>We began with a straightforward yet knowingly simplistic problem framing based on client’s request. With the emerged high-level goals, I refined that rough question:</p>
-            </div>
-        </div>
-        <div class="grid-2-1">
-            <blockquote>How might we empower content creators to <strong>quickly and easily translate</strong> their scripts into <strong>reliably high-quality videos</strong> while accommodating <strong>diverse scenarios</strong>?</blockquote>
-        </div>
-        <div class="grid-2-1">
-            <div>
-                <p>The observation that users conceptualize high-level goals differently validates our hypothesis of multiple user segments. This divergence indicates that distinct user groups inevitably adopt varying positions on value trade-offs, which was expected to be evident through their clustering along axes representing two <b>core tensions in users’ decision-making</b>.</p>
+                <p>This insight validates our hypothesis of multiple user segments, and the divergence in expectations implies that <strong>distinct user groups adopt varying positions on value trade-offs</strong>, potentially making them visually identifiable when plotted on a coordinate plane defined by such trade-offs.</p>
+                <p>To surface those groups, I identified the <strong>core tensions in users’ decision-making</strong>: users are primarily weighing cost against perceived quality, and user agency against automation.</p>
             </div>
         </div>
         <div class="grid-2-1">
@@ -552,7 +546,7 @@ responsibilities:
         </div>
         <div class="grid-2-1">
             <div>
-                <p>Mapping all sticky notes onto these two axes allowed us to reveal the logically inferred user segmentation.</p>
+                <p>Mapping all sticky notes along the axes representing the two core tensions above revealed the natural clustering of user segments.</p>
             </div>
         </div>
         <div class="grid-2-1">
@@ -589,7 +583,7 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Personae</h3>
-                <p>Based on user segmentation, I developed two personas. Original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators. Derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
+                <p>Based on the user segmentation, I developed the following two personae: original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators; derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
             </div>
         </div>
         <div class="grid-1-1">
@@ -620,7 +614,7 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Prototype</h3>
-                <p>Improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent generation.</p>
+                <p>We improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent generation.</p>
             </div>
         </div>
 
@@ -636,7 +630,7 @@ responsibilities:
                             </div>
                             <div class="before">
                                 <h5>BEFORE</h5>
-                                <p>Arranged shots horizontally, causing confusion due to misalignment between the container and slider lengths, which conflicted with standard scrolling behavior.</p>
+                                <p>Shots were arranged horizontally, with the container and thumbnail slider lengths misaligned, causing visual inconsistency. Also, this left users uncertain whether to scroll horizontally or vertically, especially on touch screens.</p>
                             </div>
                         </div>
                         <div class="list-container">
@@ -647,7 +641,7 @@ responsibilities:
                             </div>
                             <div class="after">
                                 <h5>AFTER</h5>
-                                <p>Switched to a vertical layout with two modes, and collapsed shot editing options with hover effects to reduce cognitive load through prioritized information display.</p>
+                                <p>Switched to a vertical layout with thumbnail and editor modes, aligning with standard browsing behavior. Shot editing options are collapsed behind hover effects to reduce cognitive load and display only relevant information.</p>
                             </div>
                         </div>
                     </div>
@@ -659,7 +653,7 @@ responsibilities:
             <div class="demo">
                 <div class="demo-label">Iteration #2</div>
                 <div class="demo-body">
-                    <h4>Customization <span class="tag">Consistency</span> <span class="tag">Adaptability</span></h4>
+                    <h4>Customization <span class="tag">Efficiency</span> <span class="tag">Consistency</span></h4>
                     <div class="flex-list-row">
                         <div class="list-container">
                             <div class="before">
@@ -667,7 +661,7 @@ responsibilities:
                             </div>
                             <div class="before">
                                 <h5>BEFORE</h5>
-                                <p>Required manual configuration of global settings each time via a low-discoverability button, leading to repetitive setup and frequent oversights.</p>
+                                <p>Global settings were configured via an inconspicuous icon in the corner, leading to repetitive manual setup each time and frequent oversights in maintaining consistent output quality.</p>
                             </div>
                         </div>
                         <div class="list-container">
@@ -676,7 +670,7 @@ responsibilities:
                             </div>
                             <div class="after">
                                 <h5>AFTER</h5>
-                                <p>Displayed global settings in a prominent sidebar and introduced both predefined and customizable templates to streamline setup and ensure consistency.</p>
+                                <p>Exposed global settings in a prominent sidebar for constant visibility, and introduced predefined and customizable templates to streamline setup and ensure output consistency.</p>
                             </div>
                         </div>
                     </div>
@@ -688,7 +682,7 @@ responsibilities:
                             </div>
                             <div class="before">
                                 <h5>BEFORE</h5>
-                                <p>Required extensive manual effort to tweak shots individually in order to maintain visual consistency across shots.</p>
+                                <p>Each shot need to be tweaked manually to maintain visual consistency, a time-consuming, error-prone process that scaled poorly across long productions.</p>
                             </div>
                         </div>
                         <div class="list-container">
@@ -699,7 +693,7 @@ responsibilities:
                             </div>
                             <div class="after">
                                 <h5>AFTER</h5>
-                                <p>Extracted shared assets from the script automatically, enabling centralized control for easy insertion and batch-level tweaking.</p>
+                                <p>Extracted shared assets (character, scene) from the script automatically, allowing users to insert and apply them across multiple shots at once.</p>
                             </div>
                         </div>
                     </div>
@@ -719,7 +713,7 @@ responsibilities:
                             </div>
                             <div class="before">
                                 <h5>BEFORE</h5>
-                                <p>Applied AI-assisted text enhancements to the entire text area, altering unrelated content and lacking support for targeted control.</p>
+                                <p>AI-assisted text enhancements were applied to one shot’s entire text area, indiscriminately altering unrelated content and lacking support for targeted control.</p>
                             </div>
                         </div>
                         <div class="list-container">
@@ -728,7 +722,7 @@ responsibilities:
                             </div>
                             <div class="after">
                                 <h5>AFTER</h5>
-                                <p>Introduced a floating toolbar that allows users to select specific text segments for focused, instruction-based modifications in the editor.</p>
+                                <p>Introduced a floating toolbar that activates on text selection, allowing users to apply predefined functions (polish, shorten, and regenerate) or instruction-based prompts to specific segments only.</p>
                             </div>
                         </div>
                     </div>
@@ -748,7 +742,7 @@ responsibilities:
                             </div>
                             <div class="before">
                                 <h5>BEFORE</h5>
-                                <p>Followed a linear path with a fixed entry point, assuming all users start from scratch and proceed through every editing stage.</p>
+                                <p>The workflow followed a fixed linear path that assumes all users start from scratch and proceed through every stage, adding friction for more experienced or prepared users.</p>
                             </div>
                         </div>
                         <div class="list-container">
@@ -757,7 +751,7 @@ responsibilities:
                             </div>
                             <div class="after">
                                 <h5>AFTER</h5>
-                                <p>Added conditional branching and early skip options to bypass unnecessary editing steps based on user readiness, reducing the minimum required steps.</p>
+                                <p>Introduced conditional branching and stage-skip options that allow users to bypass unnecessary stages mid-flow based on their readiness, reducing the minimum required steps.</p>
                             </div>
                         </div>
                     </div>
@@ -770,7 +764,7 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Usability Testing</h3>
-                <p>The updated prototype underwent testing with 5 additional participants, and their feedback was grouped by <b>thematic categories</b> to identify areas for improvement.</p>
+                <p>The updated prototype underwent testing with 5 additional participants, and their responses were grouped by <b>thematic categories</b> to identify areas for improvement.</p>
             </div>
         </div>
         <div class="grid-2-1">
