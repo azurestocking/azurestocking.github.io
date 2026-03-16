@@ -279,13 +279,17 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Market Analysis</h3>
-                <p>I identified several leading players along the production cycle and established a set of criteria to assess their narrative capabilities.</p>
-                <p>The matrix reveals a strategic opportunity: to differentiate by centering on storytelling support, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
+                <p>To test this hypothesis, I identified several leading players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
             </div>
         </div>
         <div class="grid-2-1">
             <div class="image-container" style="padding: 0;">
                 <img src="{{ '/images/opus/market-analysis.png' | relative_url }}" loading="lazy" style="background-color: white; border-radius: var(--radius);">
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div>
+                <p>The matrix reveals a strategic opportunity: <strong>to differentiate by centering on storytelling support</strong>, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
             </div>
         </div>
     </div>
@@ -294,7 +298,7 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Brainstorm</h3>
-                <p>We brainstormed features that support storytelling more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruits.</p>
+                <p>We brainstormed features that would support storytelling more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruits.</p>
             </div>
         </div>
         <div class="grid-2-1">
@@ -308,7 +312,7 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Wireframe</h3>
-                <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, forming two different directions.</p>
+                <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, arriving at two different directions.</p>
             </div>
         </div>
         <div class="grid-1-1">
@@ -318,7 +322,7 @@ responsibilities:
                     <img src="{{ '/images/opus/wireframe-1.png' | relative_url }}" loading="lazy">
                     <div>
                         <h5>Storyboard</h5>
-                        <p>A visual tool used by filmmakers and animators to pre-visualize and plan a production clearly and efficiently, e.g., Toon Boom Storyboard.</p>
+                        <p>A sequential visual planning tool widely used in film and animation to pre-visualize productions, as seen in tools like Toon Boom Storyboard.</p>
                     </div>
                 </div>
             </div>
@@ -328,7 +332,7 @@ responsibilities:
                     <img src="{{ '/images/opus/wireframe-2.png' | relative_url }}" loading="lazy">
                     <div>
                         <h5>Infinite Canvas</h5>
-                        <p>A modular approach used by domain experts to design and execute complex systems visually, e.g., Grasshopper, Unreal Engine.</p>
+                        <p>A modular approach used by domain experts to design and execute complex systems visually, such as Grasshopper and Unreal Engine.</p>
                     </div>
                 </div>
             </div>
@@ -339,7 +343,12 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Concept Testing</h3>
-                <p>Although the node-based option appeared intriguing, particularly for designers and engineers, I facilitated a <strong>cross-functional stakeholder interview</strong> to evaluate its viability, walking through annotated sketches and assessing each concept’s strengths, limitations, and strategic fit.</p>
+                <p>To assess which direction had the strategic and technical foundation to move forward, I facilitated a <strong>cross-functional stakeholder interview</strong> to walk through annotated sketches and evaluate its viability, grouping the responses into thematic categories.</p>
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div class="image-container">
+                <img src="{{ '/images/opus/data-analysis-1.png' | relative_url }}" loading="lazy">
             </div>
         </div>
     </div>
@@ -351,48 +360,44 @@ responsibilities:
     <div class="module-header">
         <span class="module-label">Part 03</span>
         <h2>Think, Make, Check +1</h2>
-        <p>With stakeholder feedback in hand, the next step was to synthesize insights and determine the stronger path forward before moving into the next round of iteration.</p>
+        <p>Despite the node-based canvas being an intriguing direction, particularly for designers and engineers, the findings told a different story, raising concerns significant enough to rule it out.</p>
     </div>
 
     <div>
         <div class="grid-2-1">
             <div>
                 <h3>Data Analysis</h3>
-                <p>Grouping feedback into <strong>thematic categories</strong>, the affinity mapping revealed that implementing a node-based architecture would require substantial engineering refactoring, raising critical concerns across technical, usability, and strategic dimensions.</p>
+                <p>Synthesizing the responses, the affinity mapping revealed that <strong>implementing a node-based architecture would require substantial engineering refactoring</strong>, raising critical concerns across three dimensions:</p>
             </div>
         </div>
-        <div class="grid-2-1">
-            <div class="image-container">
-                <img src="{{ '/images/opus/data-analysis-1.png' | relative_url }}" loading="lazy">
-            </div>
-        </div>
+        
         <div class="grid-2-1">
             <div class="flex-list-col">
                 <div class="card">
                     <div class="card-label">Insight #1</div>
                     <div class="card-body">
                         <h5>Technical Complexity</h5>
-                        <p>Requires each cell to be developed standalone yet communicative, and the magnitude of potential cell combinations exponentially poses challenges in scalability, agility, and version control.</p>
+                        <p>Each cell would be developed standalone yet communicative, and the magnitude of potential cell combinations exponentially poses challenges in scalability, agility, and version control.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-label">Insight #2</div>
                     <div class="card-body">
                         <h5>Usability Uncertainty</h5>
-                        <p>Introduces flexibility with larger possibility of choice paralysis and increased cognitive load, which may alienate users with a fragmented, unpredictable, and delayed experience.</p>
+                        <p>The added flexibility introduces a higher risk of choice paralysis and cognitive overload, potentially alienating users with a fragmented, unpredictable, and slow experience.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-label">Insight #3</div>
                     <div class="card-body">
                         <h5>Managerial Misalignment</h5>
-                        <p>Demands significant resources in labor, capital, and time for development and operation, potentially resulting in delays, shifts, or failures in achieving long-term strategic goals.</p>
+                        <p>Building and maintaining this system demands significant investment in labor, capital, and time, causing real risk of delays, scope shifts, or failure to meet long-term strategic goals.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="grid-2-1">
-            <p>Given these constraints and an unfavorable input-output ratio, we deprioritized this direction and redirected focus toward the storyboard alternative.</p>
+            <p>Given these constraints and an unfavorable input-output ratio, we deprioritized the node-based direction and redirected focus toward the storyboard alternative.</p>
         </div>
     </div>
 
@@ -400,7 +405,7 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Prototype</h3>
-                <p>Introduced an intermediary step of text-to-image generation to stabilize the creative workflow, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</p>
+                <p>We <strong>introduced an intermediary step of text-to-image generation to stabilize the creative workflow</strong>, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</p>
             </div>
         </div>
         <div class="grid-3">
@@ -412,14 +417,14 @@ responsibilities:
                             <img src="{{ '/images/opus/prototype-1-1.png' | relative_url }}" loading="lazy">
                             <div>
                                 <h5>Prompt</h5>
-                                <p>Enrich the user input with storytelling techniques to produce a complete, engaging screenplay.</p>
+                                <p>Enrich user input with storytelling techniques to produce a complete, engaging screenplay.</p>
                             </div>
                         </div>
                         <div class="list-container">
                             <img src="{{ '/images/opus/prototype-1-2.png' | relative_url }}" loading="lazy">
                             <div>
                                 <h5>Screenplay</h5>
-                                <p>Parse the screenplay into shot-by-shot scripts with structured metadata to guide text-to-image generation.</p>
+                                <p>Parse the screenplay into shot-by-shot scripts with structured data to guide text-to-image generation.</p>
                             </div>
                         </div>
                         <div class="list-container">
@@ -446,13 +451,17 @@ responsibilities:
         <div class="grid-2-1">
             <div>
                 <h3>Usability Testing</h3>
-                <p>To ensure comprehensive representation across hypothesized user segments, I recruited a slightly larger sample of 8 participants, complemented by a screener survey to understand how each might incorporate the feature into their existing workflow.</p>
-                <p>Sessions employed the think-aloud protocol to surface key usability and functionality issues in real time. Feedback was then synthesized through affinity mapping, grouped thematically and color-coded by usage intensity.</p>
+                <p>To test the prototype across hypothesized user segments, I recruited a slightly larger sample of 8 participants via a <strong>screener survey, capturing how each might integrate the feature into their existing workflow</strong>. Sessions employed the <strong>think-aloud protocol to surface usability and functionality issues</strong> in real time.</p>
             </div>
         </div>
         <div class="grid-2-1">
             <div class="image-container">
                 <img src="{{ '/images/opus/usability-testing-2.png' | relative_url }}" loading="lazy">
+            </div>
+        </div>
+        <div class="grid-2-1">
+            <div>
+                <p>Responses were synthesized through <strong>affinity mapping, grouped thematically and color-coded by usage intensity</strong>, to surface areas for improvement and drive the next iteration.</p>
             </div>
         </div>
     </div>
@@ -465,7 +474,7 @@ responsibilities:
     <div class="module-header">
         <span class="module-label">Part 04</span>
         <h2>Think, Make, Check +2</h2>
-        <p>Digging deeper, we found that feedback converged on the same areas for improvement, yet diverged sharply on how to address them, which raises a more fundamental question: <strong>Why are users holding conflicting opinions on the same areas for improvement?</strong></p>
+        <p>Digging deeper, something more interesting emerged: users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question: <strong>why do users hold conflicting opinions on the same areas for improvement?</strong></p>
     </div>
 
     <div>

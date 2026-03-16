@@ -483,7 +483,7 @@ footer.grid {
     font-size: var(--font-size-xs);
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
-    color: var(--text-2);
+    color: var(--accent);
 }
 
 .hero-meta-item .value {
