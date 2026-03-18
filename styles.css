@@ -710,11 +710,10 @@ img, video {
 }
 
 .project-container {
-    background-color: var(--surface);
+    position: relative;
+    background-color: var(--text);
     padding: var(--space-16);
-    margin: 32px 0;
     border-radius: var(--radius);
-    height: 75vh;
     overflow: hidden;
 }
 
@@ -726,7 +725,95 @@ img, video {
     margin-bottom: 0;
 }
 
-/* Remove margin when image-container is inside grid divs (grid spacing handles it) */
+.project-container .grid-2-2 {
+    position: relative;
+    z-index: 1;
+}
+
+.project-container .project-bg-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -20%;
+    width: auto; 
+    height: 150%;
+    opacity: 25%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    transform-origin: top right;
+    transform: rotate(30deg);
+}
+
+.project-container .grid-2-2 > div:last-child {
+    align-self: center; 
+}
+
+.project-container .project-eyebrow {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.14em;
+
+}
+
+.project-container h2 {
+    color: var(--bg);
+}
+
+.project-container .project-desc {
+    font-size: 0.9rem;
+    color: rgba(249, 246, 241, 0.6);
+    max-width: 460px;
+    line-height: 1.75;
+    margin-block-end: 28px;
+}
+
+.project-container .cantunsee-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-container .cantunsee-stat-value {
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #F9F6F1;
+    display: block;
+}
+
+.project-container .cantunsee-stat-label {
+    font-size: var(--font-size-xs);
+    color: rgba(249, 246, 241, 0.45);
+    margin-top: 2px;
+    display: block;
+    text-transform: none;
+}
+
+.project-container .project-button {
+    float: none;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: none;
+    background-color: var(--accent);
+    border-radius: 6px;
+    padding-block: var(--space-button-v);
+    padding-inline: var(--space-button-h);
+    color: var(--bg);
+    gap: 8px;
+    transition: opacity 0.15s, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.project-container .project-button:hover {
+    opacity: 0.85;
+    text-decoration: none;
+}
+
 .grid-2-1 > .image-container,
 .grid-3 > .image-container,
 .grid-1-1 > .image-container {
@@ -829,6 +916,25 @@ img, video {
     padding-block: var(--space-button-v);
     padding-inline: var(--space-button-h);
     color: var(--text);
+    position: relative;
+    transform: translate(0) translateY(0);
+    transition: scale 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-button {
+    float: left;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    font-family: var(--font-mono); 
+    text-transform: uppercase;
+    background-color: var(--accent);
+    border-radius: var(--space-2);
+    padding-block: var(--space-button-v);
+    padding-inline: var(--space-button-h);
+    color: var(--bg);
     position: relative;
     transform: translate(0) translateY(0);
     transition: scale 0.2s ease;

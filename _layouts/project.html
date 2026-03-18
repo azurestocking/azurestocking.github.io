@@ -6,7 +6,7 @@ layout: default
     <section class="hero" style="background-color: var(--surface); box-shadow: 0 0 0 100vmax var(--surface); clip-path: inset(0 -100vmax);">
         <div>
             <div class="grid-2-2">
-                <h1>{{ page.client }}</h1>
+                <h1>{{ page.name }}</h1>
             </div>
             <div class="grid-2-2">
                 <p style="color: var(--text);">{{ page.desc }}</p>
@@ -19,7 +19,11 @@ layout: default
                     </div>
                     <div class="hero-meta-item">
                         <span class="label">Category</span>
-                        <span class="value">{{ page.category }}</span>
+                        <span class="value">
+                            {% for cat in page.categories %}
+                                {{ cat }}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                        </span>
                     </div>
                     <div class="hero-meta-item">
                         <span class="label">Role</span>

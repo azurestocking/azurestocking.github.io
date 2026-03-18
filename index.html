@@ -17,18 +17,44 @@ title: Index
         {% assign visible_projects = site.projects | where_exp: "item", "item.draft != true" %}
         {% for project in visible_projects %}
             <div class="project-container" id="{{ project.slug }}">
+                {% if project.bg-image %}
+                    <img class="project-bg-image" src="{{ project.bg-image | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+                {% endif %}
                 <div class="grid-2-2">
                     <div>
-                        <h2>{{ project.client }}</h2>
+                        <h2>{{ project.name }}</h2>
+                        <p class="project-desc">{{ project.desc }}</p>
+                        <a class="project-button" href="/project/{{ project.slug }}/">Read More<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                        {% assign impact1 = project.impact-value-1 | default: '' | strip %}
+                        {% assign impact2 = project.impact-value-2 | default: '' | strip %}
+                        {% assign impact3 = project.impact-value-3 | default: '' | strip %}
+                        {% if impact1 != '' or impact2 != '' or impact3 != '' %}
+                            <div class="cantunsee-stats" aria-label="Project details">
+                                {% if impact1 != '' %}
+                                    <div>
+                                        <span class="cantunsee-stat-value">{{ impact1 }}</span>
+                                        <span class="cantunsee-stat-label">{{ project.impact-label-1 }}</span>
+                                    </div>
+                                {% endif %}
+                                {% if impact2 != '' %}
+                                    <div>
+                                        <span class="cantunsee-stat-value">{{ impact2 }}</span>
+                                        <span class="cantunsee-stat-label">{{ project.impact-label-2 }}</span>
+                                    </div>
+                                {% endif %}
+                                {% if impact3 != '' %}
+                                    <div>
+                                        <span class="cantunsee-stat-value">{{ impact3 }}</span>
+                                        <span class="cantunsee-stat-label">{{ project.impact-label-3 }}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div>
-                        <p>{{ project.desc }}</p>
+                        {% assign project_image_url = project.image | relative_url %}
+                        {% include mockup-macbook.html content_image=project_image_url content_type="image" %}
                     </div>
-                </div>
-                <div class="grid-4">
-                    <a href="/project/{{ project.slug }}/">
-                        <img src="{{ project.image | relative_url }}" alt="" loading="lazy">
-                    </a>
                 </div>
             </div>
         {% endfor %}
