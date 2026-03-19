@@ -29,7 +29,7 @@ title: Index
                         {% assign impact2 = project.impact-value-2 | default: '' | strip %}
                         {% assign impact3 = project.impact-value-3 | default: '' | strip %}
                         {% if impact1 != '' or impact2 != '' or impact3 != '' %}
-                            <div class="cantunsee-stats" aria-label="Project details">
+                            <div class="cantunsee-stats">
                                 {% if impact1 != '' %}
                                     <div>
                                         <span class="cantunsee-stat-value">{{ impact1 }}</span>

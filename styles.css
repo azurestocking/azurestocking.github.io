@@ -488,7 +488,7 @@ footer.grid {
 
 .hero-meta-item .value {
     font-size: var(--font-size-base);
-    color: var(--text);
+    color: var(--text-2);
 }
 
 
@@ -600,9 +600,7 @@ footer.grid {
 }
 
 /* Large gap between sections */
-section + section {
-    margin-block-start: var(--space-12);
-}
+
 
 /* Header elements have no bottom margin */
 header > * {
@@ -636,19 +634,16 @@ main {
 */
 section {
     display: block;
-    padding: 80px 0 64px;
-    border-top: 1px solid var(--border);
+    padding: 64px 0 64px;
+}
+
+section#overview {
+    padding-top: 0;
 }
 
 /* Prose divs inside sections: 48px spacing between them */
 section > * + * {
     margin-top: 48px;
-}
-
-/* Module header has no top margin */
-section > .module-header {
-    margin-top: 0;
-    margin-bottom: 48px;
 }
 
 /* Subgrids inside prose: 32px spacing */
@@ -660,7 +655,6 @@ section > div > [class^="grid-"] + [class^="grid-"] {
 .module-header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 48px;
 }
 
 .module-header > * {
@@ -793,29 +787,6 @@ img, video {
     text-transform: none;
 }
 
-.project-container .project-button {
-    float: none;
-    display: inline-flex; 
-    align-items: center;
-    justify-content: flex-start;
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    text-transform: none;
-    background-color: var(--accent);
-    border-radius: 6px;
-    padding-block: var(--space-button-v);
-    padding-inline: var(--space-button-h);
-    color: var(--bg);
-    gap: 8px;
-    transition: opacity 0.15s, transform 0.2s ease;
-    text-decoration: none;
-}
-
-.project-container .project-button:hover {
-    opacity: 0.85;
-    text-decoration: none;
-}
-
 .grid-2-1 > .image-container,
 .grid-3 > .image-container,
 .grid-1-1 > .image-container {
@@ -909,30 +880,10 @@ img, video {
 
 .button {
     float: left;
-    font-size: var(--font-size-xs);
-    text-decoration: none;
-    font-family: var(--font-mono); 
-    text-transform: uppercase;
-    border: 1px solid var(--text);
-    border-radius: var(--button-radius);
-    padding-block: var(--space-button-v);
-    padding-inline: var(--space-button-h);
-    color: var(--text);
-    position: relative;
-    transform: translate(0) translateY(0);
-    transition: scale 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.project-button {
-    float: left;
     font-size: var(--font-size-sm);
     text-decoration: none;
     font-family: var(--font-mono); 
     text-transform: uppercase;
-    background-color: var(--accent);
     border-radius: var(--space-2);
     padding-block: var(--space-button-v);
     padding-inline: var(--space-button-h);
@@ -943,12 +894,43 @@ img, video {
     display: flex;
     align-items: center;
     gap: 6px;
+    font-weight: 600;
+    background-color: var(--text);
+    letter-spacing: var(--tracking-wide);
+}
+
+.project-button {
+    float: none;
+    display: inline-flex; 
+    font-size: var(--font-size-sm);
+    font-family: var(--font-mono); 
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    border-radius: var(--space-2);
+    padding-block: var(--space-button-v);
+    padding-inline: var(--space-button-h);
+    color: var(--bg);
+    position: relative;
+    transform: translate(0) translateY(0);
+    transition: scale 0.2s ease;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: var(--tracking-wide);
+    font-weight: 600;
+    transition: opacity 0.15s, transform 0.2s ease;
+}
+
+.project-button:hover {
+    opacity: 0.85;
 }
 
 .ghost {
     border: none;
     padding-block: 0;
     padding-inline: 0;
+    color: var(--text);
+    background-color: transparent;
 }
 
 .button:hover, .button:active {
