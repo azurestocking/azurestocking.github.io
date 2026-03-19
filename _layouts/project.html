@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="grid" data-project-color="{{ page.color }}">
-    <section class="hero" style="background-color: var(--surface); box-shadow: 0 0 0 100vmax var(--surface); clip-path: inset(0 -100vmax);">
+    <section class="hero">
         <div>
             <div class="grid-2-2">
                 <h1>{{ page.name }}</h1>
@@ -35,7 +35,10 @@ layout: default
 
         <div>
             <div class="grid-4">
-                <img src="{{ page.image | relative_url }}" alt="" loading="lazy">
+                <div class="image-container" style="padding: var(--space-24); background-color: var(--text);">
+                    {% assign project_image_url = page.image | relative_url %}
+                    {% include mockup-macbook.html content_image=project_image_url content_type="video" %}
+                </div>
             </div>
         </div>
     </section>

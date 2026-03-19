@@ -17,8 +17,8 @@ title: Index
         {% assign visible_projects = site.projects | where_exp: "item", "item.draft != true" %}
         {% for project in visible_projects %}
             <div class="project-container" id="{{ project.slug }}">
-                {% if project.bg-image %}
-                    <img class="project-bg-image" src="{{ project.bg-image | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+                {% if project.bg-pattern %}
+                    <img class="project-bg-pattern" src="{{ project.bg-pattern | relative_url }}" alt="" aria-hidden="true" loading="lazy">
                 {% endif %}
                 <div class="grid-2-2">
                     <div>
@@ -53,7 +53,7 @@ title: Index
                     </div>
                     <div>
                         {% assign project_image_url = project.image | relative_url %}
-                        {% include mockup-macbook.html content_image=project_image_url content_type="image" %}
+                        {% include mockup-macbook.html content_image=project_image_url content_type="video" %}
                     </div>
                 </div>
             </div>

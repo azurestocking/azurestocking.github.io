@@ -699,6 +699,8 @@ img, video {
     padding: var(--space-4);
     margin: 32px 0;
     border-radius: var(--radius);
+    position: relative;
+    overflow: hidden; 
 }
 
 .image-container:first-child {
@@ -730,7 +732,7 @@ img, video {
     z-index: 1;
 }
 
-.project-container .project-bg-image {
+.project-container .project-bg-pattern {
     position: absolute;
     top: 0;
     bottom: 0;
