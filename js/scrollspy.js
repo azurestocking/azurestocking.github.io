@@ -39,11 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Build section ids: use parent section id if present, else set from heading
     const sectionIds = [];
+    const linksById = new Map();
 
     headings.forEach((heading) => {
         const link = document.createElement('a');
         const section = heading.closest('section');
         const targetId = section && (section.id || (section.id = generateHeadingId(heading)));
+        if (!targetId) {
+            return;
+        }
+
         sectionIds.push(targetId);
         link.href = '#' + targetId;
         link.classList.add('scrollspy-link', heading.tagName.toLowerCase());
@@ -53,13 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const headingText = heading.textContent.trim();
         link.append(chapterPrefix ? `${chapterPrefix}: ${headingText}` : headingText);
         scrollspyLinks.appendChild(link);
+        linksById.set(targetId, link);
     });
 
     // First section (for visibility when scrollspy is not in sidebar): overview or first linked section
     const overviewSection = document.getElementById('overview') || (sectionIds[0] ? document.getElementById(sectionIds[0]) : null);
 
     function setActiveLinkFromScrollPosition() {
-        const viewportMid = window.scrollY + window.innerHeight / 2;
+        const activationLine = window.scrollY + window.innerHeight * 0.35;
         let bestId = null;
         let bestTop = -Infinity;
         sectionIds.forEach(function(id) {
@@ -67,23 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!el) return;
             const rect = el.getBoundingClientRect();
             const top = rect.top + window.scrollY;
-            const bottom = top + rect.height;
-            if (top <= viewportMid && bottom >= viewportMid) {
-                if (top > bestTop) {
-                    bestTop = top;
-                    bestId = id;
-                }
-            } else if (bottom < viewportMid && bottom > bestTop) {
-                bestTop = bottom;
+            if (top <= activationLine && top > bestTop) {
+                bestTop = top;
                 bestId = id;
             }
         });
+        if (!bestId && sectionIds.length > 0) {
+            bestId = sectionIds[0];
+        }
+        document.querySelectorAll('.scrollspy-link').forEach(function(l) { l.classList.remove('active'); });
         if (bestId) {
-            const link = document.querySelector('.scrollspy-link[href="#' + bestId + '"]');
-            if (link) {
-                document.querySelectorAll('.scrollspy-link').forEach(function(l) { l.classList.remove('active'); });
-                link.classList.add('active');
-            }
+            const link = linksById.get(bestId);
+            if (link) link.classList.add('active');
         }
     }
 
@@ -123,29 +124,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isInSideContainer) {
         scrollspy.classList.remove('scrollspy-hidden');
     }
-
-    // Update active state on scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const link = document.querySelector(`.scrollspy-link[href="#${id}"]`);
-
-            if (entry.isIntersecting && link) {
-                document.querySelectorAll('.scrollspy-link').forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-            }
-        });
-    }, observerOptions);
-
-    // Observe each linked section/heading by id
-    sectionIds.forEach(function(id) {
-        const el = document.getElementById(id);
-        if (el) observer.observe(el);
-    });
 });

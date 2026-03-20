@@ -35,7 +35,8 @@ layout: default
 
         <div>
             <div class="grid-4">
-                <div class="image-container" style="padding: var(--space-24); background-color: var(--text);">
+                {% assign project_bg_image_url = page["bg-image"] | relative_url %}
+                <div class="image-container" style="padding: var(--space-24); background-image: url('{{ project_bg_image_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                     {% assign project_image_url = page.image | relative_url %}
                     {% include mockup-macbook.html content_image=project_image_url content_type="video" %}
                 </div>
