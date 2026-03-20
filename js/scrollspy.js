@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Build section ids: use parent section id if present, else set from heading
     const sectionIds = [];
 
-    headings.forEach((heading, index) => {
+    headings.forEach((heading) => {
         const link = document.createElement('a');
         const section = heading.closest('section');
         const targetId = section && (section.id || (section.id = generateHeadingId(heading)));
@@ -48,11 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = '#' + targetId;
         link.classList.add('scrollspy-link', heading.tagName.toLowerCase());
 
-        const label = document.createElement('span');
-        label.classList.add('module-label');
-        label.textContent = String(index + 1).padStart(2, '0');
-        link.appendChild(label);
-        link.append(heading.textContent);
+        const moduleLabel = section ? section.querySelector('.module-label') : null;
+        const chapterPrefix = moduleLabel ? moduleLabel.textContent.trim() : '';
+        const headingText = heading.textContent.trim();
+        link.append(chapterPrefix ? `${chapterPrefix}: ${headingText}` : headingText);
         scrollspyLinks.appendChild(link);
     });
 

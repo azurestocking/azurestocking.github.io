@@ -1085,7 +1085,7 @@ img, video {
     font-family: var(--font-mono);
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--text);
+    color: var(--text-2);
     border: none;
     border-top: 1px solid var(--border);
     border-radius: 0;
@@ -1105,12 +1105,14 @@ img, video {
 .scrollspy-link:active {
     background-color: var(--surface-2);
     color: var(--text);
+    font-weight: 600;
     text-decoration: none;
 }
 
 .scrollspy-link.active {
     background-color: var(--surface);
     color: var(--text);
+    font-weight: 600;
     text-decoration: none;
 }
 
