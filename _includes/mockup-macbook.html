@@ -5,7 +5,15 @@
    
     <div class="content-area">
       {% if include.content_image %}
+        {% assign content_src = include.content_image | downcase | split: '?' | first | split: '#' | first %}
+        {% assign is_video = false %}
         {% if include.content_type == 'video' %}
+          {% assign is_video = true %}
+        {% elsif content_src contains '.mp4' or content_src contains '.webm' or content_src contains '.ogg' or content_src contains '.mov' %}
+          {% assign is_video = true %}
+        {% endif %}
+
+        {% if is_video %}
           <video class="content-media" autoplay loop muted playsinline>
             <source src="{{ include.content_image }}" type="video/mp4">
             Your browser does not support the video tag.
