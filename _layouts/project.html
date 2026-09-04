@@ -2,63 +2,82 @@
 layout: default
 ---
 
-<div class="grid" data-project-color="{{ page.color }}">
-    <section class="hero">
+<section id="overview" class="full-width-bg" style="background-color: {{ page.color }};">
+    <div class="grid grid-1-5">
+        <div></div>
         <div>
-            <div class="grid-2-2">
-                <h1>{{ page.name }}</h1>
-            </div>
-            <div class="grid-2-2">
-                <p>{{ page.desc }}</p>
-            </div>
-            <div class="grid-2-2">
-                <div class="hero-meta">
-                    <div class="hero-meta-item">
-                        <span class="label">Timeline</span>
-                        <span class="value">{{ page.timeline }}</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <span class="label">Category</span>
-                        <span class="value">
-                            {% for cat in page.categories %}
-                                {{ cat }}{% unless forloop.last %}, {% endunless %}
-                            {% endfor %}
-                        </span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <span class="label">Role</span>
-                        <span class="value">{{ page.role }}</span>
-                    </div>
-                </div>
+            <div class="p-xl" style="margin-bottom: 64px; margin-top: 25vh; font-family: var(--font-secondary);">{{ page.name }}</div>
+            {% assign hero_bg = page['bg-image'] %}
+            <div class="image-container" style="padding: 96px;{% if hero_bg and hero_bg != '' %} background-image: url('{{ hero_bg | relative_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;{% endif %}">
+                {% if page.image contains '.mp4' %}
+                    {% include mockup-macbook.html content_image=page.image content_type="video" %}
+                {% else %}
+                    {% include mockup-macbook.html content_image=page.image content_type="image" %}
+                {% endif %}
             </div>
         </div>
-
-        <div>
-            <div class="grid-4">
-                {% assign project_bg_image_url = page["bg-image"] | relative_url %}
-                <div class="image-container" style="padding: var(--space-24); background-color: var(--text); background-image: url('{{ project_bg_image_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                    {% assign project_image_url = page.image | relative_url %}
-                    {% include mockup-macbook.html content_image=project_image_url %}
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <aside class="side-container" aria-hidden="true">
-        <section id="scrollspy" class="scrollspy-hidden">
-            <div class="scrollspy">
-                <div class="scrollspy-content">
-                    <div class="scrollspy-links" id="scrollspy-links">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </aside>
-    
-    <div class="main-container">
-        {{ content }}
     </div>
-</div>
+    <div class="grid grid-1-4-1">
+        <div>
+            <div class="p-l">{{page.timeline }}</div>
+        </div>
+        <div>
+            <div class="p-l">{{ page.desc }}</div>
+            <div class="button-group-vertical" style="margin-top: 64px;">
+                {% if page.highlight %}
+                    <a class="button ghost navlink" href="{{ page.highlight }}">Highlight<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+                {% if page.prototype %}
+                    <a class="button ghost navlink" href="{{ page.prototype }}">Prototype<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+                {% if page.paper %}
+                    <a class="button ghost navlink" href="{{ page.paper }}">Paper<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+                {% if page.repository %}
+                    <a class="button ghost navlink" href="{{ page.repository }}">Repository<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+                {% if page.website %}
+                    <a class="button ghost navlink" href="{{ page.website }}">Website<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="list-container">
+            <div>
+                <h5 class="np">Role</h5>
+                <p>{{ page.role }}</p>
+            </div>
+            <div>
+                <h5 class="np">Responsibilities</h5>
+                <p>
+                    {% for responsibility in page.responsibilities %}
+                        {{ responsibility }}{% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
+            <div>
+                <h5 class="np">Collaborators</h5>
+                <p>
+                    {% for member in page.team %}
+                        {{ member }}{% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+</section> 
+
+<section id="scrollspy">
+    <div class="grid grid-1-5">
+        <div class="scrollspy">
+            <div class="scrollspy-content">
+                <div class="scrollspy-links" id="scrollspy-links">
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</section>
+
+{{ content }}
 
 <script src="{{ '/js/scrollspy.js' | relative_url }}"></script>
-{% comment %}{% include bg-switcher.html %}{% endcomment %}

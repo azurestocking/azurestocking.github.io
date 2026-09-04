@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const main = document.querySelector('main');
     const scrollspyLinks = document.querySelector('.scrollspy-links');
     const scrollspy = document.querySelector('#scrollspy');
 
@@ -6,122 +7,183 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // On project pages scrollspy lives in .side-container; keep it there. Else move to body for z-index above header.
-    if (!scrollspy.parentElement || !scrollspy.parentElement.classList.contains('side-container')) {
-        document.body.appendChild(scrollspy);
+    // Create Overview link
+    const overviewLink = document.createElement('a');
+    overviewLink.href = '#overview';
+    overviewLink.textContent = 'Overview';
+    overviewLink.classList.add('scrollspy-link', 'h2');
+    scrollspyLinks.appendChild(overviewLink);
+
+    // Create Design Process link
+    const processLink = document.createElement('a');
+    processLink.href = '#design-process';
+    processLink.textContent = 'Design Process';
+    processLink.classList.add('scrollspy-link', 'h2');
+    scrollspyLinks.appendChild(processLink);
+    
+    // Apply staggered transitions
+    function applyStaggeredTransitions(isHiding) {
+        const links = scrollspy.querySelectorAll('.scrollspy-link');
+        const delayIncrement = 0.05;
+        
+        links.forEach((link, index) => {
+            let delay;
+            if (isHiding) {
+                // Disappear from bottom to top
+                delay = (links.length - 1 - index) * delayIncrement;
+            } else {
+                // Appear from top to bottom
+                delay = index * delayIncrement;
+            }
+            link.style.transitionDelay = `${delay}s`;
+        });
     }
-
-    // Use the .main-container that is sibling to scrollspy's column (same grid), so we don't pick the header's .main-container
-    const grid = scrollspy.closest('.grid');
-    const main = grid ? grid.querySelector('.main-container') : (document.querySelector('main') || document.querySelector('.main-container'));
-
-    if (!main) {
-        return;
+    
+    // Get all elements with "full-width-bg" class
+    const fullWidthBgElements = document.querySelectorAll('.full-width-bg');
+    
+    // Check if any full-width-bg element is at scrollspy position
+    function checkScrollspyVisibility() {
+        const scrollspyViewportY = 24; // scrollspy is positioned at top: 24px in viewport
+        
+        // Get the scrollspy element's height to calculate its bottom position
+        const scrollspyHeight = scrollspy.offsetHeight;
+        const scrollspyBottomY = scrollspyViewportY + scrollspyHeight;
+        
+        const hasFullWidthBgIntersection = Array.from(fullWidthBgElements).some(element => {
+            const rect = element.getBoundingClientRect();
+            
+            // Check if there's any intersection between the scrollspy and the full-width-bg element
+            // scrollspy: from scrollspyViewportY to scrollspyBottomY
+            // element: from rect.top to rect.bottom
+            return !(rect.bottom < scrollspyViewportY || rect.top > scrollspyBottomY);
+        });
+        
+        if (hasFullWidthBgIntersection) {
+            applyStaggeredTransitions(true); // Apply disappearing delays
+            scrollspy.classList.add('scrollspy-hidden');
+        } else {
+            applyStaggeredTransitions(false); // Apply appearing delays
+            scrollspy.classList.remove('scrollspy-hidden');
+        }
     }
-
-    // Function to generate ID from heading text
+    
+    // Set up scroll listener for full-width-bg elements
+    if (fullWidthBgElements.length > 0) {
+        window.addEventListener('scroll', checkScrollspyVisibility);
+        checkScrollspyVisibility();
+    }
+    
+    // Function to generate ID based on section-header index and h2 index
     function generateHeadingId(heading) {
-        const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-        return headingText;
+        // Check if h2 has index attribute (from section-header)
+        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
+            const h2Index = heading.getAttribute('index');
+            const h2Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            return `${h2Index}-${h2Text}`;
+        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
+            // Find all h3 headings and their index, heading text
+            const h3Index = heading.getAttribute('index');
+            const h3Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            return `${h3Index}-${h3Text}`;
+        } else {
+            // For h2/h3 elements without index, use their text content
+            const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+            return headingText;
+        }
     }
-
-    // Get h2 inside .module-header, in document order (exclude .np and .hide)
-    const headings = Array.from(main.querySelectorAll('.module-header h2')).filter(heading => {
-        return !heading.classList.contains('np') && !heading.classList.contains('hide');
+    
+    // Get all h2 and h3 elements from main
+    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
+        return !heading.classList.contains('np');
     });
 
-    const isInSideContainer = scrollspy.parentElement && scrollspy.parentElement.classList.contains('side-container');
-
-    if (headings.length === 0 && !isInSideContainer) {
+    // Hide TOC if no headings are found
+    if (headings.length === 0) {
         scrollspy.classList.add('scrollspy-hidden');
         return;
     }
-
-    // Build section ids: use parent section id if present, else set from heading
-    const sectionIds = [];
-    const linksById = new Map();
-
-    headings.forEach((heading) => {
+    
+    // Create TOC for other headings
+    headings.forEach(heading => {
         const link = document.createElement('a');
-        const section = heading.closest('section');
-        const targetId = section && (section.id || (section.id = generateHeadingId(heading)));
-        if (!targetId) {
-            return;
+        if (!heading.id) {
+            heading.id = generateHeadingId(heading);
         }
-
-        sectionIds.push(targetId);
-        link.href = '#' + targetId;
-        link.classList.add('scrollspy-link', heading.tagName.toLowerCase());
-
-        const moduleLabel = section ? section.querySelector('.module-label') : null;
-        const chapterPrefix = moduleLabel ? moduleLabel.textContent.trim() : '';
-        const headingText = heading.textContent.trim();
-        link.append(chapterPrefix ? `${chapterPrefix}: ${headingText}` : headingText);
-        scrollspyLinks.appendChild(link);
-        linksById.set(targetId, link);
+        link.href = '#' + heading.id;
+        
+        // Check if h2 headings
+        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
+            // For h2 elements with index attribute (from section-header), display index + text
+            const h2Index = heading.getAttribute('index');
+            link.textContent = `${h2Index} ${heading.textContent}`;
+        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
+            // For h3 elements with index attribute, display index + text
+            const h3Index = heading.getAttribute('index');
+            link.textContent = `${h3Index} ${heading.textContent}`;
+        } else {
+            link.textContent = heading.textContent;
+        }
+        
+        link.classList.add('scrollspy-link');
+        
+        // Add h3 class for indentation
+        if (heading.tagName === 'H3') {
+            link.classList.add('h3');
+            scrollspyLinks.appendChild(link);
+        } else if (heading.tagName === 'H2') {
+            link.classList.add('h2');
+            scrollspyLinks.appendChild(link);
+        }
     });
-
-    // First section (for visibility when scrollspy is not in sidebar): overview or first linked section
-    const overviewSection = document.getElementById('overview') || (sectionIds[0] ? document.getElementById(sectionIds[0]) : null);
-
-    function setActiveLinkFromScrollPosition() {
-        const activationLine = window.scrollY + window.innerHeight * 0.35;
-        let bestId = null;
-        let bestTop = -Infinity;
-        sectionIds.forEach(function(id) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const rect = el.getBoundingClientRect();
-            const top = rect.top + window.scrollY;
-            if (top <= activationLine && top > bestTop) {
-                bestTop = top;
-                bestId = id;
+    
+    // Create Retrospect link
+    const retrospectLink = document.createElement('a');
+    retrospectLink.href = '#retrospect';
+    retrospectLink.textContent = 'Retrospect';
+    retrospectLink.classList.add('scrollspy-link', 'h2');
+    scrollspyLinks.appendChild(retrospectLink);
+    
+    // Apply initial staggered transitions after creating links
+    applyStaggeredTransitions(false);
+    
+    // Update active state on scroll
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const link = document.querySelector(`.scrollspy-link[href="#${id}"]`);
+            
+            if (entry.isIntersecting) {
+                document.querySelectorAll('.scrollspy-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                link.classList.add('active');
             }
         });
-        if (!bestId && sectionIds.length > 0) {
-            bestId = sectionIds[0];
-        }
-        document.querySelectorAll('.scrollspy-link').forEach(function(l) { l.classList.remove('active'); });
-        if (bestId) {
-            const link = linksById.get(bestId);
-            if (link) link.classList.add('active');
-        }
+    }, observerOptions);
+    
+    // Observe all headings and the overview section
+    const overviewSection = document.getElementById('overview');
+    if (overviewSection) {
+        observer.observe(overviewSection);
     }
-
-    function updateScrollspyVisibility() {
-        if (!overviewSection) {
-            scrollspy.classList.remove('scrollspy-hidden');
-            return;
-        }
-        // On project pages (scrollspy in sidebar) always show the TOC
-        if (isInSideContainer) {
-            scrollspy.classList.remove('scrollspy-hidden');
-            setActiveLinkFromScrollPosition();
-            return;
-        }
-        const rect = overviewSection.getBoundingClientRect();
-        const halfViewport = window.innerHeight / 2;
-        if (rect.bottom <= -halfViewport) {
-            setActiveLinkFromScrollPosition();
-            var hasActive = scrollspyLinks.querySelector('.scrollspy-link.active');
-            if (hasActive) {
-                scrollspy.classList.remove('scrollspy-hidden');
-            } else {
-                scrollspy.classList.add('scrollspy-hidden');
-            }
-        } else {
-            scrollspy.classList.add('scrollspy-hidden');
-        }
-    }
-
-    window.addEventListener('scroll', function() {
-        updateScrollspyVisibility();
+    headings.forEach(heading => {
+        observer.observe(heading);
     });
-    window.addEventListener('resize', updateScrollspyVisibility);
-    updateScrollspyVisibility();
 
-    // On project pages (sidebar) ensure visible from the start
-    if (isInSideContainer) {
-        scrollspy.classList.remove('scrollspy-hidden');
+    const retrospectSection = document.getElementById('retrospect');
+    if (retrospectSection) {
+        observer.observe(retrospectSection);
     }
-});
+
+    const processSection = document.getElementById('design-process');
+    if (processSection) {
+        observer.observe(processSection);
+    }
+}); 

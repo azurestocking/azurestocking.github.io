@@ -8,25 +8,26 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪩</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-55" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
 <body>
-    <header class="grid" style="background-color: var(--bg);">
-        <aside class="side-container" aria-hidden="true">
+    <header>
+        <div class="grid grid-1-4-1" style="align-items: center;">
             <div class="logo">
-                <a href="{{ '/' | relative_url }}">GEMMA LI</a>
+                <a href="{{ '/' | relative_url }}" style="color: var(--background);">GEMMA</a>
             </div>
-        </aside>
-        <div class="main-container">
-            <div class="grid-1-1-1">
-                <div></div>
-                <div></div>
-                <div style="display: flex; justify-content: flex-end; gap: var(--space-grid);">
-                    <a class="button ghost" href="https://www.linkedin.com/in/li-jm/">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                    <a class="button ghost" href="https://github.com/azurestocking">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                    <a class="button" href="#about">About<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                </div>
+            <div class="button-group">
+                <a class="button ghost navlink" href="{{ '/#about' | relative_url }}" style="color: var(--background);">About<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost navlink" href="{{ '/#featured' | relative_url }}" style="color: var(--background);">Featured<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost navlink" href="{{ '/#other' | relative_url }}" style="color: var(--background);">Other<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+                <a class="button navlink" href="#footer" style="color: var(--background); border-color: var(--background);">Contact<i class="fa-solid fa-arrow-right rotate-45"></i></a>
             </div>
         </div>
     </header>
@@ -35,21 +36,29 @@
         {{ content }}
     </main>
 
-    <footer class="grid">
-        <div class="hero" style="padding-top: 0; margin-bottom: 0;">
-            <hr>
-            <div style="font-family: var(--font-mono); text-transform: uppercase;">
-                Coded from scratch with 🤖 Jekyll and 🍵 Lapsang Souchong
+    <footer id="footer" class="full-width-bg">
+        <div class="grid grid-1-4-1" style="align-items: center;">
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}" style="color: var(--background);">GEMMA</a>
             </div>
-        </div> 
+            <div class="button-group">
+                <a class="button ghost navlink" href="https://www.linkedin.com/in/li-jm/" style="color: var(--background);">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost navlink" href="https://github.com/azurestocking" style="color: var(--background);">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost navlink" href="mailto:ligem714@gmail.com" style="color: var(--background);">Resume<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+                <a class="button ghost navlink" href="mailto:ligem714@gmail.com" style="color: var(--background);">E-Mail<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            </div>
+        </div>
+        <div class="grid grid-6">
+            <div class="p-l" style="color: var(--background);">
+                I am drawn to complexity and intersectionality—not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.
+            </div>
+        </div>
+        <div class="grid grid-6">
+            <hr style="border-color: var(--background);">
+            <p style="font-size: var(--font-size-xs); font-family: var(--font-mono); text-transform: uppercase;">
+                Coded from scratch with 🤖 Jekyll framework and 🍵 Lapsang Souchong
+            </p>
+        </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.addEventListener('contextmenu', function(e) {
-                if (e.target.matches('img, video')) e.preventDefault();
-            });
-        });
-    </script>
 </body>
 </html> 
