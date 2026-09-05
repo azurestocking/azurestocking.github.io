@@ -111,20 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             heading.id = generateHeadingId(heading);
         }
         link.href = '#' + heading.id;
-        
-        // Check if h2 headings
-        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
-            // For h2 elements with index attribute (from section-header), display index + text
-            const h2Index = heading.getAttribute('index');
-            link.textContent = `${h2Index} ${heading.textContent}`;
-        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
-            // For h3 elements with index attribute, display index + text
-            const h3Index = heading.getAttribute('index');
-            link.textContent = `${h3Index} ${heading.textContent}`;
-        } else {
-            link.textContent = heading.textContent;
-        }
-        
+        link.textContent = heading.textContent;
         link.classList.add('scrollspy-link');
         
         // Add h3 class for indentation

@@ -1,12 +1,10 @@
 <section>
-    <div class="grid grid-1-4-1" style="margin-bottom: 24px;">
-        <div></div>
-        <hr>
+    <div class="grid" style="margin-bottom: 24px;">
+        <hr class="col-start-4 col-span-6">
     </div>
-    <div class="grid grid-1-4-1">
-        <div></div>
-        <div class="p-l">
-            <span style="font-style: normal;">{{ include.emoji }} </span><h2 index="{{ include.index }}" style="display: inline;">{{ include.subtitle }}</h2>
+    <div class="grid">
+        <div class="p-l col-start-4 col-span-6">
+            <span style="font-style: normal;">{{ include.emoji }} </span><h2 style="display: inline;">{{ include.subtitle }}</h2>
         </div>
     </div>
 </section>
