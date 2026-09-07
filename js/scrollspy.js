@@ -11,16 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const overviewLink = document.createElement('a');
     overviewLink.href = '#overview';
     overviewLink.textContent = 'Overview';
-    overviewLink.classList.add('scrollspy-link', 'h2');
+    overviewLink.classList.add('scrollspy-link');
     scrollspyLinks.appendChild(overviewLink);
 
-    // Create Design Process link
-    const processLink = document.createElement('a');
-    processLink.href = '#design-process';
-    processLink.textContent = 'Design Process';
-    processLink.classList.add('scrollspy-link', 'h2');
-    scrollspyLinks.appendChild(processLink);
-    
     // Apply staggered transitions
     function applyStaggeredTransitions(isHiding) {
         const links = scrollspy.querySelectorAll('.scrollspy-link');
@@ -128,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const retrospectLink = document.createElement('a');
     retrospectLink.href = '#retrospect';
     retrospectLink.textContent = 'Retrospect';
-    retrospectLink.classList.add('scrollspy-link', 'h2');
+    retrospectLink.classList.add('scrollspy-link');
     scrollspyLinks.appendChild(retrospectLink);
     
     // Apply initial staggered transitions after creating links
@@ -169,8 +162,4 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(retrospectSection);
     }
 
-    const processSection = document.getElementById('design-process');
-    if (processSection) {
-        observer.observe(processSection);
-    }
 }); 

@@ -7,20 +7,45 @@
     --ghost: rgba(23, 23, 23, 0.04);
     --ghost-focus: rgba(23, 23, 23, 0.12);
     --background: #FFFFFF;
-    --font-size-xs: 0.8rem;
-    --font-size-s: 1rem;
-    --font-size-m: 1.5rem;
-    --font-size-l: 2rem;
-    --font-size-xl: 3rem;
-    font-size: 16px;
-    --line-height-xs: 1.3em;
-    --line-height-s: 1.3em;
-    --line-height-m: 1.3em;
-    --line-height-l: 1.2em;
-    --line-height-xl: 1.1em;
-    --font-secondary: 'Tiempos', 'Times New Roman', serif; 
-    --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif; 
+
+    --font-secondary: 'Tiempos', 'Times New Roman', serif;
+    --font-primary: 'Soehne', 'Helvetica Neue LT Pro', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+
+    font-size: 16px;
+
+    /* TYPE SCALE — mirrors OpenAI's fluid --type-* ranges.
+       FLUID(min,max) = clamp(min, min + (max-min)*((100vw - 23.4375rem)/66.5625), max) */
+    --font-size-xs: 0.875rem;    /* 14px  labels, captions, meta, tags */
+    --font-size-s:  1.0625rem;   /* 17px  body (type-p1) */
+    --font-size-m:  clamp(1.5rem, calc(1.5rem + 0.375 * ((100vw - 23.4375rem) / 66.5625)), 1.875rem);  /* 24→30  h2/h4/lead */
+    --font-size-l:  clamp(2rem,   calc(2rem   + 1     * ((100vw - 23.4375rem) / 66.5625)), 3rem);       /* 32→48  h1 */
+    --font-size-xl: clamp(2rem,   calc(2rem   + 2     * ((100vw - 23.4375rem) / 66.5625)), 4rem);       /* 32→64  display */
+
+    /* LINE HEIGHTS — airy body, tight display (OpenAI) */
+    --line-height-xs: 1.5;
+    --line-height-s:  1.6;    /* body */
+    --line-height-m:  1.3;    /* subheads / lead */
+    --line-height-l:  1.15;   /* h1 */
+    --line-height-xl: 1.05;   /* display */
+
+    /* LETTER SPACING — OpenAI tightens by level */
+    --track-body:    -0.01em;
+    --track-tight:   -0.02em;
+    --track-tighter: -0.03em;
+
+    /* SPACING — OpenAI 4px base scale (calc multiples) */
+    --space:    0.25rem;                 /* 4  */
+    --space-2:  calc(var(--space) * 2);  /* 8  */
+    --space-3:  calc(var(--space) * 3);  /* 12 */
+    --space-4:  calc(var(--space) * 4);  /* 16 */
+    --space-5:  calc(var(--space) * 5);  /* 20 */
+    --space-6:  calc(var(--space) * 6);  /* 24 */
+    --space-8:  calc(var(--space) * 8);  /* 32 */
+    --space-12: calc(var(--space) * 12); /* 48 */
+    --space-16: calc(var(--space) * 16); /* 64 */
+    --space-20: calc(var(--space) * 20); /* 80 */
+    --space-30: calc(var(--space) * 30); /* 120 */
 }
 
 
@@ -188,7 +213,8 @@ h1 {
     font-family: var(--font-secondary);
     font-style: italic;
     line-height: var(--line-height-l);
-    margin-bottom: 1rem;
+    letter-spacing: var(--track-tighter);
+    margin-bottom: var(--space-4);
     color: var(--primary);
 }
 
@@ -197,7 +223,8 @@ h2 {
     font-family: var(--font-secondary);
     font-style: italic;
     line-height: var(--line-height-m);
-    margin-bottom: 1rem;
+    letter-spacing: var(--track-tight);
+    margin-bottom: var(--space-4);
     color: var(--primary);
 }
 
@@ -205,8 +232,9 @@ h3 {
     font-size: var(--font-size-s);
     font-family: var(--font-primary);
     font-weight: 500;
-    line-height: var(--line-height-s);
-    margin-bottom: 1rem;
+    line-height: var(--line-height-m);
+    letter-spacing: var(--track-body);
+    margin-bottom: var(--space-4);
     color: var(--primary);
 }
 
@@ -215,7 +243,8 @@ h4 {
     font-family: var(--font-secondary);
     font-style: italic;
     line-height: var(--line-height-m);
-    margin-bottom: 1rem;
+    letter-spacing: var(--track-tight);
+    margin-bottom: var(--space-4);
     color: var(--primary);
 }
 
@@ -223,16 +252,18 @@ h5 {
     font-size: var(--font-size-s);
     font-family: var(--font-primary);
     font-weight: 500;
-    line-height: var(--line-height-s);
-    margin-bottom: 0.5rem;
+    line-height: var(--line-height-m);
+    letter-spacing: var(--track-body);
+    margin-bottom: var(--space-2);
     color: var(--primary);
 }
 
-p {
+p, .p {
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
+    letter-spacing: var(--track-body);
     font-family: var(--font-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-4);
 }
 
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:last-child {
@@ -242,6 +273,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
 .p-l {
     font-size: var(--font-size-m);
     line-height: var(--line-height-m);
+    letter-spacing: var(--track-tight);
     font-family: var(--font-secondary);
     font-style: italic;
     color: var(--primary);
@@ -252,15 +284,17 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-family: var(--font-secondary);
     font-style: italic;
     line-height: var(--line-height-xl);
+    letter-spacing: var(--track-tighter);
     color: var(--primary);
 }
 
 .p-xxl {
-    font-family: var(--primary); 
-    letter-spacing: -0.02em; 
-    font-style: normal; 
-    font-size: 64px; 
-    line-height: 100%;
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, calc(2.5rem + 1.5 * ((100vw - 23.4375rem) / 66.5625)), 4rem);
+    line-height: var(--line-height-xl);
+    letter-spacing: var(--track-tighter);
+    font-style: normal;
+    color: var(--primary);
 }
 
 .number {
@@ -269,7 +303,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-style: italic;
     line-height: var(--line-height-xl);
     color: var(--primary);
-    margin-bottom: 24px;
+    margin-bottom: var(--space-6);
 }
 
 a {
@@ -293,18 +327,9 @@ b {
 blockquote {
     font-family: var(--font-secondary);
     font-style: italic;
-    position: relative;
-    line-height: var(--line-height-l);
-    padding-left: 2rem;
-    margin-bottom: 1rem;
-}
-
-blockquote::before {
-    content: '\201C';
-    position: absolute;
-    left: 0;
-    font-size: 2rem;
-    color: var(--secondary);
+    line-height: var(--line-height-m);
+    text-align: center;
+    margin-bottom: var(--space-4);
 }
 
 blockquote:last-child {
@@ -380,7 +405,7 @@ footer * {
     column-gap: clamp(16px, 4vw, 24px);
     row-gap: 24px;
     max-width: 1440px;
-    margin: 0 auto 64px auto;
+    margin: 0 auto var(--space-16) auto;
     padding: 0 24px;
 }
 
@@ -450,12 +475,18 @@ footer * {
 /* MAIN */
 
 section {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
 }
 
 section > div {
-    margin-bottom: 64px;
+    margin-bottom: var(--space-12);
+}
+
+/* Consecutive reading-column rows sit at a tighter prose gap; media/other rows
+   keep the wider block gap above. */
+section > div:has(> .col-span-6):has(+ div:has(> .col-span-6)) {
+    margin-bottom: var(--space-6);
 }
 
 section > div:last-child {
@@ -469,12 +500,7 @@ img, video {
 
 .image-container {
     background-color: var(--ghost);
-    padding: 24px;
-}
-
-/* Hero showcase image: breathing room around the mockup */
-#overview .image-container {
-    padding: clamp(32px, 5vw, 72px);
+    padding: var(--space-6);
 }
 
 .image-container img {
@@ -484,6 +510,12 @@ img, video {
 .image-container video {
     border-radius: 0px;
 }
+
+/* Hero showcase image: breathing room around the mockup */
+#overview .image-container {
+    padding: clamp(32px, 5vw, 72px);
+}
+
 
 .tag-group {
     display: flex;
@@ -544,8 +576,10 @@ img, video {
 }
 
 .card {
-    border: 1.5px solid var(--ghost-focus);
-    padding: 1rem;
+    background-color: var(--ghost);
+    border: none;
+    border-radius: 6px;
+    padding: var(--space-6);
 }
 
 .card h4 {
@@ -624,19 +658,25 @@ img, video {
 /* SCROLLSPY */
 
 #scrollspy {
-    position: fixed; 
-    top: 24px; 
-    left: 0; 
-    right: 0; 
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    position: fixed;
+    top: 24px;
+    left: 0;
+    right: 0;
     z-index: 10;
     opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.4s var(--ease);
+    /* the fixed container spans full width — let clicks/selection pass through
+       everywhere except the actual links */
+    pointer-events: none;
+}
+
+.scrollspy-link {
+    pointer-events: auto;
 }
 
 #scrollspy.scrollspy-hidden {
     opacity: 0;
-    transform: translateY(-20px);
     pointer-events: none;
 }
 
@@ -649,6 +689,7 @@ img, video {
 .scrollspy-links {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
     transition: max-height 0.3s ease;
 }
 
@@ -657,52 +698,39 @@ img, video {
     overflow: hidden;
 }
 
+/* Table-of-contents links — OpenAI style: sans, 14px, sentence case,
+   muted by default, smooth fade to full-ink when active/hovered. */
 .scrollspy-link {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    text-transform: uppercase;
-    line-height: var(--line-height-xs);
+    font-family: var(--font-primary);
+    font-size: 0.8125rem;     /* 13px */
+    font-weight: 400;         /* regular — Söhne 500 reads too heavy here */
+    letter-spacing: 0;
+    line-height: 1.35;
+    text-transform: none;
     text-decoration: none;
     color: var(--secondary);
-    transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
-    overflow: show;
-    text-overflow: ellipsis;
+    transition: color 0.25s var(--ease), opacity 0.35s var(--ease);
     cursor: pointer;
     display: block;
     opacity: 1;
-    transform: translateX(0);
+    text-wrap: pretty;
 }
 
-.scrollspy-link:hover {
-    color: var(--primary);
-    text-decoration: none;
-}
-
+.scrollspy-link:hover,
 .scrollspy-link.active {
     color: var(--primary);
     text-decoration: none;
 }
 
+/* Subsection level — same size, differentiated by indent only */
+/* TOC levels: Overview/Retrospect and h2 titles = level 1 (flush);
+   h3 titles = level 2 (indented) */
 .scrollspy-link.h3 {
     padding-left: 1rem;
 }
 
-.scrollspy-link.h3:hover {
-    text-decoration: none;
-}
-
-.scrollspy-link.h3.active {
-    text-decoration: none;
-}
-
 #scrollspy.scrollspy-hidden .scrollspy-link {
     opacity: 0;
-    transform: translateX(-20px);
-}
-
-.scrollspy-link {
-    transition-delay: 0s;
 }
 
 

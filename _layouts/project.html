@@ -10,11 +10,11 @@ layout: default
     </div>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <div class="p-l">{{ page.desc }}</div>
+            <div class="p">{{ page.desc }}</div>
         </div>
     </div>
     <div class="grid">
-        <div class="col-start-2 col-span-10">
+        <div class="col-start-1 col-span-12">
             {% assign hero_bg = page['bg-image'] %}
             <div class="image-container" style="{% if hero_bg and hero_bg != '' %} background-image: url('{{ hero_bg | relative_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;{% endif %}">
                 {% if page.image contains '.mp4' %}
@@ -29,7 +29,7 @@ layout: default
 
 <section id="scrollspy">
     <div class="grid">
-        <div class="col-start-1 col-span-3 scrollspy">
+        <div class="col-start-1 col-span-2 scrollspy">
             <div class="scrollspy-content">
                 <div class="scrollspy-links" id="scrollspy-links">
                 </div>
