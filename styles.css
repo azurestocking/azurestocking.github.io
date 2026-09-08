@@ -265,14 +265,6 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     color: var(--primary);
 }
 
-.p-xxl {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xl);
-    font-style: normal;
-    color: var(--primary);
-}
-
 .number {
     font-size: var(--font-size-xl);
     font-family: var(--font-secondary);
@@ -354,12 +346,6 @@ footer {
     padding-top: var(--space-m);
     padding-bottom: var(--space-m);
     isolation: isolate;
-}
-
-.hero {
-    height: 100vh;
-    width: auto;
-    position: relative;
 }
 
 .navlink {
@@ -483,28 +469,6 @@ img, video {
 }
 
 
-.tag-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-s);
-    width: 100%;
-    min-height: fit-content;
-    margin-top: var(--space-m);
-}
-
-.tag {
-    color: var(--primary);
-    font-size: var(--font-size-s);
-    background: var(--ghost);
-    padding: 0.5em 1.25em;
-    border-radius: 99px;
-    position: relative;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .before img {
     border-bottom: 8px solid #b3102e;
 }
@@ -558,6 +522,50 @@ img, video {
 
 .card h4, .insight h4 {
     font-weight: 500;
+}
+
+/* Project cards — 2-up gallery (image, then title + description) */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.project-card:hover {
+    text-decoration: none;
+}
+
+.card-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: var(--space-m);
+    margin-bottom: var(--space-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease;
+}
+
+/* Only the image dims on hover/press — title and description stay full */
+.project-card:hover .card-image,
+.project-card:active .card-image {
+    opacity: 0.7;
+}
+
+.card-name {
+    margin-bottom: var(--space-xs);
+}
+
+.card-desc {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    color: var(--secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 
@@ -627,12 +635,6 @@ header .button-group {
     text-decoration: none;
 }
 
-.button-group-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 /* Primary CTA — solid black pill (OpenAI navbar style) */
 .button {
     font-size: var(--font-size-s);
@@ -674,14 +676,6 @@ header .button-group {
     transform: rotate(-45deg);
 }
 
-.button i.rotate-90 {
-    transform: rotate(90deg);
-}
-
-.button i.rotate-135 {
-    transform: rotate(-135deg);
-}
-
 .button:hover i {
     transform: rotate(0deg);
 }
@@ -690,15 +684,6 @@ header .button-group {
 .button.secondary {
     background-color: var(--ghost);
     border: none;
-    color: var(--primary);
-}
-
-/* Plain text nav links — no fill, no border */
-.button.ghost {
-    border: none;
-    padding: 0;
-    border-radius: 0;
-    background: none;
     color: var(--primary);
 }
 
@@ -750,12 +735,6 @@ header .button-group {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    transition: max-height 0.3s ease;
-}
-
-.scrollspy-links.collapsed {
-    max-height: 0;
-    overflow: hidden;
 }
 
 /* Table-of-contents links — OpenAI style: sans, 14px, sentence case,
@@ -828,23 +807,3 @@ td {
     gap: var(--space-m);
 }
 
-.list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-}
-
-.list-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.list-item-1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.list-item-2 {
-    color: var(--secondary);
-}
