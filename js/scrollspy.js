@@ -14,119 +14,73 @@ document.addEventListener('DOMContentLoaded', function() {
     overviewLink.classList.add('scrollspy-link');
     scrollspyLinks.appendChild(overviewLink);
 
-    // Apply staggered transitions
-    function applyStaggeredTransitions(isHiding) {
-        const links = scrollspy.querySelectorAll('.scrollspy-link');
-        const delayIncrement = 0.05;
-        
-        links.forEach((link, index) => {
-            let delay;
-            if (isHiding) {
-                // Disappear from bottom to top
-                delay = (links.length - 1 - index) * delayIncrement;
-            } else {
-                // Appear from top to bottom
-                delay = index * delayIncrement;
-            }
-            link.style.transitionDelay = `${delay}s`;
-        });
+    // Turn arbitrary text into a URL-safe id fragment
+    function slug(text) {
+        return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     }
-    
-    // Get all elements with "full-width-bg" class
-    const fullWidthBgElements = document.querySelectorAll('.full-width-bg');
-    
-    // Check if any full-width-bg element is at scrollspy position
-    function checkScrollspyVisibility() {
-        const scrollspyViewportY = 24; // scrollspy is positioned at top: 24px in viewport
-        
-        // Get the scrollspy element's height to calculate its bottom position
-        const scrollspyHeight = scrollspy.offsetHeight;
-        const scrollspyBottomY = scrollspyViewportY + scrollspyHeight;
-        
-        const hasFullWidthBgIntersection = Array.from(fullWidthBgElements).some(element => {
-            const rect = element.getBoundingClientRect();
-            
-            // Check if there's any intersection between the scrollspy and the full-width-bg element
-            // scrollspy: from scrollspyViewportY to scrollspyBottomY
-            // element: from rect.top to rect.bottom
-            return !(rect.bottom < scrollspyViewportY || rect.top > scrollspyBottomY);
-        });
-        
-        if (hasFullWidthBgIntersection) {
-            applyStaggeredTransitions(true); // Apply disappearing delays
-            scrollspy.classList.add('scrollspy-hidden');
-        } else {
-            applyStaggeredTransitions(false); // Apply appearing delays
-            scrollspy.classList.remove('scrollspy-hidden');
+
+    // Capitalize each word: "think" -> "Think"
+    function titleCase(text) {
+        return text.replace(/\b\w/g, ch => ch.toUpperCase());
+    }
+
+    // Guarantee unique ids across all entries (repeated labels like
+    // think/make/check, or duplicate h3 text, get a numeric suffix)
+    const usedIds = new Set();
+    function uniqueId(base) {
+        base = base || 'section';
+        let id = base, n = 2;
+        while (usedIds.has(id)) id = `${base}-${n++}`;
+        usedIds.add(id);
+        return id;
+    }
+
+    // Build the TOC in document order:
+    //   • each <hr> section divider → a level-1 entry, labelled by the
+    //     aria-label on its container (e.g. <div class="grid" aria-label="think">)
+    //   • each <h3> (except .np) → an indented level-2 sub-entry
+    const nodes = Array.from(main.querySelectorAll('hr, h3'));
+    const tocTargets = [];
+
+    nodes.forEach(node => {
+        let text, indented;
+        if (node.tagName === 'HR') {
+            const labelled = node.closest('[aria-label]');
+            const label = labelled && labelled.getAttribute('aria-label');
+            if (!label) return;                 // unlabelled divider → skip
+            text = titleCase(label);
+            indented = false;
+        } else { // H3
+            if (node.classList.contains('np')) return;
+            text = node.textContent;
+            indented = true;
         }
-    }
-    
-    // Set up scroll listener for full-width-bg elements
-    if (fullWidthBgElements.length > 0) {
-        window.addEventListener('scroll', checkScrollspyVisibility);
-        checkScrollspyVisibility();
-    }
-    
-    // Function to generate ID based on section-header index and h2 index
-    function generateHeadingId(heading) {
-        // Check if h2 has index attribute (from section-header)
-        if (heading.tagName === 'H2' && heading.hasAttribute('index')) {
-            const h2Index = heading.getAttribute('index');
-            const h2Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            return `${h2Index}-${h2Text}`;
-        } else if (heading.tagName === 'H3' && heading.hasAttribute('index')) {
-            // Find all h3 headings and their index, heading text
-            const h3Index = heading.getAttribute('index');
-            const h3Text = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            return `${h3Index}-${h3Text}`;
-        } else {
-            // For h2/h3 elements without index, use their text content
-            const headingText = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-            return headingText;
-        }
-    }
-    
-    // Get all h2 and h3 elements from main
-    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(heading => {
-        return !heading.classList.contains('np');
+
+        if (node.id) usedIds.add(node.id);       // respect any existing id
+        else node.id = uniqueId(slug(text));
+
+        const link = document.createElement('a');
+        link.href = '#' + node.id;
+        link.textContent = text;
+        link.classList.add('scrollspy-link');
+        if (indented) link.classList.add('h3');
+        scrollspyLinks.appendChild(link);
+        tocTargets.push(node);
     });
 
-    // Hide TOC if no headings are found
-    if (headings.length === 0) {
-        scrollspy.classList.add('scrollspy-hidden');
+    // Hide TOC if there is nothing to link to
+    if (tocTargets.length === 0) {
+        scrollspy.classList.add('hide');
         return;
     }
-    
-    // Create TOC for other headings
-    headings.forEach(heading => {
-        const link = document.createElement('a');
-        if (!heading.id) {
-            heading.id = generateHeadingId(heading);
-        }
-        link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
-        link.classList.add('scrollspy-link');
-        
-        // Add h3 class for indentation
-        if (heading.tagName === 'H3') {
-            link.classList.add('h3');
-            scrollspyLinks.appendChild(link);
-        } else if (heading.tagName === 'H2') {
-            link.classList.add('h2');
-            scrollspyLinks.appendChild(link);
-        }
-    });
-    
+
     // Create Retrospect link
     const retrospectLink = document.createElement('a');
     retrospectLink.href = '#retrospect';
     retrospectLink.textContent = 'Retrospect';
     retrospectLink.classList.add('scrollspy-link');
     scrollspyLinks.appendChild(retrospectLink);
-    
-    // Apply initial staggered transitions after creating links
-    applyStaggeredTransitions(false);
-    
+
     // Update active state on scroll
     const observerOptions = {
         root: null,
@@ -138,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
             const link = document.querySelector(`.scrollspy-link[href="#${id}"]`);
-            
+            if (!link) return;
+
             if (entry.isIntersecting) {
                 document.querySelectorAll('.scrollspy-link').forEach(link => {
                     link.classList.remove('active');
@@ -147,14 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
-    // Observe all headings and the overview section
+
+    // Observe the overview section, every TOC target, and the retrospect section
     const overviewSection = document.getElementById('overview');
     if (overviewSection) {
         observer.observe(overviewSection);
     }
-    headings.forEach(heading => {
-        observer.observe(heading);
+    tocTargets.forEach(target => {
+        observer.observe(target);
     });
 
     const retrospectSection = document.getElementById('retrospect');
@@ -162,4 +117,24 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(retrospectSection);
     }
 
-}); 
+    // Disappear / reappear: hide the TOC whenever a full-width band scrolls
+    // behind it. #scrollspy is height:0, so measure the actual TOC content box.
+    const tocBox = scrollspy.querySelector('.scrollspy-content');
+    const fullWidthBgElements = Array.from(document.querySelectorAll('.full-width-bg'));
+
+    function updateScrollspyVisibility() {
+        const toc = tocBox.getBoundingClientRect();
+        const behindBand = fullWidthBgElements.some(el => {
+            const r = el.getBoundingClientRect();
+            return !(r.bottom < toc.top || r.top > toc.bottom);
+        });
+        scrollspy.classList.toggle('scrollspy-hidden', behindBand);
+    }
+
+    if (fullWidthBgElements.length > 0) {
+        window.addEventListener('scroll', updateScrollspyVisibility, { passive: true });
+        window.addEventListener('resize', updateScrollspyVisibility);
+        updateScrollspyVisibility();
+    }
+
+});

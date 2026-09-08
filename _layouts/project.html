@@ -2,18 +2,18 @@
 layout: default
 ---
 
-<section id="overview" class="full-width-bg" style="background-color: {{ page.color }};">
+{% if page['theme-color'] and page['theme-color'] != '' %}<style>:root { --accent: {{ page['theme-color'] }}; }</style>{% endif %}
+
+<section id="overview" class="full-width-bg" style="background-color: {{ page['bg-color'] }};">
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <div class="p-xl" style="margin-top: 25vh; font-family: var(--font-secondary);">{{ page.name }}</div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <div class="p">{{ page.desc }}</div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-1 col-span-12">
             {% assign hero_bg = page['bg-image'] %}
             <div class="image-container" style="{% if hero_bg and hero_bg != '' %} background-image: url('{{ hero_bg | relative_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;{% endif %}">

@@ -5,17 +5,17 @@ title: Index
 
 <section>
     <div class="grid">
-        <div class="col-start-2 col-span-10" style="margin-top: 25vh;">
-            <div class="p-xxl">
-                I’m your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives.
+        <div class="col-start-1 col-span-12" style="margin-top: 25vh;">
+            <div class="p-l">
+                I’m your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives. I am drawn to complexity and intersectionality—not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.
             </div>
         </div>
     </div>
 </section>
 
-<section id="featured">
-    <div class="grid"><hr class="col-full"></div>
-</section>
+<div class="grid" aria-label="feature">
+    <hr class="col-start-1 col-span-12">
+</div>
 
 {% for project in site.projects %}
     <section id="{{ project.slug }}">
@@ -26,9 +26,8 @@ title: Index
             <div class="col-start-4 col-span-8">
                 <h1>{{ project.name }}</h1>
             </div>
-        </div>
-        <div class="grid">
-            <div class="col-start-2 col-span-10 image-container" style="padding: 64px; background-color: {{ project.color }};">
+        
+            <div class="col-start-2 col-span-10 image-container" style="padding: 64px; background-color: {{ project['bg-color'] }};">
                 <a href="/project/{{ project.slug }}/" style="display: block; text-decoration: none;">
                     {% if project.image contains '.mp4' %}
                         {% include mockup-macbook.html content_image=project.image content_type="video" %}
@@ -40,7 +39,3 @@ title: Index
         </div>
     </section>
 {% endfor %}
-
-<section id="other">
-    <div class="grid"><hr class="col-full"></div>
-</section>

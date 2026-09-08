@@ -9,7 +9,8 @@ desc: "An AI-powered storytelling support tool empowers content creators to prod
 image: "/images/agent-opus/demo.mp4"
 bg-pattern: "/images/agent-opus/bg-pattern.png"
 bg-image: "/images/agent-opus/bg-image.jpg"
-color: "#EBEAFA"
+theme-color: "#6723FF"
+bg-color: "#EBEAFA"
 timeline: "Q2 2024"
 role: "Design Consultant"
 impact-label-1: "Series A Fundraising"
@@ -37,19 +38,21 @@ responsibilities:
             <h3 class="np">Background</h3>
             <p>Back in Q2 2024, our company saw text-to-video integration as both timely and technically feasible, but <strong>this potentially valuable yet loosely defined opportunity needed to be validated and conceptualized quickly and affordably</strong>, before securing leadership buy-in and diverting core production efforts.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="card-list-col col-start-4 col-span-6">
+
+        <div class="flex-row col-start-3 col-span-8">
             <div class="card">
-                <h5>🔥 Market Interest</h5>
+                <div class="number">🔥</div>
+                <h5>Market Interest</h5>
                 <p>Advances in generative AI have fueled momentum in multimodal creation, with text-to-video emerging as a compelling frontier. Early movers like Pika and Runway signal both technical feasibility and strong market demand.</p>
             </div>
             <div class="card">
-                <h5>🚀 “Existential Crisis”</h5>
+                <div class="number">🚀</div>
+                <h5>Existential Crisis</h5>
                 <p>Our company is among the earliest players in AI-powered video captioning and repurposing, but the low barrier to entry makes differentiation essential to maintain its competitive edge as more industry giants like ByteDance, YouTube, Meta enter the space.</p>
             </div>
             <div class="card">
-                <h5>🤝 Potential Synergy</h5>
+                <div class="number">🤝</div>
+                <h5>Potential Synergy</h5>
                 <p>Existing users have been requesting text-to-video generation, a capability that naturally complements the current product by extending the workflow earlier in the pipeline.</p>
             </div>
         </div>
@@ -62,15 +65,14 @@ responsibilities:
             <h3 class="np">Challenge</h3>
             <p>Brought in as an external consultant, I led a focused rapid prototyping sprint under low internal priority, where the core challenge was not just delivering the design, but resolving the strategic ambiguity beneath it.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="card-list-col col-start-4 col-span-6">
-            <div class="card">
-                <h5>💵 Limited Resources</h5>
+            <div class="insight">
+                <h5>Limited Resources</h5>
                 <p>With Series A fundraising underway and a lean team stretched thin, there was no bandwidth for a full-time hire, concept testing had to be fast and lightweight, leaving me with limited resources and visibility.</p>
             </div>
-            <div class="card">
-                <h5>🧭 Twofold Ambiguity</h5>
+            <div class="insight">
+                <h5>Twofold Ambiguity</h5>
                 <p>The research needed to work on two fronts: strategically, to validate the opportunity by defining a value proposition and identifying target user segments; and tactically, to translate that into a feature design aligned with real user workflows.</p>
             </div>
         </div>
@@ -83,19 +85,16 @@ responsibilities:
             <h3 class="np">Problem Statement</h3>
             <p>We began with a straightforward, feature-driven problem framing handed down by the product manager, simple by necessity, but knowingly incomplete:</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="p-l col-start-4 col-span-6" style="margin-bottom: 0px;">
+    
+        <div class="p-l col-start-4 col-span-6">
             <blockquote>How might we integrate a text-to-video generating feature into the existing short video repurposing pipeline?</blockquote>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>As later research surfaced three high-level goals shared across two user segments — efficiency, consistency, and adaptability — I refined that rough question into something more specific, which guided the design decisions that follow:</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="p-l col-start-4 col-span-6" style="margin-bottom: 0px;">
+    
+        <div class="p-l col-start-4 col-span-6">
             <blockquote>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</blockquote>
         </div>
     </div>
@@ -107,9 +106,8 @@ responsibilities:
             <h3 class="np">Design Process</h3>
             <p>We adopted a Lean approach to move quickly and stay focused on user needs, using iterative prototyping to validate assumptions and evaluate outcomes, thereby enabling confident product direction without overcommitting resources.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/design-process.png' | relative_url }}" loading="lazy">
         </div>
     </div>
@@ -126,11 +124,10 @@ responsibilities:
     </div>
 </section>
 
-<section class="full-width-bg" style="background-color: {{ page.color }};">
+<section class="full-width-bg" style="background-color: {{ page['bg-color'] }};">
     <div class="grid">
         <h4 class="col-start-1 col-span-12">I. Collaborative Script Composition</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-4">
             <div>
                 <h5>Targeted Refinement</h5>
@@ -146,12 +143,9 @@ responsibilities:
                 content_image="/images/agent-opus/F1.mp4"
                 content_type="video" %}
         </div>
-    </div>
-
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">II. Flexible Storyboard Management</h4>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-1 col-span-8">
             {% include mockup-macbook.html
                 content_image="/images/agent-opus/F2.mp4"
@@ -167,12 +161,9 @@ responsibilities:
                 <p>Filter shots by specific characters or scenes to isolate and focus on related sequences, improving manageability within complex or long-form productions without losing track of the bigger picture.</p>
             </div>
         </div>
-    </div>
-
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">III. Comprehensive Shot Tweaking</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-4">
             <div>
                 <h5>Individual Shot Control</h5>
@@ -188,12 +179,9 @@ responsibilities:
                 content_image="/images/agent-opus/F3.mp4"
                 content_type="video" %}
         </div>
-    </div>
-
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">IV. Centralized Asset Management & Customization</h4>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-1 col-span-8">
             {% include mockup-macbook.html
                 content_image="/images/agent-opus/F4.mp4"
@@ -218,20 +206,19 @@ responsibilities:
             <h3 class="np">Impacts</h3>
             <p>In Q3 2025, more than a year after the design was completed, the product finally launched — not without diverging from the original strategy as the landscape evolved, but rooted in the research and insights I established in the beginning.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="flex-row col-start-3 col-span-8">
-            <div>
+            <div class="card">
                 <div class="number">30M</div>
                 <h5>Series A Funding</h5>
                 <p>Enhanced the product vision and go-to-market narrative, contributing to investor confidence ahead of fundraising round.</p>
             </div>
-            <div>
+            <div class="card">
                 <div class="number">40%</div>
                 <h5>Day-1 Retention</h5>
                 <p>Crafted an onboarding and core experience that delivered immediate value, driving strong next-day user return.</p>
             </div>
-            <div>
+            <div class="card">
                 <div class="number">60%</div>
                 <h5>Export Rate</h5>
                 <p>Drove high satisfaction with the rendered output, prompting users to voluntarily share their results on social media.</p>
@@ -240,11 +227,9 @@ responsibilities:
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Think 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="think">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section id="design-process">
     <div class="grid">
@@ -253,11 +238,9 @@ responsibilities:
             <p>Starting with a hypothesis: leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
             <p>To test this hypothesis, I identified several leading players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
         </div>
-    </div>
-    <div class="grid">
-        <img class="col-start-3 col-span-8" src="{{ '/images/agent-opus/market-analysis.png' | relative_url }}" loading="lazy">
-    </div>
-    <div class="grid">
+    
+        <img class="col-start-4 col-span-6" src="{{ '/images/agent-opus/market-analysis.png' | relative_url }}" loading="lazy">
+    
         <div class="col-start-4 col-span-6">
             <p>The matrix reveals a strategic opportunity: <strong>to differentiate by centering on storytelling support</strong>, aligning with the market gap and the team’s strengths, instead of competing on model performance.</p>
         </div>
@@ -270,19 +253,16 @@ responsibilities:
             <h3>Brainstorm</h3>
             <p>We brainstormed features that would support storytelling more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruits.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/brainstorming.png' | relative_url }}" loading="lazy">
         </div>
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Make 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="make">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -290,8 +270,7 @@ responsibilities:
             <h3>Wireframe</h3>
             <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, arriving at two different directions.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-3 col-span-4">
             <img src="{{ '/images/agent-opus/wireframe-1.png' | relative_url }}" loading="lazy">
             <div>
@@ -309,11 +288,9 @@ responsibilities:
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Check 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="check">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -321,19 +298,16 @@ responsibilities:
             <h3>Concept Testing</h3>
             <p>To assess which direction had the strategic and technical foundation to move forward, I facilitated a <strong>cross-functional stakeholder interview</strong> to walk through annotated sketches and evaluate its viability, grouping the responses into thematic categories.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/concept-testing.png' | relative_url }}" loading="lazy">
         </div>
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Think 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="think">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -341,40 +315,34 @@ responsibilities:
             <h3>Data Analysis</h3>
             <p>Synthesizing the responses, the affinity mapping revealed that <strong>implementing a node-based architecture would require substantial engineering refactoring</strong>, raising critical concerns across three dimensions:</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
-            <img src="{{ '/images/agent-opus/data-analysis-1.png' | relative_url }}" loading="lazy">
-        </div>
-    </div>
-    <div class="grid">
-        <div class="card-list-col col-start-4 col-span-6">
+    
+        <div class="flex-row col-start-3 col-span-8">
             <div class="card">
-                <h5>🤹 Technical Complexity</h5>
+                <div class="number">🤹</div>
+                <h5>Technical Complexity</h5>
                 <p>Each cell would be developed standalone yet communicative, and the magnitude of potential cell combinations exponentially poses challenges in scalability, agility, and version control.</p>
             </div>
             <div class="card">
-                <h5>🤯 Usability Uncertainty</h5>
+                <div class="number">🤯</div>
+                <h5>Usability Uncertainty</h5>
                 <p>The added flexibility introduces a higher risk of choice paralysis and cognitive overload, potentially alienating users with a fragmented, unpredictable, and slow experience.</p>
             </div>
             <div class="card">
-                <h5>📉 Managerial Misalignment</h5>
+                <div class="number">📉</div>
+                <h5>Managerial Misalignment</h5>
                 <p>Building and maintaining this system demands significant investment in labor, capital, and time, causing real risk of delays, scope shifts, or failure to meet long-term strategic goals.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>Given these constraints and an unfavorable input-output ratio, we deprioritized the node-based direction and redirected focus toward the storyboard alternative.</p>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Make 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="make">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -385,7 +353,7 @@ responsibilities:
     </div>
 </section>
 
-<section class="full-width-bg" style="background-color: {{ page.color }};">
+<section class="full-width-bg" style="background-color: {{ page['bg-color'] }};">
     <div class="grid flex-row">
         <div class="list-container">
             <img src="{{ '/images/agent-opus/prototype-1-1.png' | relative_url }}" loading="lazy">
@@ -418,11 +386,9 @@ responsibilities:
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Check 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="check">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -432,29 +398,24 @@ responsibilities:
             <p>Sessions employed the <strong>think-aloud protocol to surface usability and functionality issues</strong> in real time.</p>
             <p>Responses were synthesized through <strong>affinity mapping, grouped thematically and color-coded by usage intensity</strong>, to surface areas for improvement and drive the next iteration.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/usability-testing-2.png' | relative_url }}" loading="lazy">
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>Digging deeper, something more interesting emerged — users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question:</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="p-l col-start-4 col-span-6" style="margin-bottom: 0px;">
+    
+        <div class="p-l col-start-4 col-span-6">
             <blockquote>Why do users hold conflicting opinions on the same areas for improvement? What factors contribute to this?</blockquote>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Think 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="think">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -462,73 +423,67 @@ responsibilities:
             <h3>Data Analysis</h3>
             <p>To make sense of these apparent contradictions, I hypothesized that the conflicting needs stemmed from how users conceptualize a set of shared goals differently. To test this, I examined the underlying intent behind each request and reshuffled them by <strong>high-level goals — the broader needs that encompass divergent user behaviors and expectations</strong>.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/data-analysis-3-1.png' | relative_url }}" loading="lazy">
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>The affinity mapping supports this hypothesis: despite appearing contradictory at the surface level, all requests consistently mapped to the same high-level goals, indicating that <strong>users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable</strong>.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="card-list-col col-start-4 col-span-6">
+    
+        <div class="flex-row col-start-3 col-span-8">
             <div class="card">
-                <h5>⌛️ Efficiency</h5>
+                <div class="number">⌛️</div>
+                <h5>Efficiency</h5>
                 <p>Reduce time, effort, financial cost, and cognitive friction by providing readable information, an intuitive interface, and a streamlined, user-friendly workflow.</p>
             </div>
             <div class="card">
-                <h5>📐 Consistency</h5>
+                <div class="number">📐</div>
+                <h5>Consistency</h5>
                 <p>Enable a coherent narrative and stable visual identity across frames, while allowing reasonable variation to support continuity in action, time, and space.</p>
             </div>
             <div class="card">
-                <h5>🕹 Adaptability</h5>
+                <div class="number">🕹</div>
+                <h5>Adaptability</h5>
                 <p>Support varied intents and use cases through rich customization options, flexible control over outputs and workflows, and a context-aware, responsive system.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>This insight validates our hypothesis of multiple user segments, and the divergence in expectations implies that <strong>distinct user groups adopt varying positions on value trade-offs</strong>, potentially making them visually identifiable when plotted on a coordinate plane defined by such trade-offs. To surface those groups, I identified the <strong>core tensions in users’ decision-making</strong>: users are primarily weighing cost against perceived quality, and user agency against automation.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="card-list-col col-start-4 col-span-6">
-            <div class="card">
-                <h5>1️⃣ Cost vs. Perceived Quality</h5>
+            <div class="insight">
+                <h5>Cost vs. Perceived Quality</h5>
                 <p>This axis plots users’ expectations for production by reflecting their weighting of resources commitment against the value of outcomes. Dimensions highlighted in feedback include time-saved, effort-saved, and craftsmanship, with the extremes of this axis representing cost and perceived quality.</p>
             </div>
-            <div class="card">
-                <h5>2️⃣ User Agency vs. Automation</h5>
+            <div class="insight">
+                <h5>User Agency vs. Automation</h5>
                 <p>This axis plots users’ preferences for interaction by reflecting their willingness to delegate creative control to the system. Dimensions highlighted in feedback include authorship, precision, and freedom, with the extremes of this axis representing user agency versus automation.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>Mapping all sticky notes along the axes representing the two core tensions above revealed the natural clustering of user segments.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/data-analysis-3-2.png' | relative_url }}" loading="lazy">
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>Sticky notes were distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating that:</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="card-list-col col-start-4 col-span-6">
-            <div class="card">
-                <h5>1️⃣ We Don’t Trust AI</h5>
+            <div class="insight">
+                <h5>We Don’t Trust AI</h5>
                 <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
             </div>
-            <div class="card">
-                <h5>2️⃣ User Segmentation</h5>
+            <div class="insight">
+                <h5>User Segmentation</h5>
                 <p>The polarization by usage intensity reveals two distinct user groups: those with lower intensity favoring low cost and automation, and others with higher intensity prioritizing user agency and quality.</p>
             </div>
         </div>
@@ -541,8 +496,7 @@ responsibilities:
             <h3>Persona</h3>
             <p>Based on the user segmentation, I developed the following two personae: original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators; derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-3 col-span-4">
             <img src="{{ '/images/agent-opus/persona-1.png' | relative_url }}" loading="lazy">
             <div>
@@ -560,11 +514,9 @@ responsibilities:
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Make 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="make">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -577,11 +529,10 @@ responsibilities:
     </div>
 </section>
 
-<section class="full-width-bg" style="background-color: {{ page.color }};">
+<section class="full-width-bg" style="background-color: {{ page['bg-color'] }};">
     <div class="grid">
         <h4 class="col-start-1 col-span-12">I. Layout</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I1-1B.png' | relative_url }}" loading="lazy">
@@ -602,11 +553,9 @@ responsibilities:
                 <p>Switched to a vertical layout with thumbnail and editor modes, aligning with standard browsing behavior. Shot editing options are collapsed behind hover effects to reduce cognitive load and display only relevant information.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">II. Customization</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I1-2-1B.png' | relative_url }}" loading="lazy">
@@ -625,8 +574,7 @@ responsibilities:
                 <p>Exposed global settings in a prominent sidebar for constant visibility, and introduced predefined and customizable templates to streamline setup and ensure output consistency.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I1-2-2B.png' | relative_url }}" loading="lazy">
@@ -647,11 +595,9 @@ responsibilities:
                 <p>Extracted shared assets (character, scene) from the script automatically, allowing users to insert and apply them across multiple shots at once.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">III. Inline Editing</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I1-3B.png' | relative_url }}" loading="lazy">
@@ -670,11 +616,9 @@ responsibilities:
                 <p>Introduced a floating toolbar that activates on text selection, allowing users to apply predefined functions (polish, shorten, and regenerate) or instruction-based prompts to specific segments only.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">IV. Separate Workflow</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I1-4B.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
@@ -696,11 +640,9 @@ responsibilities:
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Check 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="check">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -708,19 +650,16 @@ responsibilities:
             <h3>Usability Testing</h3>
             <p>The updated prototype underwent testing with 5 additional participants, and their responses were grouped by <b>thematic categories</b> to identify areas for improvement.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/usability-testing-3.png' | relative_url }}" loading="lazy">
         </div>
     </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Think 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="think">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -728,40 +667,20 @@ responsibilities:
             <h3>Data Analysis</h3>
             <p>The testing pointed to new areas for improvement, and a closer look at the responses revealed something unexpected: several responses didn’t fit any known category of high-level goals, surfacing an unstated one.</p>
         </div>
-    </div>
-    <div class="grid">
-        <div class="image-container col-start-3 col-span-8">
+    
+        <div class="image-container col-start-4 col-span-6">
             <img src="{{ '/images/agent-opus/data-analysis-4.png' | relative_url }}" loading="lazy">
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="col-start-4 col-span-6">
             <p>Even with their diverse focuses, the uncategorized feedback unanimously converged on a previously unmentioned dimension: <strong>transparency — a deeper understanding of the system’s operations and decisions, and hence more informed and targeted manipulation.</strong></p>
         </div>
     </div>
-    <div class="grid">
-        <div class="card-list-col col-start-4 col-span-6">
-            <div class="card">
-                <h5>1️⃣ Processing Logic Exposure</h5>
-                <p>Demystify how inputs and parameters are interpreted, e.g., establish a visually clear cause-effect relationship between script segments and corresponding generated shots.</p>
-            </div>
-            <div class="card">
-                <h5>2️⃣ Cognitive Load Distribution</h5>
-                <p>Offer progressive disclosure of information to guide user interactions, e.g., simplify complex, effort-intensive prompting by disassembling it into smaller, manageable pieces via structured input fields.</p>
-            </div>
-            <div class="card">
-                <h5>3️⃣ Human-in-the-Loop</h5>
-                <p>Integrate deliberate checkpoints where users can validate, revise, or override AI outputs, e.g., include undo/redo capabilities and history log to revert states or track changes.</p>
-            </div>
-        </div>
-    </div>
 </section>
 
-<section>
-    <div class="grid">
-        <h2 class="col-start-4 col-span-6">Make 🧠</h2>
-    </div>
-</section>
+<div class="grid" aria-label="make">
+    <hr class="col-start-4 col-span-6">
+</div>
 
 <section>
     <div class="grid">
@@ -774,11 +693,10 @@ responsibilities:
     </div>
 </section>
 
-<section class="full-width-bg" style="background-color: {{ page.color }};">
+<section class="full-width-bg" style="background-color: {{ page['bg-color'] }};">
     <div class="grid">
         <h4 class="col-start-1 col-span-12">I. Script Reformatting</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <video width="100%" height="auto" autoplay loop muted>
@@ -801,8 +719,7 @@ responsibilities:
                 <p>Added a reformat option that declares key elements with symbolic tags, improving both frontend readability and model performance.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <video width="100%" height="auto" autoplay loop muted>
@@ -825,11 +742,9 @@ responsibilities:
                 <p>Replaced function controls with icon buttons, visually distinguished them from open-ended prompt input to reflect different interaction modes, and simplified predefined options to remove redundant two-step interactions.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">II. Shot Editing</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I2-2-1B.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
@@ -848,8 +763,7 @@ responsibilities:
                 <p>Regrouped controls by their target objects and logical relationships, distributing them between the floating toolbar and modal accordingly, consolidated UI components to a succinct set.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I2-2-2B.png' | relative_url }}" loading="lazy">
@@ -868,8 +782,7 @@ responsibilities:
                 <p>Flattened the page hierarchy using modals and in-textarea dropdowns, keeping input and output in close proximity to establish a more intuitive cause-and-effect relationship.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I2-2-3B.png' | relative_url }}" loading="lazy">
@@ -890,11 +803,9 @@ responsibilities:
                 <p>Added a dedicated dialogue track separate from voiceover, allowing each shot to carry both independently, broadening support to formats like feature films where audio and visuals frequently diverge.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">III. Preview</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I2-3-1B.png' | relative_url }}" loading="lazy">
@@ -915,11 +826,9 @@ responsibilities:
                 <p>Introduced a slideshow mode that simulates the final output’s pacing and structure, accessible at any stage with fluid switching between modes.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">IV. Version Control</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I2-3-2B.png' | relative_url }}" loading="lazy">
@@ -947,8 +856,7 @@ responsibilities:
             <h3 class="np">Success Metrics</h3>
             <p>Full implementation would be a major, resource-intensive undertaking requiring leadership buy-in and broader organizational alignment — none of which were in place yet. With that in mind, I proactively defined success metrics to ensure the design’s impact could be rigorously evaluated once the product was ready to ship:</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-3 col-span-4">
             <h4>At Launch</h4>
             <p>Evaluate initial user engagement and identify early signals of whether the design successfully delivered value through the core workflow.</p>
@@ -994,11 +902,10 @@ responsibilities:
     </div>
 </section>
 
-<section class="full-width-bg" style="background-color: {{ page.color }};">
+<section class="full-width-bg" style="background-color: {{ page['bg-color'] }};">
     <div class="grid">
         <h4 class="col-start-1 col-span-12">I. Automation-First System</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <video width="100%" height="auto" autoplay loop muted>
@@ -1019,11 +926,9 @@ responsibilities:
                 <p>Collapsed all intermediate controls into a single prompt-to-video pipeline powered by a multi-agent system and a chatbox interface, making scripts and storyboards deliverables rather than editable workspaces.</p>
             </div>
         </div>
-    </div>
-    <div class="grid">
+    
         <h4 class="col-start-1 col-span-12">II. Independent Product Line</h4>
-    </div>
-    <div class="grid">
+    
         <div class="list-container col-start-1 col-span-6">
             <div class="before">
                 <img src="{{ '/images/agent-opus/I3-2A.png' | relative_url }}" loading="lazy">
@@ -1052,15 +957,14 @@ responsibilities:
         <div class="col-start-4 col-span-6">
             <p>The strategic framing held up — storytelling support, human-AI collaboration, distinct user segments all proved directionally correct. What didn’t survive was the assumption that those insights would translate into a craft-first feature. The company made a different bet, more than one years later, for defensible reasons.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="card-list-col col-start-4 col-span-6">
-            <div class="card">
-                <h5>💪 Competitive Repositioning</h5>
+            <div class="insight">
+                <h5>Competitive Repositioning</h5>
                 <p>With startups like Runway and Pika earning early traction, and giants like Adobe and CapCut owning strong expertise, it is more prudent to strengthen existing revenue drivers than to compete in a vertical the company had no structural advantage in and no urgent need to win.</p>
             </div>
-            <div class="card">
-                <h5>📊 Narrative Reframing</h5>
+            <div class="insight">
+                <h5>Narrative Reframing</h5>
                 <p>Positioning as an autonomous agent rather than a smarter storyboard editor, and building a new suite rather than adding a tab, commanded a higher valuation multiple and aligned with where AI product discourse was heading in 2024–2025, as expected of a Series B company.</p>
             </div>
         </div>
@@ -1073,15 +977,14 @@ responsibilities:
             <h3 class="np">Takeaways</h3>
             <p>Product decisions and priorities are rarely decided by design alone; business stage, investor narrative, and organizational trust all shape what gets built and how, making proactive alignment and stakeholder visibility not a soft skill, but a strategic one.</p>
         </div>
-    </div>
-    <div class="grid">
+    
         <div class="card-list-col col-start-4 col-span-6">
-            <div class="card">
-                <h5>🎱 Stage-Driven Strategy</h5>
+            <div class="insight">
+                <h5>Stage-Driven Strategy</h5>
                 <p>A pre-Series A startup validating a concept operates under fundamentally different constraints than a post-Series A company racing for market share — the same feature can warrant entirely different design directions depending on where a company stands in its growth cycle.</p>
             </div>
-            <div class="card">
-                <h5>🎁 Trust-Building Method</h5>
+            <div class="insight">
+                <h5>Trust-Building Method</h5>
                 <p>Establishing credibility within the team early is what drives iterative direction and secures alignment. When direct peer support is absent, maintaining momentum means putting something tangible in front of stand-by colleagues to keep feedback flowing.</p>
             </div>
         </div>

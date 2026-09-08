@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-55" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
@@ -19,15 +18,19 @@
     <header>
         <div class="grid" style="align-items: center;">
             <div class="logo col-start-1 col-span-2">
-                <a href="{{ '/' | relative_url }}" style="color: var(--background);">GEMMA</a>
+                <a href="{{ '/' | relative_url }}">GEMMA</a>
             </div>
-            <div class="button-group col-start-3 col-span-8">
-                <a class="button ghost navlink" href="{{ '/#about' | relative_url }}" style="color: var(--background);">About<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                <a class="button ghost navlink" href="{{ '/#featured' | relative_url }}" style="color: var(--background);">Featured<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                <a class="button ghost navlink" href="{{ '/#other' | relative_url }}" style="color: var(--background);">Other<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            </div>
-            <div class="col-start-11 col-span-2" style="display: flex; justify-content: flex-end;">
-                <a class="button navlink" href="#footer" style="color: var(--background); border-color: var(--background);">Contact<i class="fa-solid fa-arrow-right rotate-45"></i></a>
+            <div class="button-group col-start-9 col-span-4" style="justify-content: flex-end;">
+                <a class="button navlink" href="{{ '/#about' | relative_url }}">About</a>
+                <div class="dropdown">
+                    <button class="button secondary navlink" type="button">Contact<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="https://www.linkedin.com/in/li-jm/">LinkedIn</a>
+                        <a href="https://github.com/azurestocking">GitHub</a>
+                        <a href="mailto:ligem714@gmail.com">Resume</a>
+                        <a href="mailto:ligem714@gmail.com">E-Mail</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -35,29 +38,14 @@
     <main>
         {{ content }}
     </main>
+    
+    <div class="grid" aria-label="feature">
+        <hr class="col-start-1 col-span-12">
+    </div>
 
-    <footer id="footer" class="full-width-bg">
-        <div class="grid" style="align-items: center;">
-            <div class="logo col-start-1 col-span-3">
-                <a href="{{ '/' | relative_url }}" style="color: var(--background);">GEMMA</a>
-            </div>
-            <div class="button-group col-start-6 col-span-6">
-                <a class="button ghost navlink" href="https://www.linkedin.com/in/li-jm/" style="color: var(--background);">LinkedIn<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                <a class="button ghost navlink" href="https://github.com/azurestocking" style="color: var(--background);">GitHub<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                <a class="button ghost navlink" href="mailto:ligem714@gmail.com" style="color: var(--background);">Resume<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-                <a class="button ghost navlink" href="mailto:ligem714@gmail.com" style="color: var(--background);">E-Mail<i class="fa-solid fa-arrow-right rotate-45"></i></a>
-            </div>
-        </div>
+    <footer id="footer">
         <div class="grid">
-            <div class="p-l col-start-2 col-span-10" style="color: var(--background);">
-                I am drawn to complexity and intersectionality—not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.
-            </div>
-        </div>
-        <div class="grid">
-            <hr class="col-full" style="border-color: var(--background);">
-            <p class="col-start-2 col-span-10" style="font-size: var(--font-size-xs); font-family: var(--font-mono); text-transform: uppercase;">
-                Coded from scratch with 🤖 Jekyll framework and 🍵 Lapsang Souchong
-            </p>
+            <p class="col-start-1 col-span-12">Coded from scratch with 🤖 Jekyll framework and 🍵 Lapsang Souchong</p>
         </div>
     </footer>
 </body>
