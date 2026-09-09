@@ -16,18 +16,20 @@
     font-size: 16px;
 
     /* TYPE SCALE — 5 fixed steps */
+    --font-size-nav: 14px;
+    --line-height-nav: 1.428571; /* 20px at the navigation size */
     --font-size-xs: 13px;   /* meta, captions, tags, TOC, footer */
-    --font-size-s:  15px;   /* body */
+    --font-size-s:  17px;   /* body */
     --font-size-m:  20px;   /* h2/h3/h4, lead */
     --font-size-l:  28px;   /* h1 */
-    --font-size-xl: 40px;   /* hero display (p-xl, p-xxl, number) */
+    --font-size-xl: 46px;   /* hero display (p-xl, p-xxl, number) */
 
     /* LINE HEIGHTS */
     --line-height-xs: 1.5;
     --line-height-s:  1.65;   /* body */
     --line-height-m:  1.35;   /* subheads / lead */
     --line-height-l:  1.2;    /* h1 */
-    --line-height-xl: 1.1;    /* display */
+    --line-height-xl: 1.16;    /* display */
 
     /* SPACING — 5 fixed steps on an 8px grid */
     --space-xs:  8px;
@@ -38,6 +40,10 @@
 }
 
 
+
+@media (max-width: 720px) {
+    :root { --font-size-xl: 32px; }
+}
 
 /* FONTS */
 
@@ -287,8 +293,17 @@ a:hover {
     text-underline-offset: 4px;
 }
 
-b {
+b, strong {
     font-weight: 500;
+    color: inherit;
+}
+
+.eyebrow {
+    font-size: 12px;
+    color: var(--tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-s);
 }
 
 blockquote {
@@ -524,6 +539,49 @@ img, video {
     font-weight: 500;
 }
 
+/* Accordion — native <details>, hairline-separated rows with a +/− toggle */
+.accordion {
+    border-top: 1px solid var(--border);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.accordion-item > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-s);
+    padding: var(--space-s) 0;
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    color: var(--secondary);
+}
+
+.accordion-item > summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-item > summary::after {
+    content: "+";
+    color: var(--tertiary);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.accordion-item[open] > summary::after {
+    content: "−";
+}
+
+.accordion-item > p {
+    margin: 0;
+    padding-bottom: var(--space-s);
+    color: var(--secondary);
+}
+
 /* Project cards — 2-up gallery (image, then title + description) */
 .project-card {
     display: flex;
@@ -719,6 +777,14 @@ header .button-group {
     pointer-events: none;
 }
 
+#scrollspy.scrollspy-hidden .scrollspy-link {
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #scrollspy, .scrollspy-link { transition: none; }
+}
+
 /* Vertical padding to match section rhythm, so the TOC lines up with
    where section content begins */
 .scrollspy {
@@ -734,38 +800,46 @@ header .button-group {
 .scrollspy-links {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: var(--space-xs);
 }
 
-/* Table-of-contents links — OpenAI style: sans, 14px, sentence case,
-   muted by default, smooth fade to full-ink when active/hovered. */
+/* Table-of-contents links fill the two-column navigation rail. */
 .scrollspy-link {
     font-family: var(--font-primary);
-    font-size: 0.8125rem;     /* 13px */
-    font-weight: 400;         /* regular — Söhne 500 reads too heavy here */
-    letter-spacing: 0;
-    line-height: 1.35;
+    font-size: var(--font-size-nav);
+    font-weight: 400;
+    line-height: var(--line-height-nav);
     text-transform: none;
     text-decoration: none;
-    color: var(--tertiary);
-    transition: color 0.25s var(--ease), opacity 0.35s var(--ease);
+    color: var(--secondary);
+    padding: 4px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
     cursor: pointer;
     display: block;
     opacity: 1;
     text-wrap: pretty;
 }
 
-.scrollspy-link:hover,
-.scrollspy-link.active {
+.scrollspy-link:hover {
     color: var(--primary);
     text-decoration: none;
 }
 
-/* Subsection level — same size, differentiated by indent only */
-/* TOC levels: Overview/Retrospect and h2 titles = level 1 (flush);
-   h3 titles = level 2 (indented) */
-.scrollspy-link.h3 {
-    padding-left: var(--space-s);
+.scrollspy-link:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+.scrollspy-link.active {
+    color: var(--primary);
+    background-color: var(--ghost);
+    font-weight: 400;
+    text-decoration: none;
 }
 
 

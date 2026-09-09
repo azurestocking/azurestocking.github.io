@@ -35,26 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
         return id;
     }
 
-    // Build the TOC in document order:
-    //   • each <hr> section divider → a level-1 entry, labelled by the
-    //     aria-label on its container (e.g. <div class="grid" aria-label="think">)
-    //   • each <h3> (except .np) → an indented level-2 sub-entry
-    const nodes = Array.from(main.querySelectorAll('hr, h3'));
+    // Build the TOC from <hr> section dividers, each labelled by the
+    // aria-label on its container (e.g. <div class="grid" aria-label="think">)
+    const nodes = Array.from(main.querySelectorAll('hr'));
     const tocTargets = [];
 
     nodes.forEach(node => {
-        let text, indented;
-        if (node.tagName === 'HR') {
-            const labelled = node.closest('[aria-label]');
-            const label = labelled && labelled.getAttribute('aria-label');
-            if (!label) return;                 // unlabelled divider → skip
-            text = titleCase(label);
-            indented = false;
-        } else { // H3
-            if (node.classList.contains('np')) return;
-            text = node.textContent;
-            indented = true;
-        }
+        const labelled = node.closest('[aria-label]');
+        const label = labelled && labelled.getAttribute('aria-label');
+        if (!label) return;                 // unlabelled divider → skip
+        const text = titleCase(label);
 
         if (node.id) usedIds.add(node.id);       // respect any existing id
         else node.id = uniqueId(slug(text));
@@ -63,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = '#' + node.id;
         link.textContent = text;
         link.classList.add('scrollspy-link');
-        if (indented) link.classList.add('h3');
         scrollspyLinks.appendChild(link);
         tocTargets.push(node);
     });
@@ -73,13 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollspy.classList.add('hide');
         return;
     }
-
-    // Create Retrospect link
-    const retrospectLink = document.createElement('a');
-    retrospectLink.href = '#retrospect';
-    retrospectLink.textContent = 'Retrospect';
-    retrospectLink.classList.add('scrollspy-link');
-    scrollspyLinks.appendChild(retrospectLink);
 
     // Update active state on scroll
     const observerOptions = {
@@ -103,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe the overview section, every TOC target, and the retrospect section
+    // Observe the overview section and every TOC target
     const overviewSection = document.getElementById('overview');
     if (overviewSection) {
         observer.observe(overviewSection);
@@ -111,11 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
     tocTargets.forEach(target => {
         observer.observe(target);
     });
-
-    const retrospectSection = document.getElementById('retrospect');
-    if (retrospectSection) {
-        observer.observe(retrospectSection);
-    }
 
     // Disappear / reappear: hide the TOC whenever a full-width band scrolls
     // behind it. #scrollspy is height:0, so measure the actual TOC content box.
