@@ -191,6 +191,17 @@ body {
 main {
     display: block;
     padding-top: calc(var(--space-xl) + var(--space-l));
+    counter-reset: section-index;
+}
+
+/* Display-only Roman-numeral index on content h2 (not extracted by the TOC).
+   .no-index headings (Overview/Retrospect) are skipped and don't increment. */
+h2:not(.eyebrow):not(.no-index) {
+    counter-increment: section-index;
+}
+
+h2:not(.eyebrow):not(.no-index)::before {
+    content: "Step " counter(section-index, upper-roman) ". ";
 }
 
 .logo {
@@ -222,7 +233,6 @@ h2 {
     line-height: var(--line-height-m);
     margin-bottom: var(--space-l);
     color: var(--primary);
-    letter-spacing: 0.04em;
 }
 
 h3 {
@@ -296,8 +306,6 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     font-family: var(--font-secondary);
     font-weight: 600;
     line-height: var(--line-height-xl);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
     color: var(--primary);
 }
 
@@ -541,15 +549,18 @@ img, video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: var(--space-l);
+    padding: clamp(24px, 4vw, 48px);
     border-radius: 8px;
 }
 
 
-/* Homepage introduction: relaxed reading rhythm within the existing columns. */
-/* Hero showcase image: breathing room around the mockup */
-#overview .image-container {
+/* Hero showcase image: breathing room around the mockup, 4:3 ratio */
+.hero-mockup {
     padding: clamp(32px, 5vw, 72px);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -705,8 +716,6 @@ img, video {
 }
 
 .card-name {
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
     margin-bottom: var(--space-s);
 }
 
@@ -937,4 +946,3 @@ td {
 
 
 header > .grid { align-items: center; }
-#overview { background-color: transparent; }

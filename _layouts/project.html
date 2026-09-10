@@ -15,7 +15,7 @@ layout: default
         </div>
     
         <div class="col-start-3 col-span-8">
-            <div class="image-container" style="--media-color: {{ page['bg-color'] | default: 'var(--ghost)' }};">
+            <div class="image-container hero-mockup" style="--media-color: {{ page['bg-color'] | default: 'var(--ghost)' }};">
                 {% if page.image contains '.mp4' %}
                     {% include mockup-macbook.html content_image=page.image content_type="video" %}
                 {% else %}
