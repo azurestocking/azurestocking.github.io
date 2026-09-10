@@ -676,6 +676,26 @@ img, video {
     overflow: hidden;
 }
 
+/* Category pills — small labels wrapped in hairline pills */
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: 0;
+}
+
+.category {
+    font-size: var(--font-size-xs);
+    line-height: 1;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
 
 
 /* BUTTON */
