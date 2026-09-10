@@ -5,32 +5,53 @@ title: Index
 
 <section>
     <div class="grid">
-        <div class="col-start-1 col-span-12" style="margin-top: 25vh;">
-            <div class="p-l">
-                I’m your resident jack-of-all-trades product designer, code-skilled, strategy-minded, and thriving in both collaborative sprints and independent deep dives. I am drawn to complexity and intersectionality—not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.
-            </div>
+        <div class="col-start-4 col-span-6">
+            <p class="p-l">Design engineer and former strategy consultant. Equally at home in collaborative sprints and independent deep dives.</p>
         </div>
     </div>
 </section>
 
-<div class="grid" aria-label="feature">
-    <hr class="col-start-1 col-span-12">
+<div class="grid" aria-label="selected-work">
+    <hr class="col-start-4 col-span-6">
 </div>
 
-<section id="featured">
+<section>
+    <div class="grid">
+        <div class="col-start-4 col-span-6">
+            <p class="eyebrow">Selected Work</p>
+        </div>
+    </div>
+
     <div class="grid">
         {% for project in site.projects %}
-            <a href="/project/{{ project.slug }}/" class="project-card col-span-6">
-                <div class="card-image" style="background-color: {{ project['bg-color'] }};">
+            {% assign column_parity = forloop.index0 | modulo: 2 %}
+            <a href="/project/{{ project.slug }}/" class="project-card col-span-4 {% if column_parity == 0 %}col-start-3{% else %}col-start-7{% endif %}">
+                <div class="card-image image-container" style="--media-color: {{ project['bg-color'] }};">
                     {% if project.image contains '.mp4' %}
                         {% include mockup-macbook.html content_image=project.image content_type="video" %}
                     {% else %}
                         {% include mockup-macbook.html content_image=project.image content_type="image" %}
                     {% endif %}
+                    <span class="card-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </span>
                 </div>
                 <h2 class="card-name">{{ project.name }}</h2>
                 <p class="card-desc">{{ project.desc }}</p>
             </a>
         {% endfor %}
+    </div>
+</section>
+
+<div class="grid" aria-label="about">
+    <hr class="col-start-4 col-span-6">
+</div>
+
+<section id="about">
+    <div class="grid">
+        <div class="col-start-4 col-span-6">
+            <h2 class="eyebrow">About</h2>
+            <p class="p">I am drawn to complexity and intersectionality, not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.</p>
+        </div>
     </div>
 </section>

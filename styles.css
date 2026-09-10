@@ -10,26 +10,24 @@
     --accent:     #0c7354;   /* accent — insight left border (override per instance) */
     --background: #ffffff;
 
-    --font-secondary: 'DM Sans', -apple-system, sans-serif;
-    --font-primary: 'DM Sans', -apple-system, sans-serif;
+    --font-secondary: 'JetBrains Mono', monospace;
+    --font-primary: 'JetBrains Mono', monospace;
 
-    font-size: 16px;
+    font-size: 14px;
 
-    /* TYPE SCALE — 5 fixed steps */
-    --font-size-nav: 14px;
-    --line-height-nav: 1.428571; /* 20px at the navigation size */
-    --font-size-xs: 13px;   /* meta, captions, tags, TOC, footer */
-    --font-size-s:  17px;   /* body */
-    --font-size-m:  20px;   /* h2/h3/h4, lead */
-    --font-size-l:  28px;   /* h1 */
-    --font-size-xl: 46px;   /* hero display (p-xl, p-xxl, number) */
+    /* TYPE SCALE — 5 fixed steps (px), body anchored to the 14px base */
+    --font-size-xs: 12px;   /* meta, captions, tags, TOC, footer, card copy */
+    --font-size-s:  14px;   /* body = base */
+    --font-size-m:  18px;   /* h2/h3/h4, lead */
+    --font-size-l:  24px;   /* h1 */
+    --font-size-xl: 36px;   /* hero display (p-xl, number) */
 
-    /* LINE HEIGHTS */
-    --line-height-xs: 1.5;
-    --line-height-s:  1.65;   /* body */
-    --line-height-m:  1.35;   /* subheads / lead */
-    --line-height-l:  1.2;    /* h1 */
-    --line-height-xl: 1.16;    /* display */
+    /* LINE HEIGHTS — looser for small text, tighter as type grows */
+    --line-height-xs: 1.5;   /* meta / captions */
+    --line-height-s:  1.6;   /* body */
+    --line-height-m:  1.3;   /* subheads / lead */
+    --line-height-l:  1.2;   /* h1 */
+    --line-height-xl: 1.1;   /* display */
 
     /* SPACING — 5 fixed steps on an 8px grid */
     --space-xs:  8px;
@@ -189,6 +187,12 @@ body {
     margin: 0 auto;
 }
 
+/* Clear the fixed nav at the top of the page */
+main {
+    display: block;
+    padding-top: calc(var(--space-xl) + var(--space-l));
+}
+
 .logo {
     font-family: "Bruno Ace", sans-serif;
     font-style: normal;
@@ -253,7 +257,7 @@ p, .p {
     margin-bottom: var(--space-s);
 }
 
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:last-child {
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:last-child:not(.eyebrow) {
     margin-bottom: 0;
 }
 
@@ -299,12 +303,16 @@ b, strong {
 }
 
 .eyebrow {
-    font-size: 12px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    font-weight: 400;
     color: var(--tertiary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: var(--space-s);
+    margin: 0 0 var(--space-m);
 }
+
 
 blockquote {
     font-family: var(--font-secondary);
@@ -353,7 +361,10 @@ header {
     right: 0;
     z-index: 999;
     isolation: isolate;
-    background-color: var(--background);
+    /* liquid-glass: translucent fill + backdrop blur/saturate */
+    background-color: color-mix(in srgb, var(--background) 65%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
     padding: var(--space-m) 0;
 }
 
@@ -418,6 +429,14 @@ footer {
 @media (max-width: 720px) {
     .grid { grid-template-columns: 1fr; }
     .grid > * { grid-column: 1 / -1 !important; }
+    header > .grid {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-s);
+    }
+    header .logo { font-size: var(--font-size-m); }
+    header .button { padding-inline: var(--space-s); }
+
 }
 
 
@@ -434,6 +453,7 @@ footer {
 }
 
 .full-width-bg {
+    background-color: var(--project-bg, transparent);
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
@@ -473,11 +493,17 @@ img, video {
 }
 
 .image-container {
-    background-color: var(--ghost);
+    background-color: var(--media-color, var(--ghost));
+    background-image: var(--media-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: var(--space-m);
     border-radius: 8px;
 }
 
+
+/* Homepage introduction: relaxed reading rhythm within the existing columns. */
 /* Hero showcase image: breathing room around the mockup */
 #overview .image-container {
     padding: clamp(32px, 5vw, 72px);
@@ -494,9 +520,6 @@ img, video {
 
 .before h5 {
     color: #b3102e !important;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
 .after img {
@@ -509,9 +532,6 @@ img, video {
 
 .after h5 {
     color: #0c7354 !important;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
 .card-list-col {
@@ -558,7 +578,7 @@ img, video {
     padding: var(--space-s) 0;
     font-size: var(--font-size-s);
     font-weight: 400;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .accordion-item > summary::-webkit-details-marker {
@@ -594,21 +614,51 @@ img, video {
 }
 
 .card-image {
+    position: relative;
     aspect-ratio: 1 / 1;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: var(--space-m);
-    margin-bottom: var(--space-m);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.15s ease;
+    overflow: hidden;
+    margin-bottom: var(--space-m);
+    background-color: var(--ghost);
+    transition: background-color 0.2s ease;
 }
 
-/* Only the image dims on hover/press — title and description stay full */
+/* Thumbnail fills with the project's color on hover/focus */
 .project-card:hover .card-image,
-.project-card:active .card-image {
-    opacity: 0.7;
+.project-card:focus-visible .card-image {
+    background-color: var(--media-color, var(--ghost));
+}
+
+/* Arrow button, bottom-left of the thumbnail, revealed on hover/focus */
+.card-arrow {
+    position: absolute;
+    left: var(--space-m);
+    bottom: var(--space-m);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background-color: var(--primary);
+    color: var(--background);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.card-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+.project-card:hover .card-arrow,
+.project-card:focus-visible .card-arrow {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card-name {
@@ -638,146 +688,76 @@ img, video {
 
 /* Nav pills sit close together, OpenAI-style */
 header .button-group {
+    justify-content: flex-end;
     gap: var(--space-xs);
 }
 
-/* Contact dropdown */
-.dropdown {
-    position: relative;
-    display: inline-flex;
+/* Navbar controls share a compact size independent of article typography. */
+header .button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    line-height: var(--line-height-xs);
+    height: 36px;
+    padding: 0 20px;
+    border-radius: 40px;
+    justify-content: center;
+    gap: var(--space-xs);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.dropdown > .button {
-    cursor: pointer;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: var(--space-xs);
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    padding: 6px;
-    background-color: var(--background);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    box-shadow: 0 16px 40px -8px rgba(17, 17, 17, 0.16);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu a {
-    padding: 10px 12px;
-    border-radius: 10px;
-    font-size: var(--font-size-s);
-    line-height: 1.2;
+header .button:hover,
+header .button:active {
     color: var(--primary);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background-color 0.15s ease;
+    background-color: var(--border);
 }
 
-.dropdown-menu a:hover {
-    background-color: var(--ghost);
-    text-decoration: none;
+header .button:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
 }
 
-/* Primary CTA — solid black pill (OpenAI navbar style) */
+/* CTA — filled pill with hairline border (jaimec.co style) */
 .button {
     font-size: var(--font-size-s);
     text-decoration: none;
-    border: none;
+    border: 1px solid var(--border);
     border-radius: 999px;
     padding: 8px 18px;
-    background-color: var(--primary);
-    color: var(--background);
+    background-color: var(--ghost);
+    color: var(--primary);
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .button:hover, .button:active {
     text-decoration: none;
-    opacity: 0.7;
-    color: var(--background);
-}
-
-/* Secondary keeps its dark text on hover (overrides the global a:hover) */
-.button.secondary:hover, .button.secondary:active {
-    color: var(--primary);
-}
-
-[class*="fa-"] {
-    font-size: var(--font-size-s);
-    font-style: normal !important;
-}
-
-.button i {
-    display: inline-block;
-    transition: transform 0.2s ease;
-    vertical-align: middle;
-}
-
-.button i.rotate-45 {
-    transform: rotate(-45deg);
-}
-
-.button:hover i {
-    transform: rotate(0deg);
-}
-
-/* Secondary CTA — light grey pill */
-.button.secondary {
-    background-color: var(--ghost);
-    border: none;
-    color: var(--primary);
+    background-color: var(--border);
 }
 
 
 
 /* SCROLLSPY */
 
+/* Floating dock — a glass bar the width of the reading column, near the bottom.
+   The fixed wrapper spans full width and passes clicks through; the pill itself
+   sits in the col-start-4 col-span-6 cell so it matches the body width. */
 #scrollspy {
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
-    /* Sticky, not fixed: the TOC starts at the top of the first content
-       section (right after the hero) and pins to the top as you scroll,
-       releasing when the content ends. height:0 keeps it out of the flow so
-       content isn't pushed down; it overlays the left margin columns. */
-    position: sticky;
-    top: 24px;
-    height: 0;
-    padding: 0;
-    z-index: 10;
-    /* full-width container — let clicks/selection pass through
-       everywhere except the actual links */
+    position: fixed;
+    bottom: var(--space-l);
+    left: 0;
+    right: 0;
+    z-index: 100;
     pointer-events: none;
     opacity: 1;
-    transition: opacity 0.4s var(--ease);
+    transition: opacity 0.3s var(--ease);
 }
 
-.scrollspy-link {
-    pointer-events: auto;
-}
-
-/* Hidden while a full-width band is behind the TOC */
 #scrollspy.scrollspy-hidden {
     opacity: 0;
-    pointer-events: none;
-}
-
-#scrollspy.scrollspy-hidden .scrollspy-link {
     pointer-events: none;
 }
 
@@ -785,44 +765,52 @@ header .button-group {
     #scrollspy, .scrollspy-link { transition: none; }
 }
 
-/* Vertical padding to match section rhythm, so the TOC lines up with
-   where section content begins */
-.scrollspy {
-    padding: var(--space-xl) 0;
-}
-
 .scrollspy-content {
-    width: 100%;
+    pointer-events: auto;
     display: flex;
-    flex-direction: column;
+    min-width: 0;
+    padding: 5px;
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--background) 65%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 8px 24px -6px rgba(17, 17, 17, 0.15), 0 0 0 1px rgba(17, 17, 17, 0.06);
 }
 
 .scrollspy-links {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
 }
 
-/* Table-of-contents links fill the two-column navigation rail. */
+.scrollspy-links::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dock items — horizontal pills */
 .scrollspy-link {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-nav);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--font-size-xs);
     font-weight: 400;
-    line-height: var(--line-height-nav);
-    text-transform: none;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     text-decoration: none;
-    color: var(--secondary);
-    padding: 4px 12px;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 20px;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    white-space: nowrap;
     background-color: transparent;
     transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
     cursor: pointer;
-    display: block;
-    opacity: 1;
-    text-wrap: pretty;
 }
 
 .scrollspy-link:hover {
@@ -836,9 +824,8 @@ header .button-group {
 }
 
 .scrollspy-link.active {
-    color: var(--primary);
-    background-color: var(--ghost);
-    font-weight: 400;
+    color: var(--background);
+    background-color: var(--primary);
     text-decoration: none;
 }
 
@@ -881,3 +868,7 @@ td {
     gap: var(--space-m);
 }
 
+
+
+header > .grid { align-items: center; }
+#overview { background-color: transparent; }

@@ -81,9 +81,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.classList.remove('active');
                 });
                 link.classList.add('active');
+                revealActive(link);
             }
         });
     }, observerOptions);
+
+    // When the dock overflows and the active link isn't fully visible, snap it
+    // to the left edge so it becomes the first item (page-style, not one-by-one)
+    function revealActive(link) {
+        const c = scrollspyLinks;
+        if (c.scrollWidth <= c.clientWidth) return;   // nothing to scroll
+        const l = link.getBoundingClientRect();
+        const box = c.getBoundingClientRect();
+        if (l.left < box.left || l.right > box.right) {
+            c.scrollBy({ left: l.left - box.left, behavior: 'smooth' });
+        }
+    }
 
     // Observe the overview section and every TOC target
     const overviewSection = document.getElementById('overview');
@@ -93,25 +106,5 @@ document.addEventListener('DOMContentLoaded', function() {
     tocTargets.forEach(target => {
         observer.observe(target);
     });
-
-    // Disappear / reappear: hide the TOC whenever a full-width band scrolls
-    // behind it. #scrollspy is height:0, so measure the actual TOC content box.
-    const tocBox = scrollspy.querySelector('.scrollspy-content');
-    const fullWidthBgElements = Array.from(document.querySelectorAll('.full-width-bg'));
-
-    function updateScrollspyVisibility() {
-        const toc = tocBox.getBoundingClientRect();
-        const behindBand = fullWidthBgElements.some(el => {
-            const r = el.getBoundingClientRect();
-            return !(r.bottom < toc.top || r.top > toc.bottom);
-        });
-        scrollspy.classList.toggle('scrollspy-hidden', behindBand);
-    }
-
-    if (fullWidthBgElements.length > 0) {
-        window.addEventListener('scroll', updateScrollspyVisibility, { passive: true });
-        window.addEventListener('resize', updateScrollspyVisibility);
-        updateScrollspyVisibility();
-    }
 
 });
