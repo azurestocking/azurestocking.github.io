@@ -201,7 +201,7 @@ h2:not(.eyebrow):not(.no-index) {
 }
 
 h2:not(.eyebrow):not(.no-index)::before {
-    content: "Step " counter(section-index, upper-roman) ". ";
+    content: counter(section-index, upper-roman) ". ";
 }
 
 .logo {
@@ -551,7 +551,7 @@ section:not(.full-width-bg):not(#scrollspy) + section:not(.full-width-bg) {
 img, video {
     width: 100%;
     display: block;
-    border-radius: 8px;
+    border-radius: 14px;
 }
 
 /* Square corners for media inside a matted image-container or a full-width band,
@@ -569,7 +569,7 @@ img, video {
     background-position: center;
     background-repeat: no-repeat;
     padding: clamp(24px, 4vw, 48px);
-    border-radius: 8px;
+    border-radius: 14px;
 }
 
 
@@ -616,7 +616,7 @@ img, video {
 .card, .insight {
     background-color: var(--ghost);
     border: none;
-    border-radius: 6px;
+    border-radius: 14px;
     padding: var(--space-m);
 }
 
