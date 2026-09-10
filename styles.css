@@ -198,7 +198,7 @@ main {
     font-style: normal;
     font-size: 24px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     color: var(--primary);
 }
 
@@ -218,15 +218,17 @@ h1 {
 h2 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
+    font-weight: 600;
     line-height: var(--line-height-m);
-    margin-bottom: var(--space-s);
+    margin-bottom: var(--space-l);
     color: var(--primary);
+    letter-spacing: 0.04em;
 }
 
 h3 {
     font-size: var(--font-size-s);
     font-family: var(--font-primary);
-    font-weight: 500;
+    font-weight: 600;
     line-height: var(--line-height-m);
     margin-bottom: var(--space-s);
     color: var(--primary);
@@ -235,6 +237,7 @@ h3 {
 h4 {
     font-size: var(--font-size-m);
     font-family: var(--font-secondary);
+    font-weight: 600;
     line-height: var(--line-height-m);
     margin-bottom: var(--space-s);
     color: var(--primary);
@@ -268,10 +271,33 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
     color: var(--primary);
 }
 
+/* Page name — same style as h2 */
+.page-name {
+    font-size: var(--font-size-m);
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: var(--line-height-m);
+    margin-bottom: var(--space-l);
+    color: var(--primary);
+    letter-spacing: 0.04em;
+}
+
+.notion-face {
+    width: 108px;
+    height: 108px;
+    object-fit: cover;
+    border-radius: 999px;
+    border: 1.5px solid var(--primary);
+    margin-bottom: var(--space-l);
+}
+
 .p-xl {
     font-size: var(--font-size-xl);
     font-family: var(--font-secondary);
+    font-weight: 600;
     line-height: var(--line-height-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     color: var(--primary);
 }
 
@@ -309,8 +335,26 @@ b, strong {
     font-weight: 400;
     color: var(--tertiary);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     margin: 0 0 var(--space-m);
+}
+
+/* Education list — rows of university (ink) + degree (grey), comma-separated */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.education-row {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    color: var(--secondary);
+    margin-bottom: 0;
+}
+
+.education-row .edu-school {
+    color: var(--primary);
 }
 
 
@@ -377,7 +421,6 @@ footer {
 .navlink {
     font-family: var(--font-primary);
     text-transform: none;
-    letter-spacing: 0;
 }
 
 
@@ -498,7 +541,7 @@ img, video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: var(--space-m);
+    padding: var(--space-l);
     border-radius: 8px;
 }
 
@@ -662,7 +705,9 @@ img, video {
 }
 
 .card-name {
-    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-s);
 }
 
 .card-desc {
@@ -674,6 +719,7 @@ img, video {
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin-bottom: var(--space-s);
 }
 
 /* Category pills — small labels wrapped in hairline pills */
@@ -869,7 +915,7 @@ th {
     font-size: var(--font-size-s);
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     color: var(--primary);
 }
 

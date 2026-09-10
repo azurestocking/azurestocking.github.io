@@ -6,7 +6,8 @@ title: Index
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <p class="p-l">Design engineer and former strategy consultant. Equally at home in collaborative sprints and independent deep dives.</p>
+            <img class="notion-face" src="{{ '/images/my-notion-face.png' | relative_url }}">
+            <p class="p-l">Design engineer, independent researcher, and former strategy consultant. Equally at home in collaborative sprints and independent deep dives.</p>
         </div>
     </div>
 </section>
@@ -36,7 +37,7 @@ title: Index
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                     </span>
                 </div>
-                <h2 class="card-name">{{ project.name }}</h2>
+                <h3 class="card-name">{{ project.name }}</h3>
                 <p class="card-desc">{{ project.desc }}</p>
                 {% if project.categories %}
                 <div class="category-list">
@@ -54,11 +55,32 @@ title: Index
     <hr class="col-start-4 col-span-6">
 </div>
 
-<section id="about">
+<section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h2 class="eyebrow">About</h2>
             <p class="p">I am drawn to complexity and intersectionality, not as buzzwords, but as intellectual imperatives. If your project that piques analytical curiosity or serves the broader community, let’s talk about a potential pro bono collaboration.</p>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <h2 class="eyebrow">Education</h2>
+            <div class="education-list">
+                <p class="education-row"><span class="edu-school">Harvard University</span>, <span class="edu-degree">a more useless master's degree (2024)</span></p>
+                <p class="education-row"><span class="edu-school">Tsinghua University</span>, <span class="edu-degree">a kinda useless bachelor's degree (2020)</span></p>
+            </div>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <h2 class="eyebrow">Recognition</h2>
+            <div class="education-list">
+                <p class="education-row"><span class="edu-school">IF Design Award</span>, <span class="edu-degree">Winner (2026)</span></p>
+                <p class="education-row"><span class="edu-school">Red Dot Design Award</span>, <span class="edu-degree">Winner (2025)</span></p>
+                <p class="education-row"><span class="edu-school">IDEA Design Award</span>, <span class="edu-degree">Gold Winner (2024)</span></p>
+                <p class="education-row"><span class="edu-school">MUSE Design Award</span>, <span class="edu-degree">Platinum Winner (2024)</span></p>
+                <p class="education-row"><span class="edu-school">Museum of Science, Boston</span>, <span class="edu-degree">Participant (2024)</span></p>
+                <p class="education-row"><span class="edu-school">Venice Biennale</span>, <span class="edu-degree">Participant (2022)</span></p>
+                <p class="education-row"><span class="edu-school">National Exhibition of Fine Arts, China</span>, <span class="edu-degree">Participant (2020)</span></p>
+            </div>
         </div>
     </div>
 </section>

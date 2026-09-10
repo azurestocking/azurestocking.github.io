@@ -7,21 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Create Overview link
-    const overviewLink = document.createElement('a');
-    overviewLink.href = '#overview';
-    overviewLink.textContent = 'Overview';
-    overviewLink.classList.add('scrollspy-link');
-    scrollspyLinks.appendChild(overviewLink);
-
     // Turn arbitrary text into a URL-safe id fragment
     function slug(text) {
         return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    }
-
-    // Capitalize each word: "think" -> "Think"
-    function titleCase(text) {
-        return text.replace(/\b\w/g, ch => ch.toUpperCase());
     }
 
     // Guarantee unique ids across all entries (repeated labels like
@@ -35,16 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return id;
     }
 
-    // Build the TOC from <hr> section dividers, each labelled by the
-    // aria-label on its container (e.g. <div class="grid" aria-label="think">)
-    const nodes = Array.from(main.querySelectorAll('hr'));
+    // Build the TOC from <h2> phase/section headings
+    const nodes = Array.from(main.querySelectorAll('h2')).filter(h => !h.classList.contains('np'));
     const tocTargets = [];
 
     nodes.forEach(node => {
-        const labelled = node.closest('[aria-label]');
-        const label = labelled && labelled.getAttribute('aria-label');
-        if (!label) return;                 // unlabelled divider → skip
-        const text = titleCase(label);
+        const text = node.textContent.trim();
+        if (!text) return;
 
         if (node.id) usedIds.add(node.id);       // respect any existing id
         else node.id = uniqueId(slug(text));
@@ -63,28 +48,25 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Update active state on scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const link = document.querySelector(`.scrollspy-link[href="#${id}"]`);
-            if (!link) return;
+    // The active section is the last heading whose top has passed the viewport
+    // center. It stays active until the NEXT heading reaches the center — so the
+    // previous row never turns off in the gap between sections.
+    let activeLink = null;
 
-            if (entry.isIntersecting) {
-                document.querySelectorAll('.scrollspy-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                link.classList.add('active');
-                revealActive(link);
-            }
-        });
-    }, observerOptions);
+    function updateActive() {
+        const centerY = window.innerHeight / 2;
+        let current = tocTargets[0];
+        for (const t of tocTargets) {
+            if (t.getBoundingClientRect().top <= centerY) current = t;
+            else break;
+        }
+        const link = document.querySelector(`.scrollspy-link[href="#${current.id}"]`);
+        if (!link || link === activeLink) return;
+        if (activeLink) activeLink.classList.remove('active');
+        link.classList.add('active');
+        activeLink = link;
+        revealActive(link);
+    }
 
     // When the dock overflows and the active link isn't fully visible, snap it
     // to the left edge so it becomes the first item (page-style, not one-by-one)
@@ -98,13 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Observe the overview section and every TOC target
-    const overviewSection = document.getElementById('overview');
-    if (overviewSection) {
-        observer.observe(overviewSection);
-    }
-    tocTargets.forEach(target => {
-        observer.observe(target);
-    });
+    window.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+    updateActive();
 
 });
