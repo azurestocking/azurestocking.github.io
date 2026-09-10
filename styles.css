@@ -347,6 +347,25 @@ b, strong {
     margin: 0 0 var(--space-m);
 }
 
+/* Social icons row */
+.social-list {
+    display: flex;
+    gap: var(--space-m);
+    margin-top: var(--space-m);
+}
+
+.social-link {
+    font-size: 20px;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-link:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
 /* Education list — rows of university (ink) + degree (grey), comma-separated */
 .education-list {
     display: flex;
@@ -810,6 +829,23 @@ header .button:focus-visible {
 .button:hover, .button:active {
     text-decoration: none;
     background-color: var(--border);
+}
+
+/* Solid black button */
+.button.solid {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--background);
+}
+
+.button.solid:hover, .button.solid:active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--background);
+}
+
+.intro-cta {
+    margin-top: var(--space-m);
 }
 
 
