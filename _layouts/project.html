@@ -13,7 +13,7 @@ layout: default
         <div class="col-start-4 col-span-6">
             <div class="p-l">{{ page.desc }}</div>
         </div>
-    
+
         <div class="col-start-3 col-span-8">
             <div class="image-container hero-mockup" style="--media-color: {{ page['bg-color'] | default: 'var(--ghost)' }};">
                 {% if page.image contains '.mp4' %}
@@ -23,6 +23,25 @@ layout: default
                 {% endif %}
             </div>
         </div>
+
+        {% comment %}
+        <div class="col-start-4 col-span-6">
+            {% if page.collaborators and page.collaborators.size > 0 %}
+                <h5>Collaborator</h5>
+                <p>{{ page.collaborators | join: ", " }}</p>
+            {% endif %}
+
+            {% if page.responsibilities and page.responsibilities.size > 0 %}
+                <h5>Responsibility</h5>
+            <p>{{ page.responsibilities | join: ", " }}</p>
+            {% endif %}
+
+            {% if page.tools and page.tools.size > 0 %}
+                <h5>Tool</h5>
+            <p>{{ page.tools | join: ", " }}</p>
+            {% endif %}
+        </div>
+        {% endcomment %}
     </div>
 </section>
 
@@ -34,6 +53,10 @@ layout: default
         </div>
     </div>
 </nav>
+
+<div class="bottom-fade" aria-hidden="true">
+    <div></div><div></div><div></div><div></div><div></div>
+</div>
 
 {{ content }}
 

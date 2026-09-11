@@ -40,10 +40,13 @@ title: Index
                 </div>
                 <h3 class="card-name">{{ project.name }}</h3>
                 <p class="card-desc">{{ project.desc }}</p>
-                {% if project.categories %}
+                {% if project.categories or project.tags %}
                 <div class="category-list">
                     {% for cat in project.categories %}
                         <span class="category">{{ cat }}</span>
+                    {% endfor %}
+                    {% for tag in project.tags %}
+                        <span class="category">{{ tag }}</span>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -89,10 +92,10 @@ title: Index
             <h2 class="eyebrow">Connect</h2>
             <p>I'm drawn to complexity and intersectionality, not as buzzwords, but as intellectual imperatives. If your project piques analytical curiosity or serves the broader community, let's talk about working together pro bono. Also open to partnerships on research and publications.</p>
             <div class="social-list">
-                <a class="social-link" href="" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a class="social-link" href="" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a class="social-link" href="" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a class="social-link" href="" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a class="social-link" href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="social-link" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a class="social-link" href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a class="social-link" href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </div>

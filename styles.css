@@ -384,6 +384,37 @@ b, strong {
     color: var(--primary);
 }
 
+/* Project meta — labelled rows below the hero (client, timeline, roles, etc.) */
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.meta-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-m);
+    padding: var(--space-xs) 0;
+}
+
+.meta-row dt {
+    margin: 0;
+    font-size: var(--font-size-s);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: var(--line-height-m);
+    color: var(--primary);
+}
+
+.meta-row dd {
+    margin: 0;
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    font-family: var(--font-primary);
+    color: var(--secondary);
+}
+
 
 blockquote {
     font-family: var(--font-secondary);
@@ -432,11 +463,64 @@ header {
     right: 0;
     z-index: 999;
     isolation: isolate;
-    /* liquid-glass: translucent fill + backdrop blur/saturate */
-    background-color: color-mix(in srgb, var(--background) 65%, transparent);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
     padding: var(--space-m) 0;
+}
+
+/* liquid-glass: progressive blur that's strongest at the top and ramps to
+   nothing at the bottom, plus a translucent tint that fades the same way.
+   Sits behind the crisp logo/nav content. */
+.nav-blur {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--background) 65%, transparent),
+        transparent
+    );
+}
+
+.nav-blur > div {
+    position: absolute;
+    inset: 0;
+}
+
+/* Stacked heaviest-first: each layer blurs less but reaches further down, so
+   the composited result is a smooth top-to-bottom blur gradient. */
+.nav-blur > div:nth-child(1) {
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 8%, transparent 26%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 8%, transparent 26%);
+}
+
+.nav-blur > div:nth-child(2) {
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 24%, transparent 46%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 24%, transparent 46%);
+}
+
+.nav-blur > div:nth-child(3) {
+    -webkit-backdrop-filter: saturate(180%) blur(4px);
+    backdrop-filter: saturate(180%) blur(4px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 44%, transparent 66%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 44%, transparent 66%);
+}
+
+.nav-blur > div:nth-child(4) {
+    -webkit-backdrop-filter: saturate(180%) blur(2px);
+    backdrop-filter: saturate(180%) blur(2px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 64%, transparent 86%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 64%, transparent 86%);
+}
+
+.nav-blur > div:nth-child(5) {
+    -webkit-backdrop-filter: saturate(180%) blur(1px);
+    backdrop-filter: saturate(180%) blur(1px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
 }
 
 footer {
@@ -507,6 +591,10 @@ footer {
     header .logo { font-size: var(--font-size-m); }
     header .button { padding-inline: var(--space-s); }
 
+    .meta-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
+    }
 }
 
 
@@ -855,6 +943,78 @@ header .button:focus-visible {
 /* Floating dock — a glass bar the width of the reading column, near the bottom.
    The fixed wrapper spans full width and passes clicks through; the pill itself
    sits in the col-start-4 col-span-6 cell so it matches the body width. */
+/* Full-width progressive blur along the bottom edge of the viewport — the
+   "base" the dock rests on. Blur is strongest at the very bottom and ramps to
+   nothing going up, with a tint fading the same way. Mirrors .nav-blur. */
+.bottom-fade {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Top of the strip aligns with the top edge of the dock:
+       dock offset (--space-l) + pill height (5px padding ×2 + 40px link) */
+    height: calc(var(--space-l) + 50px);
+    z-index: 90;
+    pointer-events: none;
+    /* Mirror of .nav-blur's tint, flipped bottom-up */
+    background: linear-gradient(
+        to top,
+        color-mix(in srgb, var(--background) 65%, transparent),
+        transparent
+    );
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* No dock (hidden or too few sections) → no bottom glass */
+#scrollspy.hide ~ .bottom-fade {
+    display: none;
+}
+
+#scrollspy.scrollspy-hidden ~ .bottom-fade {
+    opacity: 0;
+}
+
+.bottom-fade > div {
+    position: absolute;
+    inset: 0;
+}
+
+.bottom-fade > div:nth-child(1) {
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 8%, transparent 26%);
+    mask-image: linear-gradient(to top, #000 0%, #000 8%, transparent 26%);
+}
+
+.bottom-fade > div:nth-child(2) {
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 24%, transparent 46%);
+    mask-image: linear-gradient(to top, #000 0%, #000 24%, transparent 46%);
+}
+
+.bottom-fade > div:nth-child(3) {
+    -webkit-backdrop-filter: saturate(180%) blur(4px);
+    backdrop-filter: saturate(180%) blur(4px);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 44%, transparent 66%);
+    mask-image: linear-gradient(to top, #000 0%, #000 44%, transparent 66%);
+}
+
+.bottom-fade > div:nth-child(4) {
+    -webkit-backdrop-filter: saturate(180%) blur(2px);
+    backdrop-filter: saturate(180%) blur(2px);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 64%, transparent 86%);
+    mask-image: linear-gradient(to top, #000 0%, #000 64%, transparent 86%);
+}
+
+.bottom-fade > div:nth-child(5) {
+    -webkit-backdrop-filter: saturate(180%) blur(1px);
+    backdrop-filter: saturate(180%) blur(1px);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to top, #000 0%, #000 84%, transparent 100%);
+}
+
 #scrollspy {
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     position: fixed;
@@ -877,15 +1037,56 @@ header .button:focus-visible {
 }
 
 .scrollspy-content {
+    position: relative;
+    isolation: isolate;
     pointer-events: auto;
     display: flex;
     min-width: 0;
     padding: 5px;
     border-radius: 999px;
-    background-color: color-mix(in srgb, var(--background) 65%, transparent);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-    box-shadow: 0 8px 24px -6px rgba(17, 17, 17, 0.15), 0 0 0 1px rgba(17, 17, 17, 0.06);
+    background-color: transparent;
+    box-shadow:
+        0 8px 24px -8px rgba(17, 17, 17, 0.18),          /* elevation */
+        inset 0 5px 15px -5px rgba(255, 255, 255, 0.4),  /* soft top inner glow */
+        inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.85); /* crisp top rim */
+}
+
+/* The glass body: light vertical gradient + frosted blur of the backdrop.
+   Sits below the links; the specular highlights live on .scrollspy-content. */
+.scrollspy-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--background) 70%, transparent),
+        color-mix(in srgb, var(--background) 55%, transparent)
+    );
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    backdrop-filter: blur(15px) saturate(180%);
+}
+
+/* Specular highlight along the pill's top edge — light catching the glass lip.
+   Center-weighted and inset from the rounded ends so it reads as a glint. */
+.scrollspy-content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    border-radius: 999px;
+    pointer-events: none;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        color-mix(in srgb, #fff 60%, transparent) 25%,
+        color-mix(in srgb, #fff 85%, transparent) 50%,
+        color-mix(in srgb, #fff 60%, transparent) 75%,
+        transparent 100%
+    );
 }
 
 .scrollspy-links {
