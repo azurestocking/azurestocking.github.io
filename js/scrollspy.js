@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
         tocTargets.push(node);
     });
 
-    // Hide TOC if there is nothing to link to
-    if (tocTargets.length === 0) {
+    // Hide the bottom bar unless there are more than 3 sections to link to
+    if (tocTargets.length <= 3) {
         scrollspy.classList.add('hide');
         return;
     }
