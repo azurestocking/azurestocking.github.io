@@ -347,6 +347,19 @@ b, strong {
     margin: 0 0 var(--space-m);
 }
 
+figure {
+    margin: 0;
+}
+
+/* Caption — small light-grey text under figures/images */
+figcaption {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    color: var(--tertiary);
+    margin: var(--space-s) 0 0;
+}
+
 /* Social icons row */
 .social-list {
     display: flex;
@@ -384,38 +397,6 @@ b, strong {
     color: var(--primary);
 }
 
-/* Project meta — labelled rows below the hero (client, timeline, roles, etc.) */
-.project-meta {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.meta-row {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: var(--space-m);
-    padding: var(--space-xs) 0;
-}
-
-.meta-row dt {
-    margin: 0;
-    font-size: var(--font-size-s);
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: var(--line-height-m);
-    color: var(--primary);
-}
-
-.meta-row dd {
-    margin: 0;
-    font-size: var(--font-size-s);
-    line-height: var(--line-height-s);
-    font-family: var(--font-primary);
-    color: var(--secondary);
-}
-
-
 blockquote {
     font-family: var(--font-secondary);
     font-size: var(--font-size-m);
@@ -430,18 +411,41 @@ blockquote:last-child {
     margin-bottom: 0;
 }
 
-ul {
-    list-style-type: disc;
+ul, ol {
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
+    padding-left: var(--space-m);
+    margin-bottom: var(--space-s);
+}
+
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+
+/* Nested levels get distinct markers */
+ul ul { list-style-type: circle; }
+ul ul ul { list-style-type: square; }
+ol ol { list-style-type: lower-alpha; }
+ol ol ol { list-style-type: lower-roman; }
+
+/* Nested lists sit tight against their parent item */
+li > ul, li > ol {
+    margin-bottom: 0;
+    margin-top: var(--space-xs);
 }
 
 li {
-    list-style-type: disc;
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
     color: var(--secondary);
-    margin-left: var(--space-s);
+    margin-bottom: var(--space-xs);
+}
+
+li::marker {
+    color: var(--tertiary);
+}
+
+li:last-child {
+    margin-bottom: 0;
 }
 
 hr {
@@ -589,12 +593,6 @@ footer {
         gap: var(--space-s);
     }
     header .logo { font-size: var(--font-size-m); }
-    header .button { padding-inline: var(--space-s); }
-
-    .meta-row {
-        grid-template-columns: 1fr;
-        gap: var(--space-xs);
-    }
 }
 
 
@@ -656,7 +654,7 @@ img, video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: clamp(24px, 4vw, 48px);
+    padding: var(--space-m);
     border-radius: 14px;
 }
 
@@ -861,43 +859,6 @@ img, video {
 
 
 /* BUTTON */
-
-.button-group {
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-m);
-}
-
-/* Nav pills sit close together, OpenAI-style */
-header .button-group {
-    justify-content: flex-end;
-    gap: var(--space-xs);
-}
-
-/* Navbar controls share a compact size independent of article typography. */
-header .button {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-    line-height: var(--line-height-xs);
-    height: 36px;
-    padding: 0 20px;
-    border-radius: 40px;
-    justify-content: center;
-    gap: var(--space-xs);
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-header .button:hover,
-header .button:active {
-    color: var(--primary);
-    background-color: var(--border);
-}
-
-header .button:focus-visible {
-    outline: 2px solid var(--secondary);
-    outline-offset: 3px;
-}
 
 /* CTA — filled pill with hairline border (jaimec.co style) */
 .button {
@@ -1173,13 +1134,5 @@ td {
 
 
 /* LIST */
-
-.list-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-}
-
-
 
 header > .grid { align-items: center; }
