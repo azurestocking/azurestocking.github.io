@@ -26,6 +26,7 @@ responsibilities:
 tools:
   - Figma
   - Balsamiq
+  - Miro
   - ChatGPT
 ---
 
@@ -168,7 +169,7 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h3 class="np">Impact</h3>
-            <p>In Q3 2025, more than a year after the design was completed, the product finally launched — not without diverging from the original strategy as the landscape evolved, but rooted in the research and insights I established in the beginning.</p>
+            <p>In Q3 2025, more than a year after the design was completed, the product finally launched, not without diverging from the original strategy as the landscape evolved, but rooted in the research and insights I established in the beginning.</p>
         </div>
     
         <div class="flex-row col-start-3 col-span-8">
@@ -200,8 +201,8 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2 class="col-start-4 col-span-6">Think</h2>
             <h3>Market Analysis</h3>
-            <p>Starting with a hypothesis: leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
-            <p>To test this hypothesis, I identified several leading players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
+            <p>Based on my initial observations of the market, I formed a hypothesis: leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
+            <p>To test it, I identified key players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
         </div>
     
         <figure class="col-start-4 col-span-6">
@@ -218,14 +219,118 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h3>Brainstorm</h3>
-            <p>We brainstormed features that would support storytelling more directly than model-centric competitors, using a mind map. Those deemed technically feasible and within design scope were marked as low-hanging fruits.</p>
+            <p>Using a mind map, we brainstormed ways to support storytelling more directly than the model-centric competitors, exploring opportunities across the production workflow based on the previously established "good narrative" criteria.</p>
         </div>
     
         <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/brainstorming.png' | relative_url }}" loading="lazy">
-            </div>
+            <img src="{{ '/images/agent-opus/brainstorm.png' | relative_url }}" loading="lazy">
         </figure>
+
+        <div class="col-start-4 col-span-6">
+            <p>We identified the low-hanging fruit and finalized the feature set by prioritizing those with higher impact and lower cost.</p>
+        </div>
+
+        <div class="card col-start-3 col-span-4">
+            <h5>Go</h5>
+            <p>Features that most directly strengthen storytelling and were technically feasible within scope.</p>
+            <div class="accordion" data-collapse="3">
+                <details class="accordion-item">
+                    <summary>Modular Pipeline</summary>
+                    <p>Introduce an intermediary text-to-image stage to lower computational demands in the process.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Shot Selector</summary>
+                    <p>Give users intuitive control over framing to shape visual emphasis and emotional tone, including close-up, medium, wide, full, establishing, etc.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Camera Angle Selector</summary>
+                    <p>Allow users to specify angles to influence visual tone, character perception, and dramatic effect, including low, eye-level, over-the-shoulder (OTS), high, bird's eye, etc.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Camera Movement Selector</summary>
+                    <p>Allow users to define how the camera behaves within a scene, enhancing storytelling dynamics, including dolly, pan, zoom, tilt, roll, etc.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Layered Editor</summary>
+                    <p>Enable fine-grained control over individual elements (e.g., background music, soundtrack, voiceover, visuals).</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Generative Fill</summary>
+                    <p>Enable context-aware completion of selected area based on surrounding content.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Version Control</summary>
+                    <p>Allow experimenting freely with prompts and edits while preserving prior iterations.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Script Structuring</summary>
+                    <p>Strengthen story coherence by identifying weak or disjointed plot elements and suggesting structural improvements.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Multiple-Shot Synthesis</summary>
+                    <p>Support manual management by arranging shots in relation to surrounding context.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Prompt Assistant</summary>
+                    <p>Guide users in shaping prompts that match narrative goals (e.g., topics, platforms).</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Storyboard Preview</summary>
+                    <p>Provide a structured view of scene flow for quick trouble-shooting and iteration.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Transition Suggestion</summary>
+                    <p>Fill gaps between scenes smoothly by recommending transitional visuals.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Global Setting</summary>
+                    <p>Define universal visual parameters (e.g., lighting, palette, tone) to prevent unwanted visual drift across scenes.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Prop Definition</summary>
+                    <p>Declare key objects and their visual properties (e.g., shape, color, material, costume).</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Entity Tagging</summary>
+                    <p>Tag visual elements with metadata (e.g., location, weather, time of day).</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="card col-start-7 col-span-4">
+            <h5>No-Go</h5>
+            <p>Features deferred as model-dependent, redundant with existing tooling, or peripheral to the storytelling focus.</p>
+            <div class="accordion" data-collapse="3">
+                <details class="accordion-item">
+                    <summary>Domain-Specific Fine-Tuning</summary>
+                    <p>Improve the model's grasp of core storytelling elements with narrative datasets (e.g., screenplays, transcripts).</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Story Arc Visualizer</summary>
+                    <p>Map relationship between scenes and tracks progression across key narrative stages such as setup, conflict, and resolution.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Character Monitor</summary>
+                    <p>Maintain logical character behavior, motivations, and development across scenes.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Reference Anchoring</summary>
+                    <p>Allow uploading or selecting styleframes or visual references that guides generation to stay within a defined visual language.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Expression Presets</summary>
+                    <p>Standardize emotional and physical expressions to maintain character continuity across different shots or contexts.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Timeline Editor</summary>
+                    <p>Map discrete scenes on a continuous timeline, allowing editing full video as a whole, rather than isolated shots.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Selective Locking</summary>
+                    <p>Fix specific elements (e.g., composition or character pose) while regenerating others.</p>
+                </details>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -238,7 +343,7 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2 class="col-start-4 col-span-6">Make</h2>
             <h3>Wireframe</h3>
-            <p>We explored how to organize the feature set through concrete interface paradigms and interaction patterns, arriving at two different directions.</p>
+            <p>How to translate those features into concrete interface paradigms and interaction patterns? I created exploratory sketches that lead two distinct directions.</p>
         </div>
     
         <figure class="col-start-3 col-span-4">
@@ -267,14 +372,8 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2 class="col-start-4 col-span-6">Check</h2>
             <h3>Concept Testing</h3>
-            <p>To assess which direction had the strategic and technical foundation to move forward, I facilitated a cross-functional stakeholder interview to walk through annotated sketches and evaluate its viability, grouping the responses into thematic categories.</p>
+            <p>Which direction to take? I facilitated a cross-functional stakeholder meeting to walk through annotated sketches and evaluate its viability with designers, engineers, product managers, and some other specialists.</p>
         </div>
-    
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/concept-testing.png' | relative_url }}" loading="lazy">
-            </div>
-        </figure>
     </div>
 </section>
 
@@ -287,7 +386,53 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2 class="col-start-4 col-span-6">Think</h2>
             <h3>Data Analysis</h3>
-            <p>Synthesizing the responses, the affinity mapping revealed that implementing a node-based architecture would require substantial engineering refactoring, raising critical concerns across three dimensions:</p>
+            <p>I used affinity mapping to reorganize stakeholder feedback by theme, revealing shared concerns across roles and informing the direction moving forward.</p>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <div class="affinity-morph image-container"
+                 data-states="stakeholder:By stakeholder, theme:By theme"
+                 data-order-stakeholder="Engineer, Designer, Product Manager, Others"
+                 data-order-theme="Technical Complexity, Usability Uncertainty, Managerial Misalignment"
+                 data-cols-stakeholder="Others:1">
+                <div class="sticky-board">
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Cells must be developed as a standalone module with meticulous interaction logic and intercell compatibility.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Tracking and managing dependencies among cells lead to complexity of system scaling.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Maintaining compatibility across versions can complicate deployment and hinder agility.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Debugging interactions between cells requires robust logging to trace errors across different cells.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Managing concurrent processing demands higher resource usage, which can strain both client and server sides.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Poorly designed communication can lead to race conditions or performance bottlenecks.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">The variability of cell combinations adds exponential QA overhead.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Usability Uncertainty">Managing responsiveness related to computation-heavy tasks can become a major performance bottleneck.</div>
+                    <div class="sticky blue" data-stakeholder="Engineer" data-theme="Managerial Misalignment">May need to adopt specialized tools and third-party services, increasing vendor lock-in.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">Implementing a conditional rendering trigger can decrease the computational load, yet it increases cognitive load of users.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">Users might experience slower or less intuitive feedback when making changes, reducing their confidence in the system.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">The flexibility can overwhelm users and lead to choice paralysis.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">Users may lose the overall context of their workflow, particularly if cells operate semi-independently.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">If a cell fails or behaves unexpectedly, users may struggle to identify or fix the issue.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">Flexibility can enable users to create workflows the system wasn't optimized for.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">The modularity of cells can lead to diversity in design or interaction patterns, resulting in less cohesive user experience.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Usability Uncertainty">Teams accustomed to working on a linear architecture may resist the move to a modular system.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Technical Complexity">Establishing rules that dictate rendering timing and conditions across varied cell combinations adds complexity as that number grows.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Managerial Misalignment">The modular interface might encounter greater responsiveness challenges when migrating to other devices.</div>
+                    <div class="sticky red" data-stakeholder="Designer" data-theme="Managerial Misalignment">Convincing investors may be difficult given its upfront costs and delayed ROI, especially before the Series A.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">Refactoring the entire interface and infrastructure is resource-intensive.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">Refactoring cause delays in meeting the upcoming launch goal in a highly competitive market.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">The complex workflow misaligns with our target audience, a large portion of whom are non-professionals.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">Users expect real-time rendering to visualize the impacts of any modifications, leading to more infrastructure investment.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">Automated testing becomes a necessity but requires significant upfront investment.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">Higher operational and maintenance costs might not align with current or projected revenue streams.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Managerial Misalignment">Allocating great resources to this may reduce focus on user-facing services.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Technical Complexity">The operational demands will be significantly higher.</div>
+                    <div class="sticky yellow" data-stakeholder="Product Manager" data-theme="Usability Uncertainty">The steeper learning curve might alienate some users.</div>
+                    <div class="sticky purple" data-stakeholder="Others" data-theme="Managerial Misalignment">It increases the need for training resources and customer support staff.</div>
+                    <div class="sticky purple" data-stakeholder="Others" data-theme="Usability Uncertainty">A more complex system requires more educational efforts to help users navigate the interface.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <p>The affinity mapping revealed that implementing a node-based architecture would require substantial engineering refactoring, raising critical concerns across three dimensions:</p>
         </div>
     
         <div class="flex-row col-start-3 col-span-8">
@@ -309,7 +454,7 @@ tools:
         </div>
     
         <div class="col-start-4 col-span-6">
-            <p>Given these constraints and an unfavorable input-output ratio, we deprioritized the node-based direction and redirected focus toward the storyboard alternative.</p>
+            <p>Given these constraints and an unfavorable input-output ratio, we redirected focus toward the storyboard alternative.</p>
         </div>
     </div>
 </section>
@@ -514,7 +659,7 @@ tools:
                 <img src="{{ '/images/agent-opus/I1-1B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Shots were arranged horizontally, with the container and thumbnail slider lengths misaligned, causing visual inconsistency. Also, this left users uncertain whether to scroll horizontally or vertically, especially on touch screens.</p>
+                    <p>Shots were arranged horizontally, with the container and thumbnail slider lengths misaligned, causing visual inconsistency. Also, this left users uncertain whether to scroll horizontally or vertically, especially on touch screens.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -523,7 +668,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Switched to a vertical layout with thumbnail and editor modes, aligning with standard browsing behavior. Shot editing options are collapsed behind hover effects to reduce cognitive load and display only relevant information.</p>
+                    <p>Switched to a vertical layout with thumbnail and editor modes, aligning with standard browsing behavior. Shot editing options are collapsed behind hover effects to reduce cognitive load and display only relevant information.</p>
                 </figcaption>
             </figure>
     
@@ -533,14 +678,14 @@ tools:
                 <img src="{{ '/images/agent-opus/I1-2-1B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Global settings were configured via an inconspicuous icon in the corner, leading to repetitive manual setup each time and frequent oversights in maintaining consistent output quality.</p>
+                    <p>Global settings were configured via an inconspicuous icon in the corner, leading to repetitive manual setup each time and frequent oversights in maintaining consistent output quality.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I1-2-1A.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>After</h5>
-                <p>Exposed global settings in a prominent sidebar for constant visibility, and introduced predefined and customizable templates to streamline setup and ensure output consistency.</p>
+                    <p>Exposed global settings in a prominent sidebar for constant visibility, and introduced predefined and customizable templates to streamline setup and ensure output consistency.</p>
                 </figcaption>
             </figure>
     
@@ -548,7 +693,7 @@ tools:
                 <img src="{{ '/images/agent-opus/I1-2-2B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Each shot need to be tweaked manually to maintain visual consistency, a time-consuming, error-prone process that scaled poorly across long productions.</p>
+                    <p>Each shot need to be tweaked manually to maintain visual consistency, a time-consuming, error-prone process that scaled poorly across long productions.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -557,7 +702,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Extracted shared assets (character, scene) from the script automatically, allowing users to insert and apply them across multiple shots at once.</p>
+                    <p>Extracted shared assets (character, scene) from the script automatically, allowing users to insert and apply them across multiple shots at once.</p>
                 </figcaption>
             </figure>
     
@@ -567,14 +712,14 @@ tools:
                 <img src="{{ '/images/agent-opus/I1-3B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>AI-assisted text enhancements were applied to one shot's entire text area, indiscriminately altering unrelated content and lacking support for targeted control.</p>
+                    <p>AI-assisted text enhancements were applied to one shot's entire text area, indiscriminately altering unrelated content and lacking support for targeted control.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I1-3A.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>After</h5>
-                <p>Introduced a floating toolbar that activates on text selection, allowing users to apply predefined functions (polish, shorten, and regenerate) or instruction-based prompts to specific segments only.</p>
+                    <p>Introduced a floating toolbar that activates on text selection, allowing users to apply predefined functions (polish, shorten, and regenerate) or instruction-based prompts to specific segments only.</p>
                 </figcaption>
             </figure>
     
@@ -584,14 +729,14 @@ tools:
                 <img src="{{ '/images/agent-opus/I1-4B.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
                 <figcaption>
                     <h5>Before</h5>
-                <p>The workflow followed a fixed linear path that assumes all users start from scratch and proceed through every stage, adding friction for more experienced or prepared users.</p>
+                    <p>The workflow followed a fixed linear path that assumes all users start from scratch and proceed through every stage, adding friction for more experienced or prepared users.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I1-4A.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
                 <figcaption>
                     <h5>After</h5>
-                <p>Introduced conditional branching and stage-skip options that allow users to bypass unnecessary stages mid-flow based on their readiness, reducing the minimum required steps.</p>
+                    <p>Introduced conditional branching and stage-skip options that allow users to bypass unnecessary stages mid-flow based on their readiness, reducing the minimum required steps.</p>
                 </figcaption>
             </figure>
     </div>
@@ -663,7 +808,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>Before</h5>
-                <p>Scripts were composed in plain text with minimal markdown-style grammar for basic formatting, confusing non-technical users.</p>
+                    <p>Scripts were composed in plain text with minimal markdown-style grammar for basic formatting, confusing non-technical users.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -672,7 +817,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Added a reformat option that declares key elements with symbolic tags, improving both frontend readability and model performance.</p>
+                    <p>Added a reformat option that declares key elements with symbolic tags, improving both frontend readability and model performance.</p>
                 </figcaption>
             </figure>
     
@@ -682,7 +827,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>Before</h5>
-                <p>All function buttons displayed both icons and text labels, then revealed an additional slider to adjust tone or length, creating redundant choices and unnecessary clicks.</p>
+                    <p>All function buttons displayed both icons and text labels, then revealed an additional slider to adjust tone or length, creating redundant choices and unnecessary clicks.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -691,7 +836,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Replaced function controls with icon buttons, visually distinguished them from open-ended prompt input to reflect different interaction modes, and simplified predefined options to remove redundant two-step interactions.</p>
+                    <p>Replaced function controls with icon buttons, visually distinguished them from open-ended prompt input to reflect different interaction modes, and simplified predefined options to remove redundant two-step interactions.</p>
                 </figcaption>
             </figure>
     
@@ -701,14 +846,14 @@ tools:
                 <img src="{{ '/images/agent-opus/I2-2-1B.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Controls suffered from an illogical information architecture: unrelated functions juxtaposed and parallel options incorrectly nested. An overuse of varied UI components made the interface even more disorienting.</p>
+                    <p>Controls suffered from an illogical information architecture: unrelated functions juxtaposed and parallel options incorrectly nested. An overuse of varied UI components made the interface even more disorienting.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I2-2-1A.png' | relative_url }}" loading="lazy" style="background-color: var(--background);">
                 <figcaption>
                     <h5>After</h5>
-                <p>Regrouped controls by their target objects and logical relationships, distributing them between the floating toolbar and modal accordingly, consolidated UI components to a succinct set.</p>
+                    <p>Regrouped controls by their target objects and logical relationships, distributing them between the floating toolbar and modal accordingly, consolidated UI components to a succinct set.</p>
                 </figcaption>
             </figure>
     
@@ -716,14 +861,14 @@ tools:
                 <img src="{{ '/images/agent-opus/I2-2-2B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Clicking a trigger button navigated users to a separate page to view the output keyframe, breaking the traceable connection between input and result with no visual continuity between the two.</p>
+                    <p>Clicking a trigger button navigated users to a separate page to view the output keyframe, breaking the traceable connection between input and result with no visual continuity between the two.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I2-2-2A.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>After</h5>
-                <p>Flattened the page hierarchy using modals and in-textarea dropdowns, keeping input and output in close proximity to establish a more intuitive cause-and-effect relationship.</p>
+                    <p>Flattened the page hierarchy using modals and in-textarea dropdowns, keeping input and output in close proximity to establish a more intuitive cause-and-effect relationship.</p>
                 </figcaption>
             </figure>
     
@@ -731,7 +876,7 @@ tools:
                 <img src="{{ '/images/agent-opus/I2-2-3B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Audio tracks were generated exclusively from voiceover input, limiting the tool to genres like vlogs and commentary where narration closely follows the visuals.</p>
+                    <p>Audio tracks were generated exclusively from voiceover input, limiting the tool to genres like vlogs and commentary where narration closely follows the visuals.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -740,7 +885,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Added a dedicated dialogue track separate from voiceover, allowing each shot to carry both independently, broadening support to formats like feature films where audio and visuals frequently diverge.</p>
+                    <p>Added a dedicated dialogue track separate from voiceover, allowing each shot to carry both independently, broadening support to formats like feature films where audio and visuals frequently diverge.</p>
                 </figcaption>
             </figure>
     
@@ -750,7 +895,7 @@ tools:
                 <img src="{{ '/images/agent-opus/I2-3-1B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Preview was only accessible at the final step, with no option to initiate it mid-production, discouraging early identification of issues.</p>
+                    <p>Preview was only accessible at the final step, with no option to initiate it mid-production, discouraging early identification of issues.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -759,7 +904,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Introduced a slideshow mode that simulates the final output's pacing and structure, accessible at any stage with fluid switching between modes.</p>
+                    <p>Introduced a slideshow mode that simulates the final output's pacing and structure, accessible at any stage with fluid switching between modes.</p>
                 </figcaption>
             </figure>
     
@@ -769,14 +914,14 @@ tools:
                 <img src="{{ '/images/agent-opus/I2-3-2B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Every generation attempt was saved indiscriminately, creating a cluttered, undifferentiated list that offered little value for tracking meaningful changes or refining prompts.</p>
+                    <p>Every generation attempt was saved indiscriminately, creating a cluttered, undifferentiated list that offered little value for tracking meaningful changes or refining prompts.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I2-3-2A.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>After</h5>
-                <p>Replaced the flat version history with a more purposeful iteration log that highlights only meaningful differences relative to the last selected version — giving users a clearer basis for informed, targeted revisions.</p>
+                    <p>Replaced the flat version history with a more purposeful iteration log that highlights only meaningful differences relative to the last selected version — giving users a clearer basis for informed, targeted revisions.</p>
                 </figcaption>
             </figure>
     </div>
@@ -855,14 +1000,14 @@ tools:
                 </video>
                 <figcaption>
                     <h5>Before</h5>
-                <p>A human-AI collaborative workspace with deliberate checkpoints at each production stage, allowing users across both personas to inspect, refine, and override outputs before committing to the next step.</p>
+                    <p>A human-AI collaborative workspace with deliberate checkpoints at each production stage, allowing users across both personas to inspect, refine, and override outputs before committing to the next step.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
                 <img src="{{ '/images/agent-opus/I3-1B.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>After</h5>
-                <p>Collapsed all intermediate controls into a single prompt-to-video pipeline powered by a multi-agent system and a chatbox interface, making scripts and storyboards deliverables rather than editable workspaces.</p>
+                    <p>Collapsed all intermediate controls into a single prompt-to-video pipeline powered by a multi-agent system and a chatbox interface, making scripts and storyboards deliverables rather than editable workspaces.</p>
                 </figcaption>
             </figure>
     
@@ -872,7 +1017,7 @@ tools:
                 <img src="{{ '/images/agent-opus/I3-2A.png' | relative_url }}" loading="lazy">
                 <figcaption>
                     <h5>Before</h5>
-                <p>Assumed text-to-video would be integrated as an additional tab within the core product, allowing users to generate source footage before repurposing it in the same workflow.</p>
+                    <p>Assumed text-to-video would be integrated as an additional tab within the core product, allowing users to generate source footage before repurposing it in the same workflow.</p>
                 </figcaption>
             </figure>
         <figure class="after col-start-7 col-span-6">
@@ -881,7 +1026,7 @@ tools:
                 </video>
                 <figcaption>
                     <h5>After</h5>
-                <p>Launched as an entirely separate product with its own domain, branding, and login, treating generation and repurposing as distinct businesses serving incompatible user intents rather than a continuous pipeline.</p>
+                    <p>Launched as an entirely separate product with its own domain, branding, and login, treating generation and repurposing as distinct businesses serving incompatible user intents rather than a continuous pipeline.</p>
                 </figcaption>
             </figure>
     </div>

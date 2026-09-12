@@ -333,7 +333,7 @@ a:hover {
 
 b, strong {
     font-weight: 500;
-    color: inherit;
+    color: var(--primary);
 }
 
 .eyebrow {
@@ -414,18 +414,44 @@ blockquote:last-child {
 ul, ol {
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
-    padding-left: var(--space-m);
     margin-bottom: var(--space-s);
 }
 
-ul { list-style-type: disc; }
-ol { list-style-type: decimal; }
+/* Unordered: a larger custom disc, flush-left with the body text, tight items.
+   Custom because the `* { list-style: none }` reset kills the native marker. */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
 
-/* Nested levels get distinct markers */
-ul ul { list-style-type: circle; }
-ul ul ul { list-style-type: square; }
-ol ol { list-style-type: lower-alpha; }
-ol ol ol { list-style-type: lower-roman; }
+ul > li {
+    position: relative;
+    padding-left: 1.4em;
+}
+
+ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tertiary);
+}
+
+/* Ordered: standard numeric markers */
+ol {
+    padding-left: var(--space-m);
+}
+
+ol > li { list-style-type: decimal; }
+ol ol > li { list-style-type: lower-alpha; }
+ol ol ol > li { list-style-type: lower-roman; }
+
+ol > li::marker {
+    color: var(--tertiary);
+}
 
 /* Nested lists sit tight against their parent item */
 li > ul, li > ol {
@@ -437,14 +463,6 @@ li {
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
     color: var(--secondary);
-    margin-bottom: var(--space-xs);
-}
-
-li::marker {
-    color: var(--tertiary);
-}
-
-li:last-child {
     margin-bottom: 0;
 }
 
@@ -759,6 +777,139 @@ img, video {
     margin: 0;
     padding-bottom: var(--space-s);
     color: var(--secondary);
+}
+
+/* View more / Show less toggle for a capped accordion */
+.accordion-more {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: var(--space-s) 0 0;
+    background: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.accordion-more:hover {
+    color: var(--primary);
+}
+
+
+/* STICKY NOTES — reusable affinity-map / brainstorm component.
+   Structure: .sticky-board (flex row of groups) > .sticky-group > .stickies > .sticky.
+   Fixed note size; set colour with .blue/.red/.yellow/.purple or --sticky-color.
+   Permanent Marker is lazy-loaded (downloads only where a .sticky renders). */
+@font-face {
+    font-family: 'Permanent Marker';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/permanentmarker/v16/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Cf5b6jlg.woff2') format('woff2');
+}
+
+.sticky-board {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;   /* flexible spacing between groups */
+    row-gap: var(--space-l);
+}
+
+.sticky-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    --cols: 3;                 /* notes per row — override with data-cols="1…4" */
+}
+
+.sticky-group[data-cols="1"] { --cols: 1; }
+.sticky-group[data-cols="2"] { --cols: 2; }
+.sticky-group[data-cols="3"] { --cols: 3; }
+.sticky-group[data-cols="4"] { --cols: 4; }
+
+.sticky-group-title {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    font-weight: 400;
+    color: var(--tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Notes wrap into --cols columns (52px = a note plus its margin) */
+.stickies {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-width: calc(var(--cols) * 52px);
+}
+
+.sticky {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    margin: 2px;
+    padding: 5px;
+    background: var(--sticky-color, #ffea79);
+    color: var(--primary);
+    opacity: 0.9;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4px;
+    line-height: 5px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transform: rotate(-5deg);
+}
+
+.stickies > .sticky:nth-child(even) {
+    transform: rotate(-4.45deg) skewX(1.16deg);
+}
+
+.sticky.blue   { --sticky-color: #b1d0ff; }
+.sticky.red    { --sticky-color: #ffbdae; }
+.sticky.yellow { --sticky-color: #ffea79; }
+.sticky.purple { --sticky-color: #d9b8ff; }
+
+/* Affinity morph — re-group the same notes with a FLIP transition (needs affinity.js) */
+.affinity-toggle {
+    display: flex;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-m);
+}
+
+.affinity-toggle button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: none;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.affinity-toggle button.is-active {
+    color: var(--background);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.affinity-morph .sticky {
+    will-change: transform;
 }
 
 /* Project cards — 2-up gallery (image, then title + description) */
@@ -1116,6 +1267,48 @@ table {
 th, td {
     padding: 0.5rem 1rem;
     text-align: left;
+    vertical-align: top;
+}
+
+/* Wrap a wide table in this to let it scroll horizontally instead of crushing */
+.table-scroll {
+    overflow-x: auto;
+    margin-bottom: var(--space-s);
+}
+
+/* The container is bounded by its grid column and scrolls; the table itself
+   is uncapped — it grows to fit its content. */
+.table-scroll table {
+    width: max-content;
+}
+
+.table-scroll th,
+.table-scroll td {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+}
+
+.table-scroll td {
+    width: 24ch;
+}
+
+.table-scroll th {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* Cap a cell's copy at two lines (truncate the rest) */
+.clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+/* Every cell reserves exactly two rows of height, whatever the copy length */
+.table-scroll td .clamp-2 {
+    min-height: calc(2 * var(--line-height-xs) * var(--font-size-xs));
 }
 
 th {
