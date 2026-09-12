@@ -37,7 +37,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6 no-index">Overview</h2>
+            <h2 class="no-index">Overview</h2>
             <h3 class="np">Background</h3>
             <p>In Q2 2024, the company was a pre-Series A startup specialized in AI-powered video captioning and repurposing. Existing users were asking for text-to-video generation, a capability that naturally complements the current product, and the recent advances in generative AI had made this feature seem both timely and technically feasible.</p>
             <p>This potentially valuable yet loosely defined opportunity needed to be validated and conceptualized quickly and affordably, before securing leadership buy-in and diverting core production efforts.</p>
@@ -199,7 +199,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Think</h2>
+            <h2>Think</h2>
             <h3>Market Analysis</h3>
             <p>Based on my initial observations of the market, I formed a hypothesis: leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
             <p>To test it, I identified key players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
@@ -341,7 +341,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Make</h2>
+            <h2>Make</h2>
             <h3>Wireframe</h3>
             <p>How to translate those features into concrete interface paradigms and interaction patterns? I created exploratory sketches that lead two distinct directions.</p>
         </div>
@@ -370,9 +370,9 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Check</h2>
+            <h2>Check</h2>
             <h3>Concept Testing</h3>
-            <p>Which direction to take? I facilitated a cross-functional stakeholder meeting to walk through annotated sketches and evaluate its viability with designers, engineers, product managers, and some other specialists.</p>
+            <p>Which direction to take? I facilitated a cross-functional stakeholder meeting (N=6) to walk through annotated sketches and evaluate its viability with designers, engineers, product managers, and some other specialists.</p>
         </div>
     </div>
 </section>
@@ -384,9 +384,9 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Think</h2>
+            <h2>Think</h2>
             <h3>Data Analysis</h3>
-            <p>I used affinity mapping to reorganize stakeholder feedback by theme, revealing shared concerns across roles and informing the direction moving forward.</p>
+            <p>Designers and engineers were initially excited about the node-based interface, but we still had reservations about its viability. I used affinity mapping to reorganize stakeholder feedback by theme, revealing shared concerns across roles and informing the direction moving forward.</p>
         </div>
 
         <div class="col-start-4 col-span-6">
@@ -432,7 +432,7 @@ tools:
         </div>
 
         <div class="col-start-4 col-span-6">
-            <p>The affinity mapping revealed that implementing a node-based architecture would require substantial engineering refactoring, raising critical concerns across three dimensions:</p>
+            <p>It revealed that implementing a node-based architecture would require substantial engineering refactoring, raising critical concerns across three dimensions:</p>
         </div>
     
         <div class="flex-row col-start-3 col-span-8">
@@ -466,7 +466,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Make</h2>
+            <h2>Make</h2>
             <h3>Prototype</h3>
             <div class="p">We introduced an intermediary step of text-to-image generation to stabilize the creative workflow, enabling users to preview keyframes and iterate on their sequence, timing, and narrative logic in areas where models typically fall short.</div>
         </div>
@@ -509,22 +509,9 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Check</h2>
+            <h2>Check</h2>
             <h3>Usability Testing</h3>
-            <p>To test the prototype across hypothesized user segments, I recruited a slightly larger sample of 8 participants via a screener survey, capturing how each might integrate the feature into their existing workflow.</p>
-            <p>Sessions employed the think-aloud protocol to surface usability and functionality issues in real time.</p>
-            <p>Responses were synthesized through affinity mapping, grouped thematically and color-coded by usage intensity, to surface areas for improvement and drive the next iteration.</p>
-        </div>
-    
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/usability-testing-2.png' | relative_url }}" loading="lazy">
-            </div>
-        </figure>
-    
-        <div class="col-start-4 col-span-6">
-            <p>Digging deeper, something more interesting emerged — users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question:</p>
-            <blockquote>Why do users hold conflicting opinions on the same areas?</blockquote>
+            <p>Participants (N=8) were recruited to use the prototype to identity the main usability and functionality issues, along with a screener survey to assess the usage intensity, i.e., how each participant might use the proposed feature in their routine. Sessions employed the think-aloud protocol.</p>
         </div>
     </div>
 </section>
@@ -536,10 +523,114 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Think</h2>
+            <h2>Think</h2>
             <h3>Data Analysis</h3>
-            <p>To make sense of these apparent contradictions, I hypothesized that the conflicting needs stemmed from how users conceptualize a set of shared goals differently. To test this, I examined the underlying intent behind each request and reshuffled them by high-level goals — the broader needs that encompass divergent user behaviors and expectations.</p>
+            <p>Responses were grouped thematically and color-coded by usage intensity, to surface areas for improvement and drive the next iteration.</p>
+            <p>The sessions surfaced a flood of suggestions. Many were clear wins we carried into the next iteration; others we pushed back for being too resource-intensive, or too dependent on model capabilities we had deliberately chosen not to rely on.</p>
         </div>
+
+        <div class="card col-start-3 col-span-4">
+            <h5>Go</h5>
+            <p>Asks we carried into the next iteration, broadly wanted and feasible, vetted with product and engineering.</p>
+            <div class="accordion" data-collapse="3">
+                <details class="accordion-item">
+                    <summary>Clearer Shot Navigation</summary>
+                    <p>Horizontal scrolling felt awkward, especially on touch; users wanted a clear, consistent way to move between shots.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Clearer Wording & Label</summary>
+                    <p>Text and control labels read as ambiguous; users wanted clearer distinctions and labels that explain themselves.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Prominent Global Setting</summary>
+                    <p>The global setting was easy to miss and should stand out.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Larger Editing Modal</summary>
+                    <p>The modal window felt too small to work in comfortably.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Intuitive, Precise Zoom</summary>
+                    <p>Zooming to adjust individual frames was too slow and imprecise.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Reusable Global Asset</summary>
+                    <p>Customize characters and scenes once and reuse them across shots and projects, instead of rebuilding them every time.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Custom Global Setting</summary>
+                    <p>Save preferred global settings and reapply them as a template.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>AI-Assisted Script Editing</summary>
+                    <p>Edit the script with AI, like selecting specific text, tweaking a single sentence, or giving prompt-based instructions instead of regenerating everything.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Simpler Script Breakdown</summary>
+                    <p>Breaking the script into shots and filling in blank ones felt like a chore; users wanted the parsing step to take far less manual effort.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Generate Keyframe in Place</summary>
+                    <p>Generate each shot's keyframe right in the storyboard instead of a separate step, for immediate and precise control.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="card col-start-7 col-span-4">
+            <h5>No-Go</h5>
+            <p>Declined as too costly or model-dependent for this stage, each redirected to a lighter alternative.</p>
+            <div class="accordion" data-collapse="3">
+                <details class="accordion-item">
+                    <summary>Custom Costume</summary>
+                    <p>Customize costumes and outfits and reuse them consistently across shots.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Custom Style Transfer</summary>
+                    <p>Define and apply a personal visual style, beyond the presets on offer.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Sound Effect & Background Music</summary>
+                    <p>Generate sound effect and music tracks across shots, sync them precisely to the timeline and match the narrative.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Custom Character Voice</summary>
+                    <p>Assign customized voices to specific characters or voiceovers.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <p>More intriguingly, a third category made the decision difficult: suggestions that directly contradicted one another on the same areas.</p>
+            <p><b>Workflow</b></p>
+            <ul>
+                <li>"I don't really get how to use the storyboard. Can I just get the output with one click?" (P2)</li>
+                <li>"I need more granular control over keyframes and easing curves." (P5)</li>
+            </ul>
+            <p><b>Terminology</b></p>
+            <ul>
+                <li>"Some of the setting options use jargon I don't understand." (P1)</li>
+                <li>"It might make more sense to use standard industry terminology." (P5)</li>
+                <li>"It'd be helpful to have a glossary or explanation for technical terms." (P7)</li>
+            </ul>
+            <p>Users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question:</p>
+            <p>Why did users disagree?</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid">
+        <div class="col-start-4 col-span-6">
+            <h3>Data Analysis</h3>
+            <p>To make sense of the contradiction, I made a hypothesis that the conflicting needs stemmed from how users conceptualize a set of shared goals differently.</p>
+            <p>To test this, I examined the underlying intent behind each request and reshuffled them by high-level goals, i.e., the broader needs that encompass divergent user behaviors and expectations.</p>
+        </div>
+
+        <figure class="col-start-4 col-span-6">
+            <div class="image-container">
+                <img src="{{ '/images/agent-opus/usability-testing-2.png' | relative_url }}" loading="lazy">
+            </div>
+        </figure>
     
         <figure class="col-start-4 col-span-6">
             <div class="image-container">
@@ -642,7 +733,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Make</h2>
+            <h2>Make</h2>
             <h3>Prototype</h3>
             <div class="p">
                 We improved clarity and workflow efficiency through both structural and functional enhancements, including a redesigned layout, surfaced global settings, and centralized asset control to support faster, more consistent generation.
@@ -745,7 +836,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Check</h2>
+            <h2>Check</h2>
             <h3>Usability Testing</h3>
             <p>The updated prototype underwent testing with 5 additional participants, and their responses were grouped by <b>thematic categories</b> to identify areas for improvement.</p>
         </div>
@@ -765,7 +856,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Think</h2>
+            <h2>Think</h2>
             <h3>Data Analysis</h3>
             <p>The testing pointed to new areas for improvement, and a closer look at the responses revealed something unexpected: several responses didn't fit any known category of high-level goals, surfacing an unstated one.</p>
         </div>
@@ -789,7 +880,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Make</h2>
+            <h2>Make</h2>
             <h3>Prototype</h3>
             <div class="p">
                 We incorporated transparency as a new evaluation lens while continuing to improve core usability through fine-grained refinements, including domain-specific text enhancement, clarified interface hierarchy and interaction logic, and more informative iteration support.
@@ -930,7 +1021,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6">Check</h2>
+            <h2>Check</h2>
             <h3 class="np">Success Metric</h3>
             <p>Full implementation would be a major, resource-intensive undertaking requiring leadership buy-in and broader organizational alignment — none of which were in place yet. With that in mind, I proactively defined success metrics to ensure the design's impact could be rigorously evaluated once the product was ready to ship:</p>
         </div>
@@ -982,7 +1073,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <h2 class="col-start-4 col-span-6 no-index">Retrospect</h2>
+            <h2 class="no-index">Retrospect</h2>
             <h3 class="np">Hindsight</h3>
             <p>The company has successfully raised $30M in Series A in August 2024 and $20M in Series B in March 2025, but ultimately shipped a fully automated, standalone product narrowly tailored to faceless creators in September 2025, rather than the human-collaborative, integrated feature serving both user segments I had proposed.</p>
             <p>The major differences in design and business strategy reflect a strategic pivot toward a broader, lower-friction market amid intensifying competition, trading craft and control for speed, scale, and a stronger investor narrative.</p>
