@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<style>:root { {% if page['theme-color'] and page['theme-color'] != '' %}--accent: {{ page['theme-color'] }};{% endif %} --project-bg: {{ page['bg-color'] | default: '#ffffff' }}; }</style>
+<style>:root { {% if page['theme-color'] and page['theme-color'] != '' %}--accent: {{ page['theme-color'] }}; --project-theme: {{ page['theme-color'] }};{% endif %} --project-bg: {{ page['bg-color'] | default: '#ffffff' }}; }</style>
 
 <section>
     <div class="grid">

@@ -876,10 +876,43 @@ img, video {
     transform: rotate(-4.45deg) skewX(1.16deg);
 }
 
-.sticky.blue   { --sticky-color: #b1d0ff; }
-.sticky.red    { --sticky-color: #ffbdae; }
-.sticky.yellow { --sticky-color: #ffea79; }
-.sticky.purple { --sticky-color: #d9b8ff; }
+.sticky.blue,   .sticky-legend .blue   { --sticky-color: #b1d0ff; }
+.sticky.red,    .sticky-legend .red    { --sticky-color: #ffbdae; }
+.sticky.yellow, .sticky-legend .yellow { --sticky-color: #ffea79; }
+.sticky.purple, .sticky-legend .purple { --sticky-color: #d9b8ff; }
+
+/* Usage-intensity palette — follows the project theme (also used by .sticky-legend chips) */
+.sticky.high,   .sticky-legend .high   { --sticky-color: color-mix(in srgb, var(--project-theme, #d3bdff) 85%, #fff); }
+.sticky.medium, .sticky-legend .medium { --sticky-color: color-mix(in srgb, var(--project-theme, #d3bdff) 35%, #fff); }
+.sticky.low,    .sticky-legend .low    { --sticky-color: #ffffff; }
+
+.sticky-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-self: end;   /* sit at the bottom of the grid row, level with the board */
+}
+
+.sticky-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    color: var(--tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sticky-legend > span::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 12px;
+    height: 12px;
+    background: var(--sticky-color, #ffea79);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
 
 /* Affinity morph — re-group the same notes with a FLIP transition (needs affinity.js) */
 .affinity-toggle {

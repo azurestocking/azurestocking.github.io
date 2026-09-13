@@ -6,7 +6,7 @@ name: "Agent Opus"
 client: "Opus Clip"
 desc: "An AI-powered storytelling copilot that helps diverse content creators turn ideas into videos through an end-to-end workflow spanning scriptwriting, storyboarding, and shot-level editing."
 image: "/images/agent-opus/demo.mp4"
-theme-color: "#6723FF"
+theme-color: "#874FFF"
 bg-color: "#EBEAFA"
 timeline: "Q3 2024"
 categories:
@@ -201,7 +201,9 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Think</h2>
             <h3>Market Analysis</h3>
-            <p>Based on my initial observations of the market, I formed a hypothesis: leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative, which positions themselves more as tools for visual experimentation and asset creation.</p>
+            <p>Based on my initial observations, I formed a hypothesis:</p>
+            <blockquote>The leading players appeared to focus on generating impressive but disjointed video clips, placing less emphasis on connecting them into structured narrative.</blockquote>
+            <p>This positioned them more as tools for visual experimentation and asset creation, creating an opportunity for us to differentiate through a more narrative-driven experience that builds on our existing strengths in content repurposing and end-to-end video production.</p>
             <p>To test it, I identified key players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
         </div>
     
@@ -210,7 +212,8 @@ tools:
         </figure>
 
         <div class="col-start-4 col-span-6">
-            <p>The matrix reveals a strategic opportunity: to differentiate by centering on storytelling support, aligning with the market gap and the team's strengths, instead of competing on model performance.</p>
+            <p>The matrix supported the hypothesis: while competitors offered strong capabilities at individual stages, few provided the continuity and control needed to shape them into a coherent narrative.</p>
+            <p>Therefore, our design should center on storytelling support, aligning with the market gap and our strengths, instead of competing on model performance.</p>
         </div>
     </div>
 </section>
@@ -343,7 +346,8 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Make</h2>
             <h3>Wireframe</h3>
-            <p>How to translate those features into concrete interface paradigms and interaction patterns? I created exploratory sketches that lead two distinct directions.</p>
+            <p>How might we translate and synthesize those features into concrete interface paradigms and interaction patterns? </p>
+            <p>I created exploratory sketches that lead two distinct directions.</p>
         </div>
     
         <figure class="col-start-3 col-span-4">
@@ -372,7 +376,8 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Check</h2>
             <h3>Concept Testing</h3>
-            <p>Which direction to take? I facilitated a cross-functional stakeholder meeting (N=6) to walk through annotated sketches and evaluate its viability with designers, engineers, product managers, and some other specialists.</p>
+            <p>Which direction should we take?</p>
+            <p>I facilitated a cross-functional stakeholder meeting (N=6) to walk through annotated sketches and evaluate its viability with designers, engineers, product managers, and some other specialists.</p>
         </div>
     </div>
 </section>
@@ -394,7 +399,8 @@ tools:
                  data-states="stakeholder:By stakeholder, theme:By theme"
                  data-order-stakeholder="Engineer, Designer, Product Manager, Others"
                  data-order-theme="Technical Complexity, Usability Uncertainty, Managerial Misalignment"
-                 data-cols-stakeholder="Others:1">
+                 data-cols-stakeholder="Others:1"
+                 data-cols-theme="Technical Complexity, Usability Uncertainty:4, Managerial Misalignment:4">
                 <div class="sticky-board">
                     <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Cells must be developed as a standalone module with meticulous interaction logic and intercell compatibility.</div>
                     <div class="sticky blue" data-stakeholder="Engineer" data-theme="Technical Complexity">Tracking and managing dependencies among cells lead to complexity of system scaling.</div>
@@ -429,6 +435,13 @@ tools:
                     <div class="sticky purple" data-stakeholder="Others" data-theme="Usability Uncertainty">A more complex system requires more educational efforts to help users navigate the interface.</div>
                 </div>
             </div>
+        </div>
+
+        <div class="sticky-legend col-start-10 col-span-2" aria-hidden="true">
+            <span class="blue">Engineer</span>
+            <span class="red">Designer</span>
+            <span class="yellow">Product Manager</span>
+            <span class="purple">Others</span>
         </div>
 
         <div class="col-start-4 col-span-6">
@@ -601,6 +614,7 @@ tools:
 
         <div class="col-start-4 col-span-6">
             <p>More intriguingly, a third category made the decision difficult: suggestions that directly contradicted one another on the same areas.</p>
+            <p>For example:</p>
             <p><b>Workflow</b></p>
             <ul>
                 <li>"I don't really get how to use the storyboard. Can I just get the output with one click?" (P2)</li>
@@ -622,24 +636,80 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h3>Data Analysis</h3>
-            <p>To make sense of the contradiction, I made a hypothesis that the conflicting needs stemmed from how users conceptualize a set of shared goals differently.</p>
-            <p>To test this, I examined the underlying intent behind each request and reshuffled them by high-level goals, i.e., the broader needs that encompass divergent user behaviors and expectations.</p>
+            <p>Those conflicting needs led to a new hypothesis:</p>
+            <blockquote>Users conceptualize a set of shared goals differently, suggesting the presence of distinct user groups.</blockquote>
+            <p>To test this, I reexamined the underlying intent behind each ask, then regrouping the findings around high-level goals, i.e., the broader needs that encompass divergent user behaviors and expectations.</p>
         </div>
 
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/usability-testing-2.png' | relative_url }}" loading="lazy">
-            </div>
-        </figure>
-    
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/data-analysis-3-1.png' | relative_url }}" loading="lazy">
-            </div>
-        </figure>
-    
         <div class="col-start-4 col-span-6">
-            <p>The affinity mapping supports this hypothesis: despite appearing contradictory at the surface level, all requests consistently mapped to the same high-level goals, indicating that users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable.</p>
+            <div class="affinity-morph image-container"
+                 data-states="theme:By theme, goal:By high-level goal"
+                 data-order-theme="Interface, Customization, Script, Workflow, Audio, Preview"
+                 data-order-goal="Efficiency, Consistency, Adaptability"
+                 data-cols-theme="Interface:2, Customization:2, Script:2, Workflow:2, Audio:1, Preview:1"
+                 data-cols-goal="Efficiency:4, Consistency:3, Adaptability:4">
+                <div class="sticky-board">
+                    <div class="sticky low"    data-theme="Interface"     data-goal="Efficiency">I can't tell the difference between these two chunks of text. What am I missing?</div>
+                    <div class="sticky low"    data-theme="Interface"     data-goal="Efficiency">Some of the setting options use jargon I don't understand.</div>
+                    <div class="sticky low"    data-theme="Interface"     data-goal="Efficiency">It'd be helpful to have a glossary or explanation for technical terms.</div>
+                    <div class="sticky high"   data-theme="Interface"     data-goal="Efficiency">It might make more sense to use standard industry terminology.</div>
+                    <div class="sticky low"    data-theme="Interface"     data-goal="Efficiency">Scrolling horizontally is tricky especially on the touch screen. Should I scroll to the right or downward?</div>
+                    <div class="sticky high"   data-theme="Interface"     data-goal="Efficiency">How should I scroll to the next shot, horizontally or vertically?</div>
+                    <div class="sticky medium" data-theme="Interface"     data-goal="Efficiency">The thumbnail bar and the horizontal shot container don't line up in length. It's a bit confusing.</div>
+                    <div class="sticky medium" data-theme="Interface"     data-goal="Efficiency">I forgot to define the global setting but it's pretty important. You should make it more conspicuous.</div>
+                    <div class="sticky high"   data-theme="Interface"     data-goal="Efficiency">The modal window is too small to work with.</div>
+                    <div class="sticky high"   data-theme="Interface"     data-goal="Efficiency">I need a way to zoom in and out quickly to adjust individual frames. Right now, it's either too slow or too imprecise.</div>
+
+                    <div class="sticky medium" data-theme="Customization" data-goal="Adaptability">Is it possible to define my own style?</div>
+                    <div class="sticky high"   data-theme="Customization" data-goal="Adaptability">Can I detach and change an asset locally in a scene?</div>
+                    <div class="sticky high"   data-theme="Customization" data-goal="Adaptability">I'd love AI to help with in-between frames, but it needs to respect the style I'm going for.</div>
+                    <div class="sticky high"   data-theme="Customization" data-goal="Adaptability">Can I create and save my own animation presets, like a specific type of walk or run?</div>
+                    <div class="sticky low"    data-theme="Customization" data-goal="Consistency">It'd be awesome to save and reuse my own global settings as a template.</div>
+                    <div class="sticky medium" data-theme="Customization" data-goal="Consistency">Does it ensure that an asset stays consistent across multiple shots? If not, I don't want to modify those shots one by one.</div>
+                    <div class="sticky medium" data-theme="Customization" data-goal="Consistency">Can I predefine some reusable assets before generating keyframes?</div>
+                    <div class="sticky high"   data-theme="Customization" data-goal="Consistency">I'd love to save my custom character rigs and reuse them across projects. Right now, I have to rebuild them every time.</div>
+                    <div class="sticky high"   data-theme="Customization" data-goal="Consistency">Can we customize characters, costumes, and environments to reuse across frames?</div>
+                    <div class="sticky high"   data-theme="Customization" data-goal="Consistency">I want to reuse characters and environments across different scenes, but it's hard to keep them consistent. Can it help with that?</div>
+
+                    <div class="sticky low"    data-theme="Script"        data-goal="Consistency">My input might not be perfect for playwriting. Can AI help tweak it to make the story more engaging?</div>
+                    <div class="sticky medium" data-theme="Script"        data-goal="Consistency">I might make grammar mistakes, so I need AI to proofread the text for me.</div>
+                    <div class="sticky low"    data-theme="Script"        data-goal="Efficiency">Is there a way to select specific text and edit it with AI?</div>
+                    <div class="sticky low"    data-theme="Script"        data-goal="Efficiency">Can I give AI instructions, like with GPT, to edit things for me?</div>
+                    <div class="sticky high"   data-theme="Script"        data-goal="Efficiency">I'd love a prompt-based script editing feature to give the AI more specific instructions.</div>
+                    <div class="sticky high"   data-theme="Script"        data-goal="Efficiency">I don't want to regenerate the whole prompt—just tweak a single sentence.</div>
+                    <div class="sticky medium" data-theme="Script"        data-goal="Efficiency">The editing options are confusing. What does polish even mean?</div>
+
+                    <div class="sticky high"   data-theme="Workflow"      data-goal="Adaptability">Can I upload a script and work from there? It'd save me a lot of time.</div>
+                    <div class="sticky high"   data-theme="Workflow"      data-goal="Adaptability">I'd like to skip the script editing phase when I already have a complete script.</div>
+                    <div class="sticky medium" data-theme="Workflow"      data-goal="Adaptability">Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots.</div>
+                    <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">The storyboard tweaking phrase is too much for me. There are so many options, kind of overwhelming.</div>
+                    <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">I don't really get how to use the storyboard. Can I just get the output with one click?</div>
+                    <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">I just want to give the AI a topic summary, and have it produce a complete, polished video.</div>
+                    <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?</div>
+
+                    <div class="sticky medium" data-theme="Audio"         data-goal="Adaptability">Can I add tracks, like sound effects or background music, across multiple shots in the storyboard?</div>
+                    <div class="sticky high"   data-theme="Audio"         data-goal="Adaptability">Can I sync audio tracks directly to the timeline with more precision?</div>
+                    <div class="sticky high"   data-theme="Audio"         data-goal="Adaptability">Does the system generate sound effects or music that match the narrative?</div>
+                    <div class="sticky high"   data-theme="Audio"         data-goal="Adaptability">Is there a way to assign specific voices to characters or voiceovers?</div>
+
+                    <div class="sticky medium" data-theme="Preview"       data-goal="Consistency">I'd love to preview how the shots come together before generating the full video.</div>
+                    <div class="sticky high"   data-theme="Preview"       data-goal="Consistency">Can I preview how changes to one shot affect the overall animation without rendering the whole thing?</div>
+                    <div class="sticky high"   data-theme="Preview"       data-goal="Consistency">Is it possible to generate video clips immediately in each shot to achieve more precise control?</div>
+                    <div class="sticky medium" data-theme="Preview"       data-goal="Consistency">What if the video output isn't good? Do I have to spend hours and extra credits rendering it again and again?</div>
+                    <div class="sticky high"   data-theme="Preview"       data-goal="Consistency">I need more granular control over keyframes and easing curves.</div>
+                    <div class="sticky medium" data-theme="Preview"       data-goal="Consistency">Can I get a low-res preview of the video to check pacing and transitions before committing to a full render?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-legend col-start-10 col-span-2" aria-hidden="true">
+            <span class="high">High Usage</span>
+            <span class="medium">Medium Usage</span>
+            <span class="low">Low Usage</span>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <p>The mapping supports this hypothesis: despite appearing contradictory at the surface level, all asks consistently mapped to the same high-level goals, indicating that users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable.</p>
         </div>
     
         <div class="flex-row col-start-3 col-span-8">
@@ -659,9 +729,26 @@ tools:
                 <p>Support varied intents and use cases through rich customization options, flexible control over outputs and workflows, and a context-aware, responsive system.</p>
             </div>
         </div>
-    
+    </div>
+</section>
+
+<section>
+    <div class="grid">
         <div class="col-start-4 col-span-6">
-            <p>This insight validates our hypothesis of multiple user segments, and the divergence in expectations implies that distinct user groups adopt varying positions on value trade-offs, potentially making them visually identifiable when plotted on a coordinate plane defined by such trade-offs. To surface those groups, I identified the core tensions in users' decision-making: users are primarily weighing cost against perceived quality, and user agency against automation.</p>
+            <h3>Problem Statement</h3>
+            <p>Thus, we moved beyond the request of simply integrating text-to-video generation, arriving at a specific problem statement grounded in these goals:</p>
+            <blockquote>How might we empower content creators to quickly and easily translate their scripts into reliably high-quality videos while accommodating diverse scenarios?</blockquote>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid">
+        <div class="col-start-4 col-span-6">
+            <h3>Data Analysis</h3>
+            <p>Which user groups did we have?</p>
+            <p>The divergence in expectations implies that distinct user groups adopt varying positions on value trade-offs, potentially making them visually identifiable when plotted on a coordinate plane defined by such trade-offs.</p>
+            <p>To surface those groups, I identified the core tensions in users' decision-making: users are primarily weighing cost against perceived quality, and user agency against automation.</p>
         </div>
     
         <div class="card-list-col col-start-4 col-span-6">
