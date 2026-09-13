@@ -91,6 +91,11 @@ tools:
                 <img src="{{ '/images/agent-opus/design-process.png' | relative_url }}" loading="lazy">
             </div>
         </figure>
+
+        <div class="sticky-legend col-start-10 col-span-1" aria-hidden="true">
+            <span class="black">Phase</span>
+            <span class="purple">Task</span>
+        </div>
     </div>
 </section>
 
@@ -682,7 +687,7 @@ tools:
                     <div class="sticky high"   data-theme="Workflow"      data-goal="Adaptability">Can I upload a script and work from there? It'd save me a lot of time.</div>
                     <div class="sticky high"   data-theme="Workflow"      data-goal="Adaptability">I'd like to skip the script editing phase when I already have a complete script.</div>
                     <div class="sticky medium" data-theme="Workflow"      data-goal="Adaptability">Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots.</div>
-                    <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">The storyboard tweaking phrase is too much for me. There are so many options, kind of overwhelming.</div>
+                    <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">The storyboard tweaking phase is too much for me. There are so many options, kind of overwhelming.</div>
                     <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">I don't really get how to use the storyboard. Can I just get the output with one click?</div>
                     <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">I just want to give the AI a topic summary, and have it produce a complete, polished video.</div>
                     <div class="sticky low"    data-theme="Workflow"      data-goal="Adaptability">I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?</div>
@@ -766,11 +771,66 @@ tools:
             <p>Mapping all sticky notes along the axes representing the two core tensions above revealed the natural clustering of user segments.</p>
         </div>
     
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/data-analysis-3-2.png' | relative_url }}" loading="lazy">
+        <div class="col-start-4 col-span-6">
+            <div class="affinity-scatter image-container">
+                <div class="axis-x"></div>
+                <div class="axis-y"></div>
+                <span class="axis-label top">Perceived quality</span>
+                <span class="axis-label bottom">Cost</span>
+                <span class="axis-label left">User agency</span>
+                <span class="axis-label right">Automation</span>
+                <div class="sticky medium" style="--x:-11;--y:9">Can I add tracks, like sound effects or background music, across multiple shots in the storyboard?</div>
+                <div class="sticky high" style="--x:-9;--y:9">Can I sync audio tracks directly to the timeline with more precision?</div>
+                <div class="sticky high" style="--x:-7;--y:9">I'd love to save my custom character rigs and reuse them across projects. Right now, I have to rebuild them every time.</div>
+                <div class="sticky high" style="--x:-5;--y:9">Can we customize characters, costumes, and environments to reuse across frames?</div>
+                <div class="sticky high" style="--x:5;--y:9">Is it possible to generate video clips immediately in each shot to achieve more precise control?</div>
+                <div class="sticky high" style="--x:-11;--y:7">I want to reuse characters and environments across different scenes, but it's hard to keep them consistent. Can it help with that?</div>
+                <div class="sticky high" style="--x:-9;--y:7">Can I detach and change an asset locally in a scene?</div>
+                <div class="sticky high" style="--x:-7;--y:7">I need more granular control over keyframes and easing curves.</div>
+                <div class="sticky high" style="--x:-5;--y:7">Can I create and save my own animation presets, like a specific type of walk or run?</div>
+                <div class="sticky high" style="--x:-7;--y:5">I need a way to zoom in and out quickly to adjust individual frames. Right now, it's either too slow or too imprecise.</div>
+                <div class="sticky high" style="--x:-5;--y:5">I'd love AI to help with in-between frames, but it needs to respect the style I'm going for.</div>
+                <div class="sticky high" style="--x:-3;--y:5">I'd love a prompt-based script editing feature to give the AI more specific instructions.</div>
+                <div class="sticky low" style="--x:-1;--y:5">Is there a way to select specific text and edit it with AI?</div>
+                <div class="sticky high" style="--x:5;--y:5">Does the system generate sound effects or music that match the narrative?</div>
+                <div class="sticky medium" style="--x:-7;--y:3">Can I predefine some reusable assets before generating keyframes?</div>
+                <div class="sticky medium" style="--x:-5;--y:3">Is it possible to define my own style?</div>
+                <div class="sticky high" style="--x:-3;--y:3">I don't want to regenerate the whole prompt—just tweak a single sentence.</div>
+                <div class="sticky medium" style="--x:1;--y:3">Can I get a low-res preview of the video to check pacing and transitions before committing to a full render?</div>
+                <div class="sticky high" style="--x:3;--y:3">Is there a way to assign specific voices to characters or voiceovers?</div>
+                <div class="sticky medium" style="--x:-7;--y:1">Does it ensure that an asset stays consistent across multiple shots? If not, I don't want to modify those shots one by one.</div>
+                <div class="sticky high" style="--x:-3;--y:1">The modal window is too small to work with.</div>
+                <div class="sticky low" style="--x:-1;--y:1">Can I give AI instructions, like with GPT, to edit things for me?</div>
+                <div class="sticky high" style="--x:1;--y:1">Can I preview how changes to one shot affect the overall animation without rendering the whole thing?</div>
+                <div class="sticky medium" style="--x:3;--y:1">What if the video output isn't good? Do I have to spend hours and extra credits rendering it again and again?</div>
+                <div class="sticky medium" style="--x:1;--y:-1">I'd love to preview how the shots come together before generating the full video.</div>
+                <div class="sticky medium" style="--x:5;--y:-1">I might make grammar mistakes, so I need AI to proofread the text for me.</div>
+                <div class="sticky low" style="--x:7;--y:-1">My input might not be perfect for playwriting. Can AI help tweak it to make the story more engaging?</div>
+                <div class="sticky high" style="--x:-11;--y:-3">I'd like to skip the script editing phase when I already have a complete script.</div>
+                <div class="sticky high" style="--x:-9;--y:-3">Can I upload a script and work from there? It'd save me a lot of time.</div>
+                <div class="sticky low" style="--x:-1;--y:-3">It'd be awesome to save and reuse my own global settings as a template.</div>
+                <div class="sticky high" style="--x:1;--y:-3">It might make more sense to use standard industry terminology.</div>
+                <div class="sticky medium" style="--x:5;--y:-3">The editing options are confusing. What does polish even mean?</div>
+                <div class="sticky medium" style="--x:7;--y:-3">Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots.</div>
+                <div class="sticky low" style="--x:9;--y:-3">The storyboard tweaking phase is too much for me. There are so many options, kind of overwhelming.</div>
+                <div class="sticky low" style="--x:5;--y:-5">I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?</div>
+                <div class="sticky medium" style="--x:7;--y:-5">I forgot to define the global setting but it's pretty important. You should make it more conspicuous.</div>
+                <div class="sticky high" style="--x:1;--y:-7">How should I scroll to the next shot, horizontally or vertically?</div>
+                <div class="sticky low" style="--x:3;--y:-7">I can't tell the difference between these two chunks of text. What am I missing?</div>
+                <div class="sticky low" style="--x:5;--y:-7">It'd be helpful to have a glossary or explanation for technical terms.</div>
+                <div class="sticky low" style="--x:7;--y:-7">Some of the setting options use jargon I don't understand.</div>
+                <div class="sticky medium" style="--x:1;--y:-9">The thumbnail bar and the horizontal shot container don't line up in length. It's a bit confusing.</div>
+                <div class="sticky low" style="--x:3;--y:-9">Scrolling horizontally is tricky especially on the touch screen. Should I scroll to the right or downward?</div>
+                <div class="sticky low" style="--x:9;--y:-9">I just want to give the AI a topic summary, and have it produce a complete, polished video.</div>
+                <div class="sticky low" style="--x:11;--y:-9">I don't really get how to use the storyboard. Can I just get the output with one click?</div>
             </div>
-        </figure>
+        </div>
+
+        <div class="sticky-legend col-start-10 col-span-1" aria-hidden="true">
+            <span class="high">High</span>
+            <span class="medium">Medium</span>
+            <span class="low">Low</span>
+        </div>
     
         <div class="col-start-4 col-span-6">
             <p>Sticky notes were distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating that:</p>

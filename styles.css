@@ -880,6 +880,8 @@ img, video {
 .sticky.red,    .sticky-legend .red    { --sticky-color: #ffbdae; }
 .sticky.yellow, .sticky-legend .yellow { --sticky-color: #ffea79; }
 .sticky.purple, .sticky-legend .purple { --sticky-color: #d9b8ff; }
+.sticky.black,  .sticky-legend .black  { --sticky-color: #111111; }
+.sticky.black { color: #fff; }
 
 /* Usage-intensity palette — follows the project theme (also used by .sticky-legend chips) */
 .sticky.high,   .sticky-legend .high   { --sticky-color: color-mix(in srgb, var(--project-theme, #d3bdff) 85%, #fff); }
@@ -943,6 +945,72 @@ img, video {
 
 .affinity-morph .sticky {
     will-change: transform;
+}
+
+/* Positioning map — the same notes plotted on a 2-axis plane (static, no JS).
+   Place each note with inline --x / --y grid coords: origin at the axes cross,
+   x = left(−) → right(+), y = down(−) → up(+). One unit = half a note. */
+.affinity-scatter {
+    position: relative;
+    aspect-ratio: 1600 / 1452;
+    --ux: 26px;   /* one grid unit = half a note slot (52px), so two adjacent */
+    --uy: 26px;   /* notes match the 4px gap of the affinity board */
+}
+
+.affinity-scatter .axis-x,
+.affinity-scatter .axis-y {
+    position: absolute;
+    background: var(--tertiary);
+}
+
+.affinity-scatter .axis-x { left: var(--space-m); right: var(--space-m); top: 50%; height: 2px; transform: translateY(-50%); }
+.affinity-scatter .axis-y { top: var(--space-l); bottom: var(--space-l); left: 50%; width: 2px; transform: translateX(-50%); }
+
+/* Line-art arrowheads (open chevrons) on the positive ends only: top & right */
+.affinity-scatter .axis-x::after,
+.affinity-scatter .axis-y::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: solid var(--tertiary);
+    border-width: 0;
+}
+
+.affinity-scatter .axis-x::after {   /* right end → points right, legs overlap the shaft */
+    right: 0; top: 50%;
+    border-top-width: 2px; border-right-width: 2px;
+    transform: translate(calc(50% - 6px), -50%) rotate(45deg);
+}
+
+.affinity-scatter .axis-y::before {  /* top end → points up, legs overlap the shaft */
+    top: 0; left: 50%;
+    border-top-width: 2px; border-left-width: 2px;
+    transform: translate(-50%, calc(-50% + 6px)) rotate(45deg);
+}
+
+.affinity-scatter .axis-label {
+    position: absolute;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    color: var(--tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.affinity-scatter .axis-label.top    { top: var(--space-m);    left: 50%; transform: translateX(-50%); }
+.affinity-scatter .axis-label.bottom { bottom: var(--space-m); left: 50%; transform: translateX(-50%); }
+.affinity-scatter .axis-label.left   { left: var(--space-m);  top: 50%; transform: translateY(calc(-50% - 12px)); }
+.affinity-scatter .axis-label.right  { right: var(--space-m); top: 50%; transform: translateY(calc(-50% - 12px)); }
+
+/* Position by the note's centre while keeping the base .sticky size, margin
+   and rotation — offset the top-left corner by half a note (48px / 2). */
+.affinity-scatter .sticky {
+    position: absolute;
+    left: calc(50% + var(--x, 0) * var(--ux) - 24px);
+    top:  calc(50% - var(--y, 0) * var(--uy) - 24px);
 }
 
 /* Project cards — 2-up gallery (image, then title + description) */
