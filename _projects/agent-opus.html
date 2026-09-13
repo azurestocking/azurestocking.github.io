@@ -549,7 +549,7 @@ tools:
 
         <div class="card col-start-3 col-span-4">
             <h5>Go</h5>
-            <p>Asks we carried into the next iteration, broadly wanted and feasible, vetted with product and engineering.</p>
+            <p>Request we carried into the next iteration, broadly wanted and feasible, vetted with product and engineering.</p>
             <div class="accordion" data-collapse="3">
                 <details class="accordion-item">
                     <summary>Clearer Shot Navigation</summary>
@@ -643,7 +643,7 @@ tools:
             <h3>Data Analysis</h3>
             <p>Those conflicting needs led to a new hypothesis:</p>
             <blockquote>Users conceptualize a set of shared goals differently, suggesting the presence of distinct user groups.</blockquote>
-            <p>To test this, I reexamined the underlying intent behind each ask, then regrouping the findings around high-level goals, i.e., the broader needs that encompass divergent user behaviors and expectations.</p>
+            <p>To test this, I reexamined the underlying intent behind each request, then regrouping the findings around high-level goals, i.e., the broader needs that encompass divergent user behaviors and expectations.</p>
         </div>
 
         <div class="col-start-4 col-span-6">
@@ -714,7 +714,7 @@ tools:
         </div>
 
         <div class="col-start-4 col-span-6">
-            <p>The mapping supports this hypothesis: despite appearing contradictory at the surface level, all asks consistently mapped to the same high-level goals, indicating that users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable.</p>
+            <p>The mapping supports this hypothesis: despite appearing contradictory at the surface level, all requests consistently mapped to the same high-level goals, indicating that users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable.</p>
         </div>
     
         <div class="flex-row col-start-3 col-span-8">
@@ -751,99 +751,97 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h3>Data Analysis</h3>
-            <p>Which user groups did we have?</p>
-            <p>The divergence in expectations implies that distinct user groups adopt varying positions on value trade-offs, potentially making them visually identifiable when plotted on a coordinate plane defined by such trade-offs.</p>
-            <p>To surface those groups, I identified the core tensions in users' decision-making: users are primarily weighing cost against perceived quality, and user agency against automation.</p>
+            <p>What distinct user groups were emerging?</p>
+            <p>User groups pulled apart not in the high-level goals, but in how they expected to achieve them, which might become visually identifiable when the requests were plotted on a coordinate plane defined by differences in their expected approaches.</p>
+            <p>Thus, I distilled that "how" into two defining dimensions, represented by the y- and x-axes: who makes each creative decision and how far that decision reaches.</p>
         </div>
-    
-        <div class="card-list-col col-start-4 col-span-6">
-            <div class="insight">
-                <h5>Cost vs. Perceived Quality</h5>
-                <p>This axis plots users' expectations for production by reflecting their weighting of resources commitment against the value of outcomes. Dimensions highlighted in feedback include time-saved, effort-saved, and craftsmanship, with the extremes of this axis representing cost and perceived quality.</p>
-            </div>
-            <div class="insight">
-                <h5>User Agency vs. Automation</h5>
-                <p>This axis plots users' preferences for interaction by reflecting their willingness to delegate creative control to the system. Dimensions highlighted in feedback include authorship, precision, and freedom, with the extremes of this axis representing user agency versus automation.</p>
-            </div>
+
+        <div class="card col-start-3 col-span-4">
+            <div class="number">🧠</div>
+            <h5>Locus of Decision</h5>
+            <p>Who supplies the creative decision? Does the user specify for the system to execute, or the system make it for the user to initiate?</p>
         </div>
-    
+        <div class="card col-start-7 col-span-4">
+            <div class="number">🔊</div>
+            <h5>Scope of Effect</h5>
+            <p>How far does a decision reach? Does it apply locally to a single element, or globally to the entire production?</p>
+        </div>
+
         <div class="col-start-4 col-span-6">
-            <p>Mapping all sticky notes along the axes representing the two core tensions above revealed the natural clustering of user segments.</p>
+            <p>Working from each request's wording and motive, I rated it on both axes by how strongly it leaned toward either pole.</p>
+            <ul>
+                <li><b>35 requests</b> stated both a locus and a scope and were plotted below.</li>
+                <li><b>9 requests</b> stated neither but plain usability frictions, left off here.</li>
+            </ul>
         </div>
-    
+
         <div class="col-start-4 col-span-6">
             <div class="affinity-scatter image-container">
                 <div class="axis-x"></div>
                 <div class="axis-y"></div>
-                <span class="axis-label top">Perceived quality</span>
-                <span class="axis-label bottom">Cost</span>
-                <span class="axis-label left">User agency</span>
-                <span class="axis-label right">Automation</span>
-                <div class="sticky medium" style="--x:-11;--y:9">Can I add tracks, like sound effects or background music, across multiple shots in the storyboard?</div>
-                <div class="sticky high" style="--x:-9;--y:9">Can I sync audio tracks directly to the timeline with more precision?</div>
-                <div class="sticky high" style="--x:-7;--y:9">I'd love to save my custom character rigs and reuse them across projects. Right now, I have to rebuild them every time.</div>
-                <div class="sticky high" style="--x:-5;--y:9">Can we customize characters, costumes, and environments to reuse across frames?</div>
-                <div class="sticky high" style="--x:5;--y:9">Is it possible to generate video clips immediately in each shot to achieve more precise control?</div>
-                <div class="sticky high" style="--x:-11;--y:7">I want to reuse characters and environments across different scenes, but it's hard to keep them consistent. Can it help with that?</div>
-                <div class="sticky high" style="--x:-9;--y:7">Can I detach and change an asset locally in a scene?</div>
-                <div class="sticky high" style="--x:-7;--y:7">I need more granular control over keyframes and easing curves.</div>
-                <div class="sticky high" style="--x:-5;--y:7">Can I create and save my own animation presets, like a specific type of walk or run?</div>
-                <div class="sticky high" style="--x:-7;--y:5">I need a way to zoom in and out quickly to adjust individual frames. Right now, it's either too slow or too imprecise.</div>
-                <div class="sticky high" style="--x:-5;--y:5">I'd love AI to help with in-between frames, but it needs to respect the style I'm going for.</div>
-                <div class="sticky high" style="--x:-3;--y:5">I'd love a prompt-based script editing feature to give the AI more specific instructions.</div>
-                <div class="sticky low" style="--x:-1;--y:5">Is there a way to select specific text and edit it with AI?</div>
-                <div class="sticky high" style="--x:5;--y:5">Does the system generate sound effects or music that match the narrative?</div>
-                <div class="sticky medium" style="--x:-7;--y:3">Can I predefine some reusable assets before generating keyframes?</div>
-                <div class="sticky medium" style="--x:-5;--y:3">Is it possible to define my own style?</div>
-                <div class="sticky high" style="--x:-3;--y:3">I don't want to regenerate the whole prompt—just tweak a single sentence.</div>
-                <div class="sticky medium" style="--x:1;--y:3">Can I get a low-res preview of the video to check pacing and transitions before committing to a full render?</div>
-                <div class="sticky high" style="--x:3;--y:3">Is there a way to assign specific voices to characters or voiceovers?</div>
-                <div class="sticky medium" style="--x:-7;--y:1">Does it ensure that an asset stays consistent across multiple shots? If not, I don't want to modify those shots one by one.</div>
-                <div class="sticky high" style="--x:-3;--y:1">The modal window is too small to work with.</div>
+                <span class="axis-label top">Locus of Decision</span>
+                <span class="axis-label right" style="--nudge-y: 16px">Scope of Effect</span>
+                <div class="sticky high" style="--x:-5;--y:4">I need more granular control over keyframes and easing curves.</div>
+                <div class="sticky medium" style="--x:2;--y:4">Can I predefine some reusable assets before generating keyframes?</div>
+                <div class="sticky high" style="--x:3;--y:4">Can we customize characters, costumes, and environments to reuse across frames?</div>
+                <div class="sticky high" style="--x:4;--y:4">I want to reuse characters and environments across different scenes, but it's hard to keep them consistent. Can it help with that?</div>
+                <div class="sticky high" style="--x:5;--y:4">I'd love to save my custom character rigs and reuse them across projects. Right now, I have to rebuild them every time.</div>
+                <div class="sticky high" style="--x:-4;--y:3">Can I sync audio tracks directly to the timeline with more precision?</div>
+                <div class="sticky high" style="--x:-3;--y:3">Can I detach and change an asset locally in a scene?</div>
+                <div class="sticky high" style="--x:0;--y:3">Can I preview how changes to one shot affect the overall animation without rendering the whole thing?</div>
+                <div class="sticky medium" style="--x:1;--y:3">Is it possible to define my own style?</div>
+                <div class="sticky high" style="--x:2;--y:3">Can I create and save my own animation presets, like a specific type of walk or run?</div>
+                <div class="sticky medium" style="--x:4;--y:3">I forgot to define the global setting but it's pretty important. You should make it more conspicuous.</div>
+                <div class="sticky low" style="--x:5;--y:3">It'd be awesome to save and reuse my own global settings as a template.</div>
+                <div class="sticky high" style="--x:-5;--y:2">I don't want to regenerate the whole prompt—just tweak a single sentence.</div>
+                <div class="sticky high" style="--x:-2;--y:2">I need a way to zoom in and out quickly to adjust individual frames. Right now, it's either too slow or too imprecise.</div>
+                <div class="sticky high" style="--x:1;--y:2">I'd love a prompt-based script editing feature to give the AI more specific instructions.</div>
+                <div class="sticky high" style="--x:3;--y:2">Is there a way to assign specific voices to characters or voiceovers?</div>
+                <div class="sticky high" style="--x:4;--y:2">Can I upload a script and work from there? It'd save me a lot of time.</div>
+                <div class="sticky high" style="--x:5;--y:2">I'd like to skip the script editing phase when I already have a complete script.</div>
                 <div class="sticky low" style="--x:-1;--y:1">Can I give AI instructions, like with GPT, to edit things for me?</div>
-                <div class="sticky high" style="--x:1;--y:1">Can I preview how changes to one shot affect the overall animation without rendering the whole thing?</div>
-                <div class="sticky medium" style="--x:3;--y:1">What if the video output isn't good? Do I have to spend hours and extra credits rendering it again and again?</div>
-                <div class="sticky medium" style="--x:1;--y:-1">I'd love to preview how the shots come together before generating the full video.</div>
-                <div class="sticky medium" style="--x:5;--y:-1">I might make grammar mistakes, so I need AI to proofread the text for me.</div>
-                <div class="sticky low" style="--x:7;--y:-1">My input might not be perfect for playwriting. Can AI help tweak it to make the story more engaging?</div>
-                <div class="sticky high" style="--x:-11;--y:-3">I'd like to skip the script editing phase when I already have a complete script.</div>
-                <div class="sticky high" style="--x:-9;--y:-3">Can I upload a script and work from there? It'd save me a lot of time.</div>
-                <div class="sticky low" style="--x:-1;--y:-3">It'd be awesome to save and reuse my own global settings as a template.</div>
-                <div class="sticky high" style="--x:1;--y:-3">It might make more sense to use standard industry terminology.</div>
-                <div class="sticky medium" style="--x:5;--y:-3">The editing options are confusing. What does polish even mean?</div>
-                <div class="sticky medium" style="--x:7;--y:-3">Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots.</div>
-                <div class="sticky low" style="--x:9;--y:-3">The storyboard tweaking phase is too much for me. There are so many options, kind of overwhelming.</div>
-                <div class="sticky low" style="--x:5;--y:-5">I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?</div>
-                <div class="sticky medium" style="--x:7;--y:-5">I forgot to define the global setting but it's pretty important. You should make it more conspicuous.</div>
-                <div class="sticky high" style="--x:1;--y:-7">How should I scroll to the next shot, horizontally or vertically?</div>
-                <div class="sticky low" style="--x:3;--y:-7">I can't tell the difference between these two chunks of text. What am I missing?</div>
-                <div class="sticky low" style="--x:5;--y:-7">It'd be helpful to have a glossary or explanation for technical terms.</div>
-                <div class="sticky low" style="--x:7;--y:-7">Some of the setting options use jargon I don't understand.</div>
-                <div class="sticky medium" style="--x:1;--y:-9">The thumbnail bar and the horizontal shot container don't line up in length. It's a bit confusing.</div>
-                <div class="sticky low" style="--x:3;--y:-9">Scrolling horizontally is tricky especially on the touch screen. Should I scroll to the right or downward?</div>
-                <div class="sticky low" style="--x:9;--y:-9">I just want to give the AI a topic summary, and have it produce a complete, polished video.</div>
-                <div class="sticky low" style="--x:11;--y:-9">I don't really get how to use the storyboard. Can I just get the output with one click?</div>
+                <div class="sticky medium" style="--x:2;--y:1">What if the video output isn't good? Do I have to spend hours and extra credits rendering it again and again?</div>
+                <div class="sticky medium" style="--x:3;--y:1">Can I get a low-res preview of the video to check pacing and transitions before committing to a full render?</div>
+                <div class="sticky medium" style="--x:4;--y:1">I'd love to preview how the shots come together before generating the full video.</div>
+                <div class="sticky medium" style="--x:5;--y:1">Can I add tracks, like sound effects or background music, across multiple shots in the storyboard?</div>
+                <div class="sticky high" style="--x:-4;--y:0">Is it possible to generate video clips immediately in each shot to achieve more precise control?</div>
+                <div class="sticky medium" style="--x:3;--y:0">Does it ensure that an asset stays consistent across multiple shots? If not, I don't want to modify those shots one by one.</div>
+                <div class="sticky low" style="--x:-5;--y:-1">Is there a way to select specific text and edit it with AI?</div>
+                <div class="sticky low" style="--x:1;--y:-1">My input might not be perfect for playwriting. Can AI help tweak it to make the story more engaging?</div>
+                <div class="sticky low" style="--x:2;--y:-1">The storyboard tweaking phase is too much for me. There are so many options, kind of overwhelming.</div>
+                <div class="sticky high" style="--x:-3;--y:-2">I'd love AI to help with in-between frames, but it needs to respect the style I'm going for.</div>
+                <div class="sticky high" style="--x:4;--y:-2">Does the system generate sound effects or music that match the narrative?</div>
+                <div class="sticky medium" style="--x:3;--y:-3">Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots.</div>
+                <div class="sticky low" style="--x:5;--y:-3">I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?</div>
+                <div class="sticky medium" style="--x:3;--y:-4">I might make grammar mistakes, so I need AI to proofread the text for me.</div>
+                <div class="sticky low" style="--x:4;--y:-4">I don't really get how to use the storyboard. Can I just get the output with one click?</div>
+                <div class="sticky low" style="--x:5;--y:-4">I just want to give the AI a topic summary, and have it produce a complete, polished video.</div>
             </div>
         </div>
 
-        <div class="sticky-legend col-start-10 col-span-1" aria-hidden="true">
-            <span class="high">High</span>
-            <span class="medium">Medium</span>
-            <span class="low">Low</span>
+        <div class="sticky-legend col-start-10 col-span-2" aria-hidden="true">
+            <span class="high">High Usage</span>
+            <span class="medium">Medium Usage</span>
+            <span class="low">Low Usage</span>
         </div>
-    
+
         <div class="col-start-4 col-span-6">
-            <p>Sticky notes were distributed diagonally from the upper-left to lower-right quadrants, with high and low usage intensity clustering at opposite ends, demonstrating that:</p>
+            <p>The requests fell into two clusters along the locus axis, a dense one on the specify side and a sparser one on the delegate side, with usage intensity running high among the specifiers and low among the delegators. Only one corner stayed almost empty, where a user hands a single, local decision to the system.</p>
+            <p>Three findings stood out:</p>
         </div>
-    
+
         <div class="card-list-col col-start-4 col-span-6">
             <div class="insight">
-                <h5>We Don't Trust AI</h5>
-                <p>The negative correlation between perceived quality and automation validates the hypothesis that users associate strong outputs with manual control, implying limited trust in fully automated systems to deliver professional results.</p>
+                <h5>User Segmentation</h5>
+                <p>The requests didn't spread along a continuum; they clumped into two groups. One skew toward the high-intensity, specify-side users, such as indie filmmakers and animators; one toward the lower-intensity, delegate side, including influencers and content aggregators.</p>
             </div>
             <div class="insight">
-                <h5>User Segmentation</h5>
-                <p>The polarization by usage intensity reveals two distinct user groups: those with lower intensity favoring low cost and automation, and others with higher intensity prioritizing user agency and quality.</p>
+                <h5>All-or-Nothing Delegation</h5>
+                <p>Users who wanted the system to decide handed over entire projects, not individual choices, but those who retained control retained it at every scale. The dividing line was never how much automation users would accept, but whether a decision was theirs to make at all.</p>
+            </div>
+            <div class="insight">
+                <h5>One Branching Pipeline</h5>
+                <p>The locus tracked usage intensity closely, while the scope cut evenly across both groups, implying that they needed the same range of capabilities but varying depths of control. This pointed away from two products and toward one pipeline with branching control depth.</p>
             </div>
         </div>
     </div>
@@ -853,21 +851,21 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h3>Persona</h3>
-            <p>Based on the user segmentation, I developed the following two personae: original creators are typically users with a high level of creative expertise, such as indie filmmakers and animators; derivative creators are more likely users with distribution-driven priorities, including influencers and content aggregators.</p>
+            <p>With the two segments established, I gave each a face with their own goals, habits, pains, and tools to design against, rather than an abstract split:</p>
         </div>
     
         <figure class="col-start-3 col-span-4">
             <img src="{{ '/images/agent-opus/persona-1.png' | relative_url }}" loading="lazy">
             <figcaption>
                 <h5>Original Creator</h5>
-                <p>Seek to maintain creative authorship while achieving high-quality outputs; cautious of full automation and perceive the tool as an extension.</p>
+                <p>Arrives with decisions already made and wants AI as an executor, supplying the labor inside constraints they set, from reusable global assets on entry to shot-level depth on exit.</p>
             </figcaption>
         </figure>
         <figure class="col-start-7 col-span-4">
             <img src="{{ '/images/agent-opus/persona-2.png' | relative_url }}" loading="lazy">
             <figcaption>
                 <h5>Derivative Creator</h5>
-                <p>Aim to produce acceptable outputs with minimal input; willing to delegate complex tasks to the system and view the tool as a replacement.</p>
+                <p>Arrives without settled decisions and wants AI as a proposer, suggesting the script, recommending global settings, and producing a complete first pass to react to at the project scale.</p>
             </figcaption>
         </figure>
     </div>
@@ -985,14 +983,8 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Check</h2>
             <h3>Usability Testing</h3>
-            <p>The updated prototype underwent testing with 5 additional participants, and their responses were grouped by <b>thematic categories</b> to identify areas for improvement.</p>
+            <p>The updated prototype underwent testing with 5 additional participants, and their responses were grouped by thematic categories to identify areas for improvement.</p>
         </div>
-    
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/usability-testing-3.png' | relative_url }}" loading="lazy">
-            </div>
-        </figure>
     </div>
 </section>
 
@@ -1007,6 +999,12 @@ tools:
             <h3>Data Analysis</h3>
             <p>The testing pointed to new areas for improvement, and a closer look at the responses revealed something unexpected: several responses didn't fit any known category of high-level goals, surfacing an unstated one.</p>
         </div>
+
+        <figure class="col-start-4 col-span-6">
+            <div class="image-container">
+                <img src="{{ '/images/agent-opus/usability-testing-3.png' | relative_url }}" loading="lazy">
+            </div>
+        </figure>
     
         <figure class="col-start-4 col-span-6">
             <div class="image-container">
@@ -1202,7 +1200,7 @@ tools:
                 </details>
                 <details class="accordion-item">
                     <summary>Persona-Split Engagement</summary>
-                    <p>Whether the two user groups defined exhibited distinct usage patterns, validating the two-segment strategy and informing future prioritization.</p>
+                    <p>The ratio of user-specified to system-generated decisions per session — a directly observable proxy for which persona a user falls into, validating the two-segment strategy and informing future prioritization.</p>
                 </details>
                 <details class="accordion-item">
                     <summary>Trial-to-Paid Conversion Rate</summary>
@@ -1273,7 +1271,7 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <p>The strategic framing held up — storytelling support, human-AI collaboration, distinct user segments all proved directionally correct. What didn't survive was the assumption that those insights would translate into a craft-first feature. The company made a different bet, more than one years later, for defensible reasons.</p>
+            <p>The strategic framing held up — storytelling support, human-AI collaboration, distinct user segments all proved directionally correct. What didn't survive was the assumption that those insights would translate into a craft-first feature: by collapsing the workflow to a single prompt-in, video-out path, the shipped product served only the proposer persona — the users who arrive with an idea and hand the rest to the system — and dropped the specify-side creators, along with the branching control depth the analysis had argued for. The company made a different bet, more than one years later, for defensible reasons.</p>
         </div>
     
         <div class="card-list-col col-start-4 col-span-6">

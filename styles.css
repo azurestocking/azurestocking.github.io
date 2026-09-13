@@ -863,7 +863,6 @@ img, video {
     padding: 5px;
     background: var(--sticky-color, #ffea79);
     color: var(--primary);
-    opacity: 0.9;
     font-family: 'Permanent Marker', cursive;
     font-size: 4px;
     line-height: 5px;
@@ -952,9 +951,16 @@ img, video {
    x = left(−) → right(+), y = down(−) → up(+). One unit = half a note. */
 .affinity-scatter {
     position: relative;
-    aspect-ratio: 1600 / 1452;
-    --ux: 26px;   /* one grid unit = half a note slot (52px), so two adjacent */
-    --uy: 26px;   /* notes match the 4px gap of the affinity board */
+    --ux: 52px;   /* grid cell = 48px note + 4px gap, matching the affinity board */
+    --uy: 52px;
+    /* Crossing sits at the note-field centre, offset from the top to leave room
+       for the top label (there is no bottom label, so the card ends just below
+       the lowest row, y −4). */
+    --cy: calc(4 * var(--uy) + 80px);
+    /* end below the lowest row (y −4): note half (24) + margin (2) + rotation/
+       shadow overhang (~5) + the container's own bottom padding, so the visible
+       bottom gap matches the other sides. */
+    height: calc(var(--cy) + 4 * var(--uy) + 31px + var(--space-m));
 }
 
 .affinity-scatter .axis-x,
@@ -963,8 +969,8 @@ img, video {
     background: var(--tertiary);
 }
 
-.affinity-scatter .axis-x { left: var(--space-m); right: var(--space-m); top: 50%; height: 2px; transform: translateY(-50%); }
-.affinity-scatter .axis-y { top: var(--space-l); bottom: var(--space-l); left: 50%; width: 2px; transform: translateX(-50%); }
+.affinity-scatter .axis-x { left: var(--space-m); right: var(--space-m); top: var(--cy); height: 2px; transform: translateY(-50%); }
+.affinity-scatter .axis-y { top: var(--space-l); bottom: var(--space-m); left: 50%; width: 2px; transform: translateX(-50%); }
 
 /* Line-art arrowheads (open chevrons) on the positive ends only: top & right */
 .affinity-scatter .axis-x::after,
@@ -1000,18 +1006,30 @@ img, video {
     white-space: nowrap;
 }
 
-.affinity-scatter .axis-label.top    { top: var(--space-m);    left: 50%; transform: translateX(-50%); }
-.affinity-scatter .axis-label.bottom { bottom: var(--space-m); left: 50%; transform: translateX(-50%); }
-.affinity-scatter .axis-label.left   { left: var(--space-m);  top: 50%; transform: translateY(calc(-50% - 12px)); }
-.affinity-scatter .axis-label.right  { right: var(--space-m); top: 50%; transform: translateY(calc(-50% - 12px)); }
+/* Labels centre on their axis; nudge off it per-label with inline --nudge-x / --nudge-y */
+.affinity-scatter .axis-label.top    { top: var(--space-m);    left: 50%;  transform: translate(calc(-50% + var(--nudge-x, 0px)), var(--nudge-y, 0px)); }
+.affinity-scatter .axis-label.bottom { bottom: var(--space-m); left: 50%;  transform: translate(calc(-50% + var(--nudge-x, 0px)), var(--nudge-y, 0px)); }
+.affinity-scatter .axis-label.left   { left: var(--space-m);   top: var(--cy);   transform: translate(var(--nudge-x, 0px), calc(-50% + var(--nudge-y, 0px))); }
+.affinity-scatter .axis-label.right  { right: var(--space-m);  top: var(--cy);   transform: translate(var(--nudge-x, 0px), calc(-50% + var(--nudge-y, 0px))); }
 
 /* Position by the note's centre while keeping the base .sticky size, margin
    and rotation — offset the top-left corner by half a note (48px / 2). */
 .affinity-scatter .sticky {
     position: absolute;
     left: calc(50% + var(--x, 0) * var(--ux) - 24px);
-    top:  calc(50% - var(--y, 0) * var(--uy) - 24px);
+    top:  calc(var(--cy) - var(--y, 0) * var(--uy) - 24px);
 }
+
+/* Vary the tilt across notes (the flowing boards get this from affinity.js;
+   the static scatter cycles the same angle set) */
+.affinity-scatter .sticky:nth-child(8n+1) { transform: rotate(-6deg); }
+.affinity-scatter .sticky:nth-child(8n+2) { transform: rotate(-3deg); }
+.affinity-scatter .sticky:nth-child(8n+3) { transform: rotate(-5deg); }
+.affinity-scatter .sticky:nth-child(8n+4) { transform: rotate(3deg); }
+.affinity-scatter .sticky:nth-child(8n+5) { transform: rotate(-4deg); }
+.affinity-scatter .sticky:nth-child(8n+6) { transform: rotate(4deg); }
+.affinity-scatter .sticky:nth-child(8n+7) { transform: rotate(-2deg); }
+.affinity-scatter .sticky:nth-child(8n)   { transform: rotate(2deg); }
 
 /* Project cards — 2-up gallery (image, then title + description) */
 .project-card {
