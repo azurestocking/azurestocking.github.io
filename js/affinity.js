@@ -41,12 +41,13 @@
         if (!toggle) {
             toggle = document.createElement('div');
             toggle.className = 'affinity-toggle';
+            var defaultIndex = states.length > 1 ? 1 : 0; // default to the second state when present
             states.forEach(function (st, i) {
                 var b = document.createElement('button');
                 b.type = 'button';
                 b.setAttribute('data-state', st.key);
                 b.textContent = st.label;
-                if (i === 0) b.className = 'is-active';
+                if (i === defaultIndex) b.className = 'is-active';
                 toggle.appendChild(b);
             });
             morph.insertBefore(toggle, board);

@@ -827,13 +827,14 @@ img, video {
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
-    --cols: 3;                 /* notes per row — override with data-cols="1…4" */
+    --cols: 3;                 /* notes per row — override with data-cols="1…5" */
 }
 
 .sticky-group[data-cols="1"] { --cols: 1; }
 .sticky-group[data-cols="2"] { --cols: 2; }
 .sticky-group[data-cols="3"] { --cols: 3; }
 .sticky-group[data-cols="4"] { --cols: 4; }
+.sticky-group[data-cols="5"] { --cols: 5; }
 
 .sticky-group-title {
     margin: 0;

@@ -529,7 +529,7 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Check</h2>
             <h3>Usability Testing</h3>
-            <p>Participants (N=8) were recruited to use the prototype to identity the main usability and functionality issues, along with a screener survey to assess the usage intensity, i.e., how each participant might use the proposed feature in their routine. Sessions employed the think-aloud protocol.</p>
+            <p>Participants (N=8) were recruited to use the prototype in an open-ended interview to identity the main usability and functionality issues, along with a screener survey to assess the usage, i.e., how each participant might use the proposed feature in their routine. Sessions employed the think-aloud protocol.</p>
         </div>
     </div>
 </section>
@@ -543,7 +543,77 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Think</h2>
             <h3>Data Analysis</h3>
-            <p>Responses were grouped thematically and color-coded by usage intensity, to surface areas for improvement and drive the next iteration.</p>
+            <p>Responses were grouped thematically and color-coded by usage, to surface areas for improvement and drive the next iteration.</p>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <div class="affinity-morph image-container"
+                 data-states="intensity:By usage, theme:By theme"
+                 data-order-intensity="High, Medium, Low"
+                 data-order-theme="Interface, Customization, Script, Workflow, Audio, Preview"
+                 data-cols-intensity="High:5, Medium:3, Low:3"
+                 data-cols-theme="Interface:2, Customization:2, Script:2, Workflow:2, Audio:1, Preview:1">
+                <div class="sticky-board">
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Interface">I can't tell the difference between these two chunks of text. What am I missing?</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Interface">Some of the setting options use jargon I don't understand.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Interface">It'd be helpful to have a glossary or explanation for technical terms.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Interface">It might make more sense to use standard industry terminology.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Interface">Scrolling horizontally is tricky especially on the touch screen. Should I scroll to the right or downward?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Interface">How should I scroll to the next shot, horizontally or vertically?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Interface">The thumbnail bar and the horizontal shot container don't line up in length. It's a bit confusing.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Interface">I forgot to define the global setting but it's pretty important. You should make it more conspicuous.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Interface">The modal window is too small to work with.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Interface">I need a way to zoom in and out quickly to adjust individual frames. Right now, it's either too slow or too imprecise.</div>
+
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Customization">Is it possible to define my own style?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Customization">Can I detach and change an asset locally in a scene?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Customization">I'd love AI to help with in-between frames, but it needs to respect the style I'm going for.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Customization">Can I create and save my own animation presets, like a specific type of walk or run?</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Customization">It'd be awesome to save and reuse my own global settings as a template.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Customization">Does it ensure that an asset stays consistent across multiple shots? If not, I don't want to modify those shots one by one.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Customization">Can I predefine some reusable assets before generating keyframes?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Customization">I'd love to save my custom character rigs and reuse them across projects. Right now, I have to rebuild them every time.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Customization">Can we customize characters, costumes, and environments to reuse across frames?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Customization">I want to reuse characters and environments across different scenes, but it's hard to keep them consistent. Can it help with that?</div>
+
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Script">My input might not be perfect for playwriting. Can AI help tweak it to make the story more engaging?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Script">I might make grammar mistakes, so I need AI to proofread the text for me.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Script">Is there a way to select specific text and edit it with AI?</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Script">Can I give AI instructions, like with GPT, to edit things for me?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script">I'd love a prompt-based script editing feature to give the AI more specific instructions.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script">I don't want to regenerate the whole prompt—just tweak a single sentence.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Script">The editing options are confusing. What does polish even mean?</div>
+
+                    <div class="sticky high"   data-intensity="High"   data-theme="Workflow">Can I upload a script and work from there? It'd save me a lot of time.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Workflow">I'd like to skip the script editing phase when I already have a complete script.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Workflow">Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Workflow">The storyboard tweaking phase is too much for me. There are so many options, kind of overwhelming.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Workflow">I don't really get how to use the storyboard. Can I just get the output with one click?</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Workflow">I just want to give the AI a topic summary, and have it produce a complete, polished video.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Workflow">I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?</div>
+
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Audio">Can I add tracks, like sound effects or background music, across multiple shots in the storyboard?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Audio">Can I sync audio tracks directly to the timeline with more precision?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Audio">Does the system generate sound effects or music that match the narrative?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Audio">Is there a way to assign specific voices to characters or voiceovers?</div>
+
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Preview">I'd love to preview how the shots come together before generating the full video.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Preview">Can I preview how changes to one shot affect the overall animation without rendering the whole thing?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Preview">Is it possible to generate video clips immediately in each shot to achieve more precise control?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Preview">What if the video output isn't good? Do I have to spend hours and extra credits rendering it again and again?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Preview">I need more granular control over keyframes and easing curves.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Preview">Can I get a low-res preview of the video to check pacing and transitions before committing to a full render?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-legend col-start-10 col-span-2" aria-hidden="true">
+            <span class="high">High Usage</span>
+            <span class="medium">Medium Usage</span>
+            <span class="low">Low Usage</span>
+        </div>
+
+        <div class="col-start-4 col-span-6">
             <p>The sessions surfaced a flood of suggestions. Many were clear wins we carried into the next iteration; others we pushed back for being too resource-intensive, or too dependent on model capabilities we had deliberately chosen not to rely on.</p>
         </div>
 
@@ -552,43 +622,53 @@ tools:
             <p>Request we carried into the next iteration, broadly wanted and feasible, vetted with product and engineering.</p>
             <div class="accordion" data-collapse="3">
                 <details class="accordion-item">
-                    <summary>Clearer Shot Navigation</summary>
-                    <p>Horizontal scrolling felt awkward, especially on touch; users wanted a clear, consistent way to move between shots.</p>
+                    <summary>AI-Assisted Script Editing</summary>
+                    <!-- src: "My input might not be perfect for playwriting. Can AI help tweak it to make the story more engaging?" | "I might make grammar mistakes, so I need AI to proofread the text for me." | "Is there a way to select specific text and edit it with AI?" | "Can I give AI instructions, like with GPT, to edit things for me?" | "I'd love a prompt-based script editing feature to give the AI more specific instructions." | "I don't want to regenerate the whole prompt—just tweak a single sentence." -->
+                    <p>Edit the script with AI, like selecting specific text, tweaking a single sentence, or giving prompt-based instructions instead of regenerating everything.</p>
                 </details>
                 <details class="accordion-item">
-                    <summary>Clearer Wording & Label</summary>
-                    <p>Text and control labels read as ambiguous; users wanted clearer distinctions and labels that explain themselves.</p>
+                    <summary>Reusable Global Asset</summary>
+                    <!-- src: "Can I detach and change an asset locally in a scene?" | "Does it ensure that an asset stays consistent across multiple shots? If not, I don't want to modify those shots one by one." | "Can I predefine some reusable assets before generating keyframes?" | "I'd love to save my custom character rigs and reuse them across projects. Right now, I have to rebuild them every time." | "I want to reuse characters and environments across different scenes, but it's hard to keep them consistent. Can it help with that?" -->
+                    <p>Customize characters and scenes once and reuse them across shots and projects, instead of rebuilding them every time.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Retire Horizontal Scrolling</summary>
+                    <!-- src: "Scrolling horizontally is tricky especially on the touch screen. Should I scroll to the right or downward?" | "How should I scroll to the next shot, horizontally or vertically?" | "The thumbnail bar and the horizontal shot container don't line up in length. It's a bit confusing." | "I need a way to zoom in and out quickly to adjust individual frames. Right now, it's either too slow or too imprecise." -->
+                    <p>Horizontal scrolling felt awkward, especially on touch; users wanted a clear, consistent way to move between shots, and quicker, more precise zoom to adjust individual frames.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Preview Before Render</summary>
+                    <!-- src: "I'd love to preview how the shots come together before generating the full video." | "Can I preview how changes to one shot affect the overall animation without rendering the whole thing?" | "What if the video output isn't good? Do I have to spend hours and extra credits rendering it again and again?" | "Can I get a low-res preview of the video to check pacing and transitions before committing to a full render?" -->
+                    <p>Preview how the shots come together, and how a single change plays, without committing to a full, costly render each time.</p>
                 </details>
                 <details class="accordion-item">
                     <summary>Prominent Global Setting</summary>
+                    <!-- src: "I forgot to define the global setting but it's pretty important. You should make it more conspicuous." -->
                     <p>The global setting was easy to miss and should stand out.</p>
                 </details>
                 <details class="accordion-item">
                     <summary>Larger Editing Modal</summary>
+                    <!-- src: "The modal window is too small to work with." -->
                     <p>The modal window felt too small to work in comfortably.</p>
                 </details>
                 <details class="accordion-item">
-                    <summary>Intuitive, Precise Zoom</summary>
-                    <p>Zooming to adjust individual frames was too slow and imprecise.</p>
-                </details>
-                <details class="accordion-item">
-                    <summary>Reusable Global Asset</summary>
-                    <p>Customize characters and scenes once and reuse them across shots and projects, instead of rebuilding them every time.</p>
-                </details>
-                <details class="accordion-item">
                     <summary>Custom Global Setting</summary>
+                    <!-- src: "It'd be awesome to save and reuse my own global settings as a template." -->
                     <p>Save preferred global settings and reapply them as a template.</p>
                 </details>
                 <details class="accordion-item">
-                    <summary>AI-Assisted Script Editing</summary>
-                    <p>Edit the script with AI, like selecting specific text, tweaking a single sentence, or giving prompt-based instructions instead of regenerating everything.</p>
+                    <summary>Upload Complete Script</summary>
+                    <!-- src: "Can I upload a script and work from there? It'd save me a lot of time." -->
+                    <p>Upload a finished script and work from it directly.</p>
                 </details>
                 <details class="accordion-item">
-                    <summary>Simpler Script Breakdown</summary>
-                    <p>Breaking the script into shots and filling in blank ones felt like a chore; users wanted the parsing step to take far less manual effort.</p>
+                    <summary>Editable Screenplay Breakdown</summary>
+                    <!-- src: "Adjusting the script parsing feels like a chore—there's just too much to fill in for blank shots." -->
+                    <p>Let users edit the screenplay to reshape the breakdown before cards are generated, and drop the per-shot voiceover blank.</p>
                 </details>
                 <details class="accordion-item">
                     <summary>Generate Keyframe in Place</summary>
+                    <!-- src: "Is it possible to generate video clips immediately in each shot to achieve more precise control?" -->
                     <p>Generate each shot's keyframe right in the storyboard instead of a separate step, for immediate and precise control.</p>
                 </details>
             </div>
@@ -599,19 +679,28 @@ tools:
             <p>Declined as too costly or model-dependent for this stage, each redirected to a lighter alternative.</p>
             <div class="accordion" data-collapse="3">
                 <details class="accordion-item">
-                    <summary>Custom Costume</summary>
-                    <p>Customize costumes and outfits and reuse them consistently across shots.</p>
-                </details>
-                <details class="accordion-item">
-                    <summary>Custom Style Transfer</summary>
-                    <p>Define and apply a personal visual style, beyond the presets on offer.</p>
-                </details>
-                <details class="accordion-item">
                     <summary>Sound Effect & Background Music</summary>
+                    <!-- src: "Can I add tracks, like sound effects or background music, across multiple shots in the storyboard?" | "Can I sync audio tracks directly to the timeline with more precision?" | "Does the system generate sound effects or music that match the narrative?" -->
                     <p>Generate sound effect and music tracks across shots, sync them precisely to the timeline and match the narrative.</p>
                 </details>
                 <details class="accordion-item">
+                    <summary>Custom Style Transfer</summary>
+                    <!-- src: "Is it possible to define my own style?" | "I'd love AI to help with in-between frames, but it needs to respect the style I'm going for." -->
+                    <p>Define and apply a personal visual style, beyond the presets on offer.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Custom Costume</summary>
+                    <!-- src: "Can we customize characters, costumes, and environments to reuse across frames?" -->
+                    <p>Customize costumes and outfits and reuse them consistently across shots.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Custom Animation Preset</summary>
+                    <!-- src: "Can I create and save my own animation presets, like a specific type of walk or run?" -->
+                    <p>Create and save custom animation presets, like a specific type of walk or run.</p>
+                </details>
+                <details class="accordion-item">
                     <summary>Custom Character Voice</summary>
+                    <!-- src: "Is there a way to assign specific voices to characters or voiceovers?" -->
                     <p>Assign customized voices to specific characters or voiceovers.</p>
                 </details>
             </div>
@@ -619,10 +708,15 @@ tools:
 
         <div class="col-start-4 col-span-6">
             <p>More intriguingly, a third category made the decision difficult: suggestions that directly contradicted one another on the same areas.</p>
+            <!-- src (undecided — third category, contradictory asks):
+                 Workflow · automation vs. control: "I don't really get how to use the storyboard. Can I just get the output with one click?" | "I just want to give the AI a topic summary, and have it produce a complete, polished video." | "I don't know which style is proper. Can AI automatically recommend global settings based on the theme of my stories?" | "The storyboard tweaking phase is too much for me. There are so many options, kind of overwhelming." | "I'd like to skip the script editing phase when I already have a complete script." | "I need more granular control over keyframes and easing curves."
+                 Terminology · plain vs. industry: "Some of the setting options use jargon I don't understand." | "It'd be helpful to have a glossary or explanation for technical terms." | "It might make more sense to use standard industry terminology." | "I can't tell the difference between these two chunks of text. What am I missing?" | "The editing options are confusing. What does polish even mean?" -->
+
             <p>For example:</p>
             <p><b>Workflow</b></p>
             <ul>
                 <li>"I don't really get how to use the storyboard. Can I just get the output with one click?" (P2)</li>
+                <li>"I'd like to skip the script editing phase when I already have a complete script." (P3)</li>
                 <li>"I need more granular control over keyframes and easing curves." (P5)</li>
             </ul>
             <p><b>Terminology</b></p>
@@ -714,14 +808,14 @@ tools:
         </div>
 
         <div class="col-start-4 col-span-6">
-            <p>The mapping supports this hypothesis: despite appearing contradictory at the surface level, all requests consistently mapped to the same high-level goals, indicating that users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable.</p>
+            <p>The affinity mapping supports this hypothesis: despite appearing contradictory at the surface level, all requests consistently mapped to the same high-level goals, indicating that users differ in their expectations about how these goals should be achieved rather than holding fundamentally incompatible needs, and are therefore reconcilable.</p>
         </div>
     
         <div class="flex-row col-start-3 col-span-8">
             <div class="card">
                 <div class="number">⌛️</div>
                 <h5>Efficiency</h5>
-                <p>Reduce time, effort, financial cost, and cognitive friction by providing readable information, an intuitive interface, and a streamlined, user-friendly workflow.</p>
+                <p>Reduce time, effort, money, and cognitive friction by providing readable information, an intuitive interface, and a streamlined, user-friendly workflow.</p>
             </div>
             <div class="card">
                 <div class="number">📐</div>
@@ -826,7 +920,7 @@ tools:
         </div>
 
         <div class="col-start-4 col-span-6">
-            <p>The requests fell into two clusters along the locus axis, a dense one on the specify side and a sparser one on the delegate side, with usage intensity running high among the specifiers and low among the delegators. Only one corner stayed almost empty, where a user hands a single, local decision to the system.</p>
+            <p>The requests fell into two clusters along the locus axis, a dense one on the specify side and a sparser one on the delegate side, with usage running high among the specifiers and low among the delegators. Only one corner stayed almost empty, where a user hands a single, local decision to the system.</p>
             <p>Three findings stood out:</p>
         </div>
 
@@ -841,7 +935,7 @@ tools:
             </div>
             <div class="insight">
                 <h5>One Branching Pipeline</h5>
-                <p>The locus tracked usage intensity closely, while the scope cut evenly across both groups, implying that they needed the same range of capabilities but varying depths of control. This pointed away from two products and toward one pipeline with branching control depth.</p>
+                <p>The locus tracked usage closely, while the scope cut evenly across both groups, implying that they needed the same range of capabilities but varying depths of control. This pointed away from two products and toward one pipeline with branching control depth.</p>
             </div>
         </div>
     </div>
@@ -983,7 +1077,7 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Check</h2>
             <h3>Usability Testing</h3>
-            <p>The updated prototype underwent testing with 5 additional participants, and their responses were grouped by thematic categories to identify areas for improvement.</p>
+            <p>Additional participants (N=6) were recruited and screened into both personas. They used the new prototype under scenario-based tasks drawn from their own routines, and a crossover task of switching between the two workflows midway. Sessions kept the think-aloud protocol.</p>
         </div>
     </div>
 </section>
@@ -1000,20 +1094,192 @@ tools:
             <p>The testing pointed to new areas for improvement, and a closer look at the responses revealed something unexpected: several responses didn't fit any known category of high-level goals, surfacing an unstated one.</p>
         </div>
 
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/usability-testing-3.png' | relative_url }}" loading="lazy">
+        <div class="col-start-4 col-span-6">
+            <div class="affinity-morph image-container"
+                 data-states="intensity:By usage, theme:By theme"
+                 data-order-intensity="High, Medium, Low"
+                 data-order-theme="Layout, Script Editing, Shot Tweaking, Shot Management"
+                 data-cols-intensity="High:4, Medium:3, Low:4"
+                 data-cols-theme="Layout:2, Script Editing:3, Shot Tweaking:3, Shot Management:2">
+                <div class="sticky-board">
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Layout">Uploading on a single page feels redundant given the option to upload images/videos on the list page.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Layout">The layout is counter-intuitive as the sidebar are also controlling the image.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Layout">The cards in the thumbnail mode has too much information.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Layout">Do not know click which button to generate the current frame.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Layout">It is difficult to identify the next steps.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Layout">Feel cumbersome to select another option through opening a new page.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script Editing">The script parsing could benefit from highlighting key elements.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script Editing">Changing the tone of sentences can be achieved through "Instruct AI", and "Polish" should focus solely on correcting errors.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Script Editing">Tweaking level of professionalism of a single sentence in screenplay seems not a common practice.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Script Editing">The workflow for tweaking key elements is too cumbersome. Need manipulations directly from the list page.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script Editing">Adding the length of a sentence is not a common practice in production and can be alternatively achieved through "Instruct AI."</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Script Editing">Need to click the toolbar at least twice to view the changes.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script Editing">Maintaining proper script formatting is crucial. Now the script editor fails to format the input.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Script Editing">Enable PDF upload to align with industry-standard screenplay formatting.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Script Editing">The polished script is overwhelming. Could users select their desired level of professionalism before text parsing?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Script Editing">Users need a clue to understand how the script is broken down to multiple shots. Now it's hard to see each paragraph is a shot.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Script Editing">The interaction for adding a paragraph is unclear.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Shot Tweaking">Could we designate a voice for characters when editing a character?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Shot Tweaking">Could we tweak the camera control when editing a shot?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Shot Tweaking">Could we probably let characters speak?</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Shot Tweaking">The script is parsed into keyframe description and voiceover, but it doesn't work for narrative film with dialogues.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Shot Tweaking">Need guidance on how to prompt to get a satisfactory output.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Shot Tweaking">Need clear navigation about what each input field means and how it influences the frame generated.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Shot Tweaking">Is there any differences between uploading keyframes from the list page or the single page?</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Shot Tweaking">The tweaking controls' distribution is too scattered and chaotic, don't know how to quickly find the needed ones.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Shot Tweaking">Put so many important controls inside "tweaking" that I have always been visiting the single pages.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Shot Tweaking">Need to quickly recover the previous version of outputs.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Shot Management">Cast and scene can be a lot. Allow collapsing each section.</div>
+                    <div class="sticky low"    data-intensity="Low"    data-theme="Shot Management">Could users also edit the shot from the thumbnail without jumping to the editor mode?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Shot Management">Add friction at key moments to encourage users to review outputs before proceeding to next steps.</div>
+                    <div class="sticky high"   data-intensity="High"   data-theme="Shot Management">Prefer to preview the storyboard during the editing process rather than waiting until the final step.</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Shot Management">Could we animate a shot in storyboard, instead of waiting until the very end?</div>
+                    <div class="sticky medium" data-intensity="Medium" data-theme="Shot Management">Can I preview some of the shots, instead of going over all of them?</div>
+                </div>
             </div>
-        </figure>
-    
-        <figure class="col-start-4 col-span-6">
-            <div class="image-container">
-                <img src="{{ '/images/agent-opus/data-analysis-4.png' | relative_url }}" loading="lazy">
+        </div>
+
+        <div class="sticky-legend col-start-10 col-span-2" aria-hidden="true">
+            <span class="high">High Usage</span>
+            <span class="medium">Medium Usage</span>
+            <span class="low">Low Usage</span>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <p>Weighing each ask against its build cost and payoff, I sorted them into changes to make now and changes to set aside.</p>
+        </div>
+
+        <div class="card col-start-3 col-span-4">
+            <h5>Go</h5>
+            <p>Carried into for being feasible to build, high-impact on the core workflow, and filling a gap no existing feature already covered.</p>
+            <div class="accordion" data-collapse="3">
+                <details class="accordion-item">
+                    <summary>Consolidate Editing Controls</summary>
+                    <!-- src: "The layout is counter-intuitive as the sidebar are also controlling the image." | "The cards in the thumbnail mode has too much information." | "The tweaking controls' distribution is too scattered and chaotic, don't know how to quickly find the needed ones." | "Put so many important controls inside \"tweaking\" that I have always been visiting the single pages." | "Uploading on a single page feels redundant given the option to upload images/videos on the list page." | "Do not know click which button to generate the current frame." | "Feel cumbersome to select another option through opening a new page." | "Is there any differences between uploading keyframes from the list page or the single page?" | "It is difficult to identify the next steps." | "Need to click the toolbar at least twice to view the changes." | "Tweaking level of professionalism of a single sentence in screenplay seems not a common practice." | "Adding the length of a sentence is not a common practice in production and can be alternatively achieved through \"Instruct AI.\"" -->
+                    <p>Gather the controls scattered and duplicated across pages into one clear layout, and cut the redundant steps and options each action takes.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Use Legible Labels and Instructions</summary>
+                    <!-- src: "The script parsing could benefit from highlighting key elements." | "Maintaining proper script formatting is crucial. Now the script editor fails to format the input." | "Enable PDF upload to align with industry-standard screenplay formatting." | "Need clear navigation about what each input field means and how it influences the frame generated." | "Need guidance on how to prompt to get a satisfactory output." -->
+                    <p>Format the script to standard screenplay conventions with key elements highlighted, accept PDF uploads, and clearly label what each input field means and how to prompt it.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Add Dialogue Track</summary>
+                    <!-- src: "The script is parsed into keyframe description and voiceover, but it doesn't work for narrative film with dialogues." | "Could we probably let characters speak?" | "Could we designate a voice for characters when editing a character?" -->
+                    <p>Let each shot carry dialogue, not just voiceover, and allow assigning a specific voice to each character.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Preview Storyboard Early</summary>
+                    <!-- src: "Prefer to preview the storyboard during the editing process rather than waiting until the final step." | "Can I preview some of the shots, instead of going over all of them?" | "Add friction at key moments to encourage users to review outputs before proceeding to next steps." -->
+                    <p>Preview the storyboard mid-production and on selected shots, and prompt users to review outputs before proceeding.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Add Editable Shot Container</summary>
+                    <!-- src: "Users need a clue to understand how the script is broken down to multiple shots. Now it's hard to see each paragraph is a shot." | "The interaction for adding a paragraph is unclear." -->
+                    <p>Gather all of a shot's elements into one visible container, and apply editing controls to the whole block.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Add Camera Control</summary>
+                    <!-- src: "Could we tweak the camera control when editing a shot?" -->
+                    <p>Enable camera controls (angle, distance, movement) in shot tweaking.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Add Iteration Log</summary>
+                    <!-- src: "Need to quickly recover the previous version of outputs." -->
+                    <p>Keep an iteration log that highlights the differences between versions, and allow quickly recovering a previous one.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Collapse Asset Lists</summary>
+                    <!-- src: "Cast and scene can be a lot. Allow collapsing each section." -->
+                    <p>Make each section of the global asset list (cast and scene) collapsible.</p>
+                </details>
             </div>
-        </figure>
+        </div>
+
+        <div class="card col-start-7 col-span-4">
+            <h5>No-Go</h5>
+            <p>Held back for being too resource-intensive, too heavy for a lightweight surface, or redundant with an existing alternative.</p>
+            <div class="accordion" data-collapse="3">
+                <details class="accordion-item">
+                    <summary>Add Tweaking Options to Thumbnail</summary>
+                    <!-- src: "The workflow for tweaking key elements is too cumbersome. Need manipulations directly from the list page." | "Could users also edit the shot from the thumbnail without jumping to the editor mode?" -->
+                    <p>Edit a shot straight from its thumbnail or the list page.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Designate Professionalism Level</summary>
+                    <!-- src: "The polished script is overwhelming. Could users select their desired level of professionalism before text parsing?" -->
+                    <p>Choose a level of professionalism before the script is parsed.</p>
+                </details>
+                <details class="accordion-item">
+                    <summary>Add Early Shot Animation</summary>
+                    <!-- src: "Could we animate a shot in storyboard, instead of waiting until the very end?" -->
+                    <p>Animate a shot within the storyboard rather than only at the very end.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid">
+        <div class="col-start-4 col-span-6">
+            <h3>Data Analysis</h3>
+            <p>Did those requests still map to the high-level goals identified earlier? Remapping the requests, most still did, but several fit none of the three, surfacing a goal we hadn't named.</p>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <div class="affinity-morph image-container"
+                 data-states="theme:By theme, goal:By high-level goal"
+                 data-order-theme="Layout, Script Editing, Shot Tweaking, Shot Management"
+                 data-order-goal="Efficiency, Consistency, Adaptability, Uncategorized"
+                 data-cols-theme="Layout:2, Script Editing:3, Shot Tweaking:3, Shot Management:2"
+                 data-cols-goal="Efficiency:3, Consistency:2, Adaptability:2, Uncategorized:3">
+                <div class="sticky-board">
+                    <div class="sticky low" data-theme="Layout" data-goal="Efficiency">Uploading on a single page feels redundant given the option to upload images/videos on the list page.</div>
+                    <div class="sticky medium" data-theme="Layout" data-goal="Efficiency">The layout is counter-intuitive as the sidebar are also controlling the image.</div>
+                    <div class="sticky high" data-theme="Layout" data-goal="Efficiency">The cards in the thumbnail mode has too much information.</div>
+                    <div class="sticky low" data-theme="Layout" data-goal="Uncategorized">Do not know click which button to generate the current frame.</div>
+                    <div class="sticky low" data-theme="Layout" data-goal="Uncategorized">It is difficult to identify the next steps.</div>
+                    <div class="sticky medium" data-theme="Layout" data-goal="Efficiency">Feel cumbersome to select another option through opening a new page.</div>
+                    <div class="sticky high" data-theme="Script Editing" data-goal="Efficiency">The script parsing could benefit from highlighting key elements.</div>
+                    <div class="sticky high" data-theme="Script Editing" data-goal="Efficiency">Changing the tone of sentences can be achieved through "Instruct AI", and "Polish" should focus solely on correcting errors.</div>
+                    <div class="sticky medium" data-theme="Script Editing" data-goal="Efficiency">Tweaking level of professionalism of a single sentence in screenplay seems not a common practice.</div>
+                    <div class="sticky medium" data-theme="Script Editing" data-goal="Efficiency">The workflow for tweaking key elements is too cumbersome. Need manipulations directly from the list page.</div>
+                    <div class="sticky high" data-theme="Script Editing" data-goal="Efficiency">Adding the length of a sentence is not a common practice in production and can be alternatively achieved through "Instruct AI."</div>
+                    <div class="sticky low" data-theme="Script Editing" data-goal="Efficiency">Need to click the toolbar at least twice to view the changes.</div>
+                    <div class="sticky high" data-theme="Script Editing" data-goal="Consistency">Maintaining proper script formatting is crucial. Now the script editor fails to format the input.</div>
+                    <div class="sticky high" data-theme="Script Editing" data-goal="Consistency">Enable PDF upload to align with industry-standard screenplay formatting.</div>
+                    <div class="sticky low" data-theme="Script Editing" data-goal="Adaptability">The polished script is overwhelming. Could users select their desired level of professionalism before text parsing?</div>
+                    <div class="sticky medium" data-theme="Script Editing" data-goal="Uncategorized">Users need a clue to understand how the script is broken down to multiple shots. Now it's hard to see each paragraph is a shot.</div>
+                    <div class="sticky low" data-theme="Script Editing" data-goal="Uncategorized">The interaction for adding a paragraph is unclear.</div>
+                    <div class="sticky low" data-theme="Shot Tweaking" data-goal="Adaptability">Could we designate a voice for characters when editing a character?</div>
+                    <div class="sticky high" data-theme="Shot Tweaking" data-goal="Adaptability">Could we tweak the camera control when editing a shot?</div>
+                    <div class="sticky medium" data-theme="Shot Tweaking" data-goal="Adaptability">Could we probably let characters speak?</div>
+                    <div class="sticky high" data-theme="Shot Tweaking" data-goal="Adaptability">The script is parsed into keyframe description and voiceover, but it doesn't work for narrative film with dialogues.</div>
+                    <div class="sticky medium" data-theme="Shot Tweaking" data-goal="Uncategorized">Need guidance on how to prompt to get a satisfactory output.</div>
+                    <div class="sticky low" data-theme="Shot Tweaking" data-goal="Uncategorized">Need clear navigation about what each input field means and how it influences the frame generated.</div>
+                    <div class="sticky low" data-theme="Shot Tweaking" data-goal="Uncategorized">Is there any differences between uploading keyframes from the list page or the single page?</div>
+                    <div class="sticky low" data-theme="Shot Tweaking" data-goal="Efficiency">The tweaking controls' distribution is too scattered and chaotic, don't know how to quickly find the needed ones.</div>
+                    <div class="sticky high" data-theme="Shot Tweaking" data-goal="Efficiency">Put so many important controls inside "tweaking" that I have always been visiting the single pages.</div>
+                    <div class="sticky low" data-theme="Shot Tweaking" data-goal="Efficiency">Need to quickly recover the previous version of outputs.</div>
+                    <div class="sticky high" data-theme="Shot Management" data-goal="Adaptability">Cast and scene can be a lot. Allow collapsing each section.</div>
+                    <div class="sticky low" data-theme="Shot Management" data-goal="Adaptability">Could users also edit the shot from the thumbnail without jumping to the editor mode?</div>
+                    <div class="sticky medium" data-theme="Shot Management" data-goal="Uncategorized">Add friction at key moments to encourage users to review outputs before proceeding to next steps.</div>
+                    <div class="sticky high" data-theme="Shot Management" data-goal="Consistency">Prefer to preview the storyboard during the editing process rather than waiting until the final step.</div>
+                    <div class="sticky medium" data-theme="Shot Management" data-goal="Consistency">Could we animate a shot in storyboard, instead of waiting until the very end?</div>
+                    <div class="sticky medium" data-theme="Shot Management" data-goal="Consistency">Can I preview some of the shots, instead of going over all of them?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-legend col-start-10 col-span-2" aria-hidden="true">
+            <span class="high">High Usage</span>
+            <span class="medium">Medium Usage</span>
+            <span class="low">Low Usage</span>
+        </div>
     
         <div class="col-start-4 col-span-6">
-            <p>Even with their diverse focuses, the uncategorized feedback unanimously converged on a previously unmentioned dimension: transparency — a deeper understanding of the system's operations and decisions, and hence more informed and targeted manipulation.</p>
+            <p>Even with their diverse focuses, the uncategorized feedback unanimously converged on a previously unstated goal: transparency, i.e., a deeper understanding of the system's operations and decisions, and hence more informed and targeted manipulation.</p>
         </div>
     </div>
 </section>

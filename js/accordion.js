@@ -22,7 +22,7 @@
             hidden.forEach(function (el) { el.hidden = !expanded; });
             btn.textContent = expanded
                 ? '↑ Show less'
-                : '↓ View more (' + hidden.length + ')';
+                : '↓ View more';
             btn.setAttribute('aria-expanded', String(expanded));
         }
 
