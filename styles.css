@@ -437,7 +437,7 @@ ul > li::before {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--tertiary);
+    background: var(--secondary);
 }
 
 /* Ordered: standard numeric markers */
@@ -450,7 +450,7 @@ ol ol > li { list-style-type: lower-alpha; }
 ol ol ol > li { list-style-type: lower-roman; }
 
 ol > li::marker {
-    color: var(--tertiary);
+    color: var(--secondary);
 }
 
 /* Nested lists sit tight against their parent item */
@@ -1394,7 +1394,23 @@ th, td {
 .table-scroll {
     overflow-x: auto;
     margin-bottom: var(--space-s);
+    padding: var(--space-m);
+    background-color: var(--ghost);
+    border-radius: 14px;
 }
+
+/* Table sits transparent on the matted wrapper; body rows zebra-stripe */
+.table-scroll table { background-color: transparent; }
+.table-scroll thead th {
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 1px solid var(--tertiary);
+}
+.table-scroll thead tr:first-child th { padding-top: 0; }
+.table-scroll tbody td, .table-scroll tbody th { border-bottom: 1px solid var(--border); }
+.table-scroll tbody tr:last-child td, .table-scroll tbody tr:last-child th { border-bottom: none; padding-bottom: 0; }
+.table-scroll th, .table-scroll td { padding-left: 0; padding-right: var(--space-s); }
+.table-scroll th:last-child, .table-scroll td:last-child { padding-right: 0; }
 
 /* The container is bounded by its grid column and scrolls; the table itself
    is uncapped — it grows to fit its content. */
@@ -1416,6 +1432,10 @@ th, td {
     text-transform: none;
     letter-spacing: 0;
 }
+
+/* Modifier: stretch to fill the column and wrap, instead of scrolling */
+.table-scroll.fit table { width: 100%; }
+.table-scroll.fit td { width: auto; }
 
 /* Cap a cell's copy at two lines (truncate the rest) */
 .clamp-2 {

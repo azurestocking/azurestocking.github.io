@@ -212,9 +212,76 @@ tools:
             <p>To test it, I identified key players across the production cycle and established a set of criteria to evaluate their narrative capabilities.</p>
         </div>
     
-        <figure class="col-start-4 col-span-6">
-            <img src="{{ '/images/agent-opus/market-analysis.png' | relative_url }}" loading="lazy">
-        </figure>
+        <div class="table-scroll fit col-start-3 col-span-8">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Pre-production</th>
+                        <th colspan="3">Production</th>
+                        <th>Post-production</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Boords</th>
+                        <th>Runway</th>
+                        <th>Pika Labs</th>
+                        <th>Sora</th>
+                        <th>CapCut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">AI Capability</th>
+                        <td>🔴 Relies on a third-party model focusing on image generation.</td>
+                        <td>🟢 Develops a proprietary, specialized model for video generation.</td>
+                        <td>🟢 Develops a proprietary, specialized model for video generation.</td>
+                        <td>🟢 Develops a proprietary, specialized model for video generation.</td>
+                        <td>🟡 Develops a proprietary model focusing on text generation.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Narrative Coherence</th>
+                        <td>🟢 Processes scripts with domain-specific enhancements.</td>
+                        <td>🟡 Offers limited built-in options to assemble multiple, independent scenes.</td>
+                        <td>🔴 Lacks built-in options to assemble multiple independent scenes.</td>
+                        <td>🟡 Allows inputting multiple prompts within scenes, instead of across scenes.</td>
+                        <td>🟡 Processes scripts without visual and cinematic considerations.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Visual Consistency</th>
+                        <td>🟢 Allows defining reusable assets globally with extensive options to control features.</td>
+                        <td>🔴 Requires significant user prompt efforts and is not inherently supported.</td>
+                        <td>🔴 Requires significant user prompt efforts and is not inherently supported.</td>
+                        <td>🟡 Lacks built-in mechanisms to secure consistency across scenes, but is indirectly managed within scenes.</td>
+                        <td>🟡 Depends on footage selection, requiring significant user efforts to find raw materials.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Temporal Continuity</th>
+                        <td>🟡 Lacks built-in mechanisms to secure continuity across scenes, but is indirectly managed via upstream work.</td>
+                        <td>🔴 Lacks built-in mechanisms to secure continuity across scenes.</td>
+                        <td>🔴 Lacks built-in mechanisms to secure continuity across scenes.</td>
+                        <td>🟡 Lacks built-in mechanisms to secure continuity across scenes, but is indirectly managed within scenes.</td>
+                        <td>🟡 Depends on footage curation, requiring significant user efforts to arrange raw materials.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cinematography</th>
+                        <td>🟡 Offers extensive options to edit image outputs, but lacks controls over cinematic elements.</td>
+                        <td>🟡 Offers extensive options to edit video outputs, but requires significant user prompts for nuanced expressions.</td>
+                        <td>🔴 Offers limited options to edit video outputs, and requires significant user prompts for nuanced expressions.</td>
+                        <td>🔴 Offers limited options to edit video outputs, and requires significant user prompts for nuanced expressions.</td>
+                        <td>🔴 Offers limited options to edit video outputs with simple visual effects.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Creative Agency</th>
+                        <td>🟢 Offers extensive functions to iterate outputs locally and structured workflows to override outputs globally.</td>
+                        <td>🟢 Offers extensive functions to iterate outputs locally and structured workflows to override outputs globally.</td>
+                        <td>🟡 Offers extensive functions to iterate outputs locally but lacks built-in mechanisms to override them globally.</td>
+                        <td>🔴 Offers limited functions to iterate outputs locally and lacks built-in mechanisms to override them globally.</td>
+                        <td>🟡 Offers limited functions to iterate outputs locally but has structured workflows to override them globally.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div class="col-start-4 col-span-6">
             <p>The matrix supported the hypothesis: while competitors offered strong capabilities at individual stages, few provided the continuity and control needed to shape them into a coherent narrative.</p>
@@ -716,14 +783,12 @@ tools:
             <p><b>Workflow</b></p>
             <ul>
                 <li>"I don't really get how to use the storyboard. Can I just get the output with one click?" (P2)</li>
-                <li>"I'd like to skip the script editing phase when I already have a complete script." (P3)</li>
                 <li>"I need more granular control over keyframes and easing curves." (P5)</li>
             </ul>
             <p><b>Terminology</b></p>
             <ul>
                 <li>"Some of the setting options use jargon I don't understand." (P1)</li>
                 <li>"It might make more sense to use standard industry terminology." (P5)</li>
-                <li>"It'd be helpful to have a glossary or explanation for technical terms." (P7)</li>
             </ul>
             <p>Users were converging on the same problems while diverging sharply on how to solve them, which raises a more fundamental question:</p>
             <p>Why did users disagree?</p>
@@ -951,15 +1016,15 @@ tools:
         <figure class="col-start-3 col-span-4">
             <img src="{{ '/images/agent-opus/persona-1.png' | relative_url }}" loading="lazy">
             <figcaption>
-                <h5>Original Creator</h5>
-                <p>Arrives with decisions already made and wants AI as an executor, supplying the labor inside constraints they set, from reusable global assets on entry to shot-level depth on exit.</p>
+                <h5>Specifier</h5>
+                <p>Arrive with decisions already made and wants AI as an executor, supplying the labor inside constraints they set, from reusable global assets on entry to shot-level depth on exit.</p>
             </figcaption>
         </figure>
         <figure class="col-start-7 col-span-4">
             <img src="{{ '/images/agent-opus/persona-2.png' | relative_url }}" loading="lazy">
             <figcaption>
-                <h5>Derivative Creator</h5>
-                <p>Arrives without settled decisions and wants AI as a proposer, suggesting the script, recommending global settings, and producing a complete first pass to react to at the project scale.</p>
+                <h5>Delegator</h5>
+                <p>Arrive without settled decisions and wants AI as a proposer, suggesting the script, recommending global settings, and producing a complete first pass to react to at the project scale.</p>
             </figcaption>
         </figure>
     </div>
@@ -1091,7 +1156,7 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Think</h2>
             <h3>Data Analysis</h3>
-            <p>The testing pointed to new areas for improvement, and a closer look at the responses revealed something unexpected: several responses didn't fit any known category of high-level goals, surfacing an unstated one.</p>
+            <p>The testing pointed to new areas for improvement.</p>
         </div>
 
         <div class="col-start-4 col-span-6">
@@ -1198,7 +1263,7 @@ tools:
 
         <div class="card col-start-7 col-span-4">
             <h5>No-Go</h5>
-            <p>Held back for being too resource-intensive, too heavy for a lightweight surface, or redundant with an existing alternative.</p>
+            <p>Held back for being too resource-intensive, too heavy for a lightweight surface, or redundant with a cheaper existing alternative.</p>
             <div class="accordion" data-collapse="3">
                 <details class="accordion-item">
                     <summary>Add Tweaking Options to Thumbnail</summary>
@@ -1224,7 +1289,8 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h3>Data Analysis</h3>
-            <p>Did those requests still map to the high-level goals identified earlier? Remapping the requests, most still did, but several fit none of the three, surfacing a goal we hadn't named.</p>
+            <p>Did the new requests still map to the goals identified earlier?</p>
+            <p>Regrouping those requests, it demostrated something unexpected: most still did, but several fit none of the known categories of high-level goals, surfacing we hadn't named.</p>
         </div>
 
         <div class="col-start-4 col-span-6">
@@ -1434,7 +1500,7 @@ tools:
         <div class="col-start-4 col-span-6">
             <h2>Check</h2>
             <h3 class="np">Success Metric</h3>
-            <p>Full implementation would be a major, resource-intensive undertaking requiring leadership buy-in and broader organizational alignment — none of which were in place yet. With that in mind, I proactively defined success metrics to ensure the design's impact could be rigorously evaluated once the product was ready to ship:</p>
+            <p>Full implementation would be a major requiring leadership buy-in and broader organizational alignment, but none of which were in place yet. Therefore, I proactively defined success metrics to ensure the design's impact could be rigorously evaluated once the product was ready to ship:</p>
         </div>
 
         <div class="card col-start-3 col-span-4">
@@ -1466,7 +1532,7 @@ tools:
                 </details>
                 <details class="accordion-item">
                     <summary>Persona-Split Engagement</summary>
-                    <p>The ratio of user-specified to system-generated decisions per session — a directly observable proxy for which persona a user falls into, validating the two-segment strategy and informing future prioritization.</p>
+                    <p>The ratio of user-specified to system-generated decisions per session, validating the two-segment strategy and informing future prioritization.</p>
                 </details>
                 <details class="accordion-item">
                     <summary>Trial-to-Paid Conversion Rate</summary>
@@ -1485,9 +1551,9 @@ tools:
     <div class="grid">
         <div class="col-start-4 col-span-6">
             <h2 class="no-index">Retrospect</h2>
-            <h3 class="np">Hindsight</h3>
-            <p>The company has successfully raised $30M in Series A in August 2024 and $20M in Series B in March 2025, but ultimately shipped a fully automated, standalone product narrowly tailored to faceless creators in September 2025, rather than the human-collaborative, integrated feature serving both user segments I had proposed.</p>
-            <p>The major differences in design and business strategy reflect a strategic pivot toward a broader, lower-friction market amid intensifying competition, trading craft and control for speed, scale, and a stronger investor narrative.</p>
+            <h3 class="np">Production</h3>
+            <p>The company raised a $30M Series A in August 2024 and a $20M Series B in March 2025. In September 2025, it launched a fully automated, standalone product narrowly tailored to faceless creators, rather than the product I had proposed.</p>
+            <p>The major differences in design and business strategy reflect a pivot toward a broader, lower-friction market amid intensifying competition, trading craft and control for speed, scale, and a more compelling investor narrative.</p>
         </div>
     </div>
 </section>
@@ -1537,9 +1603,8 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
-            <p>The strategic framing held up — storytelling support, human-AI collaboration, distinct user segments all proved directionally correct. What didn't survive was the assumption that those insights would translate into a craft-first feature: by collapsing the workflow to a single prompt-in, video-out path, the shipped product served only the proposer persona — the users who arrive with an idea and hand the rest to the system — and dropped the specify-side creators, along with the branching control depth the analysis had argued for. The company made a different bet, more than one years later, for defensible reasons.</p>
+            <p>One year later, the company made a different bet, for reasons that were defensible at the time, and for one that became visible only afterward.</p>
         </div>
-    
         <div class="card-list-col col-start-4 col-span-6">
             <div class="insight">
                 <h5>Competitive Repositioning</h5>
@@ -1547,7 +1612,7 @@ tools:
             </div>
             <div class="insight">
                 <h5>Narrative Reframing</h5>
-                <p>Positioning as an autonomous agent rather than a smarter storyboard editor, and building a new suite rather than adding a tab, commanded a higher valuation multiple and aligned with where AI product discourse was heading in 2024–2025, as expected of a Series B company.</p>
+                <p>Positioning as an autonomous agent rather than a smarter storyboard editor, and building a new suite rather than adding a tab, commanded a higher valuation multiple and aligned with where AI product discourse was heading in 2024-2025, as expected of a Series B company.</p>
             </div>
         </div>
     </div>
@@ -1556,8 +1621,106 @@ tools:
 <section>
     <div class="grid">
         <div class="col-start-4 col-span-6">
+            <h3 class="np">Hindsight</h3>
+            <p>Does this mean the design failed?</p>
+            <p>No. Read against the papers that followed, it looks instead like an early practice of a decomposition the field adopted.</p>
+            <p>This design was built on the idea that workflow scaffolding could compensate for the base model's limitations. The workflow decomposition has proved correct; correct enough that the research community arrived at the same decomposition independently. What changed is where each piece lives.</p>
+        </div>
+
+        <div class="table-scroll fit col-start-3 col-span-8">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shared Concept</th>
+                        <th>Our Design (2024)</th>
+                        <th>Related Work</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Break narrative generation into stages that establish characters, settings, and scene images before producing video</td>
+                        <td>An editable pipeline moves from entity extraction through global settings and storyboarding to video generation, with user review between stages</td>
+                        <td>An LMM agent automates script development, character and setting references, scene images, and animation, including output evaluation and selection (Anim-Director, Li et al., SIGGRAPH Asia 2024)</td>
+                    </tr>
+                    <tr>
+                        <td>Plan the story's visual sequence through keyframes before committing to motion synthesis</td>
+                        <td>A text-to-image storyboard stage lets users review and refine the planned shots before passing their images to image-to-video generation</td>
+                        <td>Generates narrative keyframes, then conditions a video generator on multiple keyframes and text for long-context synthesis (Captain Cinema, Xiao et al., ICLR 2026)</td>
+                    </tr>
+                    <tr>
+                        <td>Use an explicit storyboard to translate a narrative into shot-level visual specifications</td>
+                        <td>A visible storyboard canvas lets users inspect the sequence, reorder shots, and regenerate individual images before generating video</td>
+                        <td>Generates a shot plan, predicts start-end frame pairs with a trained model, and uses those frames to guide an off-the-shelf video generator (STAGE, Zhang et al., CVPR 2026)</td>
+                    </tr>
+                    <tr>
+                        <td>Maintain a persistent inventory of characters, props, and backgrounds to support continuity across shots</td>
+                        <td>Automatic entity extraction populates a user-facing asset panel, centralizing recurring elements for review and reuse throughout the project</td>
+                        <td>Stores visual and semantic entity states in an external memory bank that agents retrieve and update across shots. (VideoMemory, Zhou et al., 2026 preprint)</td>
+                    </tr>
+                    <tr>
+                        <td>Coordinate narrative structure, visual references, and iterative review to maintain consistency across a long sequence</td>
+                        <td>The parsed screenplay, global settings, asset manager, and storyboard organize decisions at different levels, with a user review loop for checking and revising outputs</td>
+                        <td>Use a structured screenplay, scene/shot references, keyframe grids, and automated verification to maintain consistency when remaking existing videos (Soap2Soap, Song et al., 2026 preprint)</td>
+                    </tr>
+                    <tr>
+                        <td>Let creators move between an overview of the sequence, detailed editing, and sequential preview within one authoring workflow</td>
+                        <td>Thumbnail, editor, and slideshow modes offer complementary views of the same pipeline, supporting sequence inspection, shot refinement, and presentation</td>
+                        <td>Connect scriptwriting with storyboard previsualization (CineVision, Wei et al., UIST 2025); links canvas, script, and timeline views with semantic zoom across story, scene, and shot (Vidmento, Yeh et al., CHI 2026)</td>
+                    </tr>
+                    <tr>
+                        <td>Define a subject once and reuse its identity across different shots and settings</td>
+                        <td>An asset manager stores reusable subject definitions and incorporates them into each relevant shot's prompt</td>
+                        <td>Share attention and visual features across still-image generations to preserve subject identity without additional training (ConsiStory, Tewel et al., ACM TOG 2024)</td>
+                    </tr>
+                    <tr>
+                        <td>Express cinematographic choices through explicit controls rather than relying on an undifferentiated prompt</td>
+                        <td>Separate shot-type, camera-angle, and movement dropdowns structure the user's choices before compiling them into prompt text</td>
+                        <td>Separately control camera and object motion through model conditioning or attention guidance (MotionCtrl, Wang et al., SIGGRAPH 2024; Direct-a-Video, Yang et al., SIGGRAPH 2024)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <p>Every row shares a concept but differs in method.</p>
+            <ul>
+                <li><b>Our design</b> provides GUI controls and review steps that users managed.</li>
+                <li><b>Agent systems</b> automate parts of that workflow through coordinated LLM roles.</li>
+                <li><b>Model-level approaches</b> use learned planning, explicit conditioning, and inference-time feature sharing.</li>
+            </ul>
+            <p>Across these three implementations, a similar decomposition recurs, suggesting we broke the problem down in a useful way. What needed more thought was the division of labor: which parts users should direct, and which the system should handle.</p>
+        </div>
+
+        <div class="card col-start-3 col-span-4">
+            <div class="number">🥪</div>
+            <h5>Absorbed</h5>
+            <p>The parts of scaffold that compensated for model limitations were absorbed first, and quickly. The intermediary stages, justified by compute cost and by base models "falling short" on sequencing, became redundant once keyframe planning was trained into the generator itself.</p>
+        </div>
+        <div class="card col-start-7 col-span-4">
+            <div class="number">♻️</div>
+            <h5>Remained</h5>
+            <p>The parts of scaffold that captured users' decision were not absorbed, and those papers didn't try to. The two personas got further apart as models improved: delegators received one-pass generation; specifiers received models with more parameters to specify.</p>
+        </div>
+
+        <div class="col-start-4 col-span-6">
+            <p>As generative models evolve this quickly, designers are faced with an uncomfortable yet inevitable question:</p>
+            <blockquote>Where does design create lasting value?</blockquote>
+            <p>In this case, collapsing the pipeline was an implicit wager that models would improve quickly enough to make intermediate checkpoints unnecessary. For the delegator persona, that wager paid off within a year, but disappeared controls from the interface did not make the underlying workflow obsolete. What it missed is that the checkpoints themselves were about to be adopted, by the models.</p>
+            <p>Redoing this in 2026, I would separate features into two kinds:</p>
+            <ul>
+                <li><b>Model-limitation scaffolds</b> built thin and expected to be absorbed within a model generation, such as entity enforcement, camera translation, the T2I preview, etc.</li>
+                <li><b>User-decision scaffolds</b> built as the product, such as the entity list, shot intent, the review checkpoint, the iteration log, etc.</li>
+            </ul>
+            <p>I would also make control depth elastic rather than staged: one representation the delegator sees as prompt-and-result and the specifier unfolds into shots and parameters.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid">
+        <div class="col-start-4 col-span-6">
             <h3 class="np">Takeaway</h3>
-            <p>Product decisions and priorities are rarely decided by design alone; business stage, investor narrative, and organizational trust all shape what gets built and how, making proactive alignment and stakeholder visibility not a soft skill, but a strategic one.</p>
+            <p>Product decisions and priorities are rarely decided by design alone; it also needs to fit the company's business stage, earn the team's trust, and remain useful as the technology changes.</p>
         </div>
     
         <div class="card-list-col col-start-4 col-span-6">
@@ -1568,6 +1731,10 @@ tools:
             <div class="insight">
                 <h5>Trust-Building Method</h5>
                 <p>Establishing credibility within the team early is what drives iterative direction and secures alignment. When direct peer support is absent, maintaining momentum means putting something tangible in front of stand-by colleagues to keep feedback flowing.</p>
+            </div>
+            <div class="insight">
+                <h5>Design for What Lasts</h5>
+                <p>Workflow design around a fast-moving model has to distinguish compensating for what the model cannot do today from capturing what the user wants regardless of the model. The first is a depreciating asset with a horizon of about one model generation; the second is the product. This design conflated them, which is why it looks superseded.</p>
             </div>
         </div>
     </div>
