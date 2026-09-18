@@ -1390,52 +1390,37 @@ th, td {
     vertical-align: top;
 }
 
-/* Wrap a wide table in this to let it scroll horizontally instead of crushing */
-.table-scroll {
-    overflow-x: auto;
+/* Matted table block: fills its column and wraps its cells. */
+.data-table {
     margin-bottom: var(--space-s);
     padding: var(--space-m);
     background-color: var(--ghost);
     border-radius: 14px;
 }
 
-/* Table sits transparent on the matted wrapper; body rows zebra-stripe */
-.table-scroll table { background-color: transparent; }
-.table-scroll thead th {
+/* Table sits transparent on the matted wrapper, filling the width */
+.data-table table { background-color: transparent; width: 100%; }
+.data-table thead th {
     font-weight: 700;
     color: var(--primary);
     border-bottom: 1px solid var(--tertiary);
 }
-.table-scroll thead tr:first-child th { padding-top: 0; }
-.table-scroll tbody td, .table-scroll tbody th { border-bottom: 1px solid var(--border); }
-.table-scroll tbody tr:last-child td, .table-scroll tbody tr:last-child th { border-bottom: none; padding-bottom: 0; }
-.table-scroll th, .table-scroll td { padding-left: 0; padding-right: var(--space-s); }
-.table-scroll th:last-child, .table-scroll td:last-child { padding-right: 0; }
+.data-table thead tr:first-child th { padding-top: 0; }
+.data-table tbody td, .data-table tbody th { border-bottom: 1px solid var(--border); }
+.data-table tbody tr:last-child td, .data-table tbody tr:last-child th { border-bottom: none; padding-bottom: 0; }
+.data-table th, .data-table td { padding-left: 0; padding-right: var(--space-s); }
+.data-table th:last-child, .data-table td:last-child { padding-right: 0; }
 
-/* The container is bounded by its grid column and scrolls; the table itself
-   is uncapped — it grows to fit its content. */
-.table-scroll table {
-    width: max-content;
-}
-
-.table-scroll th,
-.table-scroll td {
+.data-table th,
+.data-table td {
     font-size: var(--font-size-xs);
     line-height: var(--line-height-xs);
 }
 
-.table-scroll td {
-    width: 24ch;
-}
-
-.table-scroll th {
+.data-table th {
     text-transform: none;
     letter-spacing: 0;
 }
-
-/* Modifier: stretch to fill the column and wrap, instead of scrolling */
-.table-scroll.fit table { width: 100%; }
-.table-scroll.fit td { width: auto; }
 
 /* Cap a cell's copy at two lines (truncate the rest) */
 .clamp-2 {
@@ -1447,7 +1432,7 @@ th, td {
 }
 
 /* Every cell reserves exactly two rows of height, whatever the copy length */
-.table-scroll td .clamp-2 {
+.data-table td .clamp-2 {
     min-height: calc(2 * var(--line-height-xs) * var(--font-size-xs));
 }
 
