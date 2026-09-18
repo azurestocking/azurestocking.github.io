@@ -3,6 +3,14 @@ description: Portfolio
 baseurl: ""
 url: "https://azurestocking.github.io"
 
+# Set to false (or remove) when ready to launch — adds a noindex meta tag site-wide.
+noindex: true
+
+# Your GoatCounter site code -- the subdomain you pick when registering at
+# goatcounter.com (e.g. "azurestocking" for azurestocking.goatcounter.com).
+# Leave "" to disable analytics.
+goatcounter: "azurestocking"
+
 markdown: kramdown
 permalink: pretty
 
