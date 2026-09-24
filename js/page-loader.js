@@ -13,6 +13,7 @@
 
     var root = document.documentElement;
     var bar = loader.querySelector('.page-loader-bar span');
+    var pct = loader.querySelector('.page-loader-pct');
 
     function reveal() {
         if (loader.classList.contains('is-done')) return;
@@ -38,7 +39,9 @@
 
     function bump() {
         loaded++;
-        if (bar) bar.style.width = Math.min(100, Math.round(loaded / priority.length * 100)) + '%';
+        var percent = Math.min(100, Math.round(loaded / priority.length * 100));
+        if (bar) bar.style.width = percent + '%';
+        if (pct) pct.textContent = percent + '%';
         if (loaded >= priority.length) reveal();
     }
 

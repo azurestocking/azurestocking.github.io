@@ -710,6 +710,14 @@ html.is-loading, html.is-loading body { overflow: hidden; }
     transition: width 0.3s ease;
 }
 
+.page-loader-pct {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.04em;
+    color: var(--secondary);
+    font-variant-numeric: tabular-nums;
+    margin-top: calc(var(--space-xs) - var(--space-l));
+}
+
 /* Square corners for media inside a matted image-container or a full-width band,
    and for the MacBook mockup frame + its on-screen content */
 .image-container img, .image-container video,
