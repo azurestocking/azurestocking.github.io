@@ -670,7 +670,7 @@ html.is-loading, html.is-loading body { overflow: hidden; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--project-bg, var(--background));
+    background-color: var(--background);
     opacity: 1;
     transition: opacity 0.5s ease;
 }
@@ -705,7 +705,7 @@ html.is-loading, html.is-loading body { overflow: hidden; }
     display: block;
     width: 0;
     height: 100%;
-    background-color: var(--project-theme, var(--primary));
+    background-color: var(--primary);
     border-radius: 999px;
     transition: width 0.3s ease;
 }
