@@ -658,6 +658,58 @@ img, video {
     border-radius: 14px;
 }
 
+/* PROJECT LOADING SCREEN */
+
+/* Lock scroll while the loader is up (script adds .is-loading to <html>). */
+html.is-loading, html.is-loading body { overflow: hidden; }
+
+#page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--project-bg, var(--background));
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+#page-loader.is-done {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-loader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-l);
+}
+
+.page-loader-face {
+    width: 108px;
+    height: 108px;
+    object-fit: cover;
+    border-radius: 999px;
+    border: 1.5px solid var(--primary);
+}
+
+.page-loader-bar {
+    width: 160px;
+    height: 6px;
+    background-color: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.page-loader-bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: var(--project-theme, var(--primary));
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
 /* Square corners for media inside a matted image-container or a full-width band,
    and for the MacBook mockup frame + its on-screen content */
 .image-container img, .image-container video,
@@ -1125,6 +1177,37 @@ img, video {
     border: 1px solid var(--border);
     border-radius: 999px;
     white-space: nowrap;
+}
+
+/* Goal pills — tag each prototype iteration with the high-level goal(s) it demonstrates.
+   Pills sit inline with the iteration title. */
+.iteration-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-s);
+}
+.iteration-head h4 { margin-bottom: 0; }
+
+.goal-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.goal-pill {
+    font-size: var(--font-size-xs);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--project-theme, var(--primary));
+    background-color: color-mix(in srgb, var(--project-theme, var(--primary)) 12%, transparent);
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 

@@ -15,12 +15,26 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-55" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <style>:root { {% if page['theme-color'] and page['theme-color'] != '' %}--accent: {{ page['theme-color'] }}; --project-theme: {{ page['theme-color'] }};{% endif %} --project-bg: {{ page['bg-color'] | default: '#ffffff' }}; }</style>
+    {% if site.page_loader %}
+    <script>document.documentElement.classList.add('is-loading');
+    window.PAGE_LOADER = { fraction: {{ site.page_loader_fraction | default: 0.34 }}, timeout: {{ site.page_loader_timeout | default: 6000 }} };</script>
+    <noscript><style>#page-loader{display:none!important}html.is-loading,html.is-loading body{overflow:auto!important}</style></noscript>
+    {% endif %}
     {% if site.goatcounter and site.goatcounter != "" %}
     <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     {% endif %}
 </head>
 <body>
+    {% if site.page_loader %}
+    <div id="page-loader" role="status" aria-label="Loading">
+        <div class="page-loader-inner">
+            <img class="page-loader-face" src="{{ '/images/my-notion-face.png' | relative_url }}" alt="">
+            <div class="page-loader-bar"><span></span></div>
+        </div>
+    </div>
+    {% endif %}
     <header>
         <div class="nav-blur" aria-hidden="true">
             <div></div><div></div><div></div><div></div><div></div>
@@ -45,5 +59,6 @@
             <p class="eyebrow col-start-4 col-span-6">Built with 🤖 Jekyll and 🍵 Black Tea</p>
         </div>
     </footer>
+    {% if site.page_loader %}<script src="{{ '/js/page-loader.js' | relative_url }}"></script>{% endif %}
 </body>
 </html> 

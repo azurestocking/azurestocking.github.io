@@ -11,6 +11,14 @@ noindex: true
 # Leave "" to disable analytics.
 goatcounter: "azurestocking"
 
+# Every page shows a brief loading screen until the first fraction of its media
+# has rendered (with a hard timeout so no one gets stuck). Set false to disable.
+page_loader: true
+# Fraction of a page's media to load before revealing it.
+page_loader_fraction: 0.34
+# Max time (ms) to wait before revealing regardless of media state.
+page_loader_timeout: 6000
+
 markdown: kramdown
 permalink: pretty
 
