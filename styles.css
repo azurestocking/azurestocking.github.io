@@ -170,8 +170,18 @@
 }
 
 html, body {
-    font-family: var(--font-primary); 
+    font-family: var(--font-primary);
     scroll-behavior: smooth;
+}
+
+/* Text selection: black background, white text */
+::selection {
+    background: var(--primary);
+    color: var(--background);
+}
+::-moz-selection {
+    background: var(--primary);
+    color: var(--background);
 }
 
 html {
@@ -332,8 +342,15 @@ a:hover {
 }
 
 b, strong {
-    font-weight: 500;
+    font-weight: 700;
     color: var(--primary);
+}
+
+/* Emphasize: highlight a phrase with a bg-color band sitting under the text */
+em {
+    font-style: normal;
+    background-image: linear-gradient(to top, var(--project-bg, var(--ghost)) 0.5em, transparent 0.5em);
+    background-repeat: no-repeat;
 }
 
 .eyebrow {
@@ -658,6 +675,28 @@ img, video {
     border-radius: 14px;
 }
 
+/* SCROLL REVEAL — sections fade and rise in as they enter the viewport.
+   Progressive enhancement: only hidden once JS adds .reveal-ready to <html>. */
+.reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+}
+.reveal-ready .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal-ready .reveal,
+    .reveal-ready .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* PROJECT LOADING SCREEN */
 
 /* Lock scroll while the loader is up (script adds .is-loading to <html>). */
@@ -977,30 +1016,43 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 }
 
 /* Affinity morph — re-group the same notes with a FLIP transition (needs affinity.js) */
+/* Segmented control: a rounded track wrapping the toggle buttons. Track height
+   matches the .button CTA (8px vertical padding + 1px border on a 14px line box). */
+/* Segmented control: a light-grey track wrapping the toggle buttons; the active
+   one is a raised white pill (grey ladder: track --border > inactive text
+   --secondary > active pill --background with dark text). */
 .affinity-toggle {
-    display: flex;
-    gap: var(--space-xs);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background-color: var(--border);
+    border-radius: 999px;
     margin-bottom: var(--space-m);
 }
 
 .affinity-toggle button {
     font-family: var(--font-primary);
     font-size: var(--font-size-xs);
+    line-height: 1;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--primary);
-    background: none;
-    border: 1px solid var(--primary);
+    color: var(--secondary);
+    background: transparent;
+    border: 0;
     border-radius: 999px;
-    padding: 5px 14px;
+    padding: 8px 16px;
     cursor: pointer;
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.affinity-toggle button:hover {
+    color: var(--primary);
 }
 
 .affinity-toggle button.is-active {
-    color: var(--background);
-    background: var(--primary);
-    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--background);
 }
 
 .affinity-morph .sticky {

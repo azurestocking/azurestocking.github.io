@@ -19,6 +19,7 @@
         if (loader.classList.contains('is-done')) return;
         loader.classList.add('is-done');
         root.classList.remove('is-loading');
+        document.dispatchEvent(new Event('pageloader:revealed'));
         setTimeout(function () {
             if (loader.parentNode) loader.parentNode.removeChild(loader);
         }, 600);
