@@ -10,13 +10,23 @@
     var cfg = window.PAGE_LOADER || {};
     var fraction = typeof cfg.fraction === 'number' ? cfg.fraction : 0.34;
     var timeout = typeof cfg.timeout === 'number' ? cfg.timeout : 6000;
+    // Reveal this many ms after progress last advanced (a stalled connection that
+    // stops loading clears soon after, instead of waiting out the full timeout).
+    var stall = typeof cfg.stall === 'number' ? cfg.stall : 10000;
 
     var root = document.documentElement;
     var bar = loader.querySelector('.page-loader-bar span');
     var pct = loader.querySelector('.page-loader-pct');
+    var stallTimer;
+
+    function armStall() {
+        clearTimeout(stallTimer);
+        stallTimer = setTimeout(reveal, stall);
+    }
 
     function reveal() {
         if (loader.classList.contains('is-done')) return;
+        clearTimeout(stallTimer);
         loader.classList.add('is-done');
         root.classList.remove('is-loading');
         document.dispatchEvent(new Event('pageloader:revealed'));
@@ -44,6 +54,7 @@
         if (bar) bar.style.width = percent + '%';
         if (pct) pct.textContent = percent + '%';
         if (loaded >= priority.length) reveal();
+        else armStall(); // progress advanced — restart the stall countdown
     }
 
     priority.forEach(function (el) {
@@ -65,6 +76,8 @@
         el.addEventListener('error', done);
     });
 
-    // Safety net: never trap the visitor behind the overlay.
+    // Start the stall countdown (covers a hang before any media loads), and keep
+    // the absolute cap as a final backstop so the overlay never traps the visitor.
+    if (!loader.classList.contains('is-done')) armStall();
     setTimeout(reveal, timeout);
 })();

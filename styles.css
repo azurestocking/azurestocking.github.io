@@ -330,14 +330,14 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, p:las
 a {
     color: var(--primary);
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 1.5px;
     text-underline-offset: 4px;
 }
 
 a:hover {
     color: var(--primary);
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 1.5px;
     text-underline-offset: 4px;
 }
 

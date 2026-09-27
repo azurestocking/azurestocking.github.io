@@ -18,7 +18,7 @@
     <style>:root { {% if page['theme-color'] and page['theme-color'] != '' %}--accent: {{ page['theme-color'] }}; --project-theme: {{ page['theme-color'] }};{% endif %} --project-bg: {{ page['bg-color'] | default: '#ffffff' }}; }</style>
     {% if site.page_loader %}
     <script>document.documentElement.classList.add('is-loading');
-    window.PAGE_LOADER = { fraction: {{ site.page_loader_fraction | default: 0.34 }}, timeout: {{ site.page_loader_timeout | default: 6000 }} };</script>
+    window.PAGE_LOADER = { fraction: {{ site.page_loader_fraction | default: 0.34 }}, timeout: {{ site.page_loader_timeout | default: 6000 }}, stall: {{ site.page_loader_stall | default: 10000 }} };</script>
     <noscript><style>#page-loader{display:none!important}html.is-loading,html.is-loading body{overflow:auto!important}</style></noscript>
     {% endif %}
     {% if site.goatcounter and site.goatcounter != "" %}
